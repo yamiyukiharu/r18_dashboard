@@ -1,46 +1,61 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"34936 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f45k80.h
-[v _ADCON0 `Vuc ~T0 @X0 0 e@4034 ]
-"34832
-[v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
-"34761
-[v _ADCON2 `Vuc ~T0 @X0 0 e@4032 ]
-"35088
-[v _ADRESH `Vuc ~T0 @X0 0 e@4036 ]
-"35068
-[v _ADRESL `Vuc ~T0 @X0 0 e@4035 ]
-"80 mcc_generated_files/adc.c
-[c E15090 28 29 30 31 0 .. ]
-[n E15090 . channel_CTMU channel_Temp_diode channel_Vdd_core channel_1_024V_bandgap analog_1  ]
-"34942 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f45k80.h
-[s S1357 :1 `uc 1 :1 `uc 1 ]
-[n S1357 . . GO_NOT_DONE ]
-"34946
-[s S1358 :1 `uc 1 :1 `uc 1 :5 `uc 1 ]
-[n S1358 . ADON GO_nDONE CHS ]
-"34951
-[s S1359 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1359 . . DONE CHS0 CHS1 CHS2 CHS3 CHS4 ]
-"34960
-[s S1360 :1 `uc 1 :1 `uc 1 ]
-[n S1360 . . GO ]
-"34964
-[s S1361 :1 `uc 1 :1 `uc 1 ]
-[n S1361 . . NOT_DONE ]
-"34968
-[s S1362 :1 `uc 1 :1 `uc 1 ]
-[n S1362 . . nDONE ]
-"34972
-[s S1363 :1 `uc 1 :1 `uc 1 ]
-[n S1363 . . GODONE ]
-"34976
-[s S1364 :1 `uc 1 :1 `uc 1 ]
-[n S1364 . . GO_DONE ]
-"34941
-[u S1356 `S1357 1 `S1358 1 `S1359 1 `S1360 1 `S1361 1 `S1362 1 `S1363 1 `S1364 1 ]
-[n S1356 . . . . . . . . . ]
-"34981
-[v _ADCON0bits `VS1356 ~T0 @X0 0 e@4034 ]
+"31211 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f45k80.h
+[s S1179 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1179 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"31210
+[u S1178 `S1179 1 ]
+[n S1178 . . ]
+"31222
+[v _TRISCbits `VS1178 ~T0 @X0 0 e@3988 ]
+"35575
+[v _SSPBUF `Vuc ~T0 @X0 0 e@4041 ]
+"35279
+[s S1376 :2 `uc 1 :1 `uc 1 ]
+[n S1376 . . R_NOT_W ]
+"35283
+[s S1377 :5 `uc 1 :1 `uc 1 ]
+[n S1377 . . D_NOT_A ]
+"35287
+[s S1378 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1378 . BF UA R_nW S P D_nA CKE SMP ]
+"35297
+[s S1379 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S1379 . . R_W . D_A ]
+"35303
+[s S1380 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S1380 . . nW . nA ]
+"35309
+[s S1381 :2 `uc 1 :1 `uc 1 ]
+[n S1381 . . NOT_WRITE ]
+"35313
+[s S1382 :5 `uc 1 :1 `uc 1 ]
+[n S1382 . . NOT_ADDRESS ]
+"35317
+[s S1383 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S1383 . . nWRITE . nADDRESS ]
+"35323
+[s S1384 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S1384 . . READ_WRITE . DATA_ADDRESS ]
+"35329
+[s S1385 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1385 . . I2C_READ I2C_START I2C_STOP I2C_DAT ]
+"35336
+[s S1386 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1386 . . RW START STOP DA ]
+"35343
+[s S1387 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S1387 . . NOT_W . NOT_A ]
+"35278
+[u S1375 `S1376 1 `S1377 1 `S1378 1 `S1379 1 `S1380 1 `S1381 1 `S1382 1 `S1383 1 `S1384 1 `S1385 1 `S1386 1 `S1387 1 ]
+[n S1375 . . . . . . . . . . . . . ]
+"35350
+[v _SSPSTATbits `VS1375 ~T0 @X0 0 e@4039 ]
+"56 C:\Program Files (x86)\Microchip\xc8\v1.42\include\string.h
+[v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
+[v F15059 `(v ~T0 @X0 1 tf1`ul ]
+"164 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18.h
+[v __delay `JF15059 ~T0 @X0 0 e ]
+[p i __delay ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -13627,6 +13642,27 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 164: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 166: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 168: extern __nonreentrant void _delay3(unsigned char);
+[; ;FT_DataTypes.h: 8: typedef unsigned char ft_uint8_t;
+[; ;FT_DataTypes.h: 9: typedef char ft_char8_t;
+[; ;FT_DataTypes.h: 10: typedef signed char ft_schar8_t;
+[; ;FT_DataTypes.h: 11: typedef unsigned char ft_uchar8_t;
+[; ;FT_DataTypes.h: 12: typedef int ft_int16_t;
+[; ;FT_DataTypes.h: 13: typedef unsigned int ft_uint16_t;
+[; ;FT_DataTypes.h: 14: typedef unsigned long ft_uint32_t;
+[; ;FT_DataTypes.h: 15: typedef long ft_int32_t;
+[; ;FT_DataTypes.h: 16: typedef void ft_void_t;
+[; ;FT_DataTypes.h: 18: typedef unsigned char ft_bool_t;
+[; ;FT_Gpu.h: 299: typedef struct FT_Gpu_Fonts
+[; ;FT_Gpu.h: 300: {
+[; ;FT_Gpu.h: 303: ft_uint8_t FontWidth[(128)];
+[; ;FT_Gpu.h: 305: ft_uint32_t FontBitmapFormat;
+[; ;FT_Gpu.h: 307: ft_uint32_t FontLineStride;
+[; ;FT_Gpu.h: 309: ft_uint32_t FontWidthInPixels;
+[; ;FT_Gpu.h: 311: ft_uint32_t FontHeightInPixels;
+[; ;FT_Gpu.h: 313: ft_uint32_t PointerToFontGraphicsData;
+[; ;FT_Gpu.h: 314: }FT_Gpu_Fonts_t;
+[; ;pin_manager.h: 152: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 164: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 38: typedef signed long int int32_t;
@@ -13650,142 +13686,773 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 222: typedef int16_t intptr_t;
 [; ;stdint.h: 227: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;adc.h: 71: typedef uint16_t adc_result_t;
-[; ;adc.h: 85: typedef enum
-[; ;adc.h: 86: {
-[; ;adc.h: 87: channel_CTMU = 0x1C,
-[; ;adc.h: 88: channel_Temp_diode = 0x1D,
-[; ;adc.h: 89: channel_Vdd_core = 0x1E,
-[; ;adc.h: 90: channel_1_024V_bandgap = 0x1F,
-[; ;adc.h: 91: analog_1 = 0x00
-[; ;adc.h: 92: } adc_channel_t;
-[; ;adc.h: 127: void ADC_Initialize(void);
-[; ;adc.h: 156: void ADC_StartConversion(adc_channel_t channel);
-[; ;adc.h: 188: bool ADC_IsConversionDone();
-[; ;adc.h: 221: adc_result_t ADC_GetConversionResult(void);
-[; ;adc.h: 251: adc_result_t ADC_GetConversion(adc_channel_t channel);
-"58 mcc_generated_files/adc.c
-[v _ADC_Initialize `(v ~T0 @X0 1 ef ]
-"59
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stddef.h: 6: typedef int ptrdiff_t;
+[; ;spi.h: 116: void SPI_Initialize(void);
+[; ;spi.h: 151: uint8_t SPI_Exchange8bit(uint8_t data);
+[; ;spi.h: 191: uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
+[; ;spi.h: 214: bool SPI_IsBufferFull(void);
+[; ;spi.h: 239: bool SPI_HasWriteCollisionOccured(void);
+[; ;spi.h: 263: void SPI_ClearWriteCollisionStatus(void);
+[; ;ecan.h: 67: typedef union {
+[; ;ecan.h: 69: struct {
+[; ;ecan.h: 70: unsigned char idType;
+[; ;ecan.h: 71: unsigned long id;
+[; ;ecan.h: 72: unsigned char dlc;
+[; ;ecan.h: 73: unsigned char data0;
+[; ;ecan.h: 74: unsigned char data1;
+[; ;ecan.h: 75: unsigned char data2;
+[; ;ecan.h: 76: unsigned char data3;
+[; ;ecan.h: 77: unsigned char data4;
+[; ;ecan.h: 78: unsigned char data5;
+[; ;ecan.h: 79: unsigned char data6;
+[; ;ecan.h: 80: unsigned char data7;
+[; ;ecan.h: 81: } frame;
+[; ;ecan.h: 82: unsigned char array[14];
+[; ;ecan.h: 83: } uCAN_MSG;
+[; ;ecan.h: 117: void ECAN_Initialize(void);
+[; ;ecan.h: 139: void CAN_sleep(void);
+[; ;ecan.h: 160: unsigned char CAN_transmit(uCAN_MSG *tempCanMsg);
+[; ;ecan.h: 184: unsigned char CAN_receive(uCAN_MSG *tempCanMsg);
+[; ;ecan.h: 206: unsigned char CAN_messagesInBuffer(void);
+[; ;ecan.h: 230: unsigned char CAN_isBusOff(void);
+[; ;ecan.h: 254: unsigned char CAN_isRXErrorPassive(void);
+[; ;ecan.h: 278: unsigned char CAN_isTXErrorPassive(void);
+[; ;mcc.h: 69: void SYSTEM_Initialize(void);
+[; ;mcc.h: 82: void OSCILLATOR_Initialize(void);
+[; ;FT800.h: 21: extern unsigned short dli;
+[; ;FT800.h: 31: extern unsigned short cmd_offset;
+[; ;FT800.h: 35: void cmd_incrementn(unsigned char n);
+[; ;FT800.h: 39: void cmd(ft_uint32_t command);
+[; ;FT800.h: 269: void host_command(ft_uint8_t command);
+[; ;FT800.h: 274: void wr8(unsigned short long addr, ft_uint8_t value);
+[; ;FT800.h: 279: void wr16(unsigned short long addr, ft_uint16_t value);
+[; ;FT800.h: 284: void wr32(unsigned short long addr, ft_uint32_t value);
+[; ;FT800.h: 289: ft_uint8_t rd8(unsigned short long addr);
+[; ;FT800.h: 294: ft_uint16_t rd16(unsigned short long addr);
+[; ;FT800.h: 299: ft_uint32_t rd32(unsigned short long addr);
+[; ;FT800.h: 304: ft_uint8_t wr8s(unsigned short long addr, const ft_char8_t *s);
+[; ;FT800.h: 314: inline void FT800_Init();
+[; ;string.h: 14: extern void * memcpy(void *, const void *, size_t);
+[; ;string.h: 15: extern void * memmove(void *, const void *, size_t);
+[; ;string.h: 16: extern void * memset(void *, int, size_t);
+[; ;string.h: 36: extern char * strcat(char *, const char *);
+[; ;string.h: 37: extern char * strcpy(char *, const char *);
+[; ;string.h: 38: extern char * strncat(char *, const char *, size_t);
+[; ;string.h: 39: extern char * strncpy(char *, const char *, size_t);
+[; ;string.h: 40: extern char * strdup(const char *);
+[; ;string.h: 41: extern char * strtok(char *, const char *);
+[; ;string.h: 44: extern int memcmp(const void *, const void *, size_t);
+[; ;string.h: 45: extern int strcmp(const char *, const char *);
+[; ;string.h: 46: extern int stricmp(const char *, const char *);
+[; ;string.h: 47: extern int strncmp(const char *, const char *, size_t);
+[; ;string.h: 48: extern int strnicmp(const char *, const char *, size_t);
+[; ;string.h: 49: extern void * memchr(const void *, int, size_t);
+[; ;string.h: 50: extern size_t strcspn(const char *, const char *);
+[; ;string.h: 51: extern char * strpbrk(const char *, const char *);
+[; ;string.h: 52: extern size_t strspn(const char *, const char *);
+[; ;string.h: 53: extern char * strstr(const char *, const char *);
+[; ;string.h: 54: extern char * stristr(const char *, const char *);
+[; ;string.h: 55: extern char * strerror(int);
+[; ;string.h: 56: extern size_t strlen(const char *);
+[; ;string.h: 57: extern char * strchr(const char *, int);
+[; ;string.h: 58: extern char * strichr(const char *, int);
+[; ;string.h: 59: extern char * strrchr(const char *, int);
+[; ;string.h: 60: extern char * strrichr(const char *, int);
+"5 FT800.c
+[v _dli `us ~T0 @X0 1 e ]
+[; ;FT800.c: 5: unsigned short dli;
+"6
+[v _cmd_offset `us ~T0 @X0 1 e ]
+[i _cmd_offset
+-> -> 0 `i `us
+]
+[; ;FT800.c: 6: unsigned short cmd_offset = 0;
+"8
+[v _host_command `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;adc.c: 58: void ADC_Initialize(void)
-[; ;adc.c: 59: {
-[e :U _ADC_Initialize ]
+[; ;FT800.c: 8: void host_command(ft_uint8_t command){
+[e :U _host_command ]
+[v _command `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;adc.c: 63: ADCON0 = 0x01;
-"63
-[e = _ADCON0 -> -> 1 `i `uc ]
-[; ;adc.c: 66: ADCON1 = 0x80;
-"66
-[e = _ADCON1 -> -> 128 `i `uc ]
-[; ;adc.c: 69: ADCON2 = 0xBD;
-"69
-[e = _ADCON2 -> -> 189 `i `uc ]
-[; ;adc.c: 72: ADRESH = 0x00;
-"72
-[e = _ADRESH -> -> 0 `i `uc ]
-[; ;adc.c: 75: ADRESL = 0x00;
-"75
-[e = _ADRESL -> -> 0 `i `uc ]
-[; ;adc.c: 77: }
-"77
-[e :UE 1537 ]
-}
-"79
-[v _ADC_StartConversion `(v ~T0 @X0 1 ef1`E15090 ]
-"80
-{
-[; ;adc.c: 79: void ADC_StartConversion(adc_channel_t channel)
-[; ;adc.c: 80: {
-[e :U _ADC_StartConversion ]
-"79
-[v _channel `E15090 ~T0 @X0 1 r1 ]
-"80
-[f ]
-[; ;adc.c: 82: ADCON0bits.CHS = channel;
-"82
-[e = . . _ADCON0bits 1 2 -> _channel `uc ]
-[; ;adc.c: 85: ADCON0bits.ADON = 1;
-"85
-[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
-[; ;adc.c: 89: ADCON0bits.GO_nDONE = 1;
-"89
-[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
-[; ;adc.c: 90: }
-"90
-[e :UE 1538 ]
-}
-"92
-[v _ADC_IsConversionDone `(uc ~T0 @X0 1 ef ]
-"93
-{
-[; ;adc.c: 92: bool ADC_IsConversionDone()
-[; ;adc.c: 93: {
-[e :U _ADC_IsConversionDone ]
-[f ]
-[; ;adc.c: 95: return (!ADCON0bits.GO_nDONE);
-"95
-[e ) -> -> ! != -> . . _ADCON0bits 1 1 `i -> -> -> 0 `i `Vuc `i `i `uc ]
-[e $UE 1539  ]
-[; ;adc.c: 96: }
-"96
-[e :UE 1539 ]
-}
-"98
-[v _ADC_GetConversionResult `(ui ~T0 @X0 1 ef ]
-"99
-{
-[; ;adc.c: 98: adc_result_t ADC_GetConversionResult(void)
-[; ;adc.c: 99: {
-[e :U _ADC_GetConversionResult ]
-[f ]
-[; ;adc.c: 101: return ((ADRESH << 8) + ADRESL);
-"101
-[e ) -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
-[e $UE 1540  ]
-[; ;adc.c: 102: }
-"102
+[; ;FT800.c: 9: TRISCbits.TRISC1 = 0;
+"9
+[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
+[; ;FT800.c: 10: SSPBUF = command;while(!SSPSTATbits.BF);
+"10
+[e = _SSPBUF _command ]
+[e $U 1541  ]
+[e :U 1542 ]
+[e :U 1541 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1542  ]
+[e :U 1543 ]
+[; ;FT800.c: 11: SSPBUF = 0;while(!SSPSTATbits.BF);
+"11
+[e = _SSPBUF -> -> 0 `i `uc ]
+[e $U 1544  ]
+[e :U 1545 ]
+[e :U 1544 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1545  ]
+[e :U 1546 ]
+[; ;FT800.c: 12: SSPBUF = 0;while(!SSPSTATbits.BF);
+"12
+[e = _SSPBUF -> -> 0 `i `uc ]
+[e $U 1547  ]
+[e :U 1548 ]
+[e :U 1547 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1548  ]
+[e :U 1549 ]
+[; ;FT800.c: 13: TRISCbits.TRISC1 = 1;
+"13
+[e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
+[; ;FT800.c: 14: }
+"14
 [e :UE 1540 ]
 }
-"104
-[v _ADC_GetConversion `(ui ~T0 @X0 1 ef1`E15090 ]
-"105
+"16
+[v _wr8 `(v ~T0 @X0 1 ef2`um`uc ]
 {
-[; ;adc.c: 104: adc_result_t ADC_GetConversion(adc_channel_t channel)
-[; ;adc.c: 105: {
-[e :U _ADC_GetConversion ]
-"104
-[v _channel `E15090 ~T0 @X0 1 r1 ]
-"105
+[; ;FT800.c: 16: void wr8(unsigned short long addr, ft_uint8_t value){
+[e :U _wr8 ]
+[v _addr `um ~T0 @X0 1 r1 ]
+[v _value `uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;adc.c: 107: ADCON0bits.CHS = channel;
-"107
-[e = . . _ADCON0bits 1 2 -> _channel `uc ]
-[; ;adc.c: 110: ADCON0bits.ADON = 1;
-"110
-[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
-[; ;adc.c: 114: ADCON0bits.GO_nDONE = 1;
-"114
-[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
-[; ;adc.c: 117: while (ADCON0bits.GO_nDONE)
-"117
-[e $U 1542  ]
-[e :U 1543 ]
-[; ;adc.c: 118: {
-"118
-{
-"119
+[; ;FT800.c: 17: TRISCbits.TRISC1 = 0;
+"17
+[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
+[; ;FT800.c: 18: SSPBUF = 0x80 | (addr >> 16);while(!SSPSTATbits.BF);
+"18
+[e = _SSPBUF -> | -> -> -> 128 `i `m `um >> _addr -> 16 `i `uc ]
+[e $U 1551  ]
+[e :U 1552 ]
+[e :U 1551 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1552  ]
+[e :U 1553 ]
+[; ;FT800.c: 19: SSPBUF = addr >> 8;while(!SSPSTATbits.BF);
+"19
+[e = _SSPBUF -> >> _addr -> 8 `i `uc ]
+[e $U 1554  ]
+[e :U 1555 ]
+[e :U 1554 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1555  ]
+[e :U 1556 ]
+[; ;FT800.c: 20: SSPBUF = addr;while(!SSPSTATbits.BF);
+"20
+[e = _SSPBUF -> _addr `uc ]
+[e $U 1557  ]
+[e :U 1558 ]
+[e :U 1557 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1558  ]
+[e :U 1559 ]
+[; ;FT800.c: 21: SSPBUF = value;while(!SSPSTATbits.BF);
+"21
+[e = _SSPBUF _value ]
+[e $U 1560  ]
+[e :U 1561 ]
+[e :U 1560 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1561  ]
+[e :U 1562 ]
+[; ;FT800.c: 22: TRISCbits.TRISC1 = 1;
+"22
+[e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
+[; ;FT800.c: 23: }
+"23
+[e :UE 1550 ]
 }
-[e :U 1542 ]
-"117
-[e $ != -> . . _ADCON0bits 1 1 `i -> -> -> 0 `i `Vuc `i 1543  ]
-[e :U 1544 ]
-[; ;adc.c: 119: }
-[; ;adc.c: 122: return ((ADRESH << 8) + ADRESL);
+"25
+[v _wr16 `(v ~T0 @X0 1 ef2`um`ui ]
+{
+[; ;FT800.c: 25: void wr16(unsigned short long addr, ft_uint16_t value){
+[e :U _wr16 ]
+[v _addr `um ~T0 @X0 1 r1 ]
+[v _value `ui ~T0 @X0 1 r2 ]
+[f ]
+[; ;FT800.c: 26: TRISCbits.TRISC1 = 0;
+"26
+[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
+[; ;FT800.c: 27: SSPBUF = 0x80 | (addr >> 16);while(!SSPSTATbits.BF);
+"27
+[e = _SSPBUF -> | -> -> -> 128 `i `m `um >> _addr -> 16 `i `uc ]
+[e $U 1564  ]
+[e :U 1565 ]
+[e :U 1564 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1565  ]
+[e :U 1566 ]
+[; ;FT800.c: 28: SSPBUF = addr >> 8;while(!SSPSTATbits.BF);
+"28
+[e = _SSPBUF -> >> _addr -> 8 `i `uc ]
+[e $U 1567  ]
+[e :U 1568 ]
+[e :U 1567 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1568  ]
+[e :U 1569 ]
+[; ;FT800.c: 29: SSPBUF = addr;while(!SSPSTATbits.BF);
+"29
+[e = _SSPBUF -> _addr `uc ]
+[e $U 1570  ]
+[e :U 1571 ]
+[e :U 1570 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1571  ]
+[e :U 1572 ]
+[; ;FT800.c: 30: SSPBUF = (value) & 0xFF;while(!SSPSTATbits.BF);SSPBUF = ((value) >> 8) & 0xFF;while(!SSPSTATbits.BF);
+"30
+[e = _SSPBUF -> & _value -> -> 255 `i `ui `uc ]
+[e $U 1573  ]
+[e :U 1574 ]
+[e :U 1573 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1574  ]
+[e :U 1575 ]
+[e = _SSPBUF -> & >> _value -> 8 `i -> -> 255 `i `ui `uc ]
+[e $U 1576  ]
+[e :U 1577 ]
+[e :U 1576 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1577  ]
+[e :U 1578 ]
+[; ;FT800.c: 31: TRISCbits.TRISC1 = 1;
+"31
+[e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
+[; ;FT800.c: 32: }
+"32
+[e :UE 1563 ]
+}
+"34
+[v _wr32 `(v ~T0 @X0 1 ef2`um`ul ]
+{
+[; ;FT800.c: 34: void wr32(unsigned short long addr, ft_uint32_t value){
+[e :U _wr32 ]
+[v _addr `um ~T0 @X0 1 r1 ]
+[v _value `ul ~T0 @X0 1 r2 ]
+[f ]
+[; ;FT800.c: 35: TRISCbits.TRISC1 = 0;
+"35
+[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
+[; ;FT800.c: 36: SSPBUF = 0x80 | (addr >> 16);while(!SSPSTATbits.BF);
+"36
+[e = _SSPBUF -> | -> -> -> 128 `i `m `um >> _addr -> 16 `i `uc ]
+[e $U 1580  ]
+[e :U 1581 ]
+[e :U 1580 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1581  ]
+[e :U 1582 ]
+[; ;FT800.c: 37: SSPBUF = addr >> 8;while(!SSPSTATbits.BF);
+"37
+[e = _SSPBUF -> >> _addr -> 8 `i `uc ]
+[e $U 1583  ]
+[e :U 1584 ]
+[e :U 1583 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1584  ]
+[e :U 1585 ]
+[; ;FT800.c: 38: SSPBUF = addr;while(!SSPSTATbits.BF);
+"38
+[e = _SSPBUF -> _addr `uc ]
+[e $U 1586  ]
+[e :U 1587 ]
+[e :U 1586 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1587  ]
+[e :U 1588 ]
+[; ;FT800.c: 39: SSPBUF = ((value) & 0xFFFF) & 0xFF;while(!SSPSTATbits.BF);SSPBUF = (((value) & 0xFFFF) >> 8) & 0xFF;while(!SSPSTATbits.BF);SSPBUF = (((value) >> 16) & 0xFFFF) & 0xFF;while(!SSPSTATbits.BF);SSPBUF = ((((value) >> 16) & 0xFFFF) >> 8) & 0xFF;while(!SSPS
+"39
+[e = _SSPBUF -> & & _value -> -> 65535 `ui `ul -> -> -> 255 `i `l `ul `uc ]
+[e $U 1589  ]
+[e :U 1590 ]
+[e :U 1589 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1590  ]
+[e :U 1591 ]
+[e = _SSPBUF -> & >> & _value -> -> 65535 `ui `ul -> 8 `i -> -> -> 255 `i `l `ul `uc ]
+[e $U 1592  ]
+[e :U 1593 ]
+[e :U 1592 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1593  ]
+[e :U 1594 ]
+[e = _SSPBUF -> & & >> _value -> 16 `i -> -> 65535 `ui `ul -> -> -> 255 `i `l `ul `uc ]
+[e $U 1595  ]
+[e :U 1596 ]
+[e :U 1595 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1596  ]
+[e :U 1597 ]
+[e = _SSPBUF -> & >> & >> _value -> 16 `i -> -> 65535 `ui `ul -> 8 `i -> -> -> 255 `i `l `ul `uc ]
+[e $U 1598  ]
+[e :U 1599 ]
+[e :U 1598 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1599  ]
+[e :U 1600 ]
+[; ;FT800.c: 40: TRISCbits.TRISC1 = 1;
+"40
+[e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
+[; ;FT800.c: 41: }
+"41
+[e :UE 1579 ]
+}
+"43
+[v _wr8s `(uc ~T0 @X0 1 ef2`um`*Cuc ]
+"44
+{
+[; ;FT800.c: 43: ft_uint8_t wr8s(unsigned short long addr, const ft_char8_t *s)
+[; ;FT800.c: 44: {
+[e :U _wr8s ]
+"43
+[v _addr `um ~T0 @X0 1 r1 ]
+[v _s `*Cuc ~T0 @X0 1 r2 ]
+"44
+[f ]
+[; ;FT800.c: 45: TRISCbits.TRISC1 = 0;
+"45
+[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
+[; ;FT800.c: 46: SSPBUF = 0x80 | (addr >> 16);while(!SSPSTATbits.BF);
+"46
+[e = _SSPBUF -> | -> -> -> 128 `i `m `um >> _addr -> 16 `i `uc ]
+[e $U 1602  ]
+[e :U 1603 ]
+[e :U 1602 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1603  ]
+[e :U 1604 ]
+[; ;FT800.c: 47: SSPBUF = addr >> 8;while(!SSPSTATbits.BF);
+"47
+[e = _SSPBUF -> >> _addr -> 8 `i `uc ]
+[e $U 1605  ]
+[e :U 1606 ]
+[e :U 1605 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1606  ]
+[e :U 1607 ]
+[; ;FT800.c: 48: SSPBUF = addr;while(!SSPSTATbits.BF);
+"48
+[e = _SSPBUF -> _addr `uc ]
+[e $U 1608  ]
+[e :U 1609 ]
+[e :U 1608 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1609  ]
+[e :U 1610 ]
+"49
+[v _l `uc ~T0 @X0 1 a ]
+[; ;FT800.c: 49: ft_uint8_t l = strlen(s);
+[e = _l -> ( _strlen (1 _s `uc ]
+"50
+[v _i `uc ~T0 @X0 1 a ]
+[; ;FT800.c: 50: ft_uint8_t i;
+[; ;FT800.c: 51: for(i=0;i<=l;i++){
+"51
+{
+[e = _i -> -> 0 `i `uc ]
+[e $U 1614  ]
+[e :U 1611 ]
+{
+[; ;FT800.c: 52: SSPBUF = s[i];while(!SSPSTATbits.BF);
+"52
+[e = _SSPBUF *U + _s * -> _i `ux -> -> # *U _s `ui `ux ]
+[e $U 1615  ]
+[e :U 1616 ]
+[e :U 1615 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1616  ]
+[e :U 1617 ]
+"53
+}
+"51
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 1614 ]
+[e $ <= -> _i `i -> _l `i 1611  ]
+[e :U 1612 ]
+"53
+}
+[; ;FT800.c: 53: }
+[; ;FT800.c: 54: for(;i%4>0;i++){
+"54
+{
+[e $U 1621  ]
+[e :U 1618 ]
+{
+[; ;FT800.c: 55: SSPBUF = 0;while(!SSPSTATbits.BF);
+"55
+[e = _SSPBUF -> -> 0 `i `uc ]
+[e $U 1622  ]
+[e :U 1623 ]
+[e :U 1622 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1623  ]
+[e :U 1624 ]
+"56
+}
+"54
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 1621 ]
+[e $ > % -> _i `i -> 4 `i -> 0 `i 1618  ]
+[e :U 1619 ]
+"56
+}
+[; ;FT800.c: 56: }
+[; ;FT800.c: 57: TRISCbits.TRISC1 = 1;
+"57
+[e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
+[; ;FT800.c: 58: return i;
+"58
+[e ) _i ]
+[e $UE 1601  ]
+[; ;FT800.c: 59: }
+"59
+[e :UE 1601 ]
+}
+"61
+[v _rd8 `(uc ~T0 @X0 1 ef1`um ]
+{
+[; ;FT800.c: 61: ft_uint8_t rd8(unsigned short long addr){
+[e :U _rd8 ]
+[v _addr `um ~T0 @X0 1 r1 ]
+[f ]
+[; ;FT800.c: 62: TRISCbits.TRISC1 = 0;
+"62
+[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
+[; ;FT800.c: 63: SSPBUF = addr >> 16;while(!SSPSTATbits.BF);
+"63
+[e = _SSPBUF -> >> _addr -> 16 `i `uc ]
+[e $U 1626  ]
+[e :U 1627 ]
+[e :U 1626 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1627  ]
+[e :U 1628 ]
+[; ;FT800.c: 64: SSPBUF = addr >> 8;while(!SSPSTATbits.BF);
+"64
+[e = _SSPBUF -> >> _addr -> 8 `i `uc ]
+[e $U 1629  ]
+[e :U 1630 ]
+[e :U 1629 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1630  ]
+[e :U 1631 ]
+[; ;FT800.c: 65: SSPBUF = addr;while(!SSPSTATbits.BF);
+"65
+[e = _SSPBUF -> _addr `uc ]
+[e $U 1632  ]
+[e :U 1633 ]
+[e :U 1632 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1633  ]
+[e :U 1634 ]
+[; ;FT800.c: 66: SSPBUF = 0;while(!SSPSTATbits.BF);
+"66
+[e = _SSPBUF -> -> 0 `i `uc ]
+[e $U 1635  ]
+[e :U 1636 ]
+[e :U 1635 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1636  ]
+[e :U 1637 ]
+[; ;FT800.c: 67: SSPBUF = 0;while(!SSPSTATbits.BF);
+"67
+[e = _SSPBUF -> -> 0 `i `uc ]
+[e $U 1638  ]
+[e :U 1639 ]
+[e :U 1638 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1639  ]
+[e :U 1640 ]
+[; ;FT800.c: 68: TRISCbits.TRISC1 = 1;
+"68
+[e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
+[; ;FT800.c: 69: return SSPBUF;
+"69
+[e ) _SSPBUF ]
+[e $UE 1625  ]
+[; ;FT800.c: 70: }
+"70
+[e :UE 1625 ]
+}
+"72
+[v _rd16 `(ui ~T0 @X0 1 ef1`um ]
+{
+[; ;FT800.c: 72: ft_uint16_t rd16(unsigned short long addr){
+[e :U _rd16 ]
+[v _addr `um ~T0 @X0 1 r1 ]
+[f ]
+[; ;FT800.c: 73: TRISCbits.TRISC1 = 0;
+"73
+[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
+[; ;FT800.c: 74: SSPBUF = addr >> 16;while(!SSPSTATbits.BF);
+"74
+[e = _SSPBUF -> >> _addr -> 16 `i `uc ]
+[e $U 1642  ]
+[e :U 1643 ]
+[e :U 1642 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1643  ]
+[e :U 1644 ]
+[; ;FT800.c: 75: SSPBUF = addr >> 8;while(!SSPSTATbits.BF);
+"75
+[e = _SSPBUF -> >> _addr -> 8 `i `uc ]
+[e $U 1645  ]
+[e :U 1646 ]
+[e :U 1645 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1646  ]
+[e :U 1647 ]
+[; ;FT800.c: 76: SSPBUF = addr;while(!SSPSTATbits.BF);
+"76
+[e = _SSPBUF -> _addr `uc ]
+[e $U 1648  ]
+[e :U 1649 ]
+[e :U 1648 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1649  ]
+[e :U 1650 ]
+[; ;FT800.c: 77: SSPBUF = 0;while(!SSPSTATbits.BF);
+"77
+[e = _SSPBUF -> -> 0 `i `uc ]
+[e $U 1651  ]
+[e :U 1652 ]
+[e :U 1651 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1652  ]
+[e :U 1653 ]
+[; ;FT800.c: 78: SSPBUF = 0;while(!SSPSTATbits.BF);
+"78
+[e = _SSPBUF -> -> 0 `i `uc ]
+[e $U 1654  ]
+[e :U 1655 ]
+[e :U 1654 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1655  ]
+[e :U 1656 ]
+"79
+[v _temp `uc ~T0 @X0 1 a ]
+[; ;FT800.c: 79: ft_uint8_t temp = SSPBUF;
+[e = _temp _SSPBUF ]
+[; ;FT800.c: 80: SSPBUF = 0;while(!SSPSTATbits.BF);
+"80
+[e = _SSPBUF -> -> 0 `i `uc ]
+[e $U 1657  ]
+[e :U 1658 ]
+[e :U 1657 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1658  ]
+[e :U 1659 ]
+[; ;FT800.c: 81: TRISCbits.TRISC1 = 1;
+"81
+[e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
+[; ;FT800.c: 82: return ((ft_uint16_t)SSPBUF << 8) | temp;
+"82
+[e ) | << -> _SSPBUF `ui -> 8 `i -> _temp `ui ]
+[e $UE 1641  ]
+[; ;FT800.c: 83: }
+"83
+[e :UE 1641 ]
+}
+"85
+[v _rd32 `(ul ~T0 @X0 1 ef1`um ]
+{
+[; ;FT800.c: 85: ft_uint32_t rd32(unsigned short long addr){
+[e :U _rd32 ]
+[v _addr `um ~T0 @X0 1 r1 ]
+[f ]
+[; ;FT800.c: 86: TRISCbits.TRISC1 = 0;
+"86
+[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
+[; ;FT800.c: 87: SSPBUF = addr >> 16;while(!SSPSTATbits.BF);
+"87
+[e = _SSPBUF -> >> _addr -> 16 `i `uc ]
+[e $U 1661  ]
+[e :U 1662 ]
+[e :U 1661 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1662  ]
+[e :U 1663 ]
+[; ;FT800.c: 88: SSPBUF = addr >> 8;while(!SSPSTATbits.BF);
+"88
+[e = _SSPBUF -> >> _addr -> 8 `i `uc ]
+[e $U 1664  ]
+[e :U 1665 ]
+[e :U 1664 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1665  ]
+[e :U 1666 ]
+[; ;FT800.c: 89: SSPBUF = addr;while(!SSPSTATbits.BF);
+"89
+[e = _SSPBUF -> _addr `uc ]
+[e $U 1667  ]
+[e :U 1668 ]
+[e :U 1667 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1668  ]
+[e :U 1669 ]
+[; ;FT800.c: 90: SSPBUF = 0;while(!SSPSTATbits.BF);
+"90
+[e = _SSPBUF -> -> 0 `i `uc ]
+[e $U 1670  ]
+[e :U 1671 ]
+[e :U 1670 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1671  ]
+[e :U 1672 ]
+[; ;FT800.c: 91: SSPBUF = 0;while(!SSPSTATbits.BF);
+"91
+[e = _SSPBUF -> -> 0 `i `uc ]
+[e $U 1673  ]
+[e :U 1674 ]
+[e :U 1673 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1674  ]
+[e :U 1675 ]
+"92
+[v _temp `ul ~T0 @X0 1 a ]
+[; ;FT800.c: 92: ft_uint32_t temp = SSPBUF;
+[e = _temp -> _SSPBUF `ul ]
+[; ;FT800.c: 93: SSPBUF = 0;while(!SSPSTATbits.BF);
+"93
+[e = _SSPBUF -> -> 0 `i `uc ]
+[e $U 1676  ]
+[e :U 1677 ]
+[e :U 1676 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1677  ]
+[e :U 1678 ]
+[; ;FT800.c: 94: temp |= (ft_uint32_t)SSPBUF << 8;
+"94
+[e =| _temp << -> _SSPBUF `ul -> 8 `i ]
+[; ;FT800.c: 95: SSPBUF = 0;while(!SSPSTATbits.BF);
+"95
+[e = _SSPBUF -> -> 0 `i `uc ]
+[e $U 1679  ]
+[e :U 1680 ]
+[e :U 1679 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1680  ]
+[e :U 1681 ]
+[; ;FT800.c: 96: temp |= (ft_uint32_t)SSPBUF << 16;
+"96
+[e =| _temp << -> _SSPBUF `ul -> 16 `i ]
+[; ;FT800.c: 97: SSPBUF = 0;while(!SSPSTATbits.BF);
+"97
+[e = _SSPBUF -> -> 0 `i `uc ]
+[e $U 1682  ]
+[e :U 1683 ]
+[e :U 1682 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1683  ]
+[e :U 1684 ]
+[; ;FT800.c: 98: TRISCbits.TRISC1 = 1;
+"98
+[e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
+[; ;FT800.c: 99: return ((ft_uint32_t)SSPBUF << 24) | temp;
+"99
+[e ) | << -> _SSPBUF `ul -> 24 `i _temp ]
+[e $UE 1660  ]
+[; ;FT800.c: 100: }
+"100
+[e :UE 1660 ]
+}
 "122
-[e ) -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
-[e $UE 1541  ]
-[; ;adc.c: 123: }
+[v _cmd_incrementn `(v ~T0 @X0 1 ef1`uc ]
+{
+[; ;FT800.c: 122: void cmd_incrementn(unsigned char n){
+[e :U _cmd_incrementn ]
+[v _n `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;FT800.c: 123: cmd_offset=(cmd_offset+n)%4096;
 "123
-[e :UE 1541 ]
+[e = _cmd_offset -> % + -> _cmd_offset `ui -> _n `ui -> -> 4096 `i `ui `us ]
+[; ;FT800.c: 124: }
+"124
+[e :UE 1685 ]
+}
+"126
+[v _cmd `(v ~T0 @X0 1 ef1`ul ]
+{
+[; ;FT800.c: 126: void cmd(ft_uint32_t command){
+[e :U _cmd ]
+[v _command `ul ~T0 @X0 1 r1 ]
+[f ]
+[; ;FT800.c: 127: wr32(1081344UL + cmd_offset, command);cmd_incrementn(4);
+"127
+[e ( _wr32 (2 , -> + -> 1081344 `ul -> _cmd_offset `ul `um _command ]
+[e ( _cmd_incrementn (1 -> -> 4 `i `uc ]
+[; ;FT800.c: 128: }
+"128
+[e :UE 1686 ]
+}
+[v F15190 `(v ~T0 @X0 1 tf ]
+"139
+[v _FT800_Init `TF15190 ~T0 @X0 1 e ]
+{
+[; ;FT800.c: 139: inline void FT800_Init(){
+[e :U _FT800_Init ]
+[f ]
+[; ;FT800.c: 141: TRISCbits.TRISC0 = 0;
+"141
+[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
+[; ;FT800.c: 142: _delay((unsigned long)((20)*(16000000/4000.0)));
+"142
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;FT800.c: 143: TRISCbits.TRISC0 = 1;
+"143
+[e = . . _TRISCbits 0 0 -> -> 1 `i `uc ]
+[; ;FT800.c: 144: _delay((unsigned long)((20)*(16000000/4000.0)));
+"144
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;FT800.c: 146: host_command(0x00);
+"146
+[e ( _host_command (1 -> -> 0 `i `uc ]
+[; ;FT800.c: 148: host_command(0x44);
+"148
+[e ( _host_command (1 -> -> 68 `i `uc ]
+[; ;FT800.c: 150: host_command(0x62);
+"150
+[e ( _host_command (1 -> -> 98 `i `uc ]
+[; ;FT800.c: 153: wr16(1057840UL, 480);
+"153
+[e ( _wr16 (2 , -> -> 1057840 `ul `um -> -> 480 `i `ui ]
+[; ;FT800.c: 154: wr16(1057860UL, 272);
+"154
+[e ( _wr16 (2 , -> -> 1057860 `ul `um -> -> 272 `i `ui ]
+[; ;FT800.c: 155: wr16(1057832UL, 525);
+"155
+[e ( _wr16 (2 , -> -> 1057832 `ul `um -> -> 525 `i `ui ]
+[; ;FT800.c: 156: wr16(1057844UL, 0);
+"156
+[e ( _wr16 (2 , -> -> 1057844 `ul `um -> -> 0 `i `ui ]
+[; ;FT800.c: 157: wr16(1057848UL, 41);
+"157
+[e ( _wr16 (2 , -> -> 1057848 `ul `um -> -> 41 `i `ui ]
+[; ;FT800.c: 158: wr16(1057836UL, 43);
+"158
+[e ( _wr16 (2 , -> -> 1057836 `ul `um -> -> 43 `i `ui ]
+[; ;FT800.c: 159: wr16(1057852UL, 286);
+"159
+[e ( _wr16 (2 , -> -> 1057852 `ul `um -> -> 286 `i `ui ]
+[; ;FT800.c: 160: wr16(1057864UL, 0);
+"160
+[e ( _wr16 (2 , -> -> 1057864 `ul `um -> -> 0 `i `ui ]
+[; ;FT800.c: 161: wr16(1057868UL, 10);
+"161
+[e ( _wr16 (2 , -> -> 1057868 `ul `um -> -> 10 `i `ui ]
+[; ;FT800.c: 162: wr16(1057856UL, 12);
+"162
+[e ( _wr16 (2 , -> -> 1057856 `ul `um -> -> 12 `i `ui ]
+[; ;FT800.c: 163: wr8(1057892UL, 0);
+"163
+[e ( _wr8 (2 , -> -> 1057892 `ul `um -> -> 0 `i `uc ]
+[; ;FT800.c: 164: wr8(1057884UL, 0);
+"164
+[e ( _wr8 (2 , -> -> 1057884 `ul `um -> -> 0 `i `uc ]
+[; ;FT800.c: 165: wr16(1057880UL, 0x01B6);
+"165
+[e ( _wr16 (2 , -> -> 1057880 `ul `um -> -> 438 `i `ui ]
+[; ;FT800.c: 166: wr8(1057888UL, 0x0000);
+"166
+[e ( _wr8 (2 , -> -> 1057888 `ul `um -> -> 0 `i `uc ]
+[; ;FT800.c: 169: wr8(1057896UL, 1);
+"169
+[e ( _wr8 (2 , -> -> 1057896 `ul `um -> -> 1 `i `uc ]
+[; ;FT800.c: 171: wr8(1057876UL, 0);
+"171
+[e ( _wr8 (2 , -> -> 1057876 `ul `um -> -> 0 `i `uc ]
+[; ;FT800.c: 178: wr32(1048576UL+0,((2UL<<24)|(((255)&255UL)<<16)|(((0)&255UL)<<8)|(((0)&255UL)<<0)));
+"178
+[e ( _wr32 (2 , -> + -> 1048576 `ul -> -> -> 0 `i `l `ul `um | | | << -> 2 `ul -> 24 `i << & -> -> -> 255 `i `l `ul -> 255 `ul -> 16 `i << & -> -> -> 0 `i `l `ul -> 255 `ul -> 8 `i << & -> -> -> 0 `i `l `ul -> 255 `ul -> 0 `i ]
+[; ;FT800.c: 179: wr32(1048576UL+4,((38UL<<24)|(((1)&1UL)<<2)|(((1)&1UL)<<1)|(((1)&1UL)<<0)));
+"179
+[e ( _wr32 (2 , -> + -> 1048576 `ul -> -> -> 4 `i `l `ul `um | | | << -> 38 `ul -> 24 `i << & -> -> -> 1 `i `l `ul -> 1 `ul -> 2 `i << & -> -> -> 1 `i `l `ul -> 1 `ul -> 1 `i << & -> -> -> 1 `i `l `ul -> 1 `ul -> 0 `i ]
+[; ;FT800.c: 180: wr32(1048576UL+8,((0UL<<24)));
+"180
+[e ( _wr32 (2 , -> + -> 1048576 `ul -> -> -> 8 `i `l `ul `um << -> 0 `ul -> 24 `i ]
+[; ;FT800.c: 182: wr8(1057872UL,2UL);
+"182
+[e ( _wr8 (2 , -> -> 1057872 `ul `um -> -> 2 `ul `uc ]
+[; ;FT800.c: 187: wr8(1057932UL, 0xfc);
+"187
+[e ( _wr8 (2 , -> -> 1057932 `ul `um -> -> 252 `i `uc ]
+[; ;FT800.c: 188: wr8(1057936UL, 0xff);
+"188
+[e ( _wr8 (2 , -> -> 1057936 `ul `um -> -> 255 `i `uc ]
+[; ;FT800.c: 190: wr8(1057900UL,5);
+"190
+[e ( _wr8 (2 , -> -> 1057900 `ul `um -> -> 5 `i `uc ]
+[; ;FT800.c: 192: cmd_offset=rd16(1058024UL);while(rd16(1058020UL) != cmd_offset);
+"192
+[e = _cmd_offset -> ( _rd16 (1 -> -> 1058024 `ul `um `us ]
+[e $U 1688  ]
+[e :U 1689 ]
+[e :U 1688 ]
+[e $ != ( _rd16 (1 -> -> 1058020 `ul `um -> _cmd_offset `ui 1689  ]
+[e :U 1690 ]
+[; ;FT800.c: 194: }
+"194
+[e :UE 1687 ]
 }

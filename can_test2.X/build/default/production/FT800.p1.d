@@ -1,6 +1,6 @@
- build/default/production/main.d  \
- build/default/production/main.p1:  \
- main.c  \
+ build/default/production/FT800.d  \
+ build/default/production/FT800.p1:  \
+ FT800.c  \
 FT_Gpu.h  \
 FT800.h  \
 mcc_generated_files/mcc.h  \

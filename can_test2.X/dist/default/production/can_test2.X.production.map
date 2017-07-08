@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.42\dat\en_msgs.txt -cs \
   -h+dist/default/production\can_test2.X.production.sym \
   --cmf=dist/default/production\can_test2.X.production.cmf -z -Q18F45K80 \
-  -oC:\Users\FSAE\AppData\Local\Temp\sids.2 \
+  -oC:\Users\FSAE\AppData\Local\Temp\sgso.2 \
   -Mdist/default/production/can_test2.X.production.map -E1 -ver=XC8 \
   -ASTACK=060h-0e40h -pstack=STACK -ACODE=00h-07FFFh -ACONST=00h-07FFFh \
   -ASMALLCONST=0F00h-0FFFhx113 -AMEDIUMCONST=0F00h-07FFFh -ACOMRAM=01h-05Fh \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\FSAE\AppData\Local\Temp\sids.obj \
+  C:\Users\FSAE\AppData\Local\Temp\sgso.obj \
   dist/default/production\can_test2.X.production.obj 
 
 Object code version is 3.11
@@ -39,38 +39,33 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\FSAE\AppData\Local\Temp\sids.obj
+C:\Users\FSAE\AppData\Local\Temp\sgso.obj
                 init                                  0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/production\can_test2.X.production.obj
-                text8                              7964     7964       30     3CB2       0
-                text7                              7B24     7B24      19E     3D92       0
-                text6                              7CC2     7CC2      33E     3E61       0
-                text5                              794E     794E       16     3CA7       0
-                text4                              7A36     7A36       EE     3D1B       0
-                text3                              792A     792A       12     3C95       0
-                text2                              7994     7994       38     3CCA       0
-                text1                              793C     793C       12     3C9E       0
-                text0                              79CC     79CC       6A     3CE6       0
-                cstackCOMRAM                          1        1       29        1       1
-                cinit                              7924     7924        6     3C92       0
+                text5                              7F12     7F12       EE     3F89       0
+                text4                              7EA4     7EA4       12     3F52       0
+                text3                              7EDA     7EDA       38     3F6D       0
+                text2                              7E88     7E88        E     3F44       0
+                text1                              7EB6     7EB6       12     3F5B       0
+                text0                              7EC8     7EC8       12     3F64       0
+                cstackCOMRAM                          5        5        1        1       1
+                bssCOMRAM                             1        1        4        1       1
+                cinit                              7E96     7E96        E     3F4B       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 init                                  0        0        4         0
-                text8                              7964     7964       30         0
-                text7                              7B24     7B24      19E         0
-                text6                              7CC2     7CC2      33E         0
-                text5                              794E     794E       16         0
-                text4                              7A36     7A36       EE         0
-                text3                              792A     792A       12         0
-                text2                              7994     7994       38         0
-                text1                              793C     793C       12         0
-                text0                              79CC     79CC       6A         0
-                cinit                              7924     7924        6         0
+                text5                              7F12     7F12       EE         0
+                text4                              7EA4     7EA4       12         0
+                text3                              7EDA     7EDA       38         0
+                text2                              7E88     7E88        E         0
+                text1                              7EB6     7EB6       12         0
+                text0                              7EC8     7EC8       12         0
+                cinit                              7E96     7E96        E         0
 
         CLASS   CONST          
 
@@ -79,7 +74,8 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                cstackCOMRAM                          1        1       29         1
+                cstackCOMRAM                          5        5        1         1
+                bssCOMRAM                             1        1        4         1
 
         CLASS   ABS1           
 
@@ -134,17 +130,14 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
-                cstackCOMRAM                   000001  000029  00002A         1       1  COMRAM  
-                cinit                          007924  000006  00792A      3C92       0  CODE    
-                text3                          00792A  000012  00793C      3C95       0  CODE    
-                text1                          00793C  000012  00794E      3C9E       0  CODE    
-                text5                          00794E  000016  007964      3CA7       0  CODE    
-                text8                          007964  000030  007994      3CB2       0  CODE    
-                text2                          007994  000038  0079CC      3CCA       0  CODE    
-                text0                          0079CC  00006A  007A36      3CE6       0  CODE    
-                text4                          007A36  0000EE  007B24      3D1B       0  CODE    
-                text7                          007B24  00019E  007CC2      3D92       0  CODE    
-                text6                          007CC2  00033E  008000      3E61       0  CODE    
+                bssCOMRAM                      000001  000005  000006         1       1  COMRAM  
+                text2                          007E88  00000E  007E96      3F44       0  CODE    
+                cinit                          007E96  00000E  007EA4      3F4B       0  CODE    
+                text4                          007EA4  000012  007EB6      3F52       0  CODE    
+                text1                          007EB6  000012  007EC8      3F5B       0  CODE    
+                text0                          007EC8  000012  007EDA      3F64       0  CODE    
+                text3                          007EDA  000038  007F12      3F6D       0  CODE    
+                text5                          007F12  0000EE  008000      3F89       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -167,61 +160,42 @@ UNUSED ADDRESS RANGES
         BANK7            000700-0007FF              100
         BANK8            000800-0008FF              100
         BANK9            000900-0009FF              100
-        BIGRAM           00002A-000E40              E17
-        CODE             000004-007923             7920
-        COMRAM           00002A-00005F               36
-        CONST            000004-007923             7920
+        BIGRAM           000006-000E40              E3B
+        CODE             000004-007E87             7E84
+        COMRAM           000006-00005F               5A
+        CONST            000004-007E87             7E84
         EEDATA           F00000-F003FF              400
-        MEDIUMCONST      000F00-007923             6A24
+        MEDIUMCONST      000F00-007E87             6F88
         RAM              000060-000E40              100
         SFR              000E41-000FFF               BF
-        SMALLCONST       000F00-007923              100
+        SMALLCONST       000F00-007E87              100
         STACK            000060-000E40              DE1
 
                                   Symbol Table
 
-?_ADC_GetConversion              cstackCOMRAM 000001
-ADC_GetConversion@channel        cstackCOMRAM 000005
-CAN_transmit@returnValue         cstackCOMRAM 000015
-CAN_transmit@tempCanMsg          cstackCOMRAM 000013
-CAN_transmit@tempEIDH            cstackCOMRAM 000016
-CAN_transmit@tempEIDL            cstackCOMRAM 000017
-CAN_transmit@tempSIDH            cstackCOMRAM 000018
-CAN_transmit@tempSIDL            cstackCOMRAM 000019
-_ADCON0                          (abs)        000FC2
-_ADCON0bits                      (abs)        000FC2
-_ADCON1                          (abs)        000FC1
-_ADCON2                          (abs)        000FC0
-_ADC_GetConversion               text8        007964
-_ADC_Initialize                  text5        00794E
-_ADRESH                          (abs)        000FC4
-_ADRESL                          (abs)        000FC3
 _ANCON0                          (abs)        000F5D
-_ANCON0bits                      (abs)        000F5D
 _ANCON1                          (abs)        000F5C
 _BRGCON1                         (abs)        000E43
 _BRGCON2                         (abs)        000E44
 _BRGCON3                         (abs)        000E45
 _CANCON                          (abs)        000F6F
 _CANSTAT                         (abs)        000F6E
-_CAN_transmit                    text6        007CC2
 _CIOCONbits                      (abs)        000F70
 _COMSTATbits                     (abs)        000F71
 _ECANCON                         (abs)        000F72
-_ECAN_Initialize                 text4        007A36
+_ECAN_Initialize                 text5        007F12
 _LATA                            (abs)        000F89
 _LATB                            (abs)        000F8A
 _LATC                            (abs)        000F8B
-_LATCbits                        (abs)        000F8B
 _LATD                            (abs)        000F8C
 _LATDbits                        (abs)        000F8C
 _LATE                            (abs)        000F8D
 _OSCCON                          (abs)        000FD3
 _OSCCON2                         (abs)        000FD2
-_OSCILLATOR_Initialize           text3        00792A
+_OSCILLATOR_Initialize           text4        007EA4
 _OSCTUNE                         (abs)        000F9B
 _PIE5bits                        (abs)        000F76
-_PIN_MANAGER_Initialize          text2        007994
+_PIN_MANAGER_Initialize          text3        007EDA
 _PIR5bits                        (abs)        000F77
 _REFOCON                         (abs)        000F9A
 _RXB0CONbits                     (abs)        000F60
@@ -284,7 +258,14 @@ _RXM1EIDH                        (abs)        000EFE
 _RXM1EIDL                        (abs)        000EFF
 _RXM1SIDH                        (abs)        000EFC
 _RXM1SIDL                        (abs)        000EFD
-_SYSTEM_Initialize               text1        00793C
+_SPI_Initialize                  text2        007E88
+_SSPADD                          (abs)        000FC8
+_SSPBUF                          (abs)        000FC9
+_SSPCON1                         (abs)        000FC6
+_SSPCON1bits                     (abs)        000FC6
+_SSPSTAT                         (abs)        000FC7
+_SSPSTATbits                     (abs)        000FC7
+_SYSTEM_Initialize               text1        007EB6
 _TRISA                           (abs)        000F92
 _TRISB                           (abs)        000F93
 _TRISC                           (abs)        000F94
@@ -393,6 +374,7 @@ __Hbigbss                        bigbss       000000
 __Hbigdata                       bigdata      000000
 __Hbigram                        bigram       000000
 __Hbss                           bss          000000
+__HbssCOMRAM                     bssCOMRAM    000000
 __Hcinit                         cinit        000000
 __Hclrtext                       clrtext      000000
 __Hcomram                        comram       000000
@@ -431,7 +413,7 @@ __Hrparam                        rparam       000000
 __Hsfr                           sfr          000000
 __Hsmallconst                    smallconst   000000
 __Hspace_0                       (abs)        30000E
-__Hspace_1                       (abs)        00002A
+__Hspace_1                       (abs)        000006
 __Hspace_2                       (abs)        000000
 __Hstack                         stack        000000
 __Hstruct                        struct       000000
@@ -443,9 +425,6 @@ __Htext2                         text2        000000
 __Htext3                         text3        000000
 __Htext4                         text4        000000
 __Htext5                         text5        000000
-__Htext6                         text6        000000
-__Htext7                         text7        000000
-__Htext8                         text8        000000
 __LRAM                           (abs)        000001
 __Labs1                          abs1         000000
 __Lbank0                         bank0        000000
@@ -467,6 +446,7 @@ __Lbigbss                        bigbss       000000
 __Lbigdata                       bigdata      000000
 __Lbigram                        bigram       000000
 __Lbss                           bss          000000
+__LbssCOMRAM                     bssCOMRAM    000000
 __Lcinit                         cinit        000000
 __Lclrtext                       clrtext      000000
 __Lcomram                        comram       000000
@@ -517,11 +497,8 @@ __Ltext2                         text2        000000
 __Ltext3                         text3        000000
 __Ltext4                         text4        000000
 __Ltext5                         text5        000000
-__Ltext6                         text6        000000
-__Ltext7                         text7        000000
-__Ltext8                         text8        000000
 __S0                             (abs)        30000E
-__S1                             (abs)        00002A
+__S1                             (abs)        000006
 __S2                             (abs)        000000
 ___inthi_sp                      stack        000000
 ___intlo_sp                      stack        000000
@@ -530,90 +507,71 @@ ___rparam_used                   (abs)        000001
 ___sp                            stack        000000
 __accesstop                      (abs)        000060
 __activetblptr                   (abs)        000000
-__end_of_ADC_GetConversion       text8        007994
-__end_of_ADC_Initialize          text5        007964
-__end_of_CAN_transmit            text6        008000
-__end_of_ECAN_Initialize         text4        007B24
-__end_of_OSCILLATOR_Initialize   text3        00793C
-__end_of_PIN_MANAGER_Initialize  text2        0079CC
-__end_of_SYSTEM_Initialize       text1        00794E
-__end_of__initialization         cinit        007924
-__end_of_convertCANid2Reg        text7        007CC2
-__end_of_main                    text0        007A36
-__initialization                 cinit        007924
+__end_of_ECAN_Initialize         text5        008000
+__end_of_OSCILLATOR_Initialize   text4        007EB6
+__end_of_PIN_MANAGER_Initialize  text3        007F12
+__end_of_SPI_Initialize          text2        007E96
+__end_of_SYSTEM_Initialize       text1        007EC8
+__end_of__initialization         cinit        007E9E
+__end_of_main                    text0        007EDA
+__initialization                 cinit        007E96
 __mediumconst                    mediumconst  000000
-__pcinit                         cinit        007924
-__pcstackCOMRAM                  cstackCOMRAM 000001
-__ptext0                         text0        0079CC
-__ptext1                         text1        00793C
-__ptext2                         text2        007994
-__ptext3                         text3        00792A
-__ptext4                         text4        007A36
-__ptext5                         text5        00794E
-__ptext6                         text6        007CC2
-__ptext7                         text7        007B24
-__ptext8                         text8        007964
+__pbssCOMRAM                     bssCOMRAM    000001
+__pcinit                         cinit        007E96
+__pcstackCOMRAM                  cstackCOMRAM 000005
+__ptext0                         text0        007EC8
+__ptext1                         text1        007EB6
+__ptext2                         text2        007E88
+__ptext3                         text3        007EDA
+__ptext4                         text4        007EA4
+__ptext5                         text5        007F12
 __ramtop                         ramtop       000F00
-__size_of_ADC_GetConversion      (abs)        000000
-__size_of_ADC_Initialize         (abs)        000000
-__size_of_CAN_transmit           (abs)        000000
 __size_of_ECAN_Initialize        (abs)        000000
 __size_of_OSCILLATOR_Initialize  (abs)        000000
 __size_of_PIN_MANAGER_Initialize (abs)        000000
+__size_of_SPI_Initialize         (abs)        000000
 __size_of_SYSTEM_Initialize      (abs)        000000
-__size_of_convertCANid2Reg       (abs)        000000
 __size_of_main                   (abs)        000000
 __smallconst                     smallconst   000000
-_convertCANid2Reg                text7        007B24
-_main                            text0        0079CC
-convertCANid2Reg@canIdType       cstackCOMRAM 000005
-convertCANid2Reg@passedInEIDH    cstackCOMRAM 000006
-convertCANid2Reg@passedInEIDL    cstackCOMRAM 000008
-convertCANid2Reg@passedInSIDH    cstackCOMRAM 00000A
-convertCANid2Reg@passedInSIDL    cstackCOMRAM 00000C
-convertCANid2Reg@tempPassedInID  cstackCOMRAM 000001
-convertCANid2Reg@wipSIDL         cstackCOMRAM 000012
-end_of_initialization            cinit        007924
+_cmd_offset                      bssCOMRAM    000001
+_dli                             bssCOMRAM    000003
+_main                            text0        007EC8
+end_of_initialization            cinit        007E9E
 intlevel0                        text         000000
 intlevel1                        text         000000
 intlevel2                        text         000000
 intlevel3                        text         000000
-main@data                        cstackCOMRAM 00001A
-main@test                        cstackCOMRAM 00001C
 stackhi                          (abs)        000E40
 stacklo                          (abs)        000060
 start                            init         000000
-start_initialization             cinit        007924
+start_initialization             cinit        007E96
 
 
 FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 51 in file "main.c"
+		line 5 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  test           14   27[COMRAM] struct .
-  data            2   25[COMRAM] unsigned int 
+		None
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+		wreg, status,2, status,0, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:        16       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:        16       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:       16 bytes
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
  Hardware stack levels required when called:    2
  This function calls:
-		_ADC_GetConversion
-		_CAN_transmit
 		_SYSTEM_Initialize
  This function is called by:
 		Startup code after reset
@@ -644,12 +602,41 @@ Total ram usage:        0 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    1
  This function calls:
-		_ADC_Initialize
 		_ECAN_Initialize
 		_OSCILLATOR_Initialize
 		_PIN_MANAGER_Initialize
+		_SPI_Initialize
  This function is called by:
 		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _SPI_Initialize *****************
+ Defined at:
+		line 63 in file "mcc_generated_files/spi.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_SYSTEM_Initialize
  This function uses a non-reentrant model
 
 
@@ -740,172 +727,38 @@ Total ram usage:        1 bytes
  This function uses a non-reentrant model
 
 
- *************** function _ADC_Initialize *****************
- Defined at:
-		line 58 in file "mcc_generated_files/adc.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_SYSTEM_Initialize
- This function uses a non-reentrant model
-
-
- *************** function _CAN_transmit *****************
- Defined at:
-		line 167 in file "mcc_generated_files/ecan.c"
- Parameters:    Size  Location     Type
-  tempCanMsg      2   18[COMRAM] PTR struct .
-		 -> main@test(14), 
- Auto vars:     Size  Location     Type
-  tempSIDL        1   24[COMRAM] unsigned char 
-  tempSIDH        1   23[COMRAM] unsigned char 
-  tempEIDL        1   22[COMRAM] unsigned char 
-  tempEIDH        1   21[COMRAM] unsigned char 
-  returnValue     1   20[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg, fsr2l, fsr2h, status,2, status,0, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         7       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        7 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    1
- This function calls:
-		_convertCANid2Reg
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _convertCANid2Reg *****************
- Defined at:
-		line 400 in file "mcc_generated_files/ecan.c"
- Parameters:    Size  Location     Type
-  tempPassedIn    4    0[COMRAM] unsigned long 
-  canIdType       1    4[COMRAM] unsigned char 
-  passedInEIDH    2    5[COMRAM] PTR unsigned char 
-		 -> CAN_transmit@tempEIDH(1), 
-  passedInEIDL    2    7[COMRAM] PTR unsigned char 
-		 -> CAN_transmit@tempEIDL(1), 
-  passedInSIDH    2    9[COMRAM] PTR unsigned char 
-		 -> CAN_transmit@tempSIDH(1), 
-  passedInSIDL    2   11[COMRAM] PTR unsigned char 
-		 -> CAN_transmit@tempSIDL(1), 
- Auto vars:     Size  Location     Type
-  wipSIDL         1   17[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr2l, fsr2h, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:        13       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:        18       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:       18 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_CAN_transmit
- This function uses a non-reentrant model
-
-
- *************** function _ADC_GetConversion *****************
- Defined at:
-		line 104 in file "mcc_generated_files/adc.c"
- Parameters:    Size  Location     Type
-  channel         1    wreg     enum E15090
- Auto vars:     Size  Location     Type
-  channel         1    4[COMRAM] enum E15090
- Return value:  Size  Location     Type
-                  2    0[COMRAM] unsigned int 
- Registers used:
-		wreg, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        5 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
 
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 mcc_generated_files/pin_manager.c
-		_PIN_MANAGER_Initialize		CODE           	7994	0000	57
+		_PIN_MANAGER_Initialize		CODE           	7EDA	0000	57
 
 mcc_generated_files/pin_manager.c estimated size: 57
 
-mcc_generated_files/adc.c
-		_ADC_Initialize		CODE           	794E	0000	23
-		_ADC_GetConversion		CODE           	7964	0000	49
-
-mcc_generated_files/adc.c estimated size: 72
-
 mcc_generated_files/ecan.c
-		_ECAN_Initialize		CODE           	7A36	0000	239
-		_CAN_transmit  		CODE           	7CC2	0000	831
-		_convertCANid2Reg		CODE           	7B24	0000	415
+		_ECAN_Initialize		CODE           	7F12	0000	239
 
-mcc_generated_files/ecan.c estimated size: 1485
+mcc_generated_files/ecan.c estimated size: 239
+
+mcc_generated_files/spi.c
+		_SPI_Initialize		CODE           	7E88	0000	15
+
+mcc_generated_files/spi.c estimated size: 15
 
 shared
-		__initialization		CODE           	7924	0000	1
+		__initialization		CODE           	7E96	0000	9
 
-shared estimated size: 1
+shared estimated size: 9
 
 mcc_generated_files/mcc.c
-		_OSCILLATOR_Initialize		CODE           	792A	0000	19
-		_SYSTEM_Initialize		CODE           	793C	0000	19
+		_OSCILLATOR_Initialize		CODE           	7EA4	0000	19
+		_SYSTEM_Initialize		CODE           	7EB6	0000	19
 
 mcc_generated_files/mcc.c estimated size: 38
 
 main.c
-		_main          		CODE           	79CC	0000	107
+		_main          		CODE           	7EC8	0000	19
 
-main.c estimated size: 107
+main.c estimated size: 19
 

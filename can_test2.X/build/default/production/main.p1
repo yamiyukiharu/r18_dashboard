@@ -10,25 +10,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1091 . . ]
 "29269
 [v _CIOCONbits `VS1091 ~T0 @X0 0 e@3952 ]
-"31211
-[s S1179 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1179 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
-"31210
-[u S1178 `S1179 1 ]
-[n S1178 . . ]
-"31222
-[v _TRISCbits `VS1178 ~T0 @X0 0 e@3988 ]
-"30710
-[s S1162 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1162 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
-"30720
-[s S1163 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1163 . LC0 LC1 LC2 LC3 LC4 LC5 LC6 LC7 ]
-"30709
-[u S1161 `S1162 1 `S1163 1 ]
-[n S1161 . . . ]
-"30731
-[v _LATCbits `VS1161 ~T0 @X0 0 e@3979 ]
 "31273
 [s S1181 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S1181 . TRISD0 TRISD1 TRISD2 TRISD3 TRISD4 TRISD5 TRISD6 TRISD7 ]
@@ -48,30 +29,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1164 . . . ]
 "30843
 [v _LATDbits `VS1164 ~T0 @X0 0 e@3980 ]
-"27078
-[s S1013 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1013 . ANSEL0 ANSEL1 ANSEL2 ANSEL3 ANSEL4 ANSEL5 ANSEL6 ANSEL7 ]
-"27088
-[s S1014 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1014 . PCFG0 PCFG1 PCFG2 PCFG3 PCFG4 PCFG5 PCFG6 PCFG7 ]
-"27077
-[u S1012 `S1013 1 `S1014 1 ]
-[n S1012 . . . ]
-"27099
-[v _ANCON0bits `VS1012 ~T0 @X0 0 e@3933 ]
-"71 main.c
-[c E15094 28 29 30 31 0 .. ]
-[n E15094 . channel_CTMU channel_Temp_diode channel_Vdd_core channel_1_024V_bandgap analog_1  ]
-"251 mcc_generated_files/adc.h
-[v _ADC_GetConversion `(ui ~T0 @X0 0 ef1`E15094 ]
-"69 mcc_generated_files/ecan.h
-[s S1538 `uc 1 `ul 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S1538 . idType id dlc data0 data1 data2 data3 data4 data5 data6 data7 ]
-"67
-[u S1537 `S1538 1 `uc -> 14 `i ]
-[n S1537 . frame array ]
-"160
-[v _CAN_transmit `(uc ~T0 @X0 0 ef1`*S1537 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -13658,8 +13615,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 164: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 166: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 168: extern __nonreentrant void _delay3(unsigned char);
-[; ;pin_manager.h: 131: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 143: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 152: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 164: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 38: typedef signed long int int32_t;
@@ -13683,20 +13640,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 222: typedef int16_t intptr_t;
 [; ;stdint.h: 227: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;adc.h: 71: typedef uint16_t adc_result_t;
-[; ;adc.h: 85: typedef enum
-[; ;adc.h: 86: {
-[; ;adc.h: 87: channel_CTMU = 0x1C,
-[; ;adc.h: 88: channel_Temp_diode = 0x1D,
-[; ;adc.h: 89: channel_Vdd_core = 0x1E,
-[; ;adc.h: 90: channel_1_024V_bandgap = 0x1F,
-[; ;adc.h: 91: analog_1 = 0x00
-[; ;adc.h: 92: } adc_channel_t;
-[; ;adc.h: 127: void ADC_Initialize(void);
-[; ;adc.h: 156: void ADC_StartConversion(adc_channel_t channel);
-[; ;adc.h: 188: bool ADC_IsConversionDone();
-[; ;adc.h: 221: adc_result_t ADC_GetConversionResult(void);
-[; ;adc.h: 251: adc_result_t ADC_GetConversion(adc_channel_t channel);
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stddef.h: 6: typedef int ptrdiff_t;
+[; ;spi.h: 116: void SPI_Initialize(void);
+[; ;spi.h: 151: uint8_t SPI_Exchange8bit(uint8_t data);
+[; ;spi.h: 191: uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
+[; ;spi.h: 214: bool SPI_IsBufferFull(void);
+[; ;spi.h: 239: bool SPI_HasWriteCollisionOccured(void);
+[; ;spi.h: 263: void SPI_ClearWriteCollisionStatus(void);
 [; ;ecan.h: 67: typedef union {
 [; ;ecan.h: 69: struct {
 [; ;ecan.h: 70: unsigned char idType;
@@ -13723,122 +13674,90 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ecan.h: 278: unsigned char CAN_isTXErrorPassive(void);
 [; ;mcc.h: 69: void SYSTEM_Initialize(void);
 [; ;mcc.h: 82: void OSCILLATOR_Initialize(void);
+[; ;FT_DataTypes.h: 8: typedef unsigned char ft_uint8_t;
+[; ;FT_DataTypes.h: 9: typedef char ft_char8_t;
+[; ;FT_DataTypes.h: 10: typedef signed char ft_schar8_t;
+[; ;FT_DataTypes.h: 11: typedef unsigned char ft_uchar8_t;
+[; ;FT_DataTypes.h: 12: typedef int ft_int16_t;
+[; ;FT_DataTypes.h: 13: typedef unsigned int ft_uint16_t;
+[; ;FT_DataTypes.h: 14: typedef unsigned long ft_uint32_t;
+[; ;FT_DataTypes.h: 15: typedef long ft_int32_t;
+[; ;FT_DataTypes.h: 16: typedef void ft_void_t;
+[; ;FT_DataTypes.h: 18: typedef unsigned char ft_bool_t;
+[; ;FT_Gpu.h: 299: typedef struct FT_Gpu_Fonts
+[; ;FT_Gpu.h: 300: {
+[; ;FT_Gpu.h: 303: ft_uint8_t FontWidth[(128)];
+[; ;FT_Gpu.h: 305: ft_uint32_t FontBitmapFormat;
+[; ;FT_Gpu.h: 307: ft_uint32_t FontLineStride;
+[; ;FT_Gpu.h: 309: ft_uint32_t FontWidthInPixels;
+[; ;FT_Gpu.h: 311: ft_uint32_t FontHeightInPixels;
+[; ;FT_Gpu.h: 313: ft_uint32_t PointerToFontGraphicsData;
+[; ;FT_Gpu.h: 314: }FT_Gpu_Fonts_t;
+[; ;FT800.h: 21: extern unsigned short dli;
+[; ;FT800.h: 31: extern unsigned short cmd_offset;
+[; ;FT800.h: 35: void cmd_incrementn(unsigned char n);
+[; ;FT800.h: 39: void cmd(ft_uint32_t command);
+[; ;FT800.h: 269: void host_command(ft_uint8_t command);
+[; ;FT800.h: 274: void wr8(unsigned short long addr, ft_uint8_t value);
+[; ;FT800.h: 279: void wr16(unsigned short long addr, ft_uint16_t value);
+[; ;FT800.h: 284: void wr32(unsigned short long addr, ft_uint32_t value);
+[; ;FT800.h: 289: ft_uint8_t rd8(unsigned short long addr);
+[; ;FT800.h: 294: ft_uint16_t rd16(unsigned short long addr);
+[; ;FT800.h: 299: ft_uint32_t rd32(unsigned short long addr);
+[; ;FT800.h: 304: ft_uint8_t wr8s(unsigned short long addr, const ft_char8_t *s);
+[; ;FT800.h: 314: inline void FT800_Init();
 [v $root$_main `(v ~T0 @X0 0 e ]
-"51 main.c
+"5 main.c
 [v _main `(v ~T0 @X0 1 ef ]
-"52
+"6
 {
-[; ;main.c: 51: void main(void)
-[; ;main.c: 52: {
+[; ;main.c: 5: void main(void)
+[; ;main.c: 6: {
 [e :U _main ]
 [f ]
-[; ;main.c: 54: SYSTEM_Initialize();
-"54
+[; ;main.c: 8: SYSTEM_Initialize();
+"8
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 55: CIOCONbits.CLKSEL = 1;
-"55
+[; ;main.c: 9: CIOCONbits.CLKSEL = 1;
+"9
 [e = . . _CIOCONbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 56: CIOCONbits.ENDRHI = 1;
-"56
+[; ;main.c: 10: CIOCONbits.ENDRHI = 1;
+"10
 [e = . . _CIOCONbits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 57: CIOCONbits.TX2SRC = 0;
-"57
+[; ;main.c: 11: CIOCONbits.TX2SRC = 0;
+"11
 [e = . . _CIOCONbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 58: CIOCONbits.TX2EN = 1;
-"58
+[; ;main.c: 12: CIOCONbits.TX2EN = 1;
+"12
 [e = . . _CIOCONbits 0 4 -> -> 1 `i `uc ]
-[; ;main.c: 60: do { TRISCbits.TRISC0 = 0; } while(0);
-"60
-[e :U 1542 ]
-{
-[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
-}
-[e :U 1541 ]
-[; ;main.c: 61: do { LATCbits.LATC0 = 0; } while(0);
-"61
-[e :U 1545 ]
-{
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
-}
-[e :U 1544 ]
-[; ;main.c: 63: do { TRISDbits.TRISD0 = 0; } while(0);
-"63
-[e :U 1548 ]
+[; ;main.c: 14: do { TRISDbits.TRISD0 = 0; } while(0);
+"14
+[e :U 1543 ]
 {
 [e = . . _TRISDbits 0 0 -> -> 0 `i `uc ]
 }
-[e :U 1547 ]
-[; ;main.c: 64: do { LATDbits.LATD0 = 0; } while(0);
-"64
-[e :U 1551 ]
+[e :U 1542 ]
+[; ;main.c: 15: do { LATDbits.LATD0 = 0; } while(0);
+"15
+[e :U 1546 ]
 {
 [e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
 }
-[e :U 1550 ]
-[; ;main.c: 66: do { ANCON0bits.ANSEL0 = 1; } while(0);
-"66
-[e :U 1554 ]
+[e :U 1545 ]
+[; ;main.c: 17: while (1)
+"17
+[e :U 1548 ]
+[; ;main.c: 18: {
+"18
 {
-[e = . . _ANCON0bits 0 0 -> -> 1 `i `uc ]
+"36
 }
-[e :U 1553 ]
-[; ;main.c: 69: while (1)
-"69
-[e :U 1556 ]
-[; ;main.c: 70: {
-"70
-{
-"71
-[v _data `ui ~T0 @X0 1 a ]
-[; ;main.c: 71: uint16_t data = ADC_GetConversion(analog_1);
-[e = _data ( _ADC_GetConversion (1 . `E15094 4 ]
-"73
-[v _test `S1537 ~T0 @X0 1 a ]
-[; ;main.c: 73: uCAN_MSG test;
-[; ;main.c: 74: test.frame.idType=1;
-"74
-[e = . . _test 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 75: test.frame.id=0x120;
-"75
-[e = . . _test 0 1 -> -> -> 288 `i `l `ul ]
-[; ;main.c: 76: test.frame.dlc=8;
-"76
-[e = . . _test 0 2 -> -> 8 `i `uc ]
-[; ;main.c: 77: test.frame.data0= (data >> 8);
-"77
-[e = . . _test 0 3 -> >> _data -> 8 `i `uc ]
-[; ;main.c: 78: test.frame.data1= (data & 0xFF);
-"78
-[e = . . _test 0 4 -> & _data -> -> 255 `i `ui `uc ]
-[; ;main.c: 79: test.frame.data2=0xDC;
-"79
-[e = . . _test 0 5 -> -> 220 `i `uc ]
-[; ;main.c: 80: test.frame.data3=0xCB;
-"80
-[e = . . _test 0 6 -> -> 203 `i `uc ]
-[; ;main.c: 81: test.frame.data4=0xBC;
-"81
-[e = . . _test 0 7 -> -> 188 `i `uc ]
-[; ;main.c: 82: test.frame.data5=0xCD;
-"82
-[e = . . _test 0 8 -> -> 205 `i `uc ]
-[; ;main.c: 83: test.frame.data6=0xDE;
-"83
-[e = . . _test 0 9 -> -> 222 `i `uc ]
-[; ;main.c: 84: test.frame.data7=0xFF;
-"84
-[e = . . _test 0 10 -> -> 255 `i `uc ]
-[; ;main.c: 86: CAN_transmit(&test);
-"86
-[e ( _CAN_transmit (1 &U _test ]
-"90
-}
-[e :U 1555 ]
-"69
-[e $U 1556  ]
-[e :U 1557 ]
-[; ;main.c: 90: }
-[; ;main.c: 91: }
-"91
-[e :UE 1539 ]
+[e :U 1547 ]
+"17
+[e $U 1548  ]
+[e :U 1549 ]
+[; ;main.c: 36: }
+[; ;main.c: 37: }
+"37
+[e :UE 1540 ]
 }

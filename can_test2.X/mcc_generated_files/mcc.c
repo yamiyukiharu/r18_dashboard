@@ -113,7 +113,7 @@ void SYSTEM_Initialize(void)
 
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
-    ADC_Initialize();
+    SPI_Initialize();
     ECAN_Initialize();
 }
 

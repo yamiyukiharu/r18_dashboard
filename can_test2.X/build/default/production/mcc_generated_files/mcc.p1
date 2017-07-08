@@ -1,10 +1,10 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"131 mcc_generated_files/pin_manager.h
+"152 mcc_generated_files/pin_manager.h
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
 "82 mcc_generated_files/mcc.h
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"127 mcc_generated_files/adc.h
-[v _ADC_Initialize `(v ~T0 @X0 0 ef ]
+"116 mcc_generated_files/spi.h
+[v _SPI_Initialize `(v ~T0 @X0 0 ef ]
 "117 mcc_generated_files/ecan.h
 [v _ECAN_Initialize `(v ~T0 @X0 0 ef ]
 "36246 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f45k80.h
@@ -13675,8 +13675,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 164: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 166: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 168: extern __nonreentrant void _delay3(unsigned char);
-[; ;pin_manager.h: 131: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 143: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 152: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 164: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 38: typedef signed long int int32_t;
@@ -13700,20 +13700,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 222: typedef int16_t intptr_t;
 [; ;stdint.h: 227: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;adc.h: 71: typedef uint16_t adc_result_t;
-[; ;adc.h: 85: typedef enum
-[; ;adc.h: 86: {
-[; ;adc.h: 87: channel_CTMU = 0x1C,
-[; ;adc.h: 88: channel_Temp_diode = 0x1D,
-[; ;adc.h: 89: channel_Vdd_core = 0x1E,
-[; ;adc.h: 90: channel_1_024V_bandgap = 0x1F,
-[; ;adc.h: 91: analog_1 = 0x00
-[; ;adc.h: 92: } adc_channel_t;
-[; ;adc.h: 127: void ADC_Initialize(void);
-[; ;adc.h: 156: void ADC_StartConversion(adc_channel_t channel);
-[; ;adc.h: 188: bool ADC_IsConversionDone();
-[; ;adc.h: 221: adc_result_t ADC_GetConversionResult(void);
-[; ;adc.h: 251: adc_result_t ADC_GetConversion(adc_channel_t channel);
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stddef.h: 6: typedef int ptrdiff_t;
+[; ;spi.h: 116: void SPI_Initialize(void);
+[; ;spi.h: 151: uint8_t SPI_Exchange8bit(uint8_t data);
+[; ;spi.h: 191: uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
+[; ;spi.h: 214: bool SPI_IsBufferFull(void);
+[; ;spi.h: 239: bool SPI_HasWriteCollisionOccured(void);
+[; ;spi.h: 263: void SPI_ClearWriteCollisionStatus(void);
 [; ;ecan.h: 67: typedef union {
 [; ;ecan.h: 69: struct {
 [; ;ecan.h: 70: unsigned char idType;
@@ -13754,9 +13748,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.c: 115: OSCILLATOR_Initialize();
 "115
 [e ( _OSCILLATOR_Initialize ..  ]
-[; ;mcc.c: 116: ADC_Initialize();
+[; ;mcc.c: 116: SPI_Initialize();
 "116
-[e ( _ADC_Initialize ..  ]
+[e ( _SPI_Initialize ..  ]
 [; ;mcc.c: 117: ECAN_Initialize();
 "117
 [e ( _ECAN_Initialize ..  ]
