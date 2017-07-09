@@ -10,10 +10,10 @@
 
 #include "FT_DataTypes.h"
 #include "FT_Gpu.h"
-#include "mcc_generated_files/mcc.h"
+#include "../mcc_generated_files/mcc.h"
 
-#define PIN_CS CS_TRIS
-#define PIN_PD PD_TRIS
+#define PIN_CS CS_LAT
+#define PIN_PD PD_LAT
 
 #define FT800_StartTransmission() PIN_CS = 0
 #define FT800_StopTransmission() PIN_CS = 1
@@ -24,7 +24,7 @@ extern unsigned short dli;
  */
 #define dl(cmd) wr32(RAM_DL + dli, cmd);dli += 4
 
-#define tr8(value)  SSPBUF = value;while(!SSPSTATbits.BF)
+#define tr8(value)  SPI_Exchange8bit(value)
 #define tr16(value) tr8((value) & 0xFF);tr8(((value) >> 8) & 0xFF)
 #define tr32(value) tr16((value) & 0xFFFF);tr16(((value) >> 16) & 0xFFFF)
 

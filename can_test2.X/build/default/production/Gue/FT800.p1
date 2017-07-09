@@ -1,57 +1,21 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"31211 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f45k80.h
-[s S1179 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1179 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
-"31210
-[u S1178 `S1179 1 ]
-[n S1178 . . ]
-"31222
-[v _TRISCbits `VS1178 ~T0 @X0 0 e@3988 ]
-"35575
-[v _SSPBUF `Vuc ~T0 @X0 0 e@4041 ]
-"35279
-[s S1376 :2 `uc 1 :1 `uc 1 ]
-[n S1376 . . R_NOT_W ]
-"35283
-[s S1377 :5 `uc 1 :1 `uc 1 ]
-[n S1377 . . D_NOT_A ]
-"35287
-[s S1378 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1378 . BF UA R_nW S P D_nA CKE SMP ]
-"35297
-[s S1379 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S1379 . . R_W . D_A ]
-"35303
-[s S1380 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S1380 . . nW . nA ]
-"35309
-[s S1381 :2 `uc 1 :1 `uc 1 ]
-[n S1381 . . NOT_WRITE ]
-"35313
-[s S1382 :5 `uc 1 :1 `uc 1 ]
-[n S1382 . . NOT_ADDRESS ]
-"35317
-[s S1383 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S1383 . . nWRITE . nADDRESS ]
-"35323
-[s S1384 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S1384 . . READ_WRITE . DATA_ADDRESS ]
-"35329
-[s S1385 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1385 . . I2C_READ I2C_START I2C_STOP I2C_DAT ]
-"35336
-[s S1386 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1386 . . RW START STOP DA ]
-"35343
-[s S1387 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S1387 . . NOT_W . NOT_A ]
-"35278
-[u S1375 `S1376 1 `S1377 1 `S1378 1 `S1379 1 `S1380 1 `S1381 1 `S1382 1 `S1383 1 `S1384 1 `S1385 1 `S1386 1 `S1387 1 ]
-[n S1375 . . . . . . . . . . . . . ]
-"35350
-[v _SSPSTATbits `VS1375 ~T0 @X0 0 e@4039 ]
+"30496 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f45k80.h
+[s S1156 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1156 . LATA0 LATA1 LATA2 LATA3 . LATA5 LATA6 LATA7 ]
+"30506
+[s S1157 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1157 . LA0 LA1 LA2 LA3 . LA5 LA6 LA7 ]
+"30495
+[u S1155 `S1156 1 `S1157 1 ]
+[n S1155 . . . ]
+"30517
+[v _LATAbits `VS1155 ~T0 @X0 0 e@3977 ]
+"151 Gue/../mcc_generated_files/spi.h
+[v _SPI_Exchange8bit `(uc ~T0 @X0 0 ef1`uc ]
 "56 C:\Program Files (x86)\Microchip\xc8\v1.42\include\string.h
 [v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
+"35575 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f45k80.h
+[v _SSPBUF `Vuc ~T0 @X0 0 e@4041 ]
 [v F15059 `(v ~T0 @X0 1 tf1`ul ]
 "164 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18.h
 [v __delay `JF15059 ~T0 @X0 0 e ]
@@ -13661,8 +13625,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;FT_Gpu.h: 311: ft_uint32_t FontHeightInPixels;
 [; ;FT_Gpu.h: 313: ft_uint32_t PointerToFontGraphicsData;
 [; ;FT_Gpu.h: 314: }FT_Gpu_Fonts_t;
-[; ;pin_manager.h: 152: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 164: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 158: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 170: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 38: typedef signed long int int32_t;
@@ -13686,14 +13650,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 222: typedef int16_t intptr_t;
 [; ;stdint.h: 227: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;__size_t.h: 4: typedef unsigned size_t;
-[; ;stddef.h: 6: typedef int ptrdiff_t;
-[; ;spi.h: 116: void SPI_Initialize(void);
-[; ;spi.h: 151: uint8_t SPI_Exchange8bit(uint8_t data);
-[; ;spi.h: 191: uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
-[; ;spi.h: 214: bool SPI_IsBufferFull(void);
-[; ;spi.h: 239: bool SPI_HasWriteCollisionOccured(void);
-[; ;spi.h: 263: void SPI_ClearWriteCollisionStatus(void);
 [; ;ecan.h: 67: typedef union {
 [; ;ecan.h: 69: struct {
 [; ;ecan.h: 70: unsigned char idType;
@@ -13718,6 +13674,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ecan.h: 230: unsigned char CAN_isBusOff(void);
 [; ;ecan.h: 254: unsigned char CAN_isRXErrorPassive(void);
 [; ;ecan.h: 278: unsigned char CAN_isTXErrorPassive(void);
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stddef.h: 6: typedef int ptrdiff_t;
+[; ;spi.h: 116: void SPI_Initialize(void);
+[; ;spi.h: 151: uint8_t SPI_Exchange8bit(uint8_t data);
+[; ;spi.h: 191: uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
+[; ;spi.h: 214: bool SPI_IsBufferFull(void);
+[; ;spi.h: 239: bool SPI_HasWriteCollisionOccured(void);
+[; ;spi.h: 263: void SPI_ClearWriteCollisionStatus(void);
 [; ;mcc.h: 69: void SYSTEM_Initialize(void);
 [; ;mcc.h: 82: void OSCILLATOR_Initialize(void);
 [; ;FT800.h: 21: extern unsigned short dli;
@@ -13759,7 +13723,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;string.h: 58: extern char * strichr(const char *, int);
 [; ;string.h: 59: extern char * strrchr(const char *, int);
 [; ;string.h: 60: extern char * strrichr(const char *, int);
-"5 FT800.c
+"5 Gue/FT800.c
 [v _dli `us ~T0 @X0 1 e ]
 [; ;FT800.c: 5: unsigned short dli;
 "6
@@ -13775,36 +13739,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _host_command ]
 [v _command `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;FT800.c: 9: TRISCbits.TRISC1 = 0;
+[; ;FT800.c: 9: LATAbits.LATA1 = 0;
 "9
-[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
-[; ;FT800.c: 10: SSPBUF = command;while(!SSPSTATbits.BF);
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+[; ;FT800.c: 10: SPI_Exchange8bit(command);
 "10
-[e = _SSPBUF _command ]
-[e $U 1541  ]
-[e :U 1542 ]
-[e :U 1541 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1542  ]
-[e :U 1543 ]
-[; ;FT800.c: 11: SSPBUF = 0;while(!SSPSTATbits.BF);
+[e ( _SPI_Exchange8bit (1 _command ]
+[; ;FT800.c: 11: SPI_Exchange8bit(0);
 "11
-[e = _SSPBUF -> -> 0 `i `uc ]
-[e $U 1544  ]
-[e :U 1545 ]
-[e :U 1544 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1545  ]
-[e :U 1546 ]
-[; ;FT800.c: 12: SSPBUF = 0;while(!SSPSTATbits.BF);
+[e ( _SPI_Exchange8bit (1 -> -> 0 `i `uc ]
+[; ;FT800.c: 12: SPI_Exchange8bit(0);
 "12
-[e = _SSPBUF -> -> 0 `i `uc ]
-[e $U 1547  ]
-[e :U 1548 ]
-[e :U 1547 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1548  ]
-[e :U 1549 ]
-[; ;FT800.c: 13: TRISCbits.TRISC1 = 1;
+[e ( _SPI_Exchange8bit (1 -> -> 0 `i `uc ]
+[; ;FT800.c: 13: LATAbits.LATA1 = 1;
 "13
-[e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
+[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
 [; ;FT800.c: 14: }
 "14
 [e :UE 1540 ]
@@ -13817,47 +13766,27 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _addr `um ~T0 @X0 1 r1 ]
 [v _value `uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;FT800.c: 17: TRISCbits.TRISC1 = 0;
+[; ;FT800.c: 17: LATAbits.LATA1 = 0;
 "17
-[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
-[; ;FT800.c: 18: SSPBUF = 0x80 | (addr >> 16);while(!SSPSTATbits.BF);
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+[; ;FT800.c: 18: SPI_Exchange8bit(0x80 | (addr >> 16));
 "18
-[e = _SSPBUF -> | -> -> -> 128 `i `m `um >> _addr -> 16 `i `uc ]
-[e $U 1551  ]
-[e :U 1552 ]
-[e :U 1551 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1552  ]
-[e :U 1553 ]
-[; ;FT800.c: 19: SSPBUF = addr >> 8;while(!SSPSTATbits.BF);
+[e ( _SPI_Exchange8bit (1 -> | -> -> -> 128 `i `m `um >> _addr -> 16 `i `uc ]
+[; ;FT800.c: 19: SPI_Exchange8bit(addr >> 8);
 "19
-[e = _SSPBUF -> >> _addr -> 8 `i `uc ]
-[e $U 1554  ]
-[e :U 1555 ]
-[e :U 1554 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1555  ]
-[e :U 1556 ]
-[; ;FT800.c: 20: SSPBUF = addr;while(!SSPSTATbits.BF);
+[e ( _SPI_Exchange8bit (1 -> >> _addr -> 8 `i `uc ]
+[; ;FT800.c: 20: SPI_Exchange8bit(addr);
 "20
-[e = _SSPBUF -> _addr `uc ]
-[e $U 1557  ]
-[e :U 1558 ]
-[e :U 1557 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1558  ]
-[e :U 1559 ]
-[; ;FT800.c: 21: SSPBUF = value;while(!SSPSTATbits.BF);
+[e ( _SPI_Exchange8bit (1 -> _addr `uc ]
+[; ;FT800.c: 21: SPI_Exchange8bit(value);
 "21
-[e = _SSPBUF _value ]
-[e $U 1560  ]
-[e :U 1561 ]
-[e :U 1560 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1561  ]
-[e :U 1562 ]
-[; ;FT800.c: 22: TRISCbits.TRISC1 = 1;
+[e ( _SPI_Exchange8bit (1 _value ]
+[; ;FT800.c: 22: LATAbits.LATA1 = 1;
 "22
-[e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
+[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
 [; ;FT800.c: 23: }
 "23
-[e :UE 1550 ]
+[e :UE 1541 ]
 }
 "25
 [v _wr16 `(v ~T0 @X0 1 ef2`um`ui ]
@@ -13867,53 +13796,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _addr `um ~T0 @X0 1 r1 ]
 [v _value `ui ~T0 @X0 1 r2 ]
 [f ]
-[; ;FT800.c: 26: TRISCbits.TRISC1 = 0;
+[; ;FT800.c: 26: LATAbits.LATA1 = 0;
 "26
-[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
-[; ;FT800.c: 27: SSPBUF = 0x80 | (addr >> 16);while(!SSPSTATbits.BF);
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+[; ;FT800.c: 27: SPI_Exchange8bit(0x80 | (addr >> 16));
 "27
-[e = _SSPBUF -> | -> -> -> 128 `i `m `um >> _addr -> 16 `i `uc ]
-[e $U 1564  ]
-[e :U 1565 ]
-[e :U 1564 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1565  ]
-[e :U 1566 ]
-[; ;FT800.c: 28: SSPBUF = addr >> 8;while(!SSPSTATbits.BF);
+[e ( _SPI_Exchange8bit (1 -> | -> -> -> 128 `i `m `um >> _addr -> 16 `i `uc ]
+[; ;FT800.c: 28: SPI_Exchange8bit(addr >> 8);
 "28
-[e = _SSPBUF -> >> _addr -> 8 `i `uc ]
-[e $U 1567  ]
-[e :U 1568 ]
-[e :U 1567 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1568  ]
-[e :U 1569 ]
-[; ;FT800.c: 29: SSPBUF = addr;while(!SSPSTATbits.BF);
+[e ( _SPI_Exchange8bit (1 -> >> _addr -> 8 `i `uc ]
+[; ;FT800.c: 29: SPI_Exchange8bit(addr);
 "29
-[e = _SSPBUF -> _addr `uc ]
-[e $U 1570  ]
-[e :U 1571 ]
-[e :U 1570 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1571  ]
-[e :U 1572 ]
-[; ;FT800.c: 30: SSPBUF = (value) & 0xFF;while(!SSPSTATbits.BF);SSPBUF = ((value) >> 8) & 0xFF;while(!SSPSTATbits.BF);
+[e ( _SPI_Exchange8bit (1 -> _addr `uc ]
+[; ;FT800.c: 30: SPI_Exchange8bit((value) & 0xFF);SPI_Exchange8bit(((value) >> 8) & 0xFF);
 "30
-[e = _SSPBUF -> & _value -> -> 255 `i `ui `uc ]
-[e $U 1573  ]
-[e :U 1574 ]
-[e :U 1573 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1574  ]
-[e :U 1575 ]
-[e = _SSPBUF -> & >> _value -> 8 `i -> -> 255 `i `ui `uc ]
-[e $U 1576  ]
-[e :U 1577 ]
-[e :U 1576 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1577  ]
-[e :U 1578 ]
-[; ;FT800.c: 31: TRISCbits.TRISC1 = 1;
+[e ( _SPI_Exchange8bit (1 -> & _value -> -> 255 `i `ui `uc ]
+[e ( _SPI_Exchange8bit (1 -> & >> _value -> 8 `i -> -> 255 `i `ui `uc ]
+[; ;FT800.c: 31: LATAbits.LATA1 = 1;
 "31
-[e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
+[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
 [; ;FT800.c: 32: }
 "32
-[e :UE 1563 ]
+[e :UE 1542 ]
 }
 "34
 [v _wr32 `(v ~T0 @X0 1 ef2`um`ul ]
@@ -13923,65 +13827,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _addr `um ~T0 @X0 1 r1 ]
 [v _value `ul ~T0 @X0 1 r2 ]
 [f ]
-[; ;FT800.c: 35: TRISCbits.TRISC1 = 0;
+[; ;FT800.c: 35: LATAbits.LATA1 = 0;
 "35
-[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
-[; ;FT800.c: 36: SSPBUF = 0x80 | (addr >> 16);while(!SSPSTATbits.BF);
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+[; ;FT800.c: 36: SPI_Exchange8bit(0x80 | (addr >> 16));
 "36
-[e = _SSPBUF -> | -> -> -> 128 `i `m `um >> _addr -> 16 `i `uc ]
-[e $U 1580  ]
-[e :U 1581 ]
-[e :U 1580 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1581  ]
-[e :U 1582 ]
-[; ;FT800.c: 37: SSPBUF = addr >> 8;while(!SSPSTATbits.BF);
+[e ( _SPI_Exchange8bit (1 -> | -> -> -> 128 `i `m `um >> _addr -> 16 `i `uc ]
+[; ;FT800.c: 37: SPI_Exchange8bit(addr >> 8);
 "37
-[e = _SSPBUF -> >> _addr -> 8 `i `uc ]
-[e $U 1583  ]
-[e :U 1584 ]
-[e :U 1583 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1584  ]
-[e :U 1585 ]
-[; ;FT800.c: 38: SSPBUF = addr;while(!SSPSTATbits.BF);
+[e ( _SPI_Exchange8bit (1 -> >> _addr -> 8 `i `uc ]
+[; ;FT800.c: 38: SPI_Exchange8bit(addr);
 "38
-[e = _SSPBUF -> _addr `uc ]
-[e $U 1586  ]
-[e :U 1587 ]
-[e :U 1586 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1587  ]
-[e :U 1588 ]
-[; ;FT800.c: 39: SSPBUF = ((value) & 0xFFFF) & 0xFF;while(!SSPSTATbits.BF);SSPBUF = (((value) & 0xFFFF) >> 8) & 0xFF;while(!SSPSTATbits.BF);SSPBUF = (((value) >> 16) & 0xFFFF) & 0xFF;while(!SSPSTATbits.BF);SSPBUF = ((((value) >> 16) & 0xFFFF) >> 8) & 0xFF;while(!SSPS
+[e ( _SPI_Exchange8bit (1 -> _addr `uc ]
+[; ;FT800.c: 39: SPI_Exchange8bit(((value) & 0xFFFF) & 0xFF);SPI_Exchange8bit((((value) & 0xFFFF) >> 8) & 0xFF);SPI_Exchange8bit((((value) >> 16) & 0xFFFF) & 0xFF);SPI_Exchange8bit(((((value) >> 16) & 0xFFFF) >> 8) & 0xFF);
 "39
-[e = _SSPBUF -> & & _value -> -> 65535 `ui `ul -> -> -> 255 `i `l `ul `uc ]
-[e $U 1589  ]
-[e :U 1590 ]
-[e :U 1589 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1590  ]
-[e :U 1591 ]
-[e = _SSPBUF -> & >> & _value -> -> 65535 `ui `ul -> 8 `i -> -> -> 255 `i `l `ul `uc ]
-[e $U 1592  ]
-[e :U 1593 ]
-[e :U 1592 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1593  ]
-[e :U 1594 ]
-[e = _SSPBUF -> & & >> _value -> 16 `i -> -> 65535 `ui `ul -> -> -> 255 `i `l `ul `uc ]
-[e $U 1595  ]
-[e :U 1596 ]
-[e :U 1595 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1596  ]
-[e :U 1597 ]
-[e = _SSPBUF -> & >> & >> _value -> 16 `i -> -> 65535 `ui `ul -> 8 `i -> -> -> 255 `i `l `ul `uc ]
-[e $U 1598  ]
-[e :U 1599 ]
-[e :U 1598 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1599  ]
-[e :U 1600 ]
-[; ;FT800.c: 40: TRISCbits.TRISC1 = 1;
+[e ( _SPI_Exchange8bit (1 -> & & _value -> -> 65535 `ui `ul -> -> -> 255 `i `l `ul `uc ]
+[e ( _SPI_Exchange8bit (1 -> & >> & _value -> -> 65535 `ui `ul -> 8 `i -> -> -> 255 `i `l `ul `uc ]
+[e ( _SPI_Exchange8bit (1 -> & & >> _value -> 16 `i -> -> 65535 `ui `ul -> -> -> 255 `i `l `ul `uc ]
+[e ( _SPI_Exchange8bit (1 -> & >> & >> _value -> 16 `i -> -> 65535 `ui `ul -> 8 `i -> -> -> 255 `i `l `ul `uc ]
+[; ;FT800.c: 40: LATAbits.LATA1 = 1;
 "40
-[e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
+[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
 [; ;FT800.c: 41: }
 "41
-[e :UE 1579 ]
+[e :UE 1543 ]
 }
 "43
 [v _wr8s `(uc ~T0 @X0 1 ef2`um`*Cuc ]
@@ -13995,33 +13864,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _s `*Cuc ~T0 @X0 1 r2 ]
 "44
 [f ]
-[; ;FT800.c: 45: TRISCbits.TRISC1 = 0;
+[; ;FT800.c: 45: LATAbits.LATA1 = 0;
 "45
-[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
-[; ;FT800.c: 46: SSPBUF = 0x80 | (addr >> 16);while(!SSPSTATbits.BF);
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+[; ;FT800.c: 46: SPI_Exchange8bit(0x80 | (addr >> 16));
 "46
-[e = _SSPBUF -> | -> -> -> 128 `i `m `um >> _addr -> 16 `i `uc ]
-[e $U 1602  ]
-[e :U 1603 ]
-[e :U 1602 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1603  ]
-[e :U 1604 ]
-[; ;FT800.c: 47: SSPBUF = addr >> 8;while(!SSPSTATbits.BF);
+[e ( _SPI_Exchange8bit (1 -> | -> -> -> 128 `i `m `um >> _addr -> 16 `i `uc ]
+[; ;FT800.c: 47: SPI_Exchange8bit(addr >> 8);
 "47
-[e = _SSPBUF -> >> _addr -> 8 `i `uc ]
-[e $U 1605  ]
-[e :U 1606 ]
-[e :U 1605 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1606  ]
-[e :U 1607 ]
-[; ;FT800.c: 48: SSPBUF = addr;while(!SSPSTATbits.BF);
+[e ( _SPI_Exchange8bit (1 -> >> _addr -> 8 `i `uc ]
+[; ;FT800.c: 48: SPI_Exchange8bit(addr);
 "48
-[e = _SSPBUF -> _addr `uc ]
-[e $U 1608  ]
-[e :U 1609 ]
-[e :U 1608 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1609  ]
-[e :U 1610 ]
+[e ( _SPI_Exchange8bit (1 -> _addr `uc ]
 "49
 [v _l `uc ~T0 @X0 1 a ]
 [; ;FT800.c: 49: ft_uint8_t l = strlen(s);
@@ -14033,61 +13887,51 @@ Version 3.2 HI-TECH Software Intermediate Code
 "51
 {
 [e = _i -> -> 0 `i `uc ]
-[e $U 1614  ]
-[e :U 1611 ]
+[e $U 1548  ]
+[e :U 1545 ]
 {
-[; ;FT800.c: 52: SSPBUF = s[i];while(!SSPSTATbits.BF);
+[; ;FT800.c: 52: SPI_Exchange8bit(s[i]);
 "52
-[e = _SSPBUF *U + _s * -> _i `ux -> -> # *U _s `ui `ux ]
-[e $U 1615  ]
-[e :U 1616 ]
-[e :U 1615 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1616  ]
-[e :U 1617 ]
+[e ( _SPI_Exchange8bit (1 *U + _s * -> _i `ux -> -> # *U _s `ui `ux ]
 "53
 }
 "51
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 1614 ]
-[e $ <= -> _i `i -> _l `i 1611  ]
-[e :U 1612 ]
+[e :U 1548 ]
+[e $ <= -> _i `i -> _l `i 1545  ]
+[e :U 1546 ]
 "53
 }
 [; ;FT800.c: 53: }
 [; ;FT800.c: 54: for(;i%4>0;i++){
 "54
 {
-[e $U 1621  ]
-[e :U 1618 ]
+[e $U 1552  ]
+[e :U 1549 ]
 {
-[; ;FT800.c: 55: SSPBUF = 0;while(!SSPSTATbits.BF);
+[; ;FT800.c: 55: SPI_Exchange8bit(0);
 "55
-[e = _SSPBUF -> -> 0 `i `uc ]
-[e $U 1622  ]
-[e :U 1623 ]
-[e :U 1622 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1623  ]
-[e :U 1624 ]
+[e ( _SPI_Exchange8bit (1 -> -> 0 `i `uc ]
 "56
 }
 "54
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 1621 ]
-[e $ > % -> _i `i -> 4 `i -> 0 `i 1618  ]
-[e :U 1619 ]
+[e :U 1552 ]
+[e $ > % -> _i `i -> 4 `i -> 0 `i 1549  ]
+[e :U 1550 ]
 "56
 }
 [; ;FT800.c: 56: }
-[; ;FT800.c: 57: TRISCbits.TRISC1 = 1;
+[; ;FT800.c: 57: LATAbits.LATA1 = 1;
 "57
-[e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
+[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
 [; ;FT800.c: 58: return i;
 "58
 [e ) _i ]
-[e $UE 1601  ]
+[e $UE 1544  ]
 [; ;FT800.c: 59: }
 "59
-[e :UE 1601 ]
+[e :UE 1544 ]
 }
 "61
 [v _rd8 `(uc ~T0 @X0 1 ef1`um ]
@@ -14096,59 +13940,34 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _rd8 ]
 [v _addr `um ~T0 @X0 1 r1 ]
 [f ]
-[; ;FT800.c: 62: TRISCbits.TRISC1 = 0;
+[; ;FT800.c: 62: LATAbits.LATA1 = 0;
 "62
-[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
-[; ;FT800.c: 63: SSPBUF = addr >> 16;while(!SSPSTATbits.BF);
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+[; ;FT800.c: 63: SPI_Exchange8bit(addr >> 16);
 "63
-[e = _SSPBUF -> >> _addr -> 16 `i `uc ]
-[e $U 1626  ]
-[e :U 1627 ]
-[e :U 1626 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1627  ]
-[e :U 1628 ]
-[; ;FT800.c: 64: SSPBUF = addr >> 8;while(!SSPSTATbits.BF);
+[e ( _SPI_Exchange8bit (1 -> >> _addr -> 16 `i `uc ]
+[; ;FT800.c: 64: SPI_Exchange8bit(addr >> 8);
 "64
-[e = _SSPBUF -> >> _addr -> 8 `i `uc ]
-[e $U 1629  ]
-[e :U 1630 ]
-[e :U 1629 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1630  ]
-[e :U 1631 ]
-[; ;FT800.c: 65: SSPBUF = addr;while(!SSPSTATbits.BF);
+[e ( _SPI_Exchange8bit (1 -> >> _addr -> 8 `i `uc ]
+[; ;FT800.c: 65: SPI_Exchange8bit(addr);
 "65
-[e = _SSPBUF -> _addr `uc ]
-[e $U 1632  ]
-[e :U 1633 ]
-[e :U 1632 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1633  ]
-[e :U 1634 ]
-[; ;FT800.c: 66: SSPBUF = 0;while(!SSPSTATbits.BF);
+[e ( _SPI_Exchange8bit (1 -> _addr `uc ]
+[; ;FT800.c: 66: SPI_Exchange8bit(0);
 "66
-[e = _SSPBUF -> -> 0 `i `uc ]
-[e $U 1635  ]
-[e :U 1636 ]
-[e :U 1635 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1636  ]
-[e :U 1637 ]
-[; ;FT800.c: 67: SSPBUF = 0;while(!SSPSTATbits.BF);
+[e ( _SPI_Exchange8bit (1 -> -> 0 `i `uc ]
+[; ;FT800.c: 67: SPI_Exchange8bit(0);
 "67
-[e = _SSPBUF -> -> 0 `i `uc ]
-[e $U 1638  ]
-[e :U 1639 ]
-[e :U 1638 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1639  ]
-[e :U 1640 ]
-[; ;FT800.c: 68: TRISCbits.TRISC1 = 1;
+[e ( _SPI_Exchange8bit (1 -> -> 0 `i `uc ]
+[; ;FT800.c: 68: LATAbits.LATA1 = 1;
 "68
-[e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
+[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
 [; ;FT800.c: 69: return SSPBUF;
 "69
 [e ) _SSPBUF ]
-[e $UE 1625  ]
+[e $UE 1553  ]
 [; ;FT800.c: 70: }
 "70
-[e :UE 1625 ]
+[e :UE 1553 ]
 }
 "72
 [v _rd16 `(ui ~T0 @X0 1 ef1`um ]
@@ -14157,71 +13976,41 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _rd16 ]
 [v _addr `um ~T0 @X0 1 r1 ]
 [f ]
-[; ;FT800.c: 73: TRISCbits.TRISC1 = 0;
+[; ;FT800.c: 73: LATAbits.LATA1 = 0;
 "73
-[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
-[; ;FT800.c: 74: SSPBUF = addr >> 16;while(!SSPSTATbits.BF);
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+[; ;FT800.c: 74: SPI_Exchange8bit(addr >> 16);
 "74
-[e = _SSPBUF -> >> _addr -> 16 `i `uc ]
-[e $U 1642  ]
-[e :U 1643 ]
-[e :U 1642 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1643  ]
-[e :U 1644 ]
-[; ;FT800.c: 75: SSPBUF = addr >> 8;while(!SSPSTATbits.BF);
+[e ( _SPI_Exchange8bit (1 -> >> _addr -> 16 `i `uc ]
+[; ;FT800.c: 75: SPI_Exchange8bit(addr >> 8);
 "75
-[e = _SSPBUF -> >> _addr -> 8 `i `uc ]
-[e $U 1645  ]
-[e :U 1646 ]
-[e :U 1645 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1646  ]
-[e :U 1647 ]
-[; ;FT800.c: 76: SSPBUF = addr;while(!SSPSTATbits.BF);
+[e ( _SPI_Exchange8bit (1 -> >> _addr -> 8 `i `uc ]
+[; ;FT800.c: 76: SPI_Exchange8bit(addr);
 "76
-[e = _SSPBUF -> _addr `uc ]
-[e $U 1648  ]
-[e :U 1649 ]
-[e :U 1648 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1649  ]
-[e :U 1650 ]
-[; ;FT800.c: 77: SSPBUF = 0;while(!SSPSTATbits.BF);
+[e ( _SPI_Exchange8bit (1 -> _addr `uc ]
+[; ;FT800.c: 77: SPI_Exchange8bit(0);
 "77
-[e = _SSPBUF -> -> 0 `i `uc ]
-[e $U 1651  ]
-[e :U 1652 ]
-[e :U 1651 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1652  ]
-[e :U 1653 ]
-[; ;FT800.c: 78: SSPBUF = 0;while(!SSPSTATbits.BF);
+[e ( _SPI_Exchange8bit (1 -> -> 0 `i `uc ]
+[; ;FT800.c: 78: SPI_Exchange8bit(0);
 "78
-[e = _SSPBUF -> -> 0 `i `uc ]
-[e $U 1654  ]
-[e :U 1655 ]
-[e :U 1654 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1655  ]
-[e :U 1656 ]
+[e ( _SPI_Exchange8bit (1 -> -> 0 `i `uc ]
 "79
 [v _temp `uc ~T0 @X0 1 a ]
 [; ;FT800.c: 79: ft_uint8_t temp = SSPBUF;
 [e = _temp _SSPBUF ]
-[; ;FT800.c: 80: SSPBUF = 0;while(!SSPSTATbits.BF);
+[; ;FT800.c: 80: SPI_Exchange8bit(0);
 "80
-[e = _SSPBUF -> -> 0 `i `uc ]
-[e $U 1657  ]
-[e :U 1658 ]
-[e :U 1657 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1658  ]
-[e :U 1659 ]
-[; ;FT800.c: 81: TRISCbits.TRISC1 = 1;
+[e ( _SPI_Exchange8bit (1 -> -> 0 `i `uc ]
+[; ;FT800.c: 81: LATAbits.LATA1 = 1;
 "81
-[e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
+[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
 [; ;FT800.c: 82: return ((ft_uint16_t)SSPBUF << 8) | temp;
 "82
 [e ) | << -> _SSPBUF `ui -> 8 `i -> _temp `ui ]
-[e $UE 1641  ]
+[e $UE 1554  ]
 [; ;FT800.c: 83: }
 "83
-[e :UE 1641 ]
+[e :UE 1554 ]
 }
 "85
 [v _rd32 `(ul ~T0 @X0 1 ef1`um ]
@@ -14230,93 +14019,53 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _rd32 ]
 [v _addr `um ~T0 @X0 1 r1 ]
 [f ]
-[; ;FT800.c: 86: TRISCbits.TRISC1 = 0;
+[; ;FT800.c: 86: LATAbits.LATA1 = 0;
 "86
-[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
-[; ;FT800.c: 87: SSPBUF = addr >> 16;while(!SSPSTATbits.BF);
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+[; ;FT800.c: 87: SPI_Exchange8bit(addr >> 16);
 "87
-[e = _SSPBUF -> >> _addr -> 16 `i `uc ]
-[e $U 1661  ]
-[e :U 1662 ]
-[e :U 1661 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1662  ]
-[e :U 1663 ]
-[; ;FT800.c: 88: SSPBUF = addr >> 8;while(!SSPSTATbits.BF);
+[e ( _SPI_Exchange8bit (1 -> >> _addr -> 16 `i `uc ]
+[; ;FT800.c: 88: SPI_Exchange8bit(addr >> 8);
 "88
-[e = _SSPBUF -> >> _addr -> 8 `i `uc ]
-[e $U 1664  ]
-[e :U 1665 ]
-[e :U 1664 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1665  ]
-[e :U 1666 ]
-[; ;FT800.c: 89: SSPBUF = addr;while(!SSPSTATbits.BF);
+[e ( _SPI_Exchange8bit (1 -> >> _addr -> 8 `i `uc ]
+[; ;FT800.c: 89: SPI_Exchange8bit(addr);
 "89
-[e = _SSPBUF -> _addr `uc ]
-[e $U 1667  ]
-[e :U 1668 ]
-[e :U 1667 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1668  ]
-[e :U 1669 ]
-[; ;FT800.c: 90: SSPBUF = 0;while(!SSPSTATbits.BF);
+[e ( _SPI_Exchange8bit (1 -> _addr `uc ]
+[; ;FT800.c: 90: SPI_Exchange8bit(0);
 "90
-[e = _SSPBUF -> -> 0 `i `uc ]
-[e $U 1670  ]
-[e :U 1671 ]
-[e :U 1670 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1671  ]
-[e :U 1672 ]
-[; ;FT800.c: 91: SSPBUF = 0;while(!SSPSTATbits.BF);
+[e ( _SPI_Exchange8bit (1 -> -> 0 `i `uc ]
+[; ;FT800.c: 91: SPI_Exchange8bit(0);
 "91
-[e = _SSPBUF -> -> 0 `i `uc ]
-[e $U 1673  ]
-[e :U 1674 ]
-[e :U 1673 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1674  ]
-[e :U 1675 ]
+[e ( _SPI_Exchange8bit (1 -> -> 0 `i `uc ]
 "92
 [v _temp `ul ~T0 @X0 1 a ]
 [; ;FT800.c: 92: ft_uint32_t temp = SSPBUF;
 [e = _temp -> _SSPBUF `ul ]
-[; ;FT800.c: 93: SSPBUF = 0;while(!SSPSTATbits.BF);
+[; ;FT800.c: 93: SPI_Exchange8bit(0);
 "93
-[e = _SSPBUF -> -> 0 `i `uc ]
-[e $U 1676  ]
-[e :U 1677 ]
-[e :U 1676 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1677  ]
-[e :U 1678 ]
+[e ( _SPI_Exchange8bit (1 -> -> 0 `i `uc ]
 [; ;FT800.c: 94: temp |= (ft_uint32_t)SSPBUF << 8;
 "94
 [e =| _temp << -> _SSPBUF `ul -> 8 `i ]
-[; ;FT800.c: 95: SSPBUF = 0;while(!SSPSTATbits.BF);
+[; ;FT800.c: 95: SPI_Exchange8bit(0);
 "95
-[e = _SSPBUF -> -> 0 `i `uc ]
-[e $U 1679  ]
-[e :U 1680 ]
-[e :U 1679 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1680  ]
-[e :U 1681 ]
+[e ( _SPI_Exchange8bit (1 -> -> 0 `i `uc ]
 [; ;FT800.c: 96: temp |= (ft_uint32_t)SSPBUF << 16;
 "96
 [e =| _temp << -> _SSPBUF `ul -> 16 `i ]
-[; ;FT800.c: 97: SSPBUF = 0;while(!SSPSTATbits.BF);
+[; ;FT800.c: 97: SPI_Exchange8bit(0);
 "97
-[e = _SSPBUF -> -> 0 `i `uc ]
-[e $U 1682  ]
-[e :U 1683 ]
-[e :U 1682 ]
-[e $ ! != -> . . _SSPSTATbits 2 0 `i -> -> -> 0 `i `Vuc `i 1683  ]
-[e :U 1684 ]
-[; ;FT800.c: 98: TRISCbits.TRISC1 = 1;
+[e ( _SPI_Exchange8bit (1 -> -> 0 `i `uc ]
+[; ;FT800.c: 98: LATAbits.LATA1 = 1;
 "98
-[e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
+[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
 [; ;FT800.c: 99: return ((ft_uint32_t)SSPBUF << 24) | temp;
 "99
 [e ) | << -> _SSPBUF `ul -> 24 `i _temp ]
-[e $UE 1660  ]
+[e $UE 1555  ]
 [; ;FT800.c: 100: }
 "100
-[e :UE 1660 ]
+[e :UE 1555 ]
 }
 "122
 [v _cmd_incrementn `(v ~T0 @X0 1 ef1`uc ]
@@ -14330,7 +14079,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _cmd_offset -> % + -> _cmd_offset `ui -> _n `ui -> -> 4096 `i `ui `us ]
 [; ;FT800.c: 124: }
 "124
-[e :UE 1685 ]
+[e :UE 1556 ]
 }
 "126
 [v _cmd `(v ~T0 @X0 1 ef1`ul ]
@@ -14345,7 +14094,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _cmd_incrementn (1 -> -> 4 `i `uc ]
 [; ;FT800.c: 128: }
 "128
-[e :UE 1686 ]
+[e :UE 1557 ]
 }
 [v F15190 `(v ~T0 @X0 1 tf ]
 "139
@@ -14354,15 +14103,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;FT800.c: 139: inline void FT800_Init(){
 [e :U _FT800_Init ]
 [f ]
-[; ;FT800.c: 141: TRISCbits.TRISC0 = 0;
+[; ;FT800.c: 141: LATAbits.LATA2 = 0;
 "141
-[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 [; ;FT800.c: 142: _delay((unsigned long)((20)*(16000000/4000.0)));
 "142
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;FT800.c: 143: TRISCbits.TRISC0 = 1;
+[; ;FT800.c: 143: LATAbits.LATA2 = 1;
 "143
-[e = . . _TRISCbits 0 0 -> -> 1 `i `uc ]
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
 [; ;FT800.c: 144: _delay((unsigned long)((20)*(16000000/4000.0)));
 "144
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
@@ -14423,9 +14172,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;FT800.c: 171: wr8(1057876UL, 0);
 "171
 [e ( _wr8 (2 , -> -> 1057876 `ul `um -> -> 0 `i `uc ]
-[; ;FT800.c: 178: wr32(1048576UL+0,((2UL<<24)|(((255)&255UL)<<16)|(((0)&255UL)<<8)|(((0)&255UL)<<0)));
+[; ;FT800.c: 178: wr32(1048576UL+0,((2UL<<24)|(((255)&255UL)<<16)|(((255)&255UL)<<8)|(((0)&255UL)<<0)));
 "178
-[e ( _wr32 (2 , -> + -> 1048576 `ul -> -> -> 0 `i `l `ul `um | | | << -> 2 `ul -> 24 `i << & -> -> -> 255 `i `l `ul -> 255 `ul -> 16 `i << & -> -> -> 0 `i `l `ul -> 255 `ul -> 8 `i << & -> -> -> 0 `i `l `ul -> 255 `ul -> 0 `i ]
+[e ( _wr32 (2 , -> + -> 1048576 `ul -> -> -> 0 `i `l `ul `um | | | << -> 2 `ul -> 24 `i << & -> -> -> 255 `i `l `ul -> 255 `ul -> 16 `i << & -> -> -> 255 `i `l `ul -> 255 `ul -> 8 `i << & -> -> -> 0 `i `l `ul -> 255 `ul -> 0 `i ]
 [; ;FT800.c: 179: wr32(1048576UL+4,((38UL<<24)|(((1)&1UL)<<2)|(((1)&1UL)<<1)|(((1)&1UL)<<0)));
 "179
 [e ( _wr32 (2 , -> + -> 1048576 `ul -> -> -> 4 `i `l `ul `um | | | << -> 38 `ul -> 24 `i << & -> -> -> 1 `i `l `ul -> 1 `ul -> 2 `i << & -> -> -> 1 `i `l `ul -> 1 `ul -> 1 `i << & -> -> -> 1 `i `l `ul -> 1 `ul -> 0 `i ]
@@ -14447,12 +14196,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;FT800.c: 192: cmd_offset=rd16(1058024UL);while(rd16(1058020UL) != cmd_offset);
 "192
 [e = _cmd_offset -> ( _rd16 (1 -> -> 1058024 `ul `um `us ]
-[e $U 1688  ]
-[e :U 1689 ]
-[e :U 1688 ]
-[e $ != ( _rd16 (1 -> -> 1058020 `ul `um -> _cmd_offset `ui 1689  ]
-[e :U 1690 ]
+[e $U 1559  ]
+[e :U 1560 ]
+[e :U 1559 ]
+[e $ != ( _rd16 (1 -> -> 1058020 `ul `um -> _cmd_offset `ui 1560  ]
+[e :U 1561 ]
 [; ;FT800.c: 194: }
 "194
-[e :UE 1687 ]
+[e :UE 1558 ]
 }

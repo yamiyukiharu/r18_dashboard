@@ -59,6 +59,34 @@
 #define PULL_UP_ENABLED      1
 #define PULL_UP_DISABLED     0
 
+// get/set CS aliases
+#define CS_TRIS               TRISAbits.TRISA1
+#define CS_LAT                LATAbits.LATA1
+#define CS_PORT               PORTAbits.RA1
+#define CS_ANS                ANCON0bits.ANSEL1
+#define CS_SetHigh()            do { LATAbits.LATA1 = 1; } while(0)
+#define CS_SetLow()             do { LATAbits.LATA1 = 0; } while(0)
+#define CS_Toggle()             do { LATAbits.LATA1 = ~LATAbits.LATA1; } while(0)
+#define CS_GetValue()           PORTAbits.RA1
+#define CS_SetDigitalInput()    do { TRISAbits.TRISA1 = 1; } while(0)
+#define CS_SetDigitalOutput()   do { TRISAbits.TRISA1 = 0; } while(0)
+#define CS_SetAnalogMode()  do { ANCON0bits.ANSEL1 = 1; } while(0)
+#define CS_SetDigitalMode() do { ANCON0bits.ANSEL1 = 0; } while(0)
+
+// get/set PD aliases
+#define PD_TRIS               TRISAbits.TRISA2
+#define PD_LAT                LATAbits.LATA2
+#define PD_PORT               PORTAbits.RA2
+#define PD_ANS                ANCON0bits.ANSEL2
+#define PD_SetHigh()            do { LATAbits.LATA2 = 1; } while(0)
+#define PD_SetLow()             do { LATAbits.LATA2 = 0; } while(0)
+#define PD_Toggle()             do { LATAbits.LATA2 = ~LATAbits.LATA2; } while(0)
+#define PD_GetValue()           PORTAbits.RA2
+#define PD_SetDigitalInput()    do { TRISAbits.TRISA2 = 1; } while(0)
+#define PD_SetDigitalOutput()   do { TRISAbits.TRISA2 = 0; } while(0)
+#define PD_SetAnalogMode()  do { ANCON0bits.ANSEL2 = 1; } while(0)
+#define PD_SetDigitalMode() do { ANCON0bits.ANSEL2 = 0; } while(0)
+
 // get/set RB2 procedures
 #define RB2_SetHigh()    do { LATBbits.LATB2 = 1; } while(0)
 #define RB2_SetLow()   do { LATBbits.LATB2 = 0; } while(0)
@@ -78,28 +106,6 @@
 #define RB3_SetDigitalOutput()  do { TRISBbits.TRISB3 = 0; } while(0)
 #define RB3_SetPullup()     do { WPUBbits.WPUB3 = 1; } while(0)
 #define RB3_ResetPullup()   do { WPUBbits.WPUB3 = 0; } while(0)
-
-// get/set PD aliases
-#define PD_TRIS               TRISCbits.TRISC0
-#define PD_LAT                LATCbits.LATC0
-#define PD_PORT               PORTCbits.RC0
-#define PD_SetHigh()            do { LATCbits.LATC0 = 1; } while(0)
-#define PD_SetLow()             do { LATCbits.LATC0 = 0; } while(0)
-#define PD_Toggle()             do { LATCbits.LATC0 = ~LATCbits.LATC0; } while(0)
-#define PD_GetValue()           PORTCbits.RC0
-#define PD_SetDigitalInput()    do { TRISCbits.TRISC0 = 1; } while(0)
-#define PD_SetDigitalOutput()   do { TRISCbits.TRISC0 = 0; } while(0)
-
-// get/set CS aliases
-#define CS_TRIS               TRISCbits.TRISC1
-#define CS_LAT                LATCbits.LATC1
-#define CS_PORT               PORTCbits.RC1
-#define CS_SetHigh()            do { LATCbits.LATC1 = 1; } while(0)
-#define CS_SetLow()             do { LATCbits.LATC1 = 0; } while(0)
-#define CS_Toggle()             do { LATCbits.LATC1 = ~LATCbits.LATC1; } while(0)
-#define CS_GetValue()           PORTCbits.RC1
-#define CS_SetDigitalInput()    do { TRISCbits.TRISC1 = 1; } while(0)
-#define CS_SetDigitalOutput()   do { TRISCbits.TRISC1 = 0; } while(0)
 
 // get/set RC3 procedures
 #define RC3_SetHigh()    do { LATCbits.LATC3 = 1; } while(0)

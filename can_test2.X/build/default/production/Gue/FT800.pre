@@ -1,5 +1,5 @@
 
-# 1 "FT800.c"
+# 1 "Gue/FT800.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -17857,7 +17857,7 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 8 "FT_DataTypes.h"
+# 8 "Gue/FT_DataTypes.h"
 typedef unsigned char ft_uint8_t;
 typedef char ft_char8_t;
 typedef signed char ft_schar8_t;
@@ -17870,7 +17870,7 @@ typedef void ft_void_t;
 
 typedef unsigned char ft_bool_t;
 
-# 299 "FT_Gpu.h"
+# 299 "Gue/FT_Gpu.h"
 typedef struct FT_Gpu_Fonts
 {
 
@@ -17888,10 +17888,10 @@ ft_uint32_t FontHeightInPixels;
 ft_uint32_t PointerToFontGraphicsData;
 }FT_Gpu_Fonts_t;
 
-# 152 "mcc_generated_files/pin_manager.h"
+# 158 "Gue/../mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 164
+# 170
 void PIN_MANAGER_IOC(void);
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdint.h"
@@ -17969,31 +17969,7 @@ typedef uint16_t uintptr_t;
 # 12 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdbool.h"
 typedef unsigned char bool;
 
-# 4 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\__size_t.h"
-typedef unsigned size_t;
-
-# 6 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stddef.h"
-typedef int ptrdiff_t;
-
-# 116 "mcc_generated_files/spi.h"
-void SPI_Initialize(void);
-
-# 151
-uint8_t SPI_Exchange8bit(uint8_t data);
-
-# 191
-uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
-
-# 214
-bool SPI_IsBufferFull(void);
-
-# 239
-bool SPI_HasWriteCollisionOccured(void);
-
-# 263
-void SPI_ClearWriteCollisionStatus(void);
-
-# 67 "mcc_generated_files/ecan.h"
+# 67 "Gue/../mcc_generated_files/ecan.h"
 typedef union {
 
 struct {
@@ -18036,13 +18012,37 @@ unsigned char CAN_isRXErrorPassive(void);
 # 278
 unsigned char CAN_isTXErrorPassive(void);
 
-# 69 "mcc_generated_files/mcc.h"
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\__size_t.h"
+typedef unsigned size_t;
+
+# 6 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stddef.h"
+typedef int ptrdiff_t;
+
+# 116 "Gue/../mcc_generated_files/spi.h"
+void SPI_Initialize(void);
+
+# 151
+uint8_t SPI_Exchange8bit(uint8_t data);
+
+# 191
+uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
+
+# 214
+bool SPI_IsBufferFull(void);
+
+# 239
+bool SPI_HasWriteCollisionOccured(void);
+
+# 263
+void SPI_ClearWriteCollisionStatus(void);
+
+# 69 "Gue/../mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
 # 82
 void OSCILLATOR_Initialize(void);
 
-# 21 "FT800.h"
+# 21 "Gue/FT800.h"
 extern unsigned short dli;
 
 # 31
@@ -18114,101 +18114,101 @@ extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 
-# 5 "FT800.c"
+# 5 "Gue/FT800.c"
 unsigned short dli;
 unsigned short cmd_offset = 0;
 
 void host_command(ft_uint8_t command){
-TRISCbits.TRISC1 = 0;
-SSPBUF = command;while(!SSPSTATbits.BF);
-SSPBUF = 0;while(!SSPSTATbits.BF);
-SSPBUF = 0;while(!SSPSTATbits.BF);
-TRISCbits.TRISC1 = 1;
+LATAbits.LATA1 = 0;
+SPI_Exchange8bit(command);
+SPI_Exchange8bit(0);
+SPI_Exchange8bit(0);
+LATAbits.LATA1 = 1;
 }
 
 void wr8(unsigned short long addr, ft_uint8_t value){
-TRISCbits.TRISC1 = 0;
-SSPBUF = 0x80 | (addr >> 16);while(!SSPSTATbits.BF);
-SSPBUF = addr >> 8;while(!SSPSTATbits.BF);
-SSPBUF = addr;while(!SSPSTATbits.BF);
-SSPBUF = value;while(!SSPSTATbits.BF);
-TRISCbits.TRISC1 = 1;
+LATAbits.LATA1 = 0;
+SPI_Exchange8bit(0x80 | (addr >> 16));
+SPI_Exchange8bit(addr >> 8);
+SPI_Exchange8bit(addr);
+SPI_Exchange8bit(value);
+LATAbits.LATA1 = 1;
 }
 
 void wr16(unsigned short long addr, ft_uint16_t value){
-TRISCbits.TRISC1 = 0;
-SSPBUF = 0x80 | (addr >> 16);while(!SSPSTATbits.BF);
-SSPBUF = addr >> 8;while(!SSPSTATbits.BF);
-SSPBUF = addr;while(!SSPSTATbits.BF);
-SSPBUF = (value) & 0xFF;while(!SSPSTATbits.BF);SSPBUF = ((value) >> 8) & 0xFF;while(!SSPSTATbits.BF);
-TRISCbits.TRISC1 = 1;
+LATAbits.LATA1 = 0;
+SPI_Exchange8bit(0x80 | (addr >> 16));
+SPI_Exchange8bit(addr >> 8);
+SPI_Exchange8bit(addr);
+SPI_Exchange8bit((value) & 0xFF);SPI_Exchange8bit(((value) >> 8) & 0xFF);
+LATAbits.LATA1 = 1;
 }
 
 void wr32(unsigned short long addr, ft_uint32_t value){
-TRISCbits.TRISC1 = 0;
-SSPBUF = 0x80 | (addr >> 16);while(!SSPSTATbits.BF);
-SSPBUF = addr >> 8;while(!SSPSTATbits.BF);
-SSPBUF = addr;while(!SSPSTATbits.BF);
-SSPBUF = ((value) & 0xFFFF) & 0xFF;while(!SSPSTATbits.BF);SSPBUF = (((value) & 0xFFFF) >> 8) & 0xFF;while(!SSPSTATbits.BF);SSPBUF = (((value) >> 16) & 0xFFFF) & 0xFF;while(!SSPSTATbits.BF);SSPBUF = ((((value) >> 16) & 0xFFFF) >> 8) & 0xFF;while(!SSPSTATbits.BF);
-TRISCbits.TRISC1 = 1;
+LATAbits.LATA1 = 0;
+SPI_Exchange8bit(0x80 | (addr >> 16));
+SPI_Exchange8bit(addr >> 8);
+SPI_Exchange8bit(addr);
+SPI_Exchange8bit(((value) & 0xFFFF) & 0xFF);SPI_Exchange8bit((((value) & 0xFFFF) >> 8) & 0xFF);SPI_Exchange8bit((((value) >> 16) & 0xFFFF) & 0xFF);SPI_Exchange8bit(((((value) >> 16) & 0xFFFF) >> 8) & 0xFF);
+LATAbits.LATA1 = 1;
 }
 
 ft_uint8_t wr8s(unsigned short long addr, const ft_char8_t *s)
 {
-TRISCbits.TRISC1 = 0;
-SSPBUF = 0x80 | (addr >> 16);while(!SSPSTATbits.BF);
-SSPBUF = addr >> 8;while(!SSPSTATbits.BF);
-SSPBUF = addr;while(!SSPSTATbits.BF);
+LATAbits.LATA1 = 0;
+SPI_Exchange8bit(0x80 | (addr >> 16));
+SPI_Exchange8bit(addr >> 8);
+SPI_Exchange8bit(addr);
 ft_uint8_t l = strlen(s);
 ft_uint8_t i;
 for(i=0;i<=l;i++){
-SSPBUF = s[i];while(!SSPSTATbits.BF);
+SPI_Exchange8bit(s[i]);
 }
 for(;i%4>0;i++){
-SSPBUF = 0;while(!SSPSTATbits.BF);
+SPI_Exchange8bit(0);
 }
-TRISCbits.TRISC1 = 1;
+LATAbits.LATA1 = 1;
 return i;
 }
 
 ft_uint8_t rd8(unsigned short long addr){
-TRISCbits.TRISC1 = 0;
-SSPBUF = addr >> 16;while(!SSPSTATbits.BF);
-SSPBUF = addr >> 8;while(!SSPSTATbits.BF);
-SSPBUF = addr;while(!SSPSTATbits.BF);
-SSPBUF = 0;while(!SSPSTATbits.BF);
-SSPBUF = 0;while(!SSPSTATbits.BF);
-TRISCbits.TRISC1 = 1;
+LATAbits.LATA1 = 0;
+SPI_Exchange8bit(addr >> 16);
+SPI_Exchange8bit(addr >> 8);
+SPI_Exchange8bit(addr);
+SPI_Exchange8bit(0);
+SPI_Exchange8bit(0);
+LATAbits.LATA1 = 1;
 return SSPBUF;
 }
 
 ft_uint16_t rd16(unsigned short long addr){
-TRISCbits.TRISC1 = 0;
-SSPBUF = addr >> 16;while(!SSPSTATbits.BF);
-SSPBUF = addr >> 8;while(!SSPSTATbits.BF);
-SSPBUF = addr;while(!SSPSTATbits.BF);
-SSPBUF = 0;while(!SSPSTATbits.BF);
-SSPBUF = 0;while(!SSPSTATbits.BF);
+LATAbits.LATA1 = 0;
+SPI_Exchange8bit(addr >> 16);
+SPI_Exchange8bit(addr >> 8);
+SPI_Exchange8bit(addr);
+SPI_Exchange8bit(0);
+SPI_Exchange8bit(0);
 ft_uint8_t temp = SSPBUF;
-SSPBUF = 0;while(!SSPSTATbits.BF);
-TRISCbits.TRISC1 = 1;
+SPI_Exchange8bit(0);
+LATAbits.LATA1 = 1;
 return ((ft_uint16_t)SSPBUF << 8) | temp;
 }
 
 ft_uint32_t rd32(unsigned short long addr){
-TRISCbits.TRISC1 = 0;
-SSPBUF = addr >> 16;while(!SSPSTATbits.BF);
-SSPBUF = addr >> 8;while(!SSPSTATbits.BF);
-SSPBUF = addr;while(!SSPSTATbits.BF);
-SSPBUF = 0;while(!SSPSTATbits.BF);
-SSPBUF = 0;while(!SSPSTATbits.BF);
+LATAbits.LATA1 = 0;
+SPI_Exchange8bit(addr >> 16);
+SPI_Exchange8bit(addr >> 8);
+SPI_Exchange8bit(addr);
+SPI_Exchange8bit(0);
+SPI_Exchange8bit(0);
 ft_uint32_t temp = SSPBUF;
-SSPBUF = 0;while(!SSPSTATbits.BF);
+SPI_Exchange8bit(0);
 temp |= (ft_uint32_t)SSPBUF << 8;
-SSPBUF = 0;while(!SSPSTATbits.BF);
+SPI_Exchange8bit(0);
 temp |= (ft_uint32_t)SSPBUF << 16;
-SSPBUF = 0;while(!SSPSTATbits.BF);
-TRISCbits.TRISC1 = 1;
+SPI_Exchange8bit(0);
+LATAbits.LATA1 = 1;
 return ((ft_uint32_t)SSPBUF << 24) | temp;
 }
 
@@ -18224,9 +18224,9 @@ wr32(1081344UL + cmd_offset, command);cmd_incrementn(4);
 # 139
 inline void FT800_Init(){
 
-TRISCbits.TRISC0 = 0;
+LATAbits.LATA2 = 0;
 _delay((unsigned long)((20)*(16000000/4000.0)));
-TRISCbits.TRISC0 = 1;
+LATAbits.LATA2 = 1;
 _delay((unsigned long)((20)*(16000000/4000.0)));
 
 host_command(0x00);
@@ -18257,7 +18257,7 @@ wr8(1057896UL, 1);
 wr8(1057876UL, 0);
 
 # 178
-wr32(1048576UL+0,((2UL<<24)|(((255)&255UL)<<16)|(((0)&255UL)<<8)|(((0)&255UL)<<0)));
+wr32(1048576UL+0,((2UL<<24)|(((255)&255UL)<<16)|(((255)&255UL)<<8)|(((0)&255UL)<<0)));
 wr32(1048576UL+4,((38UL<<24)|(((1)&1UL)<<2)|(((1)&1UL)<<1)|(((1)&1UL)<<0)));
 wr32(1048576UL+8,((0UL<<24)));
 
