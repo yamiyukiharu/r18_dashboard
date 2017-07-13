@@ -17857,10 +17857,10 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 158 "mcc_generated_files/pin_manager.h"
+# 169 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 170
+# 181
 void PIN_MANAGER_IOC(void);
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdint.h"
@@ -17938,6 +17938,30 @@ typedef uint16_t uintptr_t;
 # 12 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdbool.h"
 typedef unsigned char bool;
 
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\__size_t.h"
+typedef unsigned size_t;
+
+# 6 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stddef.h"
+typedef int ptrdiff_t;
+
+# 116 "mcc_generated_files/spi.h"
+void SPI_Initialize(void);
+
+# 151
+uint8_t SPI_Exchange8bit(uint8_t data);
+
+# 191
+uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
+
+# 214
+bool SPI_IsBufferFull(void);
+
+# 239
+bool SPI_HasWriteCollisionOccured(void);
+
+# 263
+void SPI_ClearWriteCollisionStatus(void);
+
 # 67 "mcc_generated_files/ecan.h"
 typedef union {
 
@@ -17980,30 +18004,6 @@ unsigned char CAN_isRXErrorPassive(void);
 
 # 278
 unsigned char CAN_isTXErrorPassive(void);
-
-# 4 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\__size_t.h"
-typedef unsigned size_t;
-
-# 6 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stddef.h"
-typedef int ptrdiff_t;
-
-# 116 "mcc_generated_files/spi.h"
-void SPI_Initialize(void);
-
-# 151
-uint8_t SPI_Exchange8bit(uint8_t data);
-
-# 191
-uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
-
-# 214
-bool SPI_IsBufferFull(void);
-
-# 239
-bool SPI_HasWriteCollisionOccured(void);
-
-# 263
-void SPI_ClearWriteCollisionStatus(void);
 
 # 69 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
@@ -18089,6 +18089,7 @@ _delay((unsigned long)((3000)*(16000000/4000.0)));
 
 void main(void)
 {
+uCAN_MSG test;
 
 SYSTEM_Initialize();
 CIOCONbits.CLKSEL = 1;
@@ -18096,7 +18097,17 @@ CIOCONbits.ENDRHI = 1;
 CIOCONbits.TX2SRC = 0;
 CIOCONbits.TX2EN = 1;
 
+RXB0CONbits.RXM0 = 1;
+RXB0CONbits.RXM1 = 0;
+RXB0CONbits.RB0DBEN = 0;
+RXB0CONbits.FILHIT0 = 0;
+
+
 do { TRISDbits.TRISD0 = 0; } while(0);
+
+
+do { TRISCbits.TRISC0 = 0; } while(0);
+do { LATCbits.LATC0 = 0; } while(0);
 
 do { ANCON0bits.ANSEL1 = 0; } while(0);
 do { ANCON0bits.ANSEL2 = 0; } while(0);
@@ -18115,27 +18126,32 @@ SSPCON1bits.SSPM = 0b0000;
 
 FT800_Init();
 
-wr32(1048576UL + 0, ((38UL<<24)|(((1)&1UL)<<2)|(((1)&1UL)<<1)|(((1)&1UL)<<0)));
-wr32(1048576UL + 4, ((31UL<<24)|(((1UL)&15UL)<<0)));
-wr32(1048576UL + 8, ((2UL<<30)|(((220)&511UL)<<21)|(((110)&511UL)<<12)|(((31)&31UL)<<7)|((('F')&127UL)<<0)));
-wr32(1048576UL + 12, ((2UL<<30)|(((244)&511UL)<<21)|(((110)&511UL)<<12)|(((31)&31UL)<<7)|((('T')&127UL)<<0)));
-wr32(1048576UL + 16, ((2UL<<30)|(((270)&511UL)<<21)|(((110)&511UL)<<12)|(((31)&31UL)<<7)|((('D')&127UL)<<0)));
-wr32(1048576UL + 20, ((2UL<<30)|(((299)&511UL)<<21)|(((110)&511UL)<<12)|(((31)&31UL)<<7)|((('I')&127UL)<<0)));
-wr32(1048576UL + 24, ((33UL<<24)));
-wr32(1048576UL + 28, ((4UL<<24)|(((160)&255UL)<<16)|(((22)&255UL)<<8)|(((22)&255UL)<<0)));
-wr32(1048576UL + 32, ((13UL<<24)|(((320)&8191UL)<<0)));
-wr32(1048576UL + 36, ((31UL<<24)|(((2UL)&15UL)<<0)));
-wr32(1048576UL + 40, ((2UL<<30)|(((192)&511UL)<<21)|(((133)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
-wr32(1048576UL + 44, ((33UL<<24)));
-wr32(1048576UL + 48, ((0UL<<24)));
 
-# 79
-do { LATDbits.LATD0 = 0; } while(0);
+do { LATDbits.LATD0 = 1; } while(0);
 
 while (1)
 {
+int data0 = 222;
+int data1 = 222;
+if(CAN_receive(&test)) {
+if(test.frame.id == 0x640) {
+data0 = test.frame.data0;
+data1 = test.frame.data1;
+do { LATDbits.LATD0 = 0; } while(0);
+_delay((unsigned long)((20)*(16000000/4000.0)));
+}
+} else {
+do { LATDbits.LATD0 = 1; } while(0);
+}
 
-# 109
+test.frame.idType=1;
+test.frame.id=0x120;
+test.frame.dlc=8;
+test.frame.data0= data0;
+test.frame.data1= data1;
+
+CAN_transmit(&test);
+
 }
 }
 

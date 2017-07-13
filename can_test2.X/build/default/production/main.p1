@@ -4,6 +4,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v __delay `JF15059 ~T0 @X0 0 e ]
 [p i __delay ]
 [p mainexit ]
+"69 mcc_generated_files/ecan.h
+[s S1538 `uc 1 `ul 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1538 . idType id dlc data0 data1 data2 data3 data4 data5 data6 data7 ]
+"67
+[u S1537 `S1538 1 `uc -> 14 `i ]
+[n S1537 . frame array ]
 "69 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "29260 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f45k80.h
@@ -14,6 +20,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1091 . . ]
 "29269
 [v _CIOCONbits `VS1091 ~T0 @X0 0 e@3952 ]
+"27722
+[s S1034 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1034 . FILHIT0 JTOFF_FILHIT1 RB0DBEN_FILHIT2 RXRTRRO_FILHIT3 FILHIT4 RXM0_RTRRO RXM1 RXFUL ]
+"27732
+[s S1035 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1035 . . JTOFF RB0DBEN RXRTRRO . RTRRO ]
+"27740
+[s S1036 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1036 . . FILHIT1 FILHIT2 FILHIT3 . RXM0 ]
+"27748
+[s S1037 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1037 . RXB0FILHIT0 RXB0FILHIT1 RXB0FILHIT2 RXB0FILHIT3 RXB0FILHIT4 RXB0M0 RXB0M1 RXB0FUL ]
+"27758
+[s S1038 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1038 . . RXB0RTRR0 . RXB0RTRRO ]
+"27721
+[u S1033 `S1034 1 `S1035 1 `S1036 1 `S1037 1 `S1038 1 ]
+[n S1033 . . . . . . ]
+"27765
+[v _RXB0CONbits `VS1033 ~T0 @X0 0 e@3936 ]
 "31273
 [s S1181 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S1181 . TRISD0 TRISD1 TRISD2 TRISD3 TRISD4 TRISD5 TRISD6 TRISD7 ]
@@ -22,6 +48,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1180 . . ]
 "31284
 [v _TRISDbits `VS1180 ~T0 @X0 0 e@3989 ]
+"31211
+[s S1179 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1179 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"31210
+[u S1178 `S1179 1 ]
+[n S1178 . . ]
+"31222
+[v _TRISCbits `VS1178 ~T0 @X0 0 e@3988 ]
+"30710
+[s S1162 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1162 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+"30720
+[s S1163 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1163 . LC0 LC1 LC2 LC3 LC4 LC5 LC6 LC7 ]
+"30709
+[u S1161 `S1162 1 `S1163 1 ]
+[n S1161 . . . ]
+"30731
+[v _LATCbits `VS1161 ~T0 @X0 0 e@3979 ]
 "27078
 [s S1013 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S1013 . ANSEL0 ANSEL1 ANSEL2 ANSEL3 ANSEL4 ANSEL5 ANSEL6 ANSEL7 ]
@@ -102,8 +147,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v F15190 `(v ~T0 @X0 1 tf ]
 "314 Gue/FT800.h
 [v _FT800_Init `TF15190 ~T0 @X0 0 e ]
-"284
-[v _wr32 `(v ~T0 @X0 0 ef2`um`ul ]
 "30822 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f45k80.h
 [s S1165 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S1165 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
@@ -115,6 +158,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1164 . . . ]
 "30843
 [v _LATDbits `VS1164 ~T0 @X0 0 e@3980 ]
+"184 mcc_generated_files/ecan.h
+[v _CAN_receive `(uc ~T0 @X0 0 ef1`*S1537 ]
+"160
+[v _CAN_transmit `(uc ~T0 @X0 0 ef1`*S1537 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -13701,8 +13748,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 164: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 166: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 168: extern __nonreentrant void _delay3(unsigned char);
-[; ;pin_manager.h: 158: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 170: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 169: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 181: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 38: typedef signed long int int32_t;
@@ -13726,6 +13773,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 222: typedef int16_t intptr_t;
 [; ;stdint.h: 227: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stddef.h: 6: typedef int ptrdiff_t;
+[; ;spi.h: 116: void SPI_Initialize(void);
+[; ;spi.h: 151: uint8_t SPI_Exchange8bit(uint8_t data);
+[; ;spi.h: 191: uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
+[; ;spi.h: 214: bool SPI_IsBufferFull(void);
+[; ;spi.h: 239: bool SPI_HasWriteCollisionOccured(void);
+[; ;spi.h: 263: void SPI_ClearWriteCollisionStatus(void);
 [; ;ecan.h: 67: typedef union {
 [; ;ecan.h: 69: struct {
 [; ;ecan.h: 70: unsigned char idType;
@@ -13750,14 +13805,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ecan.h: 230: unsigned char CAN_isBusOff(void);
 [; ;ecan.h: 254: unsigned char CAN_isRXErrorPassive(void);
 [; ;ecan.h: 278: unsigned char CAN_isTXErrorPassive(void);
-[; ;__size_t.h: 4: typedef unsigned size_t;
-[; ;stddef.h: 6: typedef int ptrdiff_t;
-[; ;spi.h: 116: void SPI_Initialize(void);
-[; ;spi.h: 151: uint8_t SPI_Exchange8bit(uint8_t data);
-[; ;spi.h: 191: uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
-[; ;spi.h: 214: bool SPI_IsBufferFull(void);
-[; ;spi.h: 239: bool SPI_HasWriteCollisionOccured(void);
-[; ;spi.h: 263: void SPI_ClearWriteCollisionStatus(void);
 [; ;mcc.h: 69: void SYSTEM_Initialize(void);
 [; ;mcc.h: 82: void OSCILLATOR_Initialize(void);
 [; ;FT_DataTypes.h: 8: typedef unsigned char ft_uint8_t;
@@ -13814,143 +13861,204 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 19: {
 [e :U _main ]
 [f ]
-[; ;main.c: 21: SYSTEM_Initialize();
-"21
-[e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 22: CIOCONbits.CLKSEL = 1;
+"20
+[v _test `S1537 ~T0 @X0 1 a ]
+[; ;main.c: 20: uCAN_MSG test;
+[; ;main.c: 22: SYSTEM_Initialize();
 "22
-[e = . . _CIOCONbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 23: CIOCONbits.ENDRHI = 1;
+[e ( _SYSTEM_Initialize ..  ]
+[; ;main.c: 23: CIOCONbits.CLKSEL = 1;
 "23
-[e = . . _CIOCONbits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 24: CIOCONbits.TX2SRC = 0;
+[e = . . _CIOCONbits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 24: CIOCONbits.ENDRHI = 1;
 "24
-[e = . . _CIOCONbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 25: CIOCONbits.TX2EN = 1;
+[e = . . _CIOCONbits 0 3 -> -> 1 `i `uc ]
+[; ;main.c: 25: CIOCONbits.TX2SRC = 0;
 "25
+[e = . . _CIOCONbits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 26: CIOCONbits.TX2EN = 1;
+"26
 [e = . . _CIOCONbits 0 4 -> -> 1 `i `uc ]
-[; ;main.c: 27: do { TRISDbits.TRISD0 = 0; } while(0);
-"27
+[; ;main.c: 28: RXB0CONbits.RXM0 = 1;
+"28
+[e = . . _RXB0CONbits 2 5 -> -> 1 `i `uc ]
+[; ;main.c: 29: RXB0CONbits.RXM1 = 0;
+"29
+[e = . . _RXB0CONbits 0 6 -> -> 0 `i `uc ]
+[; ;main.c: 30: RXB0CONbits.RB0DBEN = 0;
+"30
+[e = . . _RXB0CONbits 1 2 -> -> 0 `i `uc ]
+[; ;main.c: 31: RXB0CONbits.FILHIT0 = 0;
+"31
+[e = . . _RXB0CONbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 34: do { TRISDbits.TRISD0 = 0; } while(0);
+"34
 [e :U 1544 ]
 {
 [e = . . _TRISDbits 0 0 -> -> 0 `i `uc ]
 }
 [e :U 1543 ]
-[; ;main.c: 29: do { ANCON0bits.ANSEL1 = 0; } while(0);
-"29
+[; ;main.c: 37: do { TRISCbits.TRISC0 = 0; } while(0);
+"37
 [e :U 1547 ]
+{
+[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
+}
+[e :U 1546 ]
+[; ;main.c: 38: do { LATCbits.LATC0 = 0; } while(0);
+"38
+[e :U 1550 ]
+{
+[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+}
+[e :U 1549 ]
+[; ;main.c: 40: do { ANCON0bits.ANSEL1 = 0; } while(0);
+"40
+[e :U 1553 ]
 {
 [e = . . _ANCON0bits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 1546 ]
-[; ;main.c: 30: do { ANCON0bits.ANSEL2 = 0; } while(0);
-"30
-[e :U 1550 ]
+[e :U 1552 ]
+[; ;main.c: 41: do { ANCON0bits.ANSEL2 = 0; } while(0);
+"41
+[e :U 1556 ]
 {
 [e = . . _ANCON0bits 0 2 -> -> 0 `i `uc ]
 }
-[e :U 1549 ]
-[; ;main.c: 31: do { TRISAbits.TRISA1 = 0; } while(0);
-"31
-[e :U 1553 ]
+[e :U 1555 ]
+[; ;main.c: 42: do { TRISAbits.TRISA1 = 0; } while(0);
+"42
+[e :U 1559 ]
 {
 [e = . . _TRISAbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 1552 ]
-[; ;main.c: 32: do { TRISAbits.TRISA2 = 0; } while(0);
-"32
-[e :U 1556 ]
+[e :U 1558 ]
+[; ;main.c: 43: do { TRISAbits.TRISA2 = 0; } while(0);
+"43
+[e :U 1562 ]
 {
 [e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
 }
-[e :U 1555 ]
-[; ;main.c: 34: TRISC5 = 0;
-"34
+[e :U 1561 ]
+[; ;main.c: 45: TRISC5 = 0;
+"45
 [e = _TRISC5 -> -> 0 `i `b ]
-[; ;main.c: 35: TRISC3 = 0;
-"35
-[e = _TRISC3 -> -> 0 `i `b ]
-[; ;main.c: 36: TRISA5 = 1;
-"36
-[e = _TRISA5 -> -> 1 `i `b ]
-[; ;main.c: 38: SSPSTATbits.SMP = 0;
-"38
-[e = . . _SSPSTATbits 2 7 -> -> 0 `i `uc ]
-[; ;main.c: 39: SSPSTATbits.CKE = 1;
-"39
-[e = . . _SSPSTATbits 2 6 -> -> 1 `i `uc ]
-[; ;main.c: 40: SSPCON1bits.SSPEN = 1;
-"40
-[e = . . _SSPCON1bits 0 2 -> -> 1 `i `uc ]
-[; ;main.c: 41: SSPCON1bits.CKP = 1;
-"41
-[e = . . _SSPCON1bits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 42: SSPCON1bits.SSPM = 0b0000;
-"42
-[e = . . _SSPCON1bits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 44: FT800_Init();
-"44
-[e ( _FT800_Init ..  ]
-[; ;main.c: 46: wr32(1048576UL + 0, ((38UL<<24)|(((1)&1UL)<<2)|(((1)&1UL)<<1)|(((1)&1UL)<<0)));
+[; ;main.c: 46: TRISC3 = 0;
 "46
-[e ( _wr32 (2 , -> + -> 1048576 `ul -> -> -> 0 `i `l `ul `um | | | << -> 38 `ul -> 24 `i << & -> -> -> 1 `i `l `ul -> 1 `ul -> 2 `i << & -> -> -> 1 `i `l `ul -> 1 `ul -> 1 `i << & -> -> -> 1 `i `l `ul -> 1 `ul -> 0 `i ]
-[; ;main.c: 47: wr32(1048576UL + 4, ((31UL<<24)|(((1UL)&15UL)<<0)));
+[e = _TRISC3 -> -> 0 `i `b ]
+[; ;main.c: 47: TRISA5 = 1;
 "47
-[e ( _wr32 (2 , -> + -> 1048576 `ul -> -> -> 4 `i `l `ul `um | << -> 31 `ul -> 24 `i << & -> 1 `ul -> 15 `ul -> 0 `i ]
-[; ;main.c: 48: wr32(1048576UL + 8, ((2UL<<30)|(((220)&511UL)<<21)|(((110)&511UL)<<12)|(((31)&31UL)<<7)|((('F')&127UL)<<0)));
-"48
-[e ( _wr32 (2 , -> + -> 1048576 `ul -> -> -> 8 `i `l `ul `um | | | | << -> 2 `ul -> 30 `i << & -> -> -> 220 `i `l `ul -> 511 `ul -> 21 `i << & -> -> -> 110 `i `l `ul -> 511 `ul -> 12 `i << & -> -> -> 31 `i `l `ul -> 31 `ul -> 7 `i << & -> -> 70 `ui `ul -> 127 `ul -> 0 `i ]
-[; ;main.c: 49: wr32(1048576UL + 12, ((2UL<<30)|(((244)&511UL)<<21)|(((110)&511UL)<<12)|(((31)&31UL)<<7)|((('T')&127UL)<<0)));
+[e = _TRISA5 -> -> 1 `i `b ]
+[; ;main.c: 49: SSPSTATbits.SMP = 0;
 "49
-[e ( _wr32 (2 , -> + -> 1048576 `ul -> -> -> 12 `i `l `ul `um | | | | << -> 2 `ul -> 30 `i << & -> -> -> 244 `i `l `ul -> 511 `ul -> 21 `i << & -> -> -> 110 `i `l `ul -> 511 `ul -> 12 `i << & -> -> -> 31 `i `l `ul -> 31 `ul -> 7 `i << & -> -> 84 `ui `ul -> 127 `ul -> 0 `i ]
-[; ;main.c: 50: wr32(1048576UL + 16, ((2UL<<30)|(((270)&511UL)<<21)|(((110)&511UL)<<12)|(((31)&31UL)<<7)|((('D')&127UL)<<0)));
+[e = . . _SSPSTATbits 2 7 -> -> 0 `i `uc ]
+[; ;main.c: 50: SSPSTATbits.CKE = 1;
 "50
-[e ( _wr32 (2 , -> + -> 1048576 `ul -> -> -> 16 `i `l `ul `um | | | | << -> 2 `ul -> 30 `i << & -> -> -> 270 `i `l `ul -> 511 `ul -> 21 `i << & -> -> -> 110 `i `l `ul -> 511 `ul -> 12 `i << & -> -> -> 31 `i `l `ul -> 31 `ul -> 7 `i << & -> -> 68 `ui `ul -> 127 `ul -> 0 `i ]
-[; ;main.c: 51: wr32(1048576UL + 20, ((2UL<<30)|(((299)&511UL)<<21)|(((110)&511UL)<<12)|(((31)&31UL)<<7)|((('I')&127UL)<<0)));
+[e = . . _SSPSTATbits 2 6 -> -> 1 `i `uc ]
+[; ;main.c: 51: SSPCON1bits.SSPEN = 1;
 "51
-[e ( _wr32 (2 , -> + -> 1048576 `ul -> -> -> 20 `i `l `ul `um | | | | << -> 2 `ul -> 30 `i << & -> -> -> 299 `i `l `ul -> 511 `ul -> 21 `i << & -> -> -> 110 `i `l `ul -> 511 `ul -> 12 `i << & -> -> -> 31 `i `l `ul -> 31 `ul -> 7 `i << & -> -> 73 `ui `ul -> 127 `ul -> 0 `i ]
-[; ;main.c: 52: wr32(1048576UL + 24, ((33UL<<24)));
+[e = . . _SSPCON1bits 0 2 -> -> 1 `i `uc ]
+[; ;main.c: 52: SSPCON1bits.CKP = 1;
 "52
-[e ( _wr32 (2 , -> + -> 1048576 `ul -> -> -> 24 `i `l `ul `um << -> 33 `ul -> 24 `i ]
-[; ;main.c: 53: wr32(1048576UL + 28, ((4UL<<24)|(((160)&255UL)<<16)|(((22)&255UL)<<8)|(((22)&255UL)<<0)));
+[e = . . _SSPCON1bits 0 1 -> -> 1 `i `uc ]
+[; ;main.c: 53: SSPCON1bits.SSPM = 0b0000;
 "53
-[e ( _wr32 (2 , -> + -> 1048576 `ul -> -> -> 28 `i `l `ul `um | | | << -> 4 `ul -> 24 `i << & -> -> -> 160 `i `l `ul -> 255 `ul -> 16 `i << & -> -> -> 22 `i `l `ul -> 255 `ul -> 8 `i << & -> -> -> 22 `i `l `ul -> 255 `ul -> 0 `i ]
-[; ;main.c: 54: wr32(1048576UL + 32, ((13UL<<24)|(((320)&8191UL)<<0)));
-"54
-[e ( _wr32 (2 , -> + -> 1048576 `ul -> -> -> 32 `i `l `ul `um | << -> 13 `ul -> 24 `i << & -> -> -> 320 `i `l `ul -> 8191 `ul -> 0 `i ]
-[; ;main.c: 55: wr32(1048576UL + 36, ((31UL<<24)|(((2UL)&15UL)<<0)));
+[e = . . _SSPCON1bits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 55: FT800_Init();
 "55
-[e ( _wr32 (2 , -> + -> 1048576 `ul -> -> -> 36 `i `l `ul `um | << -> 31 `ul -> 24 `i << & -> 2 `ul -> 15 `ul -> 0 `i ]
-[; ;main.c: 56: wr32(1048576UL + 40, ((2UL<<30)|(((192)&511UL)<<21)|(((133)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
-"56
-[e ( _wr32 (2 , -> + -> 1048576 `ul -> -> -> 40 `i `l `ul `um | | | | << -> 2 `ul -> 30 `i << & -> -> -> 192 `i `l `ul -> 511 `ul -> 21 `i << & -> -> -> 133 `i `l `ul -> 511 `ul -> 12 `i << & -> -> -> 0 `i `l `ul -> 31 `ul -> 7 `i << & -> -> -> 0 `i `l `ul -> 127 `ul -> 0 `i ]
-[; ;main.c: 57: wr32(1048576UL + 44, ((33UL<<24)));
-"57
-[e ( _wr32 (2 , -> + -> 1048576 `ul -> -> -> 44 `i `l `ul `um << -> 33 `ul -> 24 `i ]
-[; ;main.c: 58: wr32(1048576UL + 48, ((0UL<<24)));
+[e ( _FT800_Init ..  ]
+[; ;main.c: 58: do { LATDbits.LATD0 = 1; } while(0);
 "58
-[e ( _wr32 (2 , -> + -> 1048576 `ul -> -> -> 48 `i `l `ul `um << -> 0 `ul -> 24 `i ]
-[; ;main.c: 79: do { LATDbits.LATD0 = 0; } while(0);
-"79
-[e :U 1559 ]
+[e :U 1565 ]
+{
+[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
+}
+[e :U 1564 ]
+[; ;main.c: 60: while (1)
+"60
+[e :U 1567 ]
+[; ;main.c: 61: {
+"61
+{
+"62
+[v _data0 `i ~T0 @X0 1 a ]
+[; ;main.c: 62: int data0 = 222;
+[e = _data0 -> 222 `i ]
+"63
+[v _data1 `i ~T0 @X0 1 a ]
+[; ;main.c: 63: int data1 = 222;
+[e = _data1 -> 222 `i ]
+[; ;main.c: 64: if(CAN_receive(&test)) {
+"64
+[e $ ! != -> ( _CAN_receive (1 &U _test `i -> -> -> 0 `i `uc `i 1569  ]
+{
+[; ;main.c: 65: if(test.frame.id == 0x640) {
+"65
+[e $ ! == . . _test 0 1 -> -> -> 1600 `i `l `ul 1570  ]
+{
+[; ;main.c: 66: data0 = test.frame.data0;
+"66
+[e = _data0 -> . . _test 0 3 `i ]
+[; ;main.c: 67: data1 = test.frame.data1;
+"67
+[e = _data1 -> . . _test 0 4 `i ]
+[; ;main.c: 68: do { LATDbits.LATD0 = 0; } while(0);
+"68
+[e :U 1573 ]
 {
 [e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
 }
-[e :U 1558 ]
-[; ;main.c: 81: while (1)
-"81
-[e :U 1561 ]
-[; ;main.c: 82: {
-"82
-{
-"109
+[e :U 1572 ]
+[; ;main.c: 69: _delay((unsigned long)((20)*(16000000/4000.0)));
+"69
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"70
 }
-[e :U 1560 ]
+[e :U 1570 ]
+"71
+}
+[; ;main.c: 70: }
+[; ;main.c: 71: } else {
+[e $U 1574  ]
+[e :U 1569 ]
+{
+[; ;main.c: 72: do { LATDbits.LATD0 = 1; } while(0);
+"72
+[e :U 1577 ]
+{
+[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
+}
+[e :U 1576 ]
+"73
+}
+[e :U 1574 ]
+[; ;main.c: 73: }
+[; ;main.c: 75: test.frame.idType=1;
+"75
+[e = . . _test 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 76: test.frame.id=0x120;
+"76
+[e = . . _test 0 1 -> -> -> 288 `i `l `ul ]
+[; ;main.c: 77: test.frame.dlc=8;
+"77
+[e = . . _test 0 2 -> -> 8 `i `uc ]
+[; ;main.c: 78: test.frame.data0= data0;
+"78
+[e = . . _test 0 3 -> _data0 `uc ]
+[; ;main.c: 79: test.frame.data1= data1;
+"79
+[e = . . _test 0 4 -> _data1 `uc ]
+[; ;main.c: 81: CAN_transmit(&test);
 "81
-[e $U 1561  ]
-[e :U 1562 ]
-[; ;main.c: 109: }
-[; ;main.c: 110: }
-"110
+[e ( _CAN_transmit (1 &U _test ]
+"83
+}
+[e :U 1566 ]
+"60
+[e $U 1567  ]
+[e :U 1568 ]
+[; ;main.c: 83: }
+[; ;main.c: 84: }
+"84
 [e :UE 1541 ]
 }

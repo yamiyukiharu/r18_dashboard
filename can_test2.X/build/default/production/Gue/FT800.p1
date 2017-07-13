@@ -13625,8 +13625,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;FT_Gpu.h: 311: ft_uint32_t FontHeightInPixels;
 [; ;FT_Gpu.h: 313: ft_uint32_t PointerToFontGraphicsData;
 [; ;FT_Gpu.h: 314: }FT_Gpu_Fonts_t;
-[; ;pin_manager.h: 158: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 170: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 169: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 181: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 38: typedef signed long int int32_t;
@@ -13650,6 +13650,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 222: typedef int16_t intptr_t;
 [; ;stdint.h: 227: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stddef.h: 6: typedef int ptrdiff_t;
+[; ;spi.h: 116: void SPI_Initialize(void);
+[; ;spi.h: 151: uint8_t SPI_Exchange8bit(uint8_t data);
+[; ;spi.h: 191: uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
+[; ;spi.h: 214: bool SPI_IsBufferFull(void);
+[; ;spi.h: 239: bool SPI_HasWriteCollisionOccured(void);
+[; ;spi.h: 263: void SPI_ClearWriteCollisionStatus(void);
 [; ;ecan.h: 67: typedef union {
 [; ;ecan.h: 69: struct {
 [; ;ecan.h: 70: unsigned char idType;
@@ -13674,14 +13682,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ecan.h: 230: unsigned char CAN_isBusOff(void);
 [; ;ecan.h: 254: unsigned char CAN_isRXErrorPassive(void);
 [; ;ecan.h: 278: unsigned char CAN_isTXErrorPassive(void);
-[; ;__size_t.h: 4: typedef unsigned size_t;
-[; ;stddef.h: 6: typedef int ptrdiff_t;
-[; ;spi.h: 116: void SPI_Initialize(void);
-[; ;spi.h: 151: uint8_t SPI_Exchange8bit(uint8_t data);
-[; ;spi.h: 191: uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
-[; ;spi.h: 214: bool SPI_IsBufferFull(void);
-[; ;spi.h: 239: bool SPI_HasWriteCollisionOccured(void);
-[; ;spi.h: 263: void SPI_ClearWriteCollisionStatus(void);
 [; ;mcc.h: 69: void SYSTEM_Initialize(void);
 [; ;mcc.h: 82: void OSCILLATOR_Initialize(void);
 [; ;FT800.h: 21: extern unsigned short dli;
@@ -14166,9 +14166,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;FT800.c: 166: wr8(1057888UL, 0x0000);
 "166
 [e ( _wr8 (2 , -> -> 1057888 `ul `um -> -> 0 `i `uc ]
-[; ;FT800.c: 169: wr8(1057896UL, 1);
+[; ;FT800.c: 169: wr8(1057896UL, 0);
 "169
-[e ( _wr8 (2 , -> -> 1057896 `ul `um -> -> 1 `i `uc ]
+[e ( _wr8 (2 , -> -> 1057896 `ul `um -> -> 0 `i `uc ]
 [; ;FT800.c: 171: wr8(1057876UL, 0);
 "171
 [e ( _wr8 (2 , -> -> 1057876 `ul `um -> -> 0 `i `uc ]

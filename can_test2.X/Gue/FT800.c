@@ -166,7 +166,7 @@ inline void FT800_Init(){
     wr8(REG_SWIZZLE, 0x0000); // output swizzle
 
     //wr8(REG_RENDERMODE, 0); // 0 normal, 1 write, 2 read
-    wr8(REG_PCLK_POL, 1); // clock polarity: 0 - rising edge, 1 - falling edge
+    wr8(REG_PCLK_POL, 0); // clock polarity: 0 - rising edge, 1 - falling edge
     //wr32(REG_FREQUENCY, 48000000); // main clock frequency
     wr8(REG_ROTATE, 0); // rotate display 180 degrees: 1 - rotate enable, 0 - rotate disable
 

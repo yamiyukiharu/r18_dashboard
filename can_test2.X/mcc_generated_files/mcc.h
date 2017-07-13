@@ -49,8 +49,8 @@
 #include "pin_manager.h"
 #include <stdint.h>
 #include <stdbool.h>
-#include "ecan.h"
 #include "spi.h"
+#include "ecan.h"
 
 #define _XTAL_FREQ  16000000
 

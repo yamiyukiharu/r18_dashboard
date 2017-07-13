@@ -17991,27 +17991,27 @@ while (0x80 != (CANSTAT & 0xE0));
 # 71
 ECANCON = 0x00;
 
-# 88
-RXM0EIDH = 0x00;
-RXM0EIDL = 0x00;
-RXM0SIDH = 0x00;
-RXM0SIDL = 0x00;
+# 86
+RXM0EIDH = 0xFF;
+RXM0EIDL = 0xFF;
+RXM0SIDH = 0xFF;
+RXM0SIDL = 0xFF;
 
 RXM1EIDH = 0xFF;
 RXM1EIDL = 0xFF;
 RXM1SIDH = 0xFF;
 RXM1SIDL = 0xFF;
 
-# 102
+# 100
 RXF0EIDH = 0x00;
 RXF0EIDL = 0x00;
-RXF0SIDH = 0x88;
-RXF0SIDL = 0x80;
+RXF0SIDH = 0xC8;
+RXF0SIDL = 0x00;
 
 RXF1EIDH = 0x00;
 RXF1EIDL = 0x00;
-RXF1SIDH = 0xCC;
-RXF1SIDL = 0xC0;
+RXF1SIDH = 0x00;
+RXF1SIDL = 0x00;
 
 RXF2EIDH = 0x00;
 RXF2EIDL = 0x00;
@@ -18033,7 +18033,7 @@ RXF5EIDL = 0x00;
 RXF5SIDH = 0x00;
 RXF5SIDL = 0x00;
 
-# 145
+# 143
 BRGCON1 = 0x00;
 BRGCON2 = 0x98;
 BRGCON3 = 0x01;
@@ -18044,7 +18044,7 @@ while (0x00 != (CANSTAT & 0xE0));
 
 }
 
-# 158
+# 156
 void CAN_sleep(void) {
 
 PIR5bits.WAKIF = 0;
@@ -18214,7 +18214,7 @@ return (messageCount);
 unsigned char CAN_isBusOff(void) {
 unsigned char returnValue = 0;
 
-# 331
+# 329
 if (COMSTATbits.TXBO == 1) {
 returnValue = 1;
 }
@@ -18224,7 +18224,7 @@ return (returnValue);
 unsigned char CAN_isRXErrorPassive(void) {
 unsigned char returnValue = 0;
 
-# 344
+# 342
 if (COMSTATbits.RXBP == 1) {
 returnValue = 1;
 }
@@ -18234,14 +18234,14 @@ return (returnValue);
 unsigned char CAN_isTXErrorPassive(void) {
 unsigned char returnValue = 0;
 
-# 357
+# 355
 if (COMSTATbits.TXBP == 1) {
 returnValue = 1;
 }
 return (returnValue);
 }
 
-# 368
+# 366
 unsigned long convertReg2ExtendedCANid(unsigned char tempRXBn_EIDH, unsigned char tempRXBn_EIDL, unsigned char tempRXBn_SIDH, unsigned char tempRXBn_SIDL) {
 unsigned long returnValue = 0;
 unsigned long ConvertedID = 0;
