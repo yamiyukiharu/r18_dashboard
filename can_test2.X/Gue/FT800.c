@@ -175,7 +175,7 @@ inline void FT800_Init(){
     LATAbits.LATA4 = 0;*/
 
     // write first display list
-    wr32(RAM_DL+0,CLEAR_COLOR_RGB(255,255,0));
+    wr32(RAM_DL+0,CLEAR_COLOR_RGB(100,0,0));
     wr32(RAM_DL+4,CLEAR(1,1,1));
     wr32(RAM_DL+8,DISPLAY());
 

@@ -67,8 +67,8 @@ void SPI_Initialize(void)
     // SMP Middle; CKE Idle to Active; 
     SSPSTAT = 0x00;
     
-    // SSPEN enabled; WCOL no_collision; CKP Idle:Low, Active:High; SSPM FOSC/16; SSPOV no_overflow; 
-    SSPCON1 = 0x21;
+    // SSPEN enabled; WCOL no_collision; CKP Idle:Low, Active:High; SSPM FOSC/4; SSPOV no_overflow; 
+    SSPCON1 = 0x20;
     
     // SSPADD 0; 
     SSPADD = 0x00;

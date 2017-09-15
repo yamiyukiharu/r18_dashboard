@@ -17857,45 +17857,98 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 169 "mcc_generated_files/pin_manager.h"
+# 221 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 181
+# 233
 void PIN_MANAGER_IOC(void);
+
+# 246
+void IOCB4_ISR(void);
+
+# 269
+void IOCB4_SetInterruptHandler(void* InterruptHandler);
+
+# 293
+extern void (*IOCB4_InterruptHandler)(void);
+
+# 317
+void IOCB4_DefaultInterruptHandler(void);
 
 # 12 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdbool.h"
 typedef unsigned char bool;
 
 # 51 "mcc_generated_files/pin_manager.c"
+void (*IOCB4_InterruptHandler)(void);
+
 void PIN_MANAGER_Initialize(void)
 {
 
-# 56
+# 58
 LATE = 0x00;
 LATD = 0x00;
 LATA = 0x07;
 LATB = 0x00;
 LATC = 0x00;
 
-# 65
+# 67
 TRISE = 0x07;
-TRISA = 0xE9;
+TRISA = 0xED;
 TRISB = 0xFB;
-TRISC = 0xD6;
-TRISD = 0xFE;
+TRISC = 0x95;
+TRISD = 0xBC;
 
-# 74
+# 76
 ANCON0 = 0xF8;
-ANCON1 = 0x77;
+ANCON1 = 0x65;
 
-# 80
+# 82
 WPUB = 0xFF;
 
-# 87
+# 90
+IOCBbits.IOCB4 = 1;
+
+
+IOCB4_SetInterruptHandler(IOCB4_DefaultInterruptHandler);
+
+
+INTCONbits.RBIE = 1;
+
 }
 
 void PIN_MANAGER_IOC(void)
 {
+
+if(IOCBbits.IOCB4 == 1)
+{
+IOCB4_ISR();
+}
+
+
+INTCONbits.RBIF = 0;
+
+}
+
+# 116
+void IOCB4_ISR(void) {
+
+
+
+
+if(IOCB4_InterruptHandler)
+{
+IOCB4_InterruptHandler();
+}
+}
+
+# 130
+void IOCB4_SetInterruptHandler(void* InterruptHandler){
+IOCB4_InterruptHandler = InterruptHandler;
+}
+
+# 137
+void IOCB4_DefaultInterruptHandler(void){
+
 
 }
 

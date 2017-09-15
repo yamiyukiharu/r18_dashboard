@@ -13687,9 +13687,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;spi.c: 68: SSPSTAT = 0x00;
 "68
 [e = _SSPSTAT -> -> 0 `i `uc ]
-[; ;spi.c: 71: SSPCON1 = 0x21;
+[; ;spi.c: 71: SSPCON1 = 0x20;
 "71
-[e = _SSPCON1 -> -> 33 `i `uc ]
+[e = _SSPCON1 -> -> 32 `i `uc ]
 [; ;spi.c: 74: SSPADD = 0x00;
 "74
 [e = _SSPADD -> -> 0 `i `uc ]

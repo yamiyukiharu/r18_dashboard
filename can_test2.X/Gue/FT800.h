@@ -12,8 +12,8 @@
 #include "FT_Gpu.h"
 #include "../mcc_generated_files/mcc.h"
 
-#define PIN_CS CS_LAT
-#define PIN_PD PD_LAT
+#define PIN_CS LCD_CS_LAT
+#define PIN_PD LCD_PD_LAT
 
 #define FT800_StartTransmission() PIN_CS = 0
 #define FT800_StopTransmission() PIN_CS = 1

@@ -1,21 +1,21 @@
 /**
-  @Generated MPLAB(c) Code Configurator Header File
+  EUSART2 Generated Driver File
 
-  @Company:
+  @Company
     Microchip Technology Inc.
 
-  @File Name:
-    mcc.h
+  @File Name
+    eusart2.c
 
-  @Summary:
-    This is the mcc.h file generated using MPLAB(c) Code Configurator
+  @Summary
+    This is the generated driver implementation file for the EUSART2 driver using MPLAB(c) Code Configurator
 
-  @Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
+  @Description
+    This header file provides implementations for driver APIs for EUSART2.
     Generation Information :
         Product Revision  :  MPLAB(c) Code Configurator - 4.15.3
         Device            :  PIC18F45K80
-        Version           :  1.02
+        Driver Version    :  2.00
     The generated drivers are tested against the following:
         Compiler          :  XC8 1.35
         MPLAB             :  MPLAB X 3.40
@@ -43,50 +43,64 @@
     TERMS.
 */
 
-#ifndef MCC_H
-#define	MCC_H
-#include <xc.h>
-#include "pin_manager.h"
-#include <stdint.h>
-#include <stdbool.h>
-#include "interrupt_manager.h"
-#include "ecan.h"
-#include "spi.h"
-#include "eusart1.h"
+/**
+  Section: Included Files
+*/
 #include "eusart2.h"
 
-#define _XTAL_FREQ  16000000
-
-
 /**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the device to the default states configured in the
- *                  MCC GUI
- * @Example
-    SYSTEM_Initialize(void);
- */
-void SYSTEM_Initialize(void);
+  Section: EUSART2 APIs
+*/
 
+void EUSART2_Initialize(void)
+{
+    // Set the EUSART2 module to the options selected in the user interface.
+
+    // ABDOVF no_overflow; TXCKP async_noninverted_sync_fallingedge; BRG16 16bit_generator; WUE disabled; ABDEN disabled; RXDTP not_inverted; 
+    BAUDCON2 = 0x08;
+
+    // SPEN enabled; RX9 8-bit; CREN enabled; ADDEN disabled; SREN disabled; 
+    RCSTA2 = 0x90;
+
+    // TRMT TSR_empty; TX9 8-bit; TX9D 0; SENDB sync_break_complete; TXEN enabled; SYNC asynchronous; BRGH hi_speed; CSRC slave_mode; 
+    TXSTA2 = 0x26;
+
+    // Baud Rate = 115200; 
+    SPBRG2 = 0x22;
+
+    // Baud Rate = 115200; 
+    SPBRGH2 = 0x00;
+
+}
+
+
+uint8_t EUSART2_Read(void)
+{
+
+    while(!PIR3bits.RC2IF)
+    {
+    }
+
+    
+    if(1 == RCSTA2bits.OERR)
+    {
+        // EUSART2 error - restart
+
+        RCSTA2bits.SPEN = 0; 
+        RCSTA2bits.SPEN = 1; 
+    }
+
+    return RCREG2;
+}
+
+void EUSART2_Write(uint8_t txData)
+{
+    while(0 == PIR3bits.TX2IF)
+    {
+    }
+
+    TXREG2 = txData;    // Write the data byte to the USART.
+}
 /**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the oscillator to the default states configured in the
- *                  MCC GUI
- * @Example
-    OSCILLATOR_Initialize(void);
- */
-void OSCILLATOR_Initialize(void);
-
-
-
-#endif	/* MCC_H */
-/**
- End of File
+  End of File
 */

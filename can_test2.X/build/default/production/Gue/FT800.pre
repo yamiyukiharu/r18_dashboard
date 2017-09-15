@@ -17888,11 +17888,23 @@ ft_uint32_t FontHeightInPixels;
 ft_uint32_t PointerToFontGraphicsData;
 }FT_Gpu_Fonts_t;
 
-# 169 "Gue/../mcc_generated_files/pin_manager.h"
+# 221 "Gue/../mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 181
+# 233
 void PIN_MANAGER_IOC(void);
+
+# 246
+void IOCB4_ISR(void);
+
+# 269
+void IOCB4_SetInterruptHandler(void* InterruptHandler);
+
+# 293
+extern void (*IOCB4_InterruptHandler)(void);
+
+# 317
+void IOCB4_DefaultInterruptHandler(void);
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdint.h"
 typedef signed char int8_t;
@@ -17969,29 +17981,11 @@ typedef uint16_t uintptr_t;
 # 12 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdbool.h"
 typedef unsigned char bool;
 
-# 4 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\__size_t.h"
-typedef unsigned size_t;
+# 110 "Gue/../mcc_generated_files/interrupt_manager.h"
+void interrupt INTERRUPT_InterruptManager(void);
 
-# 6 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stddef.h"
-typedef int ptrdiff_t;
-
-# 116 "Gue/../mcc_generated_files/spi.h"
-void SPI_Initialize(void);
-
-# 151
-uint8_t SPI_Exchange8bit(uint8_t data);
-
-# 191
-uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
-
-# 214
-bool SPI_IsBufferFull(void);
-
-# 239
-bool SPI_HasWriteCollisionOccured(void);
-
-# 263
-void SPI_ClearWriteCollisionStatus(void);
+# 122
+void INTERRUPT_Initialize (void);
 
 # 67 "Gue/../mcc_generated_files/ecan.h"
 typedef union {
@@ -18036,10 +18030,52 @@ unsigned char CAN_isRXErrorPassive(void);
 # 278
 unsigned char CAN_isTXErrorPassive(void);
 
-# 69 "Gue/../mcc_generated_files/mcc.h"
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\__size_t.h"
+typedef unsigned size_t;
+
+# 6 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stddef.h"
+typedef int ptrdiff_t;
+
+# 116 "Gue/../mcc_generated_files/spi.h"
+void SPI_Initialize(void);
+
+# 151
+uint8_t SPI_Exchange8bit(uint8_t data);
+
+# 191
+uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
+
+# 214
+bool SPI_IsBufferFull(void);
+
+# 239
+bool SPI_HasWriteCollisionOccured(void);
+
+# 263
+void SPI_ClearWriteCollisionStatus(void);
+
+# 94 "Gue/../mcc_generated_files/eusart1.h"
+void EUSART1_Initialize(void);
+
+# 114
+uint8_t EUSART1_Read(void);
+
+# 134
+void EUSART1_Write(uint8_t txData);
+
+# 94 "Gue/../mcc_generated_files/eusart2.h"
+void EUSART2_Initialize(void);
+
+# 114
+uint8_t EUSART2_Read(void);
+
+# 134
+void EUSART2_Write(uint8_t txData);
+
+# 72 "Gue/../mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
-# 82
+# 85
 void OSCILLATOR_Initialize(void);
 
 # 21 "Gue/FT800.h"
@@ -18119,43 +18155,43 @@ unsigned short dli;
 unsigned short cmd_offset = 0;
 
 void host_command(ft_uint8_t command){
-LATAbits.LATA1 = 0;
+LATDbits.LATD0 = 0;
 SPI_Exchange8bit(command);
 SPI_Exchange8bit(0);
 SPI_Exchange8bit(0);
-LATAbits.LATA1 = 1;
+LATDbits.LATD0 = 1;
 }
 
 void wr8(unsigned short long addr, ft_uint8_t value){
-LATAbits.LATA1 = 0;
+LATDbits.LATD0 = 0;
 SPI_Exchange8bit(0x80 | (addr >> 16));
 SPI_Exchange8bit(addr >> 8);
 SPI_Exchange8bit(addr);
 SPI_Exchange8bit(value);
-LATAbits.LATA1 = 1;
+LATDbits.LATD0 = 1;
 }
 
 void wr16(unsigned short long addr, ft_uint16_t value){
-LATAbits.LATA1 = 0;
+LATDbits.LATD0 = 0;
 SPI_Exchange8bit(0x80 | (addr >> 16));
 SPI_Exchange8bit(addr >> 8);
 SPI_Exchange8bit(addr);
 SPI_Exchange8bit((value) & 0xFF);SPI_Exchange8bit(((value) >> 8) & 0xFF);
-LATAbits.LATA1 = 1;
+LATDbits.LATD0 = 1;
 }
 
 void wr32(unsigned short long addr, ft_uint32_t value){
-LATAbits.LATA1 = 0;
+LATDbits.LATD0 = 0;
 SPI_Exchange8bit(0x80 | (addr >> 16));
 SPI_Exchange8bit(addr >> 8);
 SPI_Exchange8bit(addr);
 SPI_Exchange8bit(((value) & 0xFFFF) & 0xFF);SPI_Exchange8bit((((value) & 0xFFFF) >> 8) & 0xFF);SPI_Exchange8bit((((value) >> 16) & 0xFFFF) & 0xFF);SPI_Exchange8bit(((((value) >> 16) & 0xFFFF) >> 8) & 0xFF);
-LATAbits.LATA1 = 1;
+LATDbits.LATD0 = 1;
 }
 
 ft_uint8_t wr8s(unsigned short long addr, const ft_char8_t *s)
 {
-LATAbits.LATA1 = 0;
+LATDbits.LATD0 = 0;
 SPI_Exchange8bit(0x80 | (addr >> 16));
 SPI_Exchange8bit(addr >> 8);
 SPI_Exchange8bit(addr);
@@ -18167,23 +18203,23 @@ SPI_Exchange8bit(s[i]);
 for(;i%4>0;i++){
 SPI_Exchange8bit(0);
 }
-LATAbits.LATA1 = 1;
+LATDbits.LATD0 = 1;
 return i;
 }
 
 ft_uint8_t rd8(unsigned short long addr){
-LATAbits.LATA1 = 0;
+LATDbits.LATD0 = 0;
 SPI_Exchange8bit(addr >> 16);
 SPI_Exchange8bit(addr >> 8);
 SPI_Exchange8bit(addr);
 SPI_Exchange8bit(0);
 SPI_Exchange8bit(0);
-LATAbits.LATA1 = 1;
+LATDbits.LATD0 = 1;
 return SSPBUF;
 }
 
 ft_uint16_t rd16(unsigned short long addr){
-LATAbits.LATA1 = 0;
+LATDbits.LATD0 = 0;
 SPI_Exchange8bit(addr >> 16);
 SPI_Exchange8bit(addr >> 8);
 SPI_Exchange8bit(addr);
@@ -18191,12 +18227,12 @@ SPI_Exchange8bit(0);
 SPI_Exchange8bit(0);
 ft_uint8_t temp = SSPBUF;
 SPI_Exchange8bit(0);
-LATAbits.LATA1 = 1;
+LATDbits.LATD0 = 1;
 return ((ft_uint16_t)SSPBUF << 8) | temp;
 }
 
 ft_uint32_t rd32(unsigned short long addr){
-LATAbits.LATA1 = 0;
+LATDbits.LATD0 = 0;
 SPI_Exchange8bit(addr >> 16);
 SPI_Exchange8bit(addr >> 8);
 SPI_Exchange8bit(addr);
@@ -18208,7 +18244,7 @@ temp |= (ft_uint32_t)SSPBUF << 8;
 SPI_Exchange8bit(0);
 temp |= (ft_uint32_t)SSPBUF << 16;
 SPI_Exchange8bit(0);
-LATAbits.LATA1 = 1;
+LATDbits.LATD0 = 1;
 return ((ft_uint32_t)SSPBUF << 24) | temp;
 }
 
@@ -18224,9 +18260,9 @@ wr32(1081344UL + cmd_offset, command);cmd_incrementn(4);
 # 139
 inline void FT800_Init(){
 
-LATAbits.LATA2 = 0;
+LATCbits.LATC1 = 0;
 _delay((unsigned long)((20)*(16000000/4000.0)));
-LATAbits.LATA2 = 1;
+LATCbits.LATC1 = 1;
 _delay((unsigned long)((20)*(16000000/4000.0)));
 
 host_command(0x00);
@@ -18257,7 +18293,7 @@ wr8(1057896UL, 0);
 wr8(1057876UL, 0);
 
 # 178
-wr32(1048576UL+0,((2UL<<24)|(((255)&255UL)<<16)|(((255)&255UL)<<8)|(((0)&255UL)<<0)));
+wr32(1048576UL+0,((2UL<<24)|(((100)&255UL)<<16)|(((0)&255UL)<<8)|(((0)&255UL)<<0)));
 wr32(1048576UL+4,((38UL<<24)|(((1)&1UL)<<2)|(((1)&1UL)<<1)|(((1)&1UL)<<0)));
 wr32(1048576UL+8,((0UL<<24)));
 

@@ -1,5 +1,11 @@
 
-# 1 "main.c"
+# 1 "mcc_generated_files/interrupt_manager.c"
+
+# 110 "mcc_generated_files/interrupt_manager.h"
+void interrupt INTERRUPT_InterruptManager(void);
+
+# 122
+void INTERRUPT_Initialize (void);
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -17950,12 +17956,6 @@ typedef uint16_t uintptr_t;
 # 12 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdbool.h"
 typedef unsigned char bool;
 
-# 110 "mcc_generated_files/interrupt_manager.h"
-void interrupt INTERRUPT_InterruptManager(void);
-
-# 122
-void INTERRUPT_Initialize (void);
-
 # 67 "mcc_generated_files/ecan.h"
 typedef union {
 
@@ -18047,117 +18047,23 @@ void SYSTEM_Initialize(void);
 # 85
 void OSCILLATOR_Initialize(void);
 
-# 8 "Gue/FT_DataTypes.h"
-typedef unsigned char ft_uint8_t;
-typedef char ft_char8_t;
-typedef signed char ft_schar8_t;
-typedef unsigned char ft_uchar8_t;
-typedef int ft_int16_t;
-typedef unsigned int ft_uint16_t;
-typedef unsigned long ft_uint32_t;
-typedef long ft_int32_t;
-typedef void ft_void_t;
-
-typedef unsigned char ft_bool_t;
-
-# 299 "Gue/FT_Gpu.h"
-typedef struct FT_Gpu_Fonts
+# 51 "mcc_generated_files/interrupt_manager.c"
+void INTERRUPT_Initialize (void)
 {
 
-
-ft_uint8_t FontWidth[(128)];
-
-ft_uint32_t FontBitmapFormat;
-
-ft_uint32_t FontLineStride;
-
-ft_uint32_t FontWidthInPixels;
-
-ft_uint32_t FontHeightInPixels;
-
-ft_uint32_t PointerToFontGraphicsData;
-}FT_Gpu_Fonts_t;
-
-# 21 "Gue/FT800.h"
-extern unsigned short dli;
-
-# 31
-extern unsigned short cmd_offset;
-
-# 35
-void cmd_incrementn(unsigned char n);
-
-
-
-void cmd(ft_uint32_t command);
-
-# 269
-void host_command(ft_uint8_t command);
-
-# 274
-void wr8(unsigned short long addr, ft_uint8_t value);
-
-# 279
-void wr16(unsigned short long addr, ft_uint16_t value);
-
-# 284
-void wr32(unsigned short long addr, ft_uint32_t value);
-
-# 289
-ft_uint8_t rd8(unsigned short long addr);
-
-# 294
-ft_uint16_t rd16(unsigned short long addr);
-
-# 299
-ft_uint32_t rd32(unsigned short long addr);
-
-# 304
-ft_uint8_t wr8s(unsigned short long addr, const ft_char8_t *s);
-
-# 314
-inline void FT800_Init();
-
-# 14 "main.c"
-void wait3secs(){
-_delay((unsigned long)((3000)*(16000000/4000.0)));
+RCONbits.IPEN = 0;
 }
 
-void main(void)
+void interrupt INTERRUPT_InterruptManager (void)
 {
-uCAN_MSG test;
 
-SYSTEM_Initialize();
+if(INTCONbits.RBIE == 1 && INTCONbits.RBIF == 1)
+{
+PIN_MANAGER_IOC();
+}
+else
+{
 
-
-CIOCONbits.CLKSEL = 1;
-CIOCONbits.ENDRHI = 1;
-CIOCONbits.TX2SRC = 0;
-CIOCONbits.TX2EN = 1;
-RXB0CONbits.RXM0 = 1;
-RXB0CONbits.RXM1 = 0;
-RXB0CONbits.RB0DBEN = 0;
-RXB0CONbits.FILHIT0 = 0;
-
-
-SSPSTATbits.SMP = 0;
-SSPSTATbits.CKE = 1;
-SSPCON1bits.SSPEN = 1;
-SSPCON1bits.CKP = 1;
-SSPCON1bits.SSPM = 0b0000;
-FT800_Init();
-
-EUSART1_Initialize();
-
-# 151
-do { LATCbits.LATC1 = 0; } while(0);
-
-while (1) {
-do { LATAbits.LATA1 = 1; } while(0);
-_delay((unsigned long)((50)*(16000000/4000.0)));
-EUSART1_Write(0xAA);
-do { LATAbits.LATA1 = 0; } while(0);
-_delay((unsigned long)((50)*(16000000/4000.0)));
 }
 }
 

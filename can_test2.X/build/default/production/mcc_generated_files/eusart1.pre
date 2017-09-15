@@ -1,5 +1,5 @@
 
-# 1 "main.c"
+# 1 "mcc_generated_files/eusart1.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -17857,23 +17857,8 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 221 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-
-# 233
-void PIN_MANAGER_IOC(void);
-
-# 246
-void IOCB4_ISR(void);
-
-# 269
-void IOCB4_SetInterruptHandler(void* InterruptHandler);
-
-# 293
-extern void (*IOCB4_InterruptHandler)(void);
-
-# 317
-void IOCB4_DefaultInterruptHandler(void);
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdbool.h"
+typedef unsigned char bool;
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdint.h"
 typedef signed char int8_t;
@@ -17947,82 +17932,6 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdbool.h"
-typedef unsigned char bool;
-
-# 110 "mcc_generated_files/interrupt_manager.h"
-void interrupt INTERRUPT_InterruptManager(void);
-
-# 122
-void INTERRUPT_Initialize (void);
-
-# 67 "mcc_generated_files/ecan.h"
-typedef union {
-
-struct {
-unsigned char idType;
-unsigned long id;
-unsigned char dlc;
-unsigned char data0;
-unsigned char data1;
-unsigned char data2;
-unsigned char data3;
-unsigned char data4;
-unsigned char data5;
-unsigned char data6;
-unsigned char data7;
-} frame;
-unsigned char array[14];
-} uCAN_MSG;
-
-# 117
-void ECAN_Initialize(void);
-
-# 139
-void CAN_sleep(void);
-
-# 160
-unsigned char CAN_transmit(uCAN_MSG *tempCanMsg);
-
-# 184
-unsigned char CAN_receive(uCAN_MSG *tempCanMsg);
-
-# 206
-unsigned char CAN_messagesInBuffer(void);
-
-# 230
-unsigned char CAN_isBusOff(void);
-
-# 254
-unsigned char CAN_isRXErrorPassive(void);
-
-# 278
-unsigned char CAN_isTXErrorPassive(void);
-
-# 4 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\__size_t.h"
-typedef unsigned size_t;
-
-# 6 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stddef.h"
-typedef int ptrdiff_t;
-
-# 116 "mcc_generated_files/spi.h"
-void SPI_Initialize(void);
-
-# 151
-uint8_t SPI_Exchange8bit(uint8_t data);
-
-# 191
-uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
-
-# 214
-bool SPI_IsBufferFull(void);
-
-# 239
-bool SPI_HasWriteCollisionOccured(void);
-
-# 263
-void SPI_ClearWriteCollisionStatus(void);
-
 # 94 "mcc_generated_files/eusart1.h"
 void EUSART1_Initialize(void);
 
@@ -18032,132 +17941,54 @@ uint8_t EUSART1_Read(void);
 # 134
 void EUSART1_Write(uint8_t txData);
 
-# 94 "mcc_generated_files/eusart2.h"
-void EUSART2_Initialize(void);
-
-# 114
-uint8_t EUSART2_Read(void);
-
-# 134
-void EUSART2_Write(uint8_t txData);
-
-# 72 "mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-
-# 85
-void OSCILLATOR_Initialize(void);
-
-# 8 "Gue/FT_DataTypes.h"
-typedef unsigned char ft_uint8_t;
-typedef char ft_char8_t;
-typedef signed char ft_schar8_t;
-typedef unsigned char ft_uchar8_t;
-typedef int ft_int16_t;
-typedef unsigned int ft_uint16_t;
-typedef unsigned long ft_uint32_t;
-typedef long ft_int32_t;
-typedef void ft_void_t;
-
-typedef unsigned char ft_bool_t;
-
-# 299 "Gue/FT_Gpu.h"
-typedef struct FT_Gpu_Fonts
+# 55 "mcc_generated_files/eusart1.c"
+void EUSART1_Initialize(void)
 {
 
 
-ft_uint8_t FontWidth[(128)];
 
-ft_uint32_t FontBitmapFormat;
-
-ft_uint32_t FontLineStride;
-
-ft_uint32_t FontWidthInPixels;
-
-ft_uint32_t FontHeightInPixels;
-
-ft_uint32_t PointerToFontGraphicsData;
-}FT_Gpu_Fonts_t;
-
-# 21 "Gue/FT800.h"
-extern unsigned short dli;
-
-# 31
-extern unsigned short cmd_offset;
-
-# 35
-void cmd_incrementn(unsigned char n);
+BAUDCON1 = 0x08;
 
 
+RCSTA1 = 0x90;
 
-void cmd(ft_uint32_t command);
 
-# 269
-void host_command(ft_uint8_t command);
+TXSTA1 = 0x24;
 
-# 274
-void wr8(unsigned short long addr, ft_uint8_t value);
 
-# 279
-void wr16(unsigned short long addr, ft_uint16_t value);
+SPBRG1 = 0x22;
 
-# 284
-void wr32(unsigned short long addr, ft_uint32_t value);
 
-# 289
-ft_uint8_t rd8(unsigned short long addr);
+SPBRGH1 = 0x00;
 
-# 294
-ft_uint16_t rd16(unsigned short long addr);
-
-# 299
-ft_uint32_t rd32(unsigned short long addr);
-
-# 304
-ft_uint8_t wr8s(unsigned short long addr, const ft_char8_t *s);
-
-# 314
-inline void FT800_Init();
-
-# 14 "main.c"
-void wait3secs(){
-_delay((unsigned long)((3000)*(16000000/4000.0)));
 }
 
-void main(void)
+
+uint8_t EUSART1_Read(void)
 {
-uCAN_MSG test;
 
-SYSTEM_Initialize();
-
-
-CIOCONbits.CLKSEL = 1;
-CIOCONbits.ENDRHI = 1;
-CIOCONbits.TX2SRC = 0;
-CIOCONbits.TX2EN = 1;
-RXB0CONbits.RXM0 = 1;
-RXB0CONbits.RXM1 = 0;
-RXB0CONbits.RB0DBEN = 0;
-RXB0CONbits.FILHIT0 = 0;
-
-
-SSPSTATbits.SMP = 0;
-SSPSTATbits.CKE = 1;
-SSPCON1bits.SSPEN = 1;
-SSPCON1bits.CKP = 1;
-SSPCON1bits.SSPM = 0b0000;
-FT800_Init();
-
-EUSART1_Initialize();
-
-# 151
-do { LATCbits.LATC1 = 0; } while(0);
-
-while (1) {
-do { LATAbits.LATA1 = 1; } while(0);
-_delay((unsigned long)((50)*(16000000/4000.0)));
-EUSART1_Write(0xAA);
-do { LATAbits.LATA1 = 0; } while(0);
-_delay((unsigned long)((50)*(16000000/4000.0)));
+while(!PIR1bits.RC1IF)
+{
 }
+
+
+if(1 == RCSTA1bits.OERR)
+{
+
+
+RCSTA1bits.SPEN = 0;
+RCSTA1bits.SPEN = 1;
+}
+
+return RCREG1;
+}
+
+void EUSART1_Write(uint8_t txData)
+{
+while(0 == PIR1bits.TX1IF)
+{
+}
+
+TXREG1 = txData;
 }
 
