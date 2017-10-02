@@ -3,6 +3,8 @@
 [d edition pro ]
 [d chip 18F45K80 ]
 [d frameptr 4065 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\ftadd.c
@@ -25,6 +27,16 @@
 [v _strlen strlen `(ui  1 e 2 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
+"3 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\display.c
+[v _display_start display_start `(v  1 e 1 0 ]
+"9
+[v _display_end display_end `(v  1 e 1 0 ]
+"15
+[v _display_labels display_labels `(v  1 e 1 0 ]
+"36
+[v _display_rpm display_rpm `(v  1 e 1 0 ]
+"65
+[v _display_gear display_gear `(v  1 e 1 0 ]
 "8 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\Gue/FT800.c
 [v _host_command host_command `(v  1 e 1 0 ]
 "16
@@ -33,13 +45,19 @@
 [v _wr16 wr16 `(v  1 e 1 0 ]
 "34
 [v _wr32 wr32 `(v  1 e 1 0 ]
+"43
+[v _wr8s wr8s `(uc  1 e 1 0 ]
 "72
 [v _rd16 rd16 `(ui  1 e 2 0 ]
 "122
 [v _cmd_incrementn cmd_incrementn `(v  1 e 1 0 ]
-"139
+"126
+[v _cmd cmd `(v  1 e 1 0 ]
+"143
 [v _FT800_Init FT800_Init `T(v  1 e 1 0 ]
-"18 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\main.c
+"15 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\main.c
+[v _wait2secs wait2secs `(v  1 e 1 0 ]
+"19
 [v _main main `(v  1 e 1 0 ]
 "63 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/ecan.c
 [v _ECAN_Initialize ECAN_Initialize `(v  1 e 1 0 ]
@@ -495,7 +513,7 @@
 [v _SPBRGH1 SPBRGH1 `VEuc  1 e 1 @3965 ]
 "30490
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
-[s S1592 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1574 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -505,7 +523,7 @@
 `uc 1 LATA7 1 0 :1:7 
 ]
 "30517
-[s S1601 . 1 `uc 1 LA0 1 0 :1:0 
+[s S1583 . 1 `uc 1 LA0 1 0 :1:0 
 `uc 1 LA1 1 0 :1:1 
 `uc 1 LA2 1 0 :1:2 
 `uc 1 LA3 1 0 :1:3 
@@ -514,13 +532,13 @@
 `uc 1 LA6 1 0 :1:6 
 `uc 1 LA7 1 0 :1:7 
 ]
-[u S1610 . 1 `S1592 1 . 1 0 `S1601 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1610  1 e 1 @3977 ]
+[u S1592 . 1 `S1574 1 . 1 0 `S1583 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1592  1 e 1 @3977 ]
 "30592
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
 "30704
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
-[s S1552 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S1713 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -530,7 +548,7 @@
 `uc 1 LATC7 1 0 :1:7 
 ]
 "30731
-[s S1561 . 1 `uc 1 LC0 1 0 :1:0 
+[s S1722 . 1 `uc 1 LC0 1 0 :1:0 
 `uc 1 LC1 1 0 :1:1 
 `uc 1 LC2 1 0 :1:2 
 `uc 1 LC3 1 0 :1:3 
@@ -539,11 +557,11 @@
 `uc 1 LC6 1 0 :1:6 
 `uc 1 LC7 1 0 :1:7 
 ]
-[u S1570 . 1 `S1552 1 . 1 0 `S1561 1 . 1 0 ]
-[v _LATCbits LATCbits `VES1570  1 e 1 @3979 ]
+[u S1731 . 1 `S1713 1 . 1 0 `S1722 1 . 1 0 ]
+[v _LATCbits LATCbits `VES1731  1 e 1 @3979 ]
 "30816
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
-[s S1690 . 1 `uc 1 LATD0 1 0 :1:0 
+[s S1666 . 1 `uc 1 LATD0 1 0 :1:0 
 `uc 1 LATD1 1 0 :1:1 
 `uc 1 LATD2 1 0 :1:2 
 `uc 1 LATD3 1 0 :1:3 
@@ -553,7 +571,7 @@
 `uc 1 LATD7 1 0 :1:7 
 ]
 "30843
-[s S1699 . 1 `uc 1 LD0 1 0 :1:0 
+[s S1675 . 1 `uc 1 LD0 1 0 :1:0 
 `uc 1 LD1 1 0 :1:1 
 `uc 1 LD2 1 0 :1:2 
 `uc 1 LD3 1 0 :1:3 
@@ -562,8 +580,8 @@
 `uc 1 LD6 1 0 :1:6 
 `uc 1 LD7 1 0 :1:7 
 ]
-[u S1708 . 1 `S1690 1 . 1 0 `S1699 1 . 1 0 ]
-[v _LATDbits LATDbits `VES1708  1 e 1 @3980 ]
+[u S1684 . 1 `S1666 1 . 1 0 `S1675 1 . 1 0 ]
+[v _LATDbits LATDbits `VES1684  1 e 1 @3980 ]
 "30928
 [v _LATE LATE `VEuc  1 e 1 @3981 ]
 "31086
@@ -868,10 +886,94 @@
 [v _cmd_offset cmd_offset `us  1 e 2 0 ]
 "51 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/pin_manager.c
 [v _IOCB4_InterruptHandler IOCB4_InterruptHandler `*.37(v  1 e 2 0 ]
-"18 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\main.c
+"19 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"160
+"21
+[v main@y_start y_start `i  1 a 2 40 ]
+"61
+} 0
+"15
+[v _wait2secs wait2secs `(v  1 e 1 0 ]
+{
+"17
+} 0
+"3 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\display.c
+[v _display_start display_start `(v  1 e 1 0 ]
+{
+"7
+} 0
+"36
+[v _display_rpm display_rpm `(v  1 e 1 0 ]
+{
+[v display_rpm@rpm rpm `i  1 p 2 33 ]
+"63
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"11
+[v ___awdiv@quotient quotient `i  1 a 2 20 ]
+"12
+[v ___awdiv@sign sign `uc  1 a 1 19 ]
+[v ___awdiv@counter counter `uc  1 a 1 18 ]
+"8
+[v ___awdiv@dividend dividend `i  1 p 2 14 ]
+[v ___awdiv@divisor divisor `i  1 p 2 16 ]
+"42
+} 0
+"15 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\display.c
+[v _display_labels display_labels `(v  1 e 1 0 ]
+{
+"16
+[v display_labels@y_start y_start `i  1 a 2 36 ]
+"34
+} 0
+"43 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\Gue/FT800.c
+[v _wr8s wr8s `(uc  1 e 1 0 ]
+{
+"50
+[v wr8s@i i `uc  1 a 1 29 ]
+"49
+[v wr8s@l l `uc  1 a 1 28 ]
+"43
+[v wr8s@addr addr `um  1 p 3 20 ]
+[v wr8s@s s `*.25Cuc  1 p 2 23 ]
+"59
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+{
+"6
+[v strlen@cp cp `*.25Cuc  1 a 2 18 ]
+"4
+[v strlen@s s `*.25Cuc  1 p 2 14 ]
+"13
+} 0
+"65 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\display.c
+[v _display_gear display_gear `(v  1 e 1 0 ]
+{
+[v display_gear@gear gear `i  1 p 2 33 ]
+"135
+} 0
+"9
+[v _display_end display_end `(v  1 e 1 0 ]
+{
+"13
+} 0
+"126 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\Gue/FT800.c
+[v _cmd cmd `(v  1 e 1 0 ]
+{
+[v cmd@command command `ul  1 p 4 26 ]
+"128
+} 0
+"122
+[v _cmd_incrementn cmd_incrementn `(v  1 e 1 0 ]
+{
+[v cmd_incrementn@n n `uc  1 a 1 wreg ]
+[v cmd_incrementn@n n `uc  1 a 1 wreg ]
+[v cmd_incrementn@n n `uc  1 a 1 16 ]
+"124
 } 0
 "111 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -904,10 +1006,10 @@
 {
 "151
 } 0
-"139 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\Gue/FT800.c
+"143 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\Gue/FT800.c
 [v _FT800_Init FT800_Init `T(v  1 e 1 0 ]
 {
-"194
+"198
 } 0
 "16
 [v _wr8 wr8 `(v  1 e 1 0 ]
@@ -926,8 +1028,8 @@
 "25
 [v _wr16 wr16 `(v  1 e 1 0 ]
 {
-[v wr16@addr addr `um  1 p 3 15 ]
-[v wr16@value value `ui  1 p 2 18 ]
+[v wr16@addr addr `um  1 p 3 22 ]
+[v wr16@value value `ui  1 p 2 25 ]
 "32
 } 0
 "72

@@ -1,5 +1,5 @@
 
-# 1 "main.c"
+# 1 "display.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -18128,52 +18128,137 @@ void display_gear(int gear);
 void display_rpm(int rpm);
 void display_end();
 
-# 15 "main.c"
-void wait2secs(){
-_delay((unsigned long)((2000)*(16000000/4000.0)));
+# 3 "display.c"
+void display_start() {
+cmd(4294967040UL);
+cmd(((2UL<<24)|(((20)&255UL)<<16)|(((20)&255UL)<<8)|(((20)&255UL)<<0)));
+cmd(((38UL<<24)|(((1)&1UL)<<2)|(((1)&1UL)<<1)|(((1)&1UL)<<0)));
 }
 
-void main(void)
-{
-int y_start = 0;
-uCAN_MSG test;
-
-SYSTEM_Initialize();
-
-
-CIOCONbits.CLKSEL = 1;
-CIOCONbits.ENDRHI = 1;
-CIOCONbits.TX2SRC = 0;
-CIOCONbits.TX2EN = 1;
-RXB0CONbits.RXM0 = 1;
-RXB0CONbits.RXM1 = 0;
-RXB0CONbits.RB0DBEN = 0;
-RXB0CONbits.FILHIT0 = 0;
-
-
-SSPSTATbits.SMP = 0;
-SSPSTATbits.CKE = 1;
-SSPCON1bits.SSPEN = 1;
-SSPCON1bits.CKP = 1;
-SSPCON1bits.SSPM = 0b0000;
-FT800_Init();
-
-EUSART1_Initialize();
-
-wait2secs();
-
-display_start();
-display_labels();
-display_gear(2);
-display_rpm(2000);
-display_end();
-
-while (1) {
-do { LATAbits.LATA1 = 1; } while(0);
-_delay((unsigned long)((50)*(16000000/4000.0)));
-EUSART1_Write(0xAA);
-do { LATAbits.LATA1 = 0; } while(0);
-_delay((unsigned long)((50)*(16000000/4000.0)));
-}
+void display_end() {
+cmd(((0UL<<24)));
+cmd(4294967041UL);
+wr16(1058024UL, cmd_offset);
 }
 
+void display_labels() {
+int y_start = 5;
+
+cmd(((4UL<<24)|(((255)&255UL)<<16)|(((255)&255UL)<<8)|(((255)&255UL)<<0)));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "WATER"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start += (26/2 +2));cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "TEMP"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start += (26/2 +2) + (26/2 +2));cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "OIL"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start += (26/2 +2));cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "TEMP"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start += (26/2 +2) + (26/2 +2));cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "FUEL"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start += (26/2 +2));cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "USED"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start += (26/2 +2) + (26/2 +2));cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "BATT"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start += (26/2 +2));cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "VOLTS"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 360);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 150);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "SPEED"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 360);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 150 + (26/2 +2));cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "KPH"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 360 + 45);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 150 - 10);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 31);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "115"));
+
+
+
+
+}
+
+void display_rpm(int rpm) {
+cmd(((31UL<<24)|(((2UL)&15UL)<<0)));
+cmd(((4UL<<24)|(((80)&255UL)<<16)|(((80)&255UL)<<8)|(((80)&255UL)<<0)));
+cmd(((13UL<<24)|(((1750)&8191UL)<<0)));
+cmd(((2UL<<30)|(((240)&511UL)<<21)|(((115)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((4UL<<24)|(((0)&255UL)<<16)|(((0)&255UL)<<8)|(((0)&255UL)<<0)));
+cmd(((13UL<<24)|(((1650)&8191UL)<<0)));
+cmd(((2UL<<30)|(((240)&511UL)<<21)|(((115)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+
+cmd(((4UL<<24)|(((255)&255UL)<<16)|(((255)&255UL)<<8)|(((255)&255UL)<<0)));
+cmd(4294967049UL);cmd(0x323232);
+cmd(4294967059UL);wr16(1081344UL+cmd_offset, 240);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 115);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 130);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 16384UL|4096UL | 256UL);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 10);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, rpm/1000);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 10);cmd_incrementn(2);
+cmd(((4UL<<24)|(((255)&255UL)<<16)|(((0)&255UL)<<8)|(((0)&255UL)<<0)));
+cmd(4294967059UL);wr16(1081344UL+cmd_offset, 240);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 115);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 130);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 8192UL|4096UL | 256UL);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 10);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, rpm/1000);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 10);cmd_incrementn(2);
+
+cmd(((4UL<<24)|(((255)&255UL)<<16)|(((255)&255UL)<<8)|(((255)&255UL)<<0)));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 183);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 161);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "2"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 160);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 130);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "3"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 155);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 92);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "4"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 171);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 58);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "5"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 201);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 33);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "6"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 235);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "7"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 269);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 33);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "8"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 298);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 58);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "9"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 301);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 92);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "10"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 299);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 130);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "11"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 274);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 161);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "12"));
+}
+
+void display_gear(int gear) {
+cmd(((14UL<<24)|(((96)&4095UL)<<0)));
+cmd(((4UL<<24)|(((202)&255UL)<<16)|(((125)&255UL)<<8)|(((0)&255UL)<<0)));
+cmd(((31UL<<24)|(((3UL)&15UL)<<0)));
+switch (gear) {
+case 1:
+cmd(((2UL<<30)|(((380+40)&511UL)<<21)|(((0+15)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+40)&511UL)<<21)|(((0+115)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+39)&511UL)<<21)|(((0+15)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+20)&511UL)<<21)|(((0+30)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+25)&511UL)<<21)|(((0+116)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+55)&511UL)<<21)|(((0+116)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+break;
+case 2:
+cmd(((2UL<<30)|(((380)&511UL)<<21)|(((0+15)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+80)&511UL)<<21)|(((0+15)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+80)&511UL)<<21)|(((0+16)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+80)&511UL)<<21)|(((0+64)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+80)&511UL)<<21)|(((0+65)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380)&511UL)<<21)|(((0+65)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380)&511UL)<<21)|(((0+66)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380)&511UL)<<21)|(((0+115)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+1)&511UL)<<21)|(((0+115)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+80)&511UL)<<21)|(((0+115)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+break;
+case 3:
+cmd(((2UL<<30)|(((380)&511UL)<<21)|(((0+15)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+79)&511UL)<<21)|(((0+15)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+80)&511UL)<<21)|(((0+16)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+80)&511UL)<<21)|(((0+115)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+79)&511UL)<<21)|(((0+65)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380)&511UL)<<21)|(((0+65)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+1)&511UL)<<21)|(((0+115)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+79)&511UL)<<21)|(((0+115)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+break;
+case 4:
+cmd(((2UL<<30)|(((380)&511UL)<<21)|(((0+15)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380)&511UL)<<21)|(((0+64)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+80)&511UL)<<21)|(((0+16)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+80)&511UL)<<21)|(((0+115)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+77)&511UL)<<21)|(((0+65)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+1)&511UL)<<21)|(((0+65)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+break;
+case 5:
+cmd(((2UL<<30)|(((380)&511UL)<<21)|(((0+15)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+79)&511UL)<<21)|(((0+15)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380)&511UL)<<21)|(((0+16)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380)&511UL)<<21)|(((0+64)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+80)&511UL)<<21)|(((0+65)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+80)&511UL)<<21)|(((0+114)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+77)&511UL)<<21)|(((0+65)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+1)&511UL)<<21)|(((0+65)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+1)&511UL)<<21)|(((0+115)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+79)&511UL)<<21)|(((0+115)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+break;
+case 6:
+cmd(((2UL<<30)|(((380)&511UL)<<21)|(((0+15)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+79)&511UL)<<21)|(((0+15)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380)&511UL)<<21)|(((0+16)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380)&511UL)<<21)|(((0+115)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+80)&511UL)<<21)|(((0+65)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+80)&511UL)<<21)|(((0+114)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+77)&511UL)<<21)|(((0+65)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+1)&511UL)<<21)|(((0+65)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+1)&511UL)<<21)|(((0+115)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+79)&511UL)<<21)|(((0+115)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+break;
+default:
+break;
+}
+}

@@ -312,6 +312,10 @@ ft_uint8_t wr8s(unsigned short long addr, const ft_char8_t *s);
  * Initializes the FT800
  */
 inline void FT800_Init();
+/*
+ * Written by Hao Ye
+ */
+void off_display();
 
 
 #endif	/* FT800_H */

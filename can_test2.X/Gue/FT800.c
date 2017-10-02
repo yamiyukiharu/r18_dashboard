@@ -136,6 +136,10 @@ void cmd(ft_uint32_t command){
 #define FT_CLK36M  0x61
 #define FT_CORERST 0x68
 
+void off_display() {
+    LCD_PD_SetLow();
+}
+
 inline void FT800_Init(){
 
     PIN_PD = 0;
@@ -175,7 +179,7 @@ inline void FT800_Init(){
     LATAbits.LATA4 = 0;*/
 
     // write first display list
-    wr32(RAM_DL+0,CLEAR_COLOR_RGB(100,0,0));
+    wr32(RAM_DL+0,CLEAR_COLOR_RGB(0,26,0));
     wr32(RAM_DL+4,CLEAR(1,1,1));
     wr32(RAM_DL+8,DISPLAY());
 

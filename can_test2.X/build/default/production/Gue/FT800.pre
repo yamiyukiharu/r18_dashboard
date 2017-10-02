@@ -18118,6 +18118,9 @@ ft_uint8_t wr8s(unsigned short long addr, const ft_char8_t *s);
 # 314
 inline void FT800_Init();
 
+# 318
+void off_display();
+
 # 14 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\string.h"
 extern void * memcpy(void *, const void *, size_t);
 extern void * memmove(void *, const void *, size_t);
@@ -18258,6 +18261,10 @@ wr32(1081344UL + cmd_offset, command);cmd_incrementn(4);
 }
 
 # 139
+void off_display() {
+do { LATCbits.LATC1 = 0; } while(0);
+}
+
 inline void FT800_Init(){
 
 LATCbits.LATC1 = 0;
@@ -18292,8 +18299,8 @@ wr8(1057896UL, 0);
 
 wr8(1057876UL, 0);
 
-# 178
-wr32(1048576UL+0,((2UL<<24)|(((100)&255UL)<<16)|(((0)&255UL)<<8)|(((0)&255UL)<<0)));
+# 182
+wr32(1048576UL+0,((2UL<<24)|(((0)&255UL)<<16)|(((26)&255UL)<<8)|(((0)&255UL)<<0)));
 wr32(1048576UL+4,((38UL<<24)|(((1)&1UL)<<2)|(((1)&1UL)<<1)|(((1)&1UL)<<0)));
 wr32(1048576UL+8,((0UL<<24)));
 

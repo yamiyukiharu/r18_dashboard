@@ -1,6 +1,6 @@
- build/default/production/main.d  \
- build/default/production/main.p1:  \
- main.c  \
+ build/default/production/display.d  \
+ build/default/production/display.p1:  \
+ display.c  \
 mcc_generated_files/mcc.h  \
 Gue/../mcc_generated_files/mcc.h  \
 Gue/FT800.h  \
