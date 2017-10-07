@@ -47,8 +47,17 @@ void main(void)
     
     display_start();
     display_labels();
+    display_waterTemp(95);
+    display_oilTemp(101);
+    display_fuel(4.2);
+    display_battery(13.2);
+    display_oilPress(4);
     display_gear(2);
-    display_rpm(2000);
+    display_rpm(9457);
+    display_speed(102);
+    display_tp(20);
+    display_laptime(0, 0, 0, 0);
+    display_message("hello");
     display_end();
     
     while (1) {  

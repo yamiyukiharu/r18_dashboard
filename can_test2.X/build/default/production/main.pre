@@ -18125,8 +18125,17 @@ void off_display();
 void display_start();
 void display_labels();
 void display_gear(int gear);
+void display_waterTemp(int temp);
+void display_oilTemp(int temp);
+void display_fuel(int level);
+void display_battery(float volts);
+void display_oilPress(float pressure);
 void display_rpm(int rpm);
 void display_end();
+void display_speed(int speed);
+void display_tp(int tp);
+void display_laptime(float current, float best, float last, int lap);
+void display_message(char* message);
 
 # 15 "main.c"
 void wait2secs(){
@@ -18164,8 +18173,17 @@ wait2secs();
 
 display_start();
 display_labels();
+display_waterTemp(95);
+display_oilTemp(101);
+display_fuel(4.2);
+display_battery(13.2);
+display_oilPress(4);
 display_gear(2);
-display_rpm(2000);
+display_rpm(9457);
+display_speed(102);
+display_tp(20);
+display_laptime(0, 0, 0, 0);
+display_message("hello");
 display_end();
 
 while (1) {

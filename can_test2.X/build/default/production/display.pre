@@ -18125,8 +18125,17 @@ void off_display();
 void display_start();
 void display_labels();
 void display_gear(int gear);
+void display_waterTemp(int temp);
+void display_oilTemp(int temp);
+void display_fuel(int level);
+void display_battery(float volts);
+void display_oilPress(float pressure);
 void display_rpm(int rpm);
 void display_end();
+void display_speed(int speed);
+void display_tp(int tp);
+void display_laptime(float current, float best, float last, int lap);
+void display_message(char* message);
 
 # 3 "display.c"
 void display_start() {
@@ -18144,40 +18153,143 @@ wr16(1058024UL, cmd_offset);
 void display_labels() {
 int y_start = 5;
 
+
 cmd(((4UL<<24)|(((255)&255UL)<<16)|(((255)&255UL)<<8)|(((255)&255UL)<<0)));
 cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "WATER"));
-cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start += (26/2 +2));cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "TEMP"));
-cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start += (26/2 +2) + (26/2 +2));cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "OIL"));
-cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start += (26/2 +2));cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "TEMP"));
-cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start += (26/2 +2) + (26/2 +2));cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "FUEL"));
-cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start += (26/2 +2));cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "USED"));
-cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start += (26/2 +2) + (26/2 +2));cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "BATT"));
-cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start += (26/2 +2));cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "VOLTS"));
-cmd(4294967052UL);wr16(1081344UL+cmd_offset, 360);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 150);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "SPEED"));
-cmd(4294967052UL);wr16(1081344UL+cmd_offset, 360);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 150 + (26/2 +2));cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "KPH"));
-cmd(4294967052UL);wr16(1081344UL+cmd_offset, 360 + 45);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 150 - 10);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 31);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "115"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start += 15);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "TEMP"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start += 25);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "OIL"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start += 15);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "TEMP"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start += 25);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "FUEL"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start += 15);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "USED"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start += 25);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "BATT"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start += 15);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "VOLTS"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start += 25);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "OIL"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, y_start += 15);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "PRESS"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 360);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 130);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "SPEED"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 360);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 130 + 15);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "KPH"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 380);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 180);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "TP"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 459);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 174);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "%"));
 
 
 
-
-}
-
-void display_rpm(int rpm) {
 cmd(((31UL<<24)|(((2UL)&15UL)<<0)));
-cmd(((4UL<<24)|(((80)&255UL)<<16)|(((80)&255UL)<<8)|(((80)&255UL)<<0)));
+cmd(((4UL<<24)|(((20)&255UL)<<16)|(((20)&255UL)<<8)|(((20)&255UL)<<0)));
 cmd(((13UL<<24)|(((1750)&8191UL)<<0)));
 cmd(((2UL<<30)|(((240)&511UL)<<21)|(((115)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
-cmd(((4UL<<24)|(((0)&255UL)<<16)|(((0)&255UL)<<8)|(((0)&255UL)<<0)));
+cmd(((4UL<<24)|(((60)&255UL)<<16)|(((60)&255UL)<<8)|(((60)&255UL)<<0)));
 cmd(((13UL<<24)|(((1650)&8191UL)<<0)));
 cmd(((2UL<<30)|(((240)&511UL)<<21)|(((115)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
 
+}
+
+void display_message(char* message) {
+cmd(((31UL<<24)|(((9UL)&15UL)<<0)));
+cmd(((4UL<<24)|(((60)&255UL)<<16)|(((60)&255UL)<<8)|(((60)&255UL)<<0)));
+cmd(((2UL<<30)|(((350)&511UL)<<21)|(((215)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((134)&511UL)<<21)|(((230)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
 cmd(((4UL<<24)|(((255)&255UL)<<16)|(((255)&255UL)<<8)|(((255)&255UL)<<0)));
-cmd(4294967049UL);cmd(0x323232);
-cmd(4294967059UL);wr16(1081344UL+cmd_offset, 240);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 115);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 130);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 16384UL|4096UL | 256UL);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 10);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, rpm/1000);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 10);cmd_incrementn(2);
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 240);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 222);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 1536UL);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "Gas Press Low "));
+}
+
+void display_laptime(float current, float best, float last, int lap) {
 cmd(((4UL<<24)|(((255)&255UL)<<16)|(((0)&255UL)<<8)|(((0)&255UL)<<0)));
-cmd(4294967059UL);wr16(1081344UL+cmd_offset, 240);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 115);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 130);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 8192UL|4096UL | 256UL);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 10);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, rpm/1000);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 10);cmd_incrementn(2);
+cmd(((31UL<<24)|(((8UL)&15UL)<<0)));
+cmd(((2UL<<30)|(((0)&511UL)<<21)|(((200)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((187)&511UL)<<21)|(((200)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((216)&511UL)<<21)|(((173)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((263)&511UL)<<21)|(((173)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((292)&511UL)<<21)|(((200)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((480)&511UL)<<21)|(((200)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+
+cmd(((4UL<<24)|(((0)&255UL)<<16)|(((0)&255UL)<<8)|(((0)&255UL)<<0)));
+cmd(((31UL<<24)|(((8UL)&15UL)<<0)));
+cmd(((2UL<<30)|(((0)&511UL)<<21)|(((205)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((189)&511UL)<<21)|(((204)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((217)&511UL)<<21)|(((177)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((261)&511UL)<<21)|(((177)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((289)&511UL)<<21)|(((204)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((483)&511UL)<<21)|(((205)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+
+
+cmd(((4UL<<24)|(((255)&255UL)<<16)|(((125)&255UL)<<8)|(((0)&255UL)<<0)));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 207);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 27);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "LAST"));
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 66);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 217);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 27);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 1536UL);cmd_incrementn(2);cmd(3);
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 448);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 207);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 27);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 2048UL);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "BEST"));
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 475);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 207);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 27);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 2048UL);cmd_incrementn(2);cmd(1);
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 240);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 165);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 27);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 1536UL);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "LAP"));
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 240);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 190);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 29);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 1536UL);cmd_incrementn(2);cmd(7);
+
 
 cmd(((4UL<<24)|(((255)&255UL)<<16)|(((255)&255UL)<<8)|(((255)&255UL)<<0)));
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 36);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 222);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 30);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 2048UL);cmd_incrementn(2);cmd(18);
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 39);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 238);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 1536UL);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, ":"));
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 42);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 222);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 30);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 2UL);cmd_incrementn(2);cmd(36);
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 79);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 238);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 1536UL);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, ":"));
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 82);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 221);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 30);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 2UL);cmd_incrementn(2);cmd(89);
+
+
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 397);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 222);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 30);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 2048UL);cmd_incrementn(2);cmd(19);
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 400);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 239);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 1536UL);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, ":"));
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 403);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 222);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 30);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 2UL);cmd_incrementn(2);cmd(25);
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 439);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 239);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 1536UL);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, ":"));
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 475);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 222);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 30);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 2048UL);cmd_incrementn(2);cmd(89);
+
+
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 217);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 237);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 30);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 2048UL);cmd_incrementn(2);cmd(19);
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 221);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 254);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 1536UL);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, ":"));
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 240);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 255);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 30);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 1536UL);cmd_incrementn(2);cmd(25);
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 261);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 254);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 1536UL);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, ":"));
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 298);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 237);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 30);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 2048UL);cmd_incrementn(2);cmd(89);
+}
+
+void display_waterTemp(int temp) {
+cmd(((4UL<<24)|(((255)&255UL)<<16)|(((255)&255UL)<<8)|(((255)&255UL)<<0)));
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 64);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 7);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd(temp);
+}
+
+void display_oilTemp(int temp) {
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 66);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 48);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd(temp);
+}
+
+void display_fuel(int level) {
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 66);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 89);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd(3);
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 78);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 90);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "."));
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 83);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 89);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd(3);
+}
+
+void display_battery(float volts) {
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 66);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 130);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd(13);
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 90);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 131);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "."));
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 96);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 130);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd(2);
+}
+
+void display_oilPress(float pressure) {
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 66);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 171);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd(pressure);
+}
+
+void display_tp(int tp) {
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 455);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 166);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 30);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 2048UL);cmd_incrementn(2);cmd(tp);
+}
+
+void display_speed(int speed) {
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 360 + 45);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 130 - 10);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 31);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd(speed);
+}
+
+void display_rpm(int rpm) {
+int first_digit = rpm/1000;
+int second_digit = (rpm/100)%10;
+cmd(((4UL<<24)|(((255)&255UL)<<16)|(((255)&255UL)<<8)|(((255)&255UL)<<0)));
+
+cmd(4294967049UL);cmd(0x323232);
+cmd(4294967059UL);wr16(1081344UL+cmd_offset, 240);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 115);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 130);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 16384UL | 4096UL | 256UL);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 10);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 10);cmd_incrementn(2);
+
+cmd(((4UL<<24)|(((255)&255UL)<<16)|(((0)&255UL)<<8)|(((0)&255UL)<<0)));
+cmd(4294967059UL);wr16(1081344UL+cmd_offset, 240);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 115);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 130);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 8192UL|4096UL | 256UL);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 10);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, first_digit-2);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 10);cmd_incrementn(2);
+
+cmd(((4UL<<24)|(((255)&255UL)<<16)|(((255)&255UL)<<8)|(((255)&255UL)<<0)));
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 237);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 89);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 31);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 2048UL);cmd_incrementn(2);cmd(first_digit);
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 243);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 89);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 31);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd(second_digit);
+
 cmd(4294967052UL);wr16(1081344UL+cmd_offset, 183);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 161);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "2"));
 cmd(4294967052UL);wr16(1081344UL+cmd_offset, 160);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 130);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "3"));
 cmd(4294967052UL);wr16(1081344UL+cmd_offset, 155);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 92);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "4"));
@@ -18189,6 +18301,9 @@ cmd(4294967052UL);wr16(1081344UL+cmd_offset, 298);cmd_incrementn(2);wr16(1081344
 cmd(4294967052UL);wr16(1081344UL+cmd_offset, 301);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 92);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "10"));
 cmd(4294967052UL);wr16(1081344UL+cmd_offset, 299);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 130);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "11"));
 cmd(4294967052UL);wr16(1081344UL+cmd_offset, 274);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 161);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "12"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 241);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 114);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 31);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 1536UL);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "."));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 267);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 108);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "k"));
+cmd(4294967052UL);wr16(1081344UL+cmd_offset, 227);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 132);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 26);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "RPM"));
 }
 
 void display_gear(int gear) {

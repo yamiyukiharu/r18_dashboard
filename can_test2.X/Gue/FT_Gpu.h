@@ -23,10 +23,10 @@
 #define POINTS               2UL
 #define LINES               3UL
 #define LINE_STRIP          4UL
-#define EDGE_R              5UL
-#define EDGE_L              6UL
-#define EDGE_A              7UL
-#define EDGE_B              8UL
+#define EDGE_STRIP_R              5UL
+#define EDGE_STRIP_L              6UL
+#define EDGE_STRIP_A              7UL
+#define EDGE_STRIP_B              8UL
 #define RECTS               9UL
 
 #define CMDBUF_SIZE          4096UL

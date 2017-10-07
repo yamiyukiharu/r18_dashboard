@@ -101,11 +101,29 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _display_start `(v ~T0 @X0 0 ef ]
 "24
 [v _display_labels `(v ~T0 @X0 0 ef ]
+"26
+[v _display_waterTemp `(v ~T0 @X0 0 ef1`i ]
+"27
+[v _display_oilTemp `(v ~T0 @X0 0 ef1`i ]
+"28
+[v _display_fuel `(v ~T0 @X0 0 ef1`i ]
+"29
+[v _display_battery `(v ~T0 @X0 0 ef1`f ]
+"30
+[v _display_oilPress `(v ~T0 @X0 0 ef1`f ]
 "25
 [v _display_gear `(v ~T0 @X0 0 ef1`i ]
-"26
+"31
 [v _display_rpm `(v ~T0 @X0 0 ef1`i ]
-"27
+"33
+[v _display_speed `(v ~T0 @X0 0 ef1`i ]
+"34
+[v _display_tp `(v ~T0 @X0 0 ef1`i ]
+"35
+[v _display_laptime `(v ~T0 @X0 0 ef4`f`f`f`i ]
+"36
+[v _display_message `(v ~T0 @X0 0 ef1`*uc ]
+"32
 [v _display_end `(v ~T0 @X0 0 ef ]
 "30496 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f45k80.h
 [s S1156 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -13813,8 +13831,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;display.h: 23: void display_start();
 [; ;display.h: 24: void display_labels();
 [; ;display.h: 25: void display_gear(int gear);
-[; ;display.h: 26: void display_rpm(int rpm);
-[; ;display.h: 27: void display_end();
+[; ;display.h: 26: void display_waterTemp(int temp);
+[; ;display.h: 27: void display_oilTemp(int temp);
+[; ;display.h: 28: void display_fuel(int level);
+[; ;display.h: 29: void display_battery(float volts);
+[; ;display.h: 30: void display_oilPress(float pressure);
+[; ;display.h: 31: void display_rpm(int rpm);
+[; ;display.h: 32: void display_end();
+[; ;display.h: 33: void display_speed(int speed);
+[; ;display.h: 34: void display_tp(int tp);
+[; ;display.h: 35: void display_laptime(float current, float best, float last, int lap);
+[; ;display.h: 36: void display_message(char* message);
 "15 main.c
 [v _wait2secs `(v ~T0 @X0 1 ef ]
 {
@@ -13901,50 +13928,79 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 49: display_labels();
 "49
 [e ( _display_labels ..  ]
-[; ;main.c: 50: display_gear(2);
+[; ;main.c: 50: display_waterTemp(95);
 "50
-[e ( _display_gear (1 -> 2 `i ]
-[; ;main.c: 51: display_rpm(2000);
+[e ( _display_waterTemp (1 -> 95 `i ]
+[; ;main.c: 51: display_oilTemp(101);
 "51
-[e ( _display_rpm (1 -> 2000 `i ]
-[; ;main.c: 52: display_end();
+[e ( _display_oilTemp (1 -> 101 `i ]
+[; ;main.c: 52: display_fuel(4.2);
 "52
-[e ( _display_end ..  ]
-[; ;main.c: 54: while (1) {
+[e ( _display_fuel (1 -> .4.2 `i ]
+[; ;main.c: 53: display_battery(13.2);
+"53
+[e ( _display_battery (1 -> .13.2 `f ]
+[; ;main.c: 54: display_oilPress(4);
 "54
+[e ( _display_oilPress (1 -> -> 4 `i `f ]
+[; ;main.c: 55: display_gear(2);
+"55
+[e ( _display_gear (1 -> 2 `i ]
+[; ;main.c: 56: display_rpm(9457);
+"56
+[e ( _display_rpm (1 -> 9457 `i ]
+[; ;main.c: 57: display_speed(102);
+"57
+[e ( _display_speed (1 -> 102 `i ]
+[; ;main.c: 58: display_tp(20);
+"58
+[e ( _display_tp (1 -> 20 `i ]
+[; ;main.c: 59: display_laptime(0, 0, 0, 0);
+"59
+[e ( _display_laptime (4 , , , -> -> 0 `i `f -> -> 0 `i `f -> -> 0 `i `f -> 0 `i ]
+[; ;main.c: 60: display_message("hello");
+"60
+[e ( _display_message (1 -> :s 1C `*uc ]
+[; ;main.c: 61: display_end();
+"61
+[e ( _display_end ..  ]
+[; ;main.c: 63: while (1) {
+"63
 [e :U 1543 ]
 {
-[; ;main.c: 55: do { LATAbits.LATA1 = 1; } while(0);
-"55
+[; ;main.c: 64: do { LATAbits.LATA1 = 1; } while(0);
+"64
 [e :U 1547 ]
 {
 [e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
 }
 [e :U 1546 ]
-[; ;main.c: 56: _delay((unsigned long)((50)*(16000000/4000.0)));
-"56
+[; ;main.c: 65: _delay((unsigned long)((50)*(16000000/4000.0)));
+"65
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 57: EUSART1_Write(0xAA);
-"57
+[; ;main.c: 66: EUSART1_Write(0xAA);
+"66
 [e ( _EUSART1_Write (1 -> -> 170 `i `uc ]
-[; ;main.c: 58: do { LATAbits.LATA1 = 0; } while(0);
-"58
+[; ;main.c: 67: do { LATAbits.LATA1 = 0; } while(0);
+"67
 [e :U 1550 ]
 {
 [e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
 }
 [e :U 1549 ]
-[; ;main.c: 59: _delay((unsigned long)((50)*(16000000/4000.0)));
-"59
+[; ;main.c: 68: _delay((unsigned long)((50)*(16000000/4000.0)));
+"68
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"60
+"69
 }
 [e :U 1542 ]
-"54
+"63
 [e $U 1543  ]
 [e :U 1544 ]
-[; ;main.c: 60: }
-[; ;main.c: 61: }
-"61
+[; ;main.c: 69: }
+[; ;main.c: 70: }
+"70
 [e :UE 1541 ]
 }
+[a 1C 104 101 108 108 111 0 ]
+
