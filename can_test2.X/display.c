@@ -1,5 +1,22 @@
 #include "display.h"
 
+void display(int rpm, int oilP, int fuelP, int tp, int speed, int gear, int engTemp, int oilTemp, int battVolts) {
+    display_start();
+    display_labels();
+    display_waterTemp(engTemp);
+    display_oilTemp(oilTemp);
+    display_fuel(4.3);
+    display_battery(battVolts);
+    display_oilPress(oilP);
+    display_gear(gear);
+    display_rpm(rpm);
+    display_speed(speed);
+    display_tp(tp);
+    display_laptime(0, 0, 0, 0);
+    display_message("hello");
+    display_end();
+}
+
 void display_start() {
     cmd(CMD_DLSTART);
     cmd(CLEAR_COLOR_RGB(20, 20, 20));
@@ -119,10 +136,10 @@ void display_fuel(int level) {
     cmd_number(83, 89, 28, 0, 3);
 }
 
-void display_battery(float volts) {
-    cmd_number(66, 130, 28, 0, 13);
+void display_battery(int volts) {
+    cmd_number(66, 130, 28, 0, volts/10);
     cmd_text(90, 131, 28, 0, ".");
-    cmd_number(96, 130, 28, 0, 2);
+    cmd_number(96, 130, 28, 0, volts%10);
 }
 
 void display_oilPress(float pressure) {
@@ -134,7 +151,7 @@ void display_tp(int tp) {
 }
 
 void display_speed(int speed) {
-    cmd_number(X_START_SPEED + 45, Y_START_SPEED - 10, LARGE_FONT_SIZE, 0, speed);
+    cmd_number(X_START_SPEED + 115, Y_START_SPEED - 10, LARGE_FONT_SIZE, OPT_RIGHTX, speed);
 }
 
 void display_rpm(int rpm) {   
@@ -146,7 +163,11 @@ void display_rpm(int rpm) {
     cmd_gauge(GAUGE_X, GAUGE_Y, GAUGE_SIZE, OPT_NOPOINTER | GAUGE_OPTIONS, GAUGE_MAJOR_DIVISION, GAUGE_MINOR_DIVISION, 0, GAUGE_RANGE);
     // draw red pointer
     cmd(COLOR_RGB(255, 0, 0));
-    cmd_gauge(GAUGE_X,GAUGE_Y,GAUGE_SIZE,OPT_NOTICKS|GAUGE_OPTIONS,GAUGE_MAJOR_DIVISION,GAUGE_MINOR_DIVISION,first_digit-2,GAUGE_RANGE);
+    if(first_digit < 2) {
+        cmd_gauge(GAUGE_X,GAUGE_Y,GAUGE_SIZE,OPT_NOTICKS|GAUGE_OPTIONS,GAUGE_MAJOR_DIVISION,GAUGE_MINOR_DIVISION,first_digit,GAUGE_RANGE);
+    } else {
+        cmd_gauge(GAUGE_X,GAUGE_Y,GAUGE_SIZE,OPT_NOTICKS|GAUGE_OPTIONS,GAUGE_MAJOR_DIVISION,GAUGE_MINOR_DIVISION,first_digit-2,GAUGE_RANGE);
+    }
     // display RPM
     cmd(COLOR_RGB(255, 255, 255));
     cmd_number(237, 89, 31, OPT_RIGHTX, first_digit);
@@ -173,6 +194,14 @@ void display_gear(int gear) {
     cmd(COLOR_RGB(202, 125, 0));
     cmd(BEGIN(LINES));
     switch (gear) {
+        case 0:
+            cmd(VERTEX2II(GEAR_POSITION_OFFSET_X, GEAR_POSITION_OFFSET_Y+15, 0, 0));
+            cmd(VERTEX2II(GEAR_POSITION_OFFSET_X, GEAR_POSITION_OFFSET_Y+115, 0, 0));
+            cmd(VERTEX2II(GEAR_POSITION_OFFSET_X, GEAR_POSITION_OFFSET_Y+15, 0, 0));
+            cmd(VERTEX2II(GEAR_POSITION_OFFSET_X+80, GEAR_POSITION_OFFSET_Y+115, 0, 0));
+            cmd(VERTEX2II(GEAR_POSITION_OFFSET_X+80, GEAR_POSITION_OFFSET_Y+116, 0, 0));
+            cmd(VERTEX2II(GEAR_POSITION_OFFSET_X+80, GEAR_POSITION_OFFSET_Y+15, 0, 0));
+            break;
         case 1:
             cmd(VERTEX2II(GEAR_POSITION_OFFSET_X+40, GEAR_POSITION_OFFSET_Y+15, 0, 0));
             cmd(VERTEX2II(GEAR_POSITION_OFFSET_X+40, GEAR_POSITION_OFFSET_Y+115, 0, 0));
@@ -236,6 +265,7 @@ void display_gear(int gear) {
              cmd(VERTEX2II(GEAR_POSITION_OFFSET_X+79, GEAR_POSITION_OFFSET_Y+115, 0, 0));
             break;
         default:
+            
             break;
     }
 }

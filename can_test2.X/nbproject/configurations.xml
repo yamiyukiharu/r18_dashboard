@@ -13,7 +13,6 @@
         <itemPath>mcc_generated_files/spi.h</itemPath>
         <itemPath>mcc_generated_files/eusart1.h</itemPath>
         <itemPath>mcc_generated_files/eusart2.h</itemPath>
-        <itemPath>mcc_generated_files/interrupt_manager.h</itemPath>
       </logicalFolder>
       <itemPath>Gue/FT800.h</itemPath>
       <itemPath>Gue/FT_DataTypes.h</itemPath>
@@ -36,7 +35,6 @@
         <itemPath>mcc_generated_files/spi.c</itemPath>
         <itemPath>mcc_generated_files/eusart1.c</itemPath>
         <itemPath>mcc_generated_files/eusart2.c</itemPath>
-        <itemPath>mcc_generated_files/interrupt_manager.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>Gue/FT800.c</itemPath>
@@ -196,7 +194,7 @@
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
         <property key="programoptions.usehighvoltageonmclr" value="false"/>
         <property key="programoptions.uselvpprogramming" value="true"/>
-        <property key="voltagevalue" value="4.875"/>
+        <property key="voltagevalue" value="4.75"/>
       </PICkit3PlatformTool>
       <XC8-config-global>
         <property key="advanced-elf" value="true"/>

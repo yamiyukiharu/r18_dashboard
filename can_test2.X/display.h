@@ -20,13 +20,14 @@
 #define GAUGE_MINOR_DIVISION 5
 #define GAUGE_RANGE 10
 
+void display(int rpm, int oilP, int fuelP, int tp, int speed, int gear, int engTemp, int oilTemp, int battVolts);
 void display_start();
 void display_labels();
 void display_gear(int gear);
 void display_waterTemp(int temp);
 void display_oilTemp(int temp);
 void display_fuel(int level);
-void display_battery(float volts);
+void display_battery(int volts);
 void display_oilPress(float pressure);
 void display_rpm(int rpm);
 void display_end();

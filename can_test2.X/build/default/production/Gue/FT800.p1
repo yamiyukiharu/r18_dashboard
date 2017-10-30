@@ -13636,12 +13636,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;FT_Gpu.h: 311: ft_uint32_t FontHeightInPixels;
 [; ;FT_Gpu.h: 313: ft_uint32_t PointerToFontGraphicsData;
 [; ;FT_Gpu.h: 314: }FT_Gpu_Fonts_t;
-[; ;pin_manager.h: 221: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 233: void PIN_MANAGER_IOC(void);
-[; ;pin_manager.h: 246: void IOCB4_ISR(void);
-[; ;pin_manager.h: 269: void IOCB4_SetInterruptHandler(void* InterruptHandler);
-[; ;pin_manager.h: 293: extern void (*IOCB4_InterruptHandler)(void);
-[; ;pin_manager.h: 317: void IOCB4_DefaultInterruptHandler(void);
+[; ;pin_manager.h: 311: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 323: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 38: typedef signed long int int32_t;
@@ -13665,8 +13661,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 222: typedef int16_t intptr_t;
 [; ;stdint.h: 227: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;interrupt_manager.h: 110: void interrupt INTERRUPT_InterruptManager(void);
-[; ;interrupt_manager.h: 122: void INTERRUPT_Initialize (void);
+[; ;eusart2.h: 94: void EUSART2_Initialize(void);
+[; ;eusart2.h: 114: uint8_t EUSART2_Read(void);
+[; ;eusart2.h: 134: void EUSART2_Write(uint8_t txData);
+[; ;eusart1.h: 94: void EUSART1_Initialize(void);
+[; ;eusart1.h: 114: uint8_t EUSART1_Read(void);
+[; ;eusart1.h: 134: void EUSART1_Write(uint8_t txData);
 [; ;ecan.h: 67: typedef union {
 [; ;ecan.h: 69: struct {
 [; ;ecan.h: 70: unsigned char idType;
@@ -13699,14 +13699,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;spi.h: 214: bool SPI_IsBufferFull(void);
 [; ;spi.h: 239: bool SPI_HasWriteCollisionOccured(void);
 [; ;spi.h: 263: void SPI_ClearWriteCollisionStatus(void);
-[; ;eusart1.h: 94: void EUSART1_Initialize(void);
-[; ;eusart1.h: 114: uint8_t EUSART1_Read(void);
-[; ;eusart1.h: 134: void EUSART1_Write(uint8_t txData);
-[; ;eusart2.h: 94: void EUSART2_Initialize(void);
-[; ;eusart2.h: 114: uint8_t EUSART2_Read(void);
-[; ;eusart2.h: 134: void EUSART2_Write(uint8_t txData);
-[; ;mcc.h: 72: void SYSTEM_Initialize(void);
-[; ;mcc.h: 85: void OSCILLATOR_Initialize(void);
+[; ;mcc.h: 71: void SYSTEM_Initialize(void);
+[; ;mcc.h: 84: void OSCILLATOR_Initialize(void);
 [; ;FT800.h: 21: extern unsigned short dli;
 [; ;FT800.h: 31: extern unsigned short cmd_offset;
 [; ;FT800.h: 35: void cmd_incrementn(unsigned char n);
@@ -14137,9 +14131,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "141
 [e :UE 1558 ]
 }
-[v F15216 `(v ~T0 @X0 1 tf ]
+[v F15202 `(v ~T0 @X0 1 tf ]
 "143
-[v _FT800_Init `TF15216 ~T0 @X0 1 e ]
+[v _FT800_Init `TF15202 ~T0 @X0 1 e ]
 {
 [; ;FT800.c: 143: inline void FT800_Init(){
 [e :U _FT800_Init ]

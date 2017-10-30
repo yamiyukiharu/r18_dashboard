@@ -17857,23 +17857,11 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 221 "mcc_generated_files/pin_manager.h"
+# 311 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 233
+# 323
 void PIN_MANAGER_IOC(void);
-
-# 246
-void IOCB4_ISR(void);
-
-# 269
-void IOCB4_SetInterruptHandler(void* InterruptHandler);
-
-# 293
-extern void (*IOCB4_InterruptHandler)(void);
-
-# 317
-void IOCB4_DefaultInterruptHandler(void);
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdint.h"
 typedef signed char int8_t;
@@ -17950,11 +17938,23 @@ typedef uint16_t uintptr_t;
 # 12 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdbool.h"
 typedef unsigned char bool;
 
-# 110 "mcc_generated_files/interrupt_manager.h"
-void interrupt INTERRUPT_InterruptManager(void);
+# 94 "mcc_generated_files/eusart2.h"
+void EUSART2_Initialize(void);
 
-# 122
-void INTERRUPT_Initialize (void);
+# 114
+uint8_t EUSART2_Read(void);
+
+# 134
+void EUSART2_Write(uint8_t txData);
+
+# 94 "mcc_generated_files/eusart1.h"
+void EUSART1_Initialize(void);
+
+# 114
+uint8_t EUSART1_Read(void);
+
+# 134
+void EUSART1_Write(uint8_t txData);
 
 # 67 "mcc_generated_files/ecan.h"
 typedef union {
@@ -18023,28 +18023,10 @@ bool SPI_HasWriteCollisionOccured(void);
 # 263
 void SPI_ClearWriteCollisionStatus(void);
 
-# 94 "mcc_generated_files/eusart1.h"
-void EUSART1_Initialize(void);
-
-# 114
-uint8_t EUSART1_Read(void);
-
-# 134
-void EUSART1_Write(uint8_t txData);
-
-# 94 "mcc_generated_files/eusart2.h"
-void EUSART2_Initialize(void);
-
-# 114
-uint8_t EUSART2_Read(void);
-
-# 134
-void EUSART2_Write(uint8_t txData);
-
-# 72 "mcc_generated_files/mcc.h"
+# 71 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
-# 85
+# 84
 void OSCILLATOR_Initialize(void);
 
 # 8 "Gue/FT_DataTypes.h"
@@ -18122,13 +18104,14 @@ inline void FT800_Init();
 void off_display();
 
 # 23 "display.h"
+void display(int rpm, int oilP, int fuelP, int tp, int speed, int gear, int engTemp, int oilTemp, int battVolts);
 void display_start();
 void display_labels();
 void display_gear(int gear);
 void display_waterTemp(int temp);
 void display_oilTemp(int temp);
 void display_fuel(int level);
-void display_battery(float volts);
+void display_battery(int volts);
 void display_oilPress(float pressure);
 void display_rpm(int rpm);
 void display_end();
@@ -18138,6 +18121,23 @@ void display_laptime(float current, float best, float last, int lap);
 void display_message(char* message);
 
 # 3 "display.c"
+void display(int rpm, int oilP, int fuelP, int tp, int speed, int gear, int engTemp, int oilTemp, int battVolts) {
+display_start();
+display_labels();
+display_waterTemp(engTemp);
+display_oilTemp(oilTemp);
+display_fuel(4.3);
+display_battery(battVolts);
+display_oilPress(oilP);
+display_gear(gear);
+display_rpm(rpm);
+display_speed(speed);
+display_tp(tp);
+display_laptime(0, 0, 0, 0);
+display_message("hello");
+display_end();
+}
+
 void display_start() {
 cmd(4294967040UL);
 cmd(((2UL<<24)|(((20)&255UL)<<16)|(((20)&255UL)<<8)|(((20)&255UL)<<0)));
@@ -18257,10 +18257,10 @@ cmd(4294967052UL);wr16(1081344UL+cmd_offset, 78);cmd_incrementn(2);wr16(1081344U
 cmd(4294967086UL);wr16(1081344UL+cmd_offset, 83);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 89);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd(3);
 }
 
-void display_battery(float volts) {
-cmd(4294967086UL);wr16(1081344UL+cmd_offset, 66);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 130);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd(13);
+void display_battery(int volts) {
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 66);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 130);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd(volts/10);
 cmd(4294967052UL);wr16(1081344UL+cmd_offset, 90);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 131);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd_incrementn(wr8s(1081344UL+cmd_offset, "."));
-cmd(4294967086UL);wr16(1081344UL+cmd_offset, 96);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 130);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd(2);
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 96);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 130);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 28);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd(volts%10);
 }
 
 void display_oilPress(float pressure) {
@@ -18272,7 +18272,7 @@ cmd(4294967086UL);wr16(1081344UL+cmd_offset, 455);cmd_incrementn(2);wr16(1081344
 }
 
 void display_speed(int speed) {
-cmd(4294967086UL);wr16(1081344UL+cmd_offset, 360 + 45);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 130 - 10);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 31);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);cmd(speed);
+cmd(4294967086UL);wr16(1081344UL+cmd_offset, 360 + 115);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 130 - 10);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 31);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 2048UL);cmd_incrementn(2);cmd(speed);
 }
 
 void display_rpm(int rpm) {
@@ -18284,7 +18284,11 @@ cmd(4294967049UL);cmd(0x323232);
 cmd(4294967059UL);wr16(1081344UL+cmd_offset, 240);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 115);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 130);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 16384UL | 4096UL | 256UL);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 10);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 0);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 10);cmd_incrementn(2);
 
 cmd(((4UL<<24)|(((255)&255UL)<<16)|(((0)&255UL)<<8)|(((0)&255UL)<<0)));
+if(first_digit < 2) {
+cmd(4294967059UL);wr16(1081344UL+cmd_offset, 240);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 115);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 130);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 8192UL|4096UL | 256UL);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 10);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, first_digit);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 10);cmd_incrementn(2);
+} else {
 cmd(4294967059UL);wr16(1081344UL+cmd_offset, 240);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 115);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 130);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 8192UL|4096UL | 256UL);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 10);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 5);cmd_incrementn(2);wr16(1081344UL+cmd_offset, first_digit-2);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 10);cmd_incrementn(2);
+}
 
 cmd(((4UL<<24)|(((255)&255UL)<<16)|(((255)&255UL)<<8)|(((255)&255UL)<<0)));
 cmd(4294967086UL);wr16(1081344UL+cmd_offset, 237);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 89);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 31);cmd_incrementn(2);wr16(1081344UL+cmd_offset, 2048UL);cmd_incrementn(2);cmd(first_digit);
@@ -18311,6 +18315,14 @@ cmd(((14UL<<24)|(((96)&4095UL)<<0)));
 cmd(((4UL<<24)|(((202)&255UL)<<16)|(((125)&255UL)<<8)|(((0)&255UL)<<0)));
 cmd(((31UL<<24)|(((3UL)&15UL)<<0)));
 switch (gear) {
+case 0:
+cmd(((2UL<<30)|(((380)&511UL)<<21)|(((0+15)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380)&511UL)<<21)|(((0+115)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380)&511UL)<<21)|(((0+15)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+80)&511UL)<<21)|(((0+115)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+80)&511UL)<<21)|(((0+116)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+cmd(((2UL<<30)|(((380+80)&511UL)<<21)|(((0+15)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
+break;
 case 1:
 cmd(((2UL<<30)|(((380+40)&511UL)<<21)|(((0+15)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
 cmd(((2UL<<30)|(((380+40)&511UL)<<21)|(((0+115)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
@@ -18374,6 +18386,7 @@ cmd(((2UL<<30)|(((380+1)&511UL)<<21)|(((0+115)&511UL)<<12)|(((0)&31UL)<<7)|(((0)
 cmd(((2UL<<30)|(((380+79)&511UL)<<21)|(((0+115)&511UL)<<12)|(((0)&31UL)<<7)|(((0)&127UL)<<0)));
 break;
 default:
+
 break;
 }
 }
