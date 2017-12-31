@@ -199,10 +199,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1161 . . . ]
 "30731
 [v _LATCbits `VS1161 ~T0 @X0 0 e@3979 ]
+"39 Gue/FT800.h
+[v _cmd `(v ~T0 @X0 0 ef1`ul ]
+"33 display.h
+[v _display_end `(v ~T0 @X0 0 ef ]
+"23
+[v _display `(v ~T0 @X0 0 ef9`i`i`i`i`i`i`i`i`i ]
 "184 mcc_generated_files/ecan.h
 [v _CAN_receive `(uc ~T0 @X0 0 ef1`*S1537 ]
-"23 display.h
-[v _display `(v ~T0 @X0 0 ef9`i`i`i`i`i`i`i`i`i ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -14026,16 +14030,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _canMessage `S1537 ~T0 @X0 1 a ]
 "67
 [v _rpm `i ~T0 @X0 1 a ]
-[v _oilP `i ~T0 @X0 1 a ]
-[v _fuelP `i ~T0 @X0 1 a ]
-[v _tp `i ~T0 @X0 1 a ]
-[v _speed `i ~T0 @X0 1 a ]
-[v _gear `i ~T0 @X0 1 a ]
-[v _engTemp `i ~T0 @X0 1 a ]
-[v _oilTemp `i ~T0 @X0 1 a ]
-[v _battVolts `i ~T0 @X0 1 a ]
 [; ;main.c: 66: uCAN_MSG canMessage;
-[; ;main.c: 67: int rpm, oilP, fuelP, tp, speed, gear, engTemp, oilTemp, battVolts;
+[; ;main.c: 67: int rpm = 0, oilP = 0, fuelP = 0, tp = 0, speed = 0, gear = 0, engTemp = 0, oilTemp = 0, battVolts = 0;
+[e = _rpm -> 0 `i ]
+[v _oilP `i ~T0 @X0 1 a ]
+[e = _oilP -> 0 `i ]
+[v _fuelP `i ~T0 @X0 1 a ]
+[e = _fuelP -> 0 `i ]
+[v _tp `i ~T0 @X0 1 a ]
+[e = _tp -> 0 `i ]
+[v _speed `i ~T0 @X0 1 a ]
+[e = _speed -> 0 `i ]
+[v _gear `i ~T0 @X0 1 a ]
+[e = _gear -> 0 `i ]
+[v _engTemp `i ~T0 @X0 1 a ]
+[e = _engTemp -> 0 `i ]
+[v _oilTemp `i ~T0 @X0 1 a ]
+[e = _oilTemp -> 0 `i ]
+[v _battVolts `i ~T0 @X0 1 a ]
+[e = _battVolts -> 0 `i ]
 [; ;main.c: 68: wait2secs();
 "68
 [e ( _wait2secs ..  ]
@@ -14136,11 +14149,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
 }
 [e :U 1552 ]
-[; ;main.c: 109: do { LATBbits.LATB5 = 0; } while(0);
+[; ;main.c: 109: do { LATBbits.LATB5 = 1; } while(0);
 "109
 [e :U 1556 ]
 {
-[e = . . _LATBbits 0 5 -> -> 0 `i `uc ]
+[e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
 }
 [e :U 1555 ]
 [; ;main.c: 110: do { LATDbits.LATD5 = 0; } while(0);
@@ -14150,11 +14163,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _LATDbits 0 5 -> -> 0 `i `uc ]
 }
 [e :U 1558 ]
-[; ;main.c: 111: do { LATDbits.LATD3 = 0; } while(0);
+[; ;main.c: 111: do { LATDbits.LATD3 = 1; } while(0);
 "111
 [e :U 1562 ]
 {
-[e = . . _LATDbits 0 3 -> -> 0 `i `uc ]
+[e = . . _LATDbits 0 3 -> -> 1 `i `uc ]
 }
 [e :U 1561 ]
 [; ;main.c: 112: do { LATCbits.LATC2 = 1; } while(0);
@@ -14164,122 +14177,142 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
 }
 [e :U 1564 ]
-[; ;main.c: 116: while (1) {
+[; ;main.c: 115: cmd(4294967041UL);
+"115
+[e ( _cmd (1 -> -255 `ul ]
+[; ;main.c: 116: cmd(4294967040UL);
 "116
+[e ( _cmd (1 -> -256 `ul ]
+[; ;main.c: 117: cmd(4294967066UL);cmd(1057988UL);cmd(4);
+"117
+[e ( _cmd (1 -> -230 `ul ]
+[e ( _cmd (1 -> 1057988 `ul ]
+[e ( _cmd (1 -> -> -> 4 `i `l `ul ]
+[; ;main.c: 118: cmd(128);
+"118
+[e ( _cmd (1 -> -> -> 128 `i `l `ul ]
+[; ;main.c: 119: display_end();
+"119
+[e ( _display_end ..  ]
+[; ;main.c: 121: display(rpm, oilP, fuelP, tp, speed, gear, engTemp, oilTemp, battVolts);
+"121
+[e ( _display (4 , , , , , , , , _rpm _oilP _fuelP _tp _speed _gear _engTemp _oilTemp _battVolts ]
+[; ;main.c: 123: while (1) {
+"123
 [e :U 1567 ]
 {
-[; ;main.c: 117: if(CAN_receive(&canMessage)) {
-"117
+[; ;main.c: 124: if(CAN_receive(&canMessage)) {
+"124
 [e $ ! != -> ( _CAN_receive (1 &U _canMessage `i -> -> -> 0 `i `uc `i 1569  ]
 {
-[; ;main.c: 118: if(canMessage.frame.id == 0x640) {
-"118
+[; ;main.c: 125: if(canMessage.frame.id == 0x640) {
+"125
 [e $ ! == . . _canMessage 0 1 -> -> -> 1600 `i `l `ul 1570  ]
 {
-[; ;main.c: 119: rpm = ((canMessage.frame.data0 << 8) | canMessage.frame.data1);
-"119
+[; ;main.c: 126: rpm = ((canMessage.frame.data0 << 8) | canMessage.frame.data1);
+"126
 [e = _rpm | << -> . . _canMessage 0 3 `i -> 8 `i -> . . _canMessage 0 4 `i ]
-[; ;main.c: 120: oilP = ((canMessage.frame.data2 << 8) | canMessage.frame.data3)/10;
-"120
+[; ;main.c: 127: oilP = ((canMessage.frame.data2 << 8) | canMessage.frame.data3)/10;
+"127
 [e = _oilP / | << -> . . _canMessage 0 5 `i -> 8 `i -> . . _canMessage 0 6 `i -> 10 `i ]
-[; ;main.c: 121: fuelP = ((canMessage.frame.data0 << 4) | canMessage.frame.data5);
-"121
+[; ;main.c: 128: fuelP = ((canMessage.frame.data0 << 4) | canMessage.frame.data5);
+"128
 [e = _fuelP | << -> . . _canMessage 0 3 `i -> 4 `i -> . . _canMessage 0 8 `i ]
-[; ;main.c: 122: tp = canMessage.frame.data6;
-"122
+[; ;main.c: 129: tp = canMessage.frame.data6;
+"129
 [e = _tp -> . . _canMessage 0 9 `i ]
-[; ;main.c: 123: speed = canMessage.frame.data7;
-"123
+[; ;main.c: 130: speed = canMessage.frame.data7;
+"130
 [e = _speed -> . . _canMessage 0 10 `i ]
-"124
+"131
 }
-[; ;main.c: 124: } else if(canMessage.frame.id == 0x641) {
+[; ;main.c: 131: } else if(canMessage.frame.id == 0x641) {
 [e $U 1571  ]
 [e :U 1570 ]
 [e $ ! == . . _canMessage 0 1 -> -> -> 1601 `i `l `ul 1572  ]
 {
-[; ;main.c: 125: gear = canMessage.frame.data6;
-"125
+[; ;main.c: 132: gear = canMessage.frame.data6;
+"132
 [e = _gear -> . . _canMessage 0 9 `i ]
-"126
+"133
 }
-[; ;main.c: 126: } else if(canMessage.frame.id == 0x642) {
+[; ;main.c: 133: } else if(canMessage.frame.id == 0x642) {
 [e $U 1573  ]
 [e :U 1572 ]
 [e $ ! == . . _canMessage 0 1 -> -> -> 1602 `i `l `ul 1574  ]
 {
-[; ;main.c: 127: engTemp = canMessage.frame.data0;
-"127
+[; ;main.c: 134: engTemp = canMessage.frame.data0;
+"134
 [e = _engTemp -> . . _canMessage 0 3 `i ]
-[; ;main.c: 128: oilTemp = canMessage.frame.data1;
-"128
+[; ;main.c: 135: oilTemp = canMessage.frame.data1;
+"135
 [e = _oilTemp -> . . _canMessage 0 4 `i ]
-[; ;main.c: 129: battVolts = canMessage.frame.data2;
-"129
+[; ;main.c: 136: battVolts = canMessage.frame.data2;
+"136
 [e = _battVolts -> . . _canMessage 0 5 `i ]
-"130
+"137
 }
 [e :U 1574 ]
-"131
+"138
 [e :U 1573 ]
 [e :U 1571 ]
-[; ;main.c: 130: }
-[; ;main.c: 131: display(rpm, oilP, fuelP, tp, speed, gear, engTemp, oilTemp, battVolts);
+[; ;main.c: 137: }
+[; ;main.c: 138: display(rpm, oilP, fuelP, tp, speed, gear, engTemp, oilTemp, battVolts);
 [e ( _display (4 , , , , , , , , _rpm _oilP _fuelP _tp _speed _gear _engTemp _oilTemp _battVolts ]
-[; ;main.c: 132: do { LATAbits.LATA1 = 1; } while(0);
-"132
+[; ;main.c: 139: do { LATAbits.LATA1 = 1; } while(0);
+"139
 [e :U 1577 ]
 {
 [e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
 }
 [e :U 1576 ]
-[; ;main.c: 133: do { LATDbits.LATD4 = 1; } while(0);
-"133
+[; ;main.c: 140: do { LATDbits.LATD4 = 1; } while(0);
+"140
 [e :U 1580 ]
 {
 [e = . . _LATDbits 0 4 -> -> 1 `i `uc ]
 }
 [e :U 1579 ]
-[; ;main.c: 134: do { LATAbits.LATA0 = 1; } while(0);
-"134
+[; ;main.c: 141: do { LATAbits.LATA0 = 1; } while(0);
+"141
 [e :U 1583 ]
 {
 [e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
 }
 [e :U 1582 ]
-[; ;main.c: 135: do { LATBbits.LATB5 = 1; } while(0);
-"135
+[; ;main.c: 142: do { LATBbits.LATB5 = 1; } while(0);
+"142
 [e :U 1586 ]
 {
 [e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
 }
 [e :U 1585 ]
-[; ;main.c: 136: do { LATDbits.LATD5 = 1; } while(0);
-"136
+[; ;main.c: 143: do { LATDbits.LATD5 = 1; } while(0);
+"143
 [e :U 1589 ]
 {
 [e = . . _LATDbits 0 5 -> -> 1 `i `uc ]
 }
 [e :U 1588 ]
-[; ;main.c: 137: do { LATDbits.LATD3 = 1; } while(0);
-"137
+[; ;main.c: 144: do { LATDbits.LATD3 = 1; } while(0);
+"144
 [e :U 1592 ]
 {
 [e = . . _LATDbits 0 3 -> -> 1 `i `uc ]
 }
 [e :U 1591 ]
-"138
+"145
 }
 [e :U 1569 ]
-"143
+"150
 }
 [e :U 1566 ]
-"116
+"123
 [e $U 1567  ]
 [e :U 1568 ]
-[; ;main.c: 138: }
-[; ;main.c: 143: }
-[; ;main.c: 144: }
-"144
+[; ;main.c: 145: }
+[; ;main.c: 150: }
+[; ;main.c: 151: }
+"151
 [e :UE 1544 ]
 }

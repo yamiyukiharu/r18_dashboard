@@ -18167,7 +18167,7 @@ _delay((unsigned long)((2000)*(16000000/4000.0)));
 void main(void)
 {
 uCAN_MSG canMessage;
-int rpm, oilP, fuelP, tp, speed, gear, engTemp, oilTemp, battVolts;
+int rpm = 0, oilP = 0, fuelP = 0, tp = 0, speed = 0, gear = 0, engTemp = 0, oilTemp = 0, battVolts = 0;
 wait2secs();
 
 int y_start = 0;
@@ -18209,12 +18209,19 @@ wait2secs();
 do { LATAbits.LATA1 = 0; } while(0);
 do { LATDbits.LATD4 = 0; } while(0);
 do { LATAbits.LATA0 = 0; } while(0);
-do { LATBbits.LATB5 = 0; } while(0);
+do { LATBbits.LATB5 = 1; } while(0);
 do { LATDbits.LATD5 = 0; } while(0);
-do { LATDbits.LATD3 = 0; } while(0);
+do { LATDbits.LATD3 = 1; } while(0);
 do { LATCbits.LATC2 = 1; } while(0);
 
 
+cmd(4294967041UL);
+cmd(4294967040UL);
+cmd(4294967066UL);cmd(1057988UL);cmd(4);
+cmd(128);
+display_end();
+
+display(rpm, oilP, fuelP, tp, speed, gear, engTemp, oilTemp, battVolts);
 
 while (1) {
 if(CAN_receive(&canMessage)) {

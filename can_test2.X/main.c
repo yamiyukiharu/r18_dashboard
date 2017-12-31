@@ -64,7 +64,7 @@ void wait2secs(){
 void main(void)
 {   
     uCAN_MSG canMessage;
-    int rpm, oilP, fuelP, tp, speed, gear, engTemp, oilTemp, battVolts;
+    int rpm = 0, oilP = 0, fuelP = 0, tp = 0, speed = 0, gear = 0, engTemp = 0, oilTemp = 0, battVolts = 0;
     wait2secs(); 
     
     int y_start = 0;
@@ -106,12 +106,12 @@ void main(void)
     up_shift_SetLow();
     down_shift_SetLow();
     warning_1_SetLow();
-    warning_2_SetLow();
+    warning_2_SetHigh();
     warning_3_SetLow();
-    warning_4_SetLow();
+    warning_4_SetHigh();
     IO_RC2_SetHigh();
     
-    
+    display(rpm, oilP, fuelP, tp, speed, gear, engTemp, oilTemp, battVolts);
     
     while (1) {  
         if(CAN_receive(&canMessage)) {
