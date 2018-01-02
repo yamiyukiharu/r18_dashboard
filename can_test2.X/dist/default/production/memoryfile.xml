@@ -3,9 +3,9 @@
   <executable name="dist/default/production\can_test2.X.production.hex">
     <memory name="program">
       <units>bytes</units>
-      <length>32768</length>
-      <used>26606</used>
-      <free>6162</free>
+      <length>65536</length>
+      <used>26470</used>
+      <free>39066</free>
     </memory>
     <memory name="data">
       <units>bytes</units>

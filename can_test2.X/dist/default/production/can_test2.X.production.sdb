@@ -1,7 +1,7 @@
 [p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
 [d version 1.1 ]
 [d edition pro ]
-[d chip 18F45K80 ]
+[d chip 18F46K80 ]
 [d frameptr 4065 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -113,7 +113,7 @@
 [v _SPI_Initialize SPI_Initialize `(v  1 e 1 0 ]
 "77
 [v _SPI_Exchange8bit SPI_Exchange8bit `(uc  1 e 1 0 ]
-"190 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f45k80.h
+"190 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f46k80.h
 [v _BRGCON1 BRGCON1 `VEuc  1 e 1 @3651 ]
 "266
 [v _BRGCON2 BRGCON2 `VEuc  1 e 1 @3652 ]
@@ -876,7 +876,7 @@
 [v main@rpm rpm `i  1 a 2 40 ]
 "70
 [v main@y_start y_start `i  1 a 2 38 ]
-"151
+"144
 } 0
 "60
 [v _wait2secs wait2secs `(v  1 e 1 0 ]
