@@ -865,20 +865,26 @@
 [s S153 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
 "66
 [u S165 . 14 `S153 1 frame 14 0 `[14]uc 1 array 14 0 ]
-[v main@canMessage canMessage `S165  1 a 14 67 ]
+[v main@canMessage canMessage `S165  1 a 14 73 ]
 "67
-[v main@battVolts battVolts `i  1 a 2 65 ]
-[v main@oilTemp oilTemp `i  1 a 2 63 ]
-[v main@engTemp engTemp `i  1 a 2 61 ]
-[v main@gear gear `i  1 a 2 59 ]
-[v main@speed speed `i  1 a 2 57 ]
-[v main@tp tp `i  1 a 2 55 ]
-[v main@fuelP fuelP `i  1 a 2 53 ]
-[v main@oilP oilP `i  1 a 2 51 ]
-[v main@rpm rpm `i  1 a 2 49 ]
-"70
+[v main@battVolts battVolts `i  1 a 2 71 ]
+[v main@oilTemp oilTemp `i  1 a 2 69 ]
+[v main@engTemp engTemp `i  1 a 2 67 ]
+[v main@gear gear `i  1 a 2 65 ]
+[v main@tp tp `i  1 a 2 63 ]
+[v main@fuelP fuelP `i  1 a 2 61 ]
+[v main@oilP oilP `i  1 a 2 59 ]
+[v main@rpm rpm `i  1 a 2 57 ]
+"68
+[v main@radio_sw radio_sw `i  1 a 2 55 ]
+"67
+[v main@speed speed `i  1 a 2 53 ]
+"68
+[v main@brakeP_R brakeP_R `i  1 a 2 51 ]
+[v main@brakeP_F brakeP_F `i  1 a 2 49 ]
+"71
 [v main@y_start y_start `i  1 a 2 47 ]
-"144
+"158
 } 0
 "60
 [v _wait2secs wait2secs `(v  1 e 1 0 ]

@@ -64,7 +64,8 @@ void wait2secs(){
 void main(void)
 {   
     uCAN_MSG canMessage;
-    int rpm = 0, oilP = 0, fuelP = 0, tp = 0, speed = 0, gear = 0, engTemp = 0, oilTemp = 0, battVolts = 0;
+    int rpm = 0, oilP = 0, fuelP = 0, tp = 0, speed = 0, gear = 0, engTemp = 0, oilTemp = 0, battVolts = 0,
+            brakeP_F = 0, brakeP_R = 0, radio_sw = 0;
     wait2secs(); 
     
     int y_start = 0;
@@ -121,20 +122,33 @@ void main(void)
                 fuelP = ((canMessage.frame.data0 << 4) | canMessage.frame.data5);
                 tp = canMessage.frame.data6;
                 speed = canMessage.frame.data7;
+                warning_3_SetHigh();
+                __delay_ms(200);
             } else if(canMessage.frame.id == 0x641) {
+                brakeP_F = canMessage.frame.data0;
+                brakeP_R = canMessage.frame.data1;
                 gear = canMessage.frame.data6;
+                radio_sw = canMessage.frame.data7 >> 7;
+                warning_2_SetHigh();
+                __delay_ms(200);
             } else if(canMessage.frame.id == 0x642) {
                 engTemp = canMessage.frame.data0;
                 oilTemp = canMessage.frame.data1;
                 battVolts = canMessage.frame.data2;
+            } else if(canMessage.frame.id == 0x643) {
+                
+                warning_1_SetHigh();
+                __delay_ms(200);
             }
-        display(rpm, oilP, fuelP, tp, speed, gear, engTemp, oilTemp, battVolts); 
-        up_shift_SetHigh();
-        down_shift_SetHigh();
-        warning_1_SetHigh();
-        warning_2_SetHigh();
-        warning_3_SetHigh();
-        warning_4_SetHigh();
+        //display(rpm, oilP, fuelP, tp, speed, gear, engTemp, oilTemp, battVolts); 
+        display(rpm, oilP, fuelP, tp, radio_sw, gear, engTemp, oilTemp, battVolts); 
+        
+        up_shift_SetLow();
+        down_shift_SetLow();
+        warning_1_SetLow();
+        warning_2_SetLow();
+        warning_3_SetLow();
+        warning_4_SetLow();
         }
         //__delay_ms(50);
     //    EUSART1_Write(0x53);    
