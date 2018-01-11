@@ -1,17 +1,17 @@
 
 # 1 "main.c"
 
-# 26 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\htc.h"
+# 26 "/Applications/microchip/xc8/v1.45/include/htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\xc8debug.h"
+# 13 "/Applications/microchip/xc8/v1.45/include/xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 50 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f46k80.h"
+# 50 "/Applications/microchip/xc8/v1.45/include/pic18f46k80.h"
 extern volatile unsigned char RXERRCNT @ 0xE41;
 
 asm("RXERRCNT equ 0E41h");
@@ -17830,7 +17830,7 @@ extern volatile __bit nW @ (((unsigned) &SSPSTAT)*8) + 2;
 
 extern volatile __bit nWRITE @ (((unsigned) &SSPSTAT)*8) + 2;
 
-# 18 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18.h"
+# 18 "/Applications/microchip/xc8/v1.45/include/pic18.h"
 __attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
 __attribute__((__unsupported__("The " "EraseFlash" " routine is no longer supported. Please use the MPLAB X MCC."))) void EraseFlash(unsigned long startaddr, unsigned long endaddr);
 
@@ -17863,61 +17863,79 @@ void PIN_MANAGER_Initialize (void);
 # 323
 void PIN_MANAGER_IOC(void);
 
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdint.h"
+# 13 "/Applications/microchip/xc8/v1.45/include/stdint.h"
 typedef signed char int8_t;
 
 # 20
 typedef signed int int16_t;
 
-# 38
+# 28
+typedef signed short long int int24_t;
+
+# 36
 typedef signed long int int32_t;
 
-# 45
+# 43
 typedef unsigned char uint8_t;
 
-# 51
+# 49
 typedef unsigned int uint16_t;
 
-# 67
+# 56
+typedef unsigned short long int uint24_t;
+
+# 63
 typedef unsigned long int uint32_t;
 
-# 75
+# 71
 typedef signed char int_least8_t;
 
-# 82
+# 78
 typedef signed int int_least16_t;
 
-# 104
+# 90
+typedef signed short long int int_least24_t;
+
+# 98
 typedef signed long int int_least32_t;
 
-# 111
+# 105
 typedef unsigned char uint_least8_t;
 
-# 117
+# 111
 typedef unsigned int uint_least16_t;
 
-# 136
+# 121
+typedef unsigned short long int uint_least24_t;
+
+# 128
 typedef unsigned long int uint_least32_t;
 
-# 145
+# 137
 typedef signed char int_fast8_t;
 
-# 152
+# 144
 typedef signed int int_fast16_t;
 
-# 174
+# 156
+typedef signed short long int int_fast24_t;
+
+# 164
 typedef signed long int int_fast32_t;
 
-# 181
+# 171
 typedef unsigned char uint_fast8_t;
 
-# 187
+# 177
 typedef unsigned int uint_fast16_t;
 
-# 206
+# 187
+typedef unsigned short long int uint_fast24_t;
+
+# 194
 typedef unsigned long int uint_fast32_t;
 
-# 212
+# 200
 typedef int32_t intmax_t;
 
 
@@ -17935,7 +17953,7 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdbool.h"
+# 12 "/Applications/microchip/xc8/v1.45/include/stdbool.h"
 typedef unsigned char bool;
 
 # 94 "mcc_generated_files/eusart2.h"
@@ -17999,10 +18017,10 @@ unsigned char CAN_isRXErrorPassive(void);
 # 278
 unsigned char CAN_isTXErrorPassive(void);
 
-# 4 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\__size_t.h"
+# 4 "/Applications/microchip/xc8/v1.45/include/__size_t.h"
 typedef unsigned size_t;
 
-# 6 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stddef.h"
+# 6 "/Applications/microchip/xc8/v1.45/include/stddef.h"
 typedef int ptrdiff_t;
 
 # 116 "mcc_generated_files/spi.h"
@@ -18167,7 +18185,8 @@ _delay((unsigned long)((2000)*(16000000/4000.0)));
 void main(void)
 {
 uCAN_MSG canMessage;
-int rpm = 0, oilP = 0, fuelP = 0, tp = 0, speed = 0, gear = 0, engTemp = 0, oilTemp = 0, battVolts = 0;
+int rpm = 0, oilP = 0, fuelP = 0, tp = 0, speed = 0, gear = 0, engTemp = 0, oilTemp = 0, battVolts = 0,
+brakeP_F = 0, brakeP_R = 0, radio_sw = 0;
 wait2secs();
 
 int y_start = 0;
@@ -18224,20 +18243,33 @@ oilP = ((canMessage.frame.data2 << 8) | canMessage.frame.data3)/10;
 fuelP = ((canMessage.frame.data0 << 4) | canMessage.frame.data5);
 tp = canMessage.frame.data6;
 speed = canMessage.frame.data7;
+do { LATDbits.LATD5 = 1; } while(0);
+_delay((unsigned long)((200)*(16000000/4000.0)));
 } else if(canMessage.frame.id == 0x641) {
+brakeP_F = canMessage.frame.data0;
+brakeP_R = canMessage.frame.data1;
 gear = canMessage.frame.data6;
+radio_sw = canMessage.frame.data7 >> 7;
+do { LATBbits.LATB5 = 1; } while(0);
+_delay((unsigned long)((200)*(16000000/4000.0)));
 } else if(canMessage.frame.id == 0x642) {
 engTemp = canMessage.frame.data0;
 oilTemp = canMessage.frame.data1;
 battVolts = canMessage.frame.data2;
-}
-display(rpm, oilP, fuelP, tp, speed, gear, engTemp, oilTemp, battVolts);
-do { LATAbits.LATA1 = 1; } while(0);
-do { LATDbits.LATD4 = 1; } while(0);
+} else if(canMessage.frame.id == 0x643) {
+
 do { LATAbits.LATA0 = 1; } while(0);
-do { LATBbits.LATB5 = 1; } while(0);
-do { LATDbits.LATD5 = 1; } while(0);
-do { LATDbits.LATD3 = 1; } while(0);
+_delay((unsigned long)((200)*(16000000/4000.0)));
+}
+
+display(rpm, oilP, fuelP, tp, radio_sw, gear, engTemp, oilTemp, battVolts);
+
+do { LATAbits.LATA1 = 0; } while(0);
+do { LATDbits.LATD4 = 0; } while(0);
+do { LATAbits.LATA0 = 0; } while(0);
+do { LATBbits.LATB5 = 0; } while(0);
+do { LATDbits.LATD5 = 0; } while(0);
+do { LATDbits.LATD3 = 0; } while(0);
 }
 
 

@@ -3,37 +3,39 @@
 [d edition pro ]
 [d chip 18F46K80 ]
 [d frameptr 4065 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+"8 /Applications/microchip/xc8/v1.45/sources/common/awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awmod.c
+"8 /Applications/microchip/xc8/v1.45/sources/common/awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
-"32 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awtoft.c
+"32 /Applications/microchip/xc8/v1.45/sources/common/awtoft.c
 [v ___awtoft __awtoft `(f  1 e 3 0 ]
-"62 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\float.c
+"62 /Applications/microchip/xc8/v1.45/sources/common/float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
-"86 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\ftadd.c
+"86 /Applications/microchip/xc8/v1.45/sources/common/ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
-"54 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\ftdiv.c
+"54 /Applications/microchip/xc8/v1.45/sources/common/ftdiv.c
 [v ___ftdiv __ftdiv `(f  1 e 3 0 ]
-"62 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\ftmul.c
+"62 /Applications/microchip/xc8/v1.45/sources/common/ftmul.c
 [v ___ftmul __ftmul `(f  1 e 3 0 ]
-"20 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\ftsub.c
+"20 /Applications/microchip/xc8/v1.45/sources/common/ftsub.c
 [v ___ftsub __ftsub `(f  1 e 3 0 ]
-"44 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\fttol.c
+"44 /Applications/microchip/xc8/v1.45/sources/common/fttol.c
 [v ___fttol __fttol `(l  1 e 4 0 ]
-"10 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\sprcadd.c
+"10 /Applications/microchip/xc8/v1.45/sources/common/sprcadd.c
 [v ___fladd __fladd `(d  1 e 3 0 ]
 "245
 [v ___flsub __flsub `(d  1 e 3 0 ]
-"11 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\sprcdiv.c
+"11 /Applications/microchip/xc8/v1.45/sources/common/sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 3 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\sprcmul.c
+"8 /Applications/microchip/xc8/v1.45/sources/common/sprcmul.c
 [v ___flmul __flmul `(d  1 e 3 0 ]
-"4 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\strlen.c
+"4 /Applications/microchip/xc8/v1.45/sources/common/strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
-"15 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\Umul32.c
+"15 /Applications/microchip/xc8/v1.45/sources/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 /Applications/microchip/xc8/v1.45/sources/common/Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"3 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\display.c
+"3 /Users/haoye/Desktop/r18_dashboard/can_test2.X/display.c
 [v _display display `(v  1 e 1 0 ]
 "20
 [v _display_start display_start `(v  1 e 1 0 ]
@@ -61,9 +63,9 @@
 [v _display_speed display_speed `(v  1 e 1 0 ]
 "157
 [v _display_rpm display_rpm `(v  1 e 1 0 ]
-"192
+"193
 [v _display_gear display_gear `(v  1 e 1 0 ]
-"8 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\Gue/FT800.c
+"8 /Users/haoye/Desktop/r18_dashboard/can_test2.X/Gue/FT800.c
 [v _host_command host_command `(v  1 e 1 0 ]
 "16
 [v _wr8 wr8 `(v  1 e 1 0 ]
@@ -81,7 +83,7 @@
 [v _cmd cmd `(v  1 e 1 0 ]
 "143
 [v _FT800_Init FT800_Init `T(v  1 e 1 0 ]
-"21 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\main.c
+"21 /Users/haoye/Desktop/r18_dashboard/can_test2.X/main.c
 [v _can_bus can_bus `II(v  1 e 1 0 ]
 "48
 [v _convertStandardCANid convertStandardCANid `(ul  1 e 4 0 ]
@@ -89,7 +91,7 @@
 [v _wait2secs wait2secs `(v  1 e 1 0 ]
 "64
 [v _main main `(v  1 e 1 0 ]
-"63 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/ecan.c
+"63 /Users/haoye/Desktop/r18_dashboard/can_test2.X/mcc_generated_files/ecan.c
 [v _ECAN_Initialize ECAN_Initialize `(v  1 e 1 0 ]
 "239
 [v _CAN_receive CAN_receive `(uc  1 e 1 0 ]
@@ -99,21 +101,21 @@
 [v _convertReg2StandardCANid convertReg2StandardCANid `(ul  1 e 4 0 ]
 "397
 [v _convertCANid2Reg convertCANid2Reg `(v  1 e 1 0 ]
-"55 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/eusart1.c
+"55 /Users/haoye/Desktop/r18_dashboard/can_test2.X/mcc_generated_files/eusart1.c
 [v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
-"55 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/eusart2.c
+"55 /Users/haoye/Desktop/r18_dashboard/can_test2.X/mcc_generated_files/eusart2.c
 [v _EUSART2_Initialize EUSART2_Initialize `(v  1 e 1 0 ]
-"111 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/mcc.c
+"111 /Users/haoye/Desktop/r18_dashboard/can_test2.X/mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "122
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
-"52 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/pin_manager.c
+"52 /Users/haoye/Desktop/r18_dashboard/can_test2.X/mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"63 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/spi.c
+"63 /Users/haoye/Desktop/r18_dashboard/can_test2.X/mcc_generated_files/spi.c
 [v _SPI_Initialize SPI_Initialize `(v  1 e 1 0 ]
 "77
 [v _SPI_Exchange8bit SPI_Exchange8bit `(uc  1 e 1 0 ]
-"190 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f46k80.h
+"190 /Applications/microchip/xc8/v1.45/include/pic18f46k80.h
 [v _BRGCON1 BRGCON1 `VEuc  1 e 1 @3651 ]
 "266
 [v _BRGCON2 BRGCON2 `VEuc  1 e 1 @3652 ]
@@ -851,10 +853,10 @@
 [v _OSCCON2 OSCCON2 `VEuc  1 e 1 @4050 ]
 "36246
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
-"6 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\Gue/FT800.c
+"6 /Users/haoye/Desktop/r18_dashboard/can_test2.X/Gue/FT800.c
 [v _cmd_offset cmd_offset `us  1 e 2 0 ]
 [s S153 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
-"18 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\main.c
+"18 /Users/haoye/Desktop/r18_dashboard/can_test2.X/main.c
 [u S165 . 14 `S153 1 frame 14 0 `[14]uc 1 array 14 0 ]
 [v _tempCanMsg tempCanMsg `S165  1 e 14 0 ]
 "64
@@ -863,50 +865,56 @@
 [s S153 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
 "66
 [u S165 . 14 `S153 1 frame 14 0 `[14]uc 1 array 14 0 ]
-[v main@canMessage canMessage `S165  1 a 14 58 ]
+[v main@canMessage canMessage `S165  1 a 14 73 ]
 "67
-[v main@battVolts battVolts `i  1 a 2 56 ]
-[v main@oilTemp oilTemp `i  1 a 2 54 ]
-[v main@engTemp engTemp `i  1 a 2 52 ]
-[v main@gear gear `i  1 a 2 50 ]
-[v main@speed speed `i  1 a 2 48 ]
-[v main@tp tp `i  1 a 2 46 ]
-[v main@fuelP fuelP `i  1 a 2 44 ]
-[v main@oilP oilP `i  1 a 2 42 ]
-[v main@rpm rpm `i  1 a 2 40 ]
-"70
-[v main@y_start y_start `i  1 a 2 38 ]
-"144
+[v main@battVolts battVolts `i  1 a 2 71 ]
+[v main@oilTemp oilTemp `i  1 a 2 69 ]
+[v main@engTemp engTemp `i  1 a 2 67 ]
+[v main@gear gear `i  1 a 2 65 ]
+[v main@tp tp `i  1 a 2 63 ]
+[v main@fuelP fuelP `i  1 a 2 61 ]
+[v main@oilP oilP `i  1 a 2 59 ]
+[v main@rpm rpm `i  1 a 2 57 ]
+"68
+[v main@radio_sw radio_sw `i  1 a 2 55 ]
+"67
+[v main@speed speed `i  1 a 2 53 ]
+"68
+[v main@brakeP_R brakeP_R `i  1 a 2 51 ]
+[v main@brakeP_F brakeP_F `i  1 a 2 49 ]
+"71
+[v main@y_start y_start `i  1 a 2 47 ]
+"158
 } 0
 "60
 [v _wait2secs wait2secs `(v  1 e 1 0 ]
 {
 "62
 } 0
-"3 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\display.c
+"3 /Users/haoye/Desktop/r18_dashboard/can_test2.X/display.c
 [v _display display `(v  1 e 1 0 ]
 {
-[v display@rpm rpm `i  1 p 2 18 ]
-[v display@oilP oilP `i  1 p 2 20 ]
-[v display@fuelP fuelP `i  1 p 2 22 ]
-[v display@tp tp `i  1 p 2 24 ]
-[v display@speed speed `i  1 p 2 26 ]
-[v display@gear gear `i  1 p 2 28 ]
-[v display@engTemp engTemp `i  1 p 2 30 ]
-[v display@oilTemp oilTemp `i  1 p 2 32 ]
-[v display@battVolts battVolts `i  1 p 2 34 ]
+[v display@rpm rpm `i  1 p 2 27 ]
+[v display@oilP oilP `i  1 p 2 29 ]
+[v display@fuelP fuelP `i  1 p 2 31 ]
+[v display@tp tp `i  1 p 2 33 ]
+[v display@speed speed `i  1 p 2 35 ]
+[v display@gear gear `i  1 p 2 37 ]
+[v display@engTemp engTemp `i  1 p 2 39 ]
+[v display@oilTemp oilTemp `i  1 p 2 41 ]
+[v display@battVolts battVolts `i  1 p 2 43 ]
 "18
 } 0
 "124
 [v _display_waterTemp display_waterTemp `(v  1 e 1 0 ]
 {
-[v display_waterTemp@temp temp `i  1 p 2 4 ]
+[v display_waterTemp@temp temp `i  1 p 2 13 ]
 "127
 } 0
 "149
 [v _display_tp display_tp `(v  1 e 1 0 ]
 {
-[v display_tp@tp tp `i  1 p 2 4 ]
+[v display_tp@tp tp `i  1 p 2 13 ]
 "151
 } 0
 "20
@@ -917,76 +925,88 @@
 "153
 [v _display_speed display_speed `(v  1 e 1 0 ]
 {
-[v display_speed@speed speed `i  1 p 2 4 ]
+[v display_speed@speed speed `i  1 p 2 13 ]
 "155
 } 0
 "157
 [v _display_rpm display_rpm `(v  1 e 1 0 ]
 {
+"169
+[v display_rpm@val val `i  1 a 2 18 ]
 "158
-[v display_rpm@first_digit first_digit `i  1 a 2 11 ]
+[v display_rpm@first_digit first_digit `i  1 a 2 22 ]
 "159
-[v display_rpm@second_digit second_digit `i  1 a 2 9 ]
+[v display_rpm@second_digit second_digit `i  1 a 2 20 ]
 "157
-[v display_rpm@rpm rpm `i  1 p 2 4 ]
-"190
+[v display_rpm@rpm rpm `i  1 p 2 13 ]
+"191
 } 0
-"129
+"15 /Applications/microchip/xc8/v1.45/sources/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 37 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 33 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 35 ]
+"53
+} 0
+"129 /Users/haoye/Desktop/r18_dashboard/can_test2.X/display.c
 [v _display_oilTemp display_oilTemp `(v  1 e 1 0 ]
 {
-[v display_oilTemp@temp temp `i  1 p 2 4 ]
+[v display_oilTemp@temp temp `i  1 p 2 13 ]
 "131
 } 0
 "145
 [v _display_oilPress display_oilPress `(v  1 e 1 0 ]
 {
-[v display_oilPress@pressure pressure `f  1 p 3 4 ]
+[v display_oilPress@pressure pressure `f  1 p 3 13 ]
 "147
 } 0
-"44 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\fttol.c
+"44 /Applications/microchip/xc8/v1.45/sources/common/fttol.c
 [v ___fttol __fttol `(l  1 e 4 0 ]
 {
 "47
-[v ___fttol@lval lval `ul  1 a 4 39 ]
+[v ___fttol@lval lval `ul  1 a 4 1 ]
 "46
-[v ___fttol@exp1 exp1 `uc  1 a 1 43 ]
-[v ___fttol@sign1 sign1 `uc  1 a 1 38 ]
+[v ___fttol@exp1 exp1 `uc  1 a 1 5 ]
+[v ___fttol@sign1 sign1 `uc  1 a 1 0 ]
 "44
-[v ___fttol@f1 f1 `f  1 p 3 29 ]
+[v ___fttol@f1 f1 `f  1 p 3 33 ]
 "73
 } 0
-"64 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\display.c
+"64 /Users/haoye/Desktop/r18_dashboard/can_test2.X/display.c
 [v _display_message display_message `(v  1 e 1 0 ]
 {
-[v display_message@message message `*.25uc  1 p 2 4 ]
+[v display_message@message message `*.25uc  1 p 2 13 ]
 "71
 } 0
 "73
 [v _display_laptime display_laptime `(v  1 e 1 0 ]
 {
-[v display_laptime@current current `f  1 p 3 4 ]
-[v display_laptime@best best `f  1 p 3 7 ]
-[v display_laptime@last last `f  1 p 3 10 ]
-[v display_laptime@lap lap `i  1 p 2 13 ]
+[v display_laptime@current current `f  1 p 3 13 ]
+[v display_laptime@best best `f  1 p 3 16 ]
+[v display_laptime@last last `f  1 p 3 19 ]
+[v display_laptime@lap lap `i  1 p 2 22 ]
 "122
 } 0
 "32
 [v _display_labels display_labels `(v  1 e 1 0 ]
 {
 "33
-[v display_labels@y_start y_start `i  1 a 2 7 ]
+[v display_labels@y_start y_start `i  1 a 2 16 ]
 "62
 } 0
-"192
+"193
 [v _display_gear display_gear `(v  1 e 1 0 ]
 {
-[v display_gear@gear gear `i  1 p 2 4 ]
-"271
+[v display_gear@gear gear `i  1 p 2 13 ]
+"272
 } 0
 "133
 [v _display_fuel display_fuel `(v  1 e 1 0 ]
 {
-[v display_fuel@level level `i  1 p 2 4 ]
+[v display_fuel@level level `i  1 p 2 13 ]
 "137
 } 0
 "26
@@ -997,34 +1017,34 @@
 "139
 [v _display_battery display_battery `(v  1 e 1 0 ]
 {
-[v display_battery@volts volts `i  1 p 2 4 ]
+[v display_battery@volts volts `i  1 p 2 13 ]
 "143
 } 0
-"43 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\Gue/FT800.c
+"43 /Users/haoye/Desktop/r18_dashboard/can_test2.X/Gue/FT800.c
 [v _wr8s wr8s `(uc  1 e 1 0 ]
 {
 "50
-[v wr8s@i i `uc  1 a 1 44 ]
+[v wr8s@i i `uc  1 a 1 6 ]
 "49
-[v wr8s@l l `uc  1 a 1 43 ]
+[v wr8s@l l `uc  1 a 1 5 ]
 "43
-[v wr8s@addr addr `um  1 p 3 35 ]
-[v wr8s@s s `*.25Cuc  1 p 2 38 ]
+[v wr8s@addr addr `um  1 p 3 0 ]
+[v wr8s@s s `*.25Cuc  1 p 2 3 ]
 "59
 } 0
-"4 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\strlen.c
+"4 /Applications/microchip/xc8/v1.45/sources/common/strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
 {
 "6
-[v strlen@cp cp `*.25Cuc  1 a 2 33 ]
+[v strlen@cp cp `*.25Cuc  1 a 2 37 ]
 "4
-[v strlen@s s `*.25Cuc  1 p 2 29 ]
+[v strlen@s s `*.25Cuc  1 p 2 33 ]
 "13
 } 0
-"126 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\Gue/FT800.c
+"126 /Users/haoye/Desktop/r18_dashboard/can_test2.X/Gue/FT800.c
 [v _cmd cmd `(v  1 e 1 0 ]
 {
-[v cmd@command command `ul  1 p 4 0 ]
+[v cmd@command command `ul  1 p 4 6 ]
 "128
 } 0
 "122
@@ -1032,86 +1052,86 @@
 {
 [v cmd_incrementn@n n `uc  1 a 1 wreg ]
 [v cmd_incrementn@n n `uc  1 a 1 wreg ]
-[v cmd_incrementn@n n `uc  1 a 1 31 ]
+[v cmd_incrementn@n n `uc  1 a 1 35 ]
 "124
 } 0
-"8 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awmod.c
+"8 /Applications/microchip/xc8/v1.45/sources/common/awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
 {
 "11
 [v ___awmod@sign sign `uc  1 a 1 42 ]
 [v ___awmod@counter counter `uc  1 a 1 41 ]
 "8
-[v ___awmod@dividend dividend `i  1 p 2 37 ]
-[v ___awmod@divisor divisor `i  1 p 2 39 ]
+[v ___awmod@dividend dividend `i  1 p 2 0 ]
+[v ___awmod@divisor divisor `i  1 p 2 2 ]
 "35
 } 0
-"8 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
+"8 /Applications/microchip/xc8/v1.45/sources/common/awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 {
 "11
-[v ___awdiv@quotient quotient `i  1 a 2 35 ]
+[v ___awdiv@quotient quotient `i  1 a 2 39 ]
 "12
-[v ___awdiv@sign sign `uc  1 a 1 34 ]
-[v ___awdiv@counter counter `uc  1 a 1 33 ]
+[v ___awdiv@sign sign `uc  1 a 1 38 ]
+[v ___awdiv@counter counter `uc  1 a 1 37 ]
 "8
-[v ___awdiv@dividend dividend `i  1 p 2 29 ]
-[v ___awdiv@divisor divisor `i  1 p 2 31 ]
+[v ___awdiv@dividend dividend `i  1 p 2 33 ]
+[v ___awdiv@divisor divisor `i  1 p 2 35 ]
 "42
 } 0
-"32 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awtoft.c
+"32 /Applications/microchip/xc8/v1.45/sources/common/awtoft.c
 [v ___awtoft __awtoft `(f  1 e 3 0 ]
 {
 "34
-[v ___awtoft@sign sign `uc  1 a 1 40 ]
+[v ___awtoft@sign sign `uc  1 a 1 41 ]
 "32
-[v ___awtoft@c c `i  1 p 2 37 ]
+[v ___awtoft@c c `i  1 p 2 0 ]
 "42
 } 0
-"62 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\float.c
+"62 /Applications/microchip/xc8/v1.45/sources/common/float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 {
-[v ___ftpack@arg arg `um  1 p 3 29 ]
-[v ___ftpack@exp exp `uc  1 p 1 32 ]
-[v ___ftpack@sign sign `uc  1 p 1 33 ]
+[v ___ftpack@arg arg `um  1 p 3 33 ]
+[v ___ftpack@exp exp `uc  1 p 1 36 ]
+[v ___ftpack@sign sign `uc  1 p 1 37 ]
 "86
 } 0
-"111 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/mcc.c
+"111 /Users/haoye/Desktop/r18_dashboard/can_test2.X/mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "120
 } 0
-"63 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/spi.c
+"63 /Users/haoye/Desktop/r18_dashboard/can_test2.X/mcc_generated_files/spi.c
 [v _SPI_Initialize SPI_Initialize `(v  1 e 1 0 ]
 {
 "75
 } 0
-"52 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/pin_manager.c
+"52 /Users/haoye/Desktop/r18_dashboard/can_test2.X/mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "94
 } 0
-"122 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/mcc.c
+"122 /Users/haoye/Desktop/r18_dashboard/can_test2.X/mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "132
 } 0
-"55 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/eusart2.c
+"55 /Users/haoye/Desktop/r18_dashboard/can_test2.X/mcc_generated_files/eusart2.c
 [v _EUSART2_Initialize EUSART2_Initialize `(v  1 e 1 0 ]
 {
 "74
 } 0
-"55 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/eusart1.c
+"55 /Users/haoye/Desktop/r18_dashboard/can_test2.X/mcc_generated_files/eusart1.c
 [v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
 {
 "74
 } 0
-"63 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/ecan.c
+"63 /Users/haoye/Desktop/r18_dashboard/can_test2.X/mcc_generated_files/ecan.c
 [v _ECAN_Initialize ECAN_Initialize `(v  1 e 1 0 ]
 {
 "150
 } 0
-"143 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\Gue/FT800.c
+"143 /Users/haoye/Desktop/r18_dashboard/can_test2.X/Gue/FT800.c
 [v _FT800_Init FT800_Init `T(v  1 e 1 0 ]
 {
 "198
@@ -1119,31 +1139,31 @@
 "16
 [v _wr8 wr8 `(v  1 e 1 0 ]
 {
-[v wr8@addr addr `um  1 p 3 30 ]
-[v wr8@value value `uc  1 p 1 33 ]
+[v wr8@addr addr `um  1 p 3 34 ]
+[v wr8@value value `uc  1 p 1 37 ]
 "23
 } 0
 "34
 [v _wr32 wr32 `(v  1 e 1 0 ]
 {
-[v wr32@addr addr `um  1 p 3 30 ]
-[v wr32@value value `ul  1 p 4 33 ]
+[v wr32@addr addr `um  1 p 3 34 ]
+[v wr32@value value `ul  1 p 4 37 ]
 "41
 } 0
 "25
 [v _wr16 wr16 `(v  1 e 1 0 ]
 {
-[v wr16@addr addr `um  1 p 3 30 ]
-[v wr16@value value `ui  1 p 2 33 ]
+[v wr16@addr addr `um  1 p 3 34 ]
+[v wr16@value value `ui  1 p 2 37 ]
 "32
 } 0
 "72
 [v _rd16 rd16 `(ui  1 e 2 0 ]
 {
 "79
-[v rd16@temp temp `uc  1 a 1 36 ]
+[v rd16@temp temp `uc  1 a 1 40 ]
 "72
-[v rd16@addr addr `um  1 p 3 30 ]
+[v rd16@addr addr `um  1 p 3 34 ]
 "83
 } 0
 "8
@@ -1151,27 +1171,27 @@
 {
 [v host_command@command command `uc  1 a 1 wreg ]
 [v host_command@command command `uc  1 a 1 wreg ]
-[v host_command@command command `uc  1 a 1 30 ]
+[v host_command@command command `uc  1 a 1 34 ]
 "14
 } 0
-"77 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/spi.c
+"77 /Users/haoye/Desktop/r18_dashboard/can_test2.X/mcc_generated_files/spi.c
 [v _SPI_Exchange8bit SPI_Exchange8bit `(uc  1 e 1 0 ]
 {
 [v SPI_Exchange8bit@data data `uc  1 a 1 wreg ]
 [v SPI_Exchange8bit@data data `uc  1 a 1 wreg ]
 "80
-[v SPI_Exchange8bit@data data `uc  1 a 1 29 ]
+[v SPI_Exchange8bit@data data `uc  1 a 1 33 ]
 "89
 } 0
-"239 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/ecan.c
+"239 /Users/haoye/Desktop/r18_dashboard/can_test2.X/mcc_generated_files/ecan.c
 [v _CAN_receive CAN_receive `(uc  1 e 1 0 ]
 {
 "240
-[v CAN_receive@returnValue returnValue `uc  1 a 1 46 ]
+[v CAN_receive@returnValue returnValue `uc  1 a 1 11 ]
 [s S153 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
 "239
 [u S165 . 14 `S153 1 frame 14 0 `[14]uc 1 array 14 0 ]
-[v CAN_receive@tempCanMsg tempCanMsg `*.39S165  1 p 2 44 ]
+[v CAN_receive@tempCanMsg tempCanMsg `*.39S165  1 p 2 41 ]
 "305
 } 0
 "385
@@ -1179,13 +1199,13 @@
 {
 [v convertReg2StandardCANid@tempRXBn_SIDH tempRXBn_SIDH `uc  1 a 1 wreg ]
 "387
-[v convertReg2StandardCANid@ConvertedID ConvertedID `ul  1 a 4 40 ]
+[v convertReg2StandardCANid@ConvertedID ConvertedID `ul  1 a 4 5 ]
 "386
-[v convertReg2StandardCANid@returnValue returnValue `ul  1 a 4 36 ]
+[v convertReg2StandardCANid@returnValue returnValue `ul  1 a 4 1 ]
 "385
 [v convertReg2StandardCANid@tempRXBn_SIDH tempRXBn_SIDH `uc  1 a 1 wreg ]
-[v convertReg2StandardCANid@tempRXBn_SIDL tempRXBn_SIDL `uc  1 p 1 29 ]
-[v convertReg2StandardCANid@tempRXBn_SIDH tempRXBn_SIDH `uc  1 a 1 35 ]
+[v convertReg2StandardCANid@tempRXBn_SIDL tempRXBn_SIDL `uc  1 p 1 33 ]
+[v convertReg2StandardCANid@tempRXBn_SIDH tempRXBn_SIDH `uc  1 a 1 0 ]
 "395
 } 0
 "365
@@ -1202,13 +1222,13 @@
 [v convertReg2ExtendedCANid@CAN_standardLo_ID_lo2bits CAN_standardLo_ID_lo2bits `uc  1 a 1 5 ]
 "365
 [v convertReg2ExtendedCANid@tempRXBn_EIDH tempRXBn_EIDH `uc  1 a 1 wreg ]
-[v convertReg2ExtendedCANid@tempRXBn_EIDL tempRXBn_EIDL `uc  1 p 1 29 ]
-[v convertReg2ExtendedCANid@tempRXBn_SIDH tempRXBn_SIDH `uc  1 p 1 30 ]
-[v convertReg2ExtendedCANid@tempRXBn_SIDL tempRXBn_SIDL `uc  1 p 1 31 ]
+[v convertReg2ExtendedCANid@tempRXBn_EIDL tempRXBn_EIDL `uc  1 p 1 33 ]
+[v convertReg2ExtendedCANid@tempRXBn_SIDH tempRXBn_SIDH `uc  1 p 1 34 ]
+[v convertReg2ExtendedCANid@tempRXBn_SIDL tempRXBn_SIDL `uc  1 p 1 35 ]
 [v convertReg2ExtendedCANid@tempRXBn_EIDH tempRXBn_EIDH `uc  1 a 1 0 ]
 "383
 } 0
-"21 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\main.c
+"21 /Users/haoye/Desktop/r18_dashboard/can_test2.X/main.c
 [v _can_bus can_bus `II(v  1 e 1 0 ]
 {
 "46

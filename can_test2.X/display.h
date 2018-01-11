@@ -18,7 +18,7 @@
 #define GAUGE_OPTIONS OPT_NOBACK | OPT_FLAT
 #define GAUGE_MAJOR_DIVISION 10
 #define GAUGE_MINOR_DIVISION 5
-#define GAUGE_RANGE 10
+#define GAUGE_RANGE 50
 
 void display(int rpm, int oilP, int fuelP, int tp, int speed, int gear, int engTemp, int oilTemp, int battVolts);
 void display_start();

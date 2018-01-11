@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"29162 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f46k80.h
+"29162 /Applications/microchip/xc8/v1.45/include/pic18f46k80.h
 [v _CANCON `Vuc ~T0 @X0 0 e@3951 ]
 "29051
 [v _CANSTAT `Vuc ~T0 @X0 0 e@3950 ]
@@ -103,7 +103,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "67
 [u S1537 `S1538 1 `uc -> 14 `i ]
 [n S1537 . frame array ]
-"22881 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f46k80.h
+"22881 /Applications/microchip/xc8/v1.45/include/pic18f46k80.h
 [s S835 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S835 . TXPRI . TXREQ TXERR TXLARB TXABT TXBIF ]
 "22890
@@ -119,7 +119,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TXB0CONbits `VS834 ~T0 @X0 0 e@3872 ]
 "58 mcc_generated_files/ecan.c
 [v _convertCANid2Reg `(v ~T0 @X0 0 ef6`ul`uc`*uc`*uc`*uc`*uc ]
-"23217 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f46k80.h
+"23217 /Applications/microchip/xc8/v1.45/include/pic18f46k80.h
 [v _TXB0EIDH `Vuc ~T0 @X0 0 e@3875 ]
 "23337
 [v _TXB0EIDL `Vuc ~T0 @X0 0 e@3876 ]
@@ -249,7 +249,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RXB0SIDL `Vuc ~T0 @X0 0 e@3938 ]
 "56 mcc_generated_files/ecan.c
 [v _convertReg2ExtendedCANid `(ul ~T0 @X0 0 ef4`uc`uc`uc`uc ]
-"28137 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f46k80.h
+"28137 /Applications/microchip/xc8/v1.45/include/pic18f46k80.h
 [v _RXB0EIDH `Vuc ~T0 @X0 0 e@3939 ]
 "28257
 [v _RXB0EIDL `Vuc ~T0 @X0 0 e@3940 ]
@@ -257,7 +257,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RXB0SIDH `Vuc ~T0 @X0 0 e@3937 ]
 "57 mcc_generated_files/ecan.c
 [v _convertReg2StandardCANid `(ul ~T0 @X0 0 ef2`uc`uc ]
-"28377 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f46k80.h
+"28377 /Applications/microchip/xc8/v1.45/include/pic18f46k80.h
 [v _RXB0DLC `Vuc ~T0 @X0 0 e@3941 ]
 "28491
 [v _RXB0D0 `Vuc ~T0 @X0 0 e@3942 ]
@@ -342,7 +342,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f46k80.h: 50: extern volatile unsigned char RXERRCNT @ 0xE41;
-"52 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f46k80.h
+"52 /Applications/microchip/xc8/v1.45/include/pic18f46k80.h
 [; ;pic18f46k80.h: 52: asm("RXERRCNT equ 0E41h");
 [; <" RXERRCNT equ 0E41h ;# ">
 [; ;pic18f46k80.h: 55: typedef union {
@@ -13927,26 +13927,32 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdbool.h: 12: typedef unsigned char bool;
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
-[; ;stdint.h: 38: typedef signed long int int32_t;
-[; ;stdint.h: 45: typedef unsigned char uint8_t;
-[; ;stdint.h: 51: typedef unsigned int uint16_t;
-[; ;stdint.h: 67: typedef unsigned long int uint32_t;
-[; ;stdint.h: 75: typedef signed char int_least8_t;
-[; ;stdint.h: 82: typedef signed int int_least16_t;
-[; ;stdint.h: 104: typedef signed long int int_least32_t;
-[; ;stdint.h: 111: typedef unsigned char uint_least8_t;
-[; ;stdint.h: 117: typedef unsigned int uint_least16_t;
-[; ;stdint.h: 136: typedef unsigned long int uint_least32_t;
-[; ;stdint.h: 145: typedef signed char int_fast8_t;
-[; ;stdint.h: 152: typedef signed int int_fast16_t;
-[; ;stdint.h: 174: typedef signed long int int_fast32_t;
-[; ;stdint.h: 181: typedef unsigned char uint_fast8_t;
-[; ;stdint.h: 187: typedef unsigned int uint_fast16_t;
-[; ;stdint.h: 206: typedef unsigned long int uint_fast32_t;
-[; ;stdint.h: 212: typedef int32_t intmax_t;
-[; ;stdint.h: 217: typedef uint32_t uintmax_t;
-[; ;stdint.h: 222: typedef int16_t intptr_t;
-[; ;stdint.h: 227: typedef uint16_t uintptr_t;
+[; ;stdint.h: 28: typedef signed short long int int24_t;
+[; ;stdint.h: 36: typedef signed long int int32_t;
+[; ;stdint.h: 43: typedef unsigned char uint8_t;
+[; ;stdint.h: 49: typedef unsigned int uint16_t;
+[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
+[; ;stdint.h: 63: typedef unsigned long int uint32_t;
+[; ;stdint.h: 71: typedef signed char int_least8_t;
+[; ;stdint.h: 78: typedef signed int int_least16_t;
+[; ;stdint.h: 90: typedef signed short long int int_least24_t;
+[; ;stdint.h: 98: typedef signed long int int_least32_t;
+[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
+[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 137: typedef signed char int_fast8_t;
+[; ;stdint.h: 144: typedef signed int int_fast16_t;
+[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
+[; ;stdint.h: 164: typedef signed long int int_fast32_t;
+[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
+[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 200: typedef int32_t intmax_t;
+[; ;stdint.h: 205: typedef uint32_t uintmax_t;
+[; ;stdint.h: 210: typedef int16_t intptr_t;
+[; ;stdint.h: 215: typedef uint16_t uintptr_t;
 [; ;ecan.h: 67: typedef union {
 [; ;ecan.h: 69: struct {
 [; ;ecan.h: 70: unsigned char idType;

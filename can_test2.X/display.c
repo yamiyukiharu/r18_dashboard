@@ -67,7 +67,7 @@ void display_message(char* message) {
     cmd(VERTEX2II(350, 215, 0, 0));
     cmd(VERTEX2II(134, 230, 0, 0));
     cmd(COLOR_RGB(255, 255, 255));
-    cmd_text(240, 222, 28, OPT_CENTER, "Gas Press Low ");
+    cmd_text(240, 222, 28, OPT_CENTER, "R18 ");
 }
 
 void display_laptime(float current, float best, float last, int lap) {
@@ -92,33 +92,33 @@ void display_laptime(float current, float best, float last, int lap) {
     //lap time labels
     cmd(COLOR_RGB(255, 125, 0));
     cmd_text(5, 207, 27, 0, "LAST");
-    cmd_number(66, 217, 27, OPT_CENTER, 3);
+    cmd_number(66, 217, 27, OPT_CENTER, 0);
     cmd_text(448, 207, 27, OPT_RIGHTX, "BEST");
-    cmd_number(475, 207, 27, OPT_RIGHTX, 1);
+    cmd_number(475, 207, 27, OPT_RIGHTX, 0);
     cmd_text(240, 165, 27, OPT_CENTER, "LAP");
-    cmd_number(240, 190, 29, OPT_CENTER, 7);
+    cmd_number(240, 190, 29, OPT_CENTER, 0);
 
     // last lap time
     cmd(COLOR_RGB(255, 255, 255));
-    cmd_number(36, 222, 30, OPT_RIGHTX, 18);
+    cmd_number(36, 222, 30, OPT_RIGHTX, 0);
     cmd_text(39, 238, 28, OPT_CENTER, ":");
-    cmd_number(42, 222, 30, OPT_NODL, 36);
+    cmd_number(42, 222, 30, OPT_NODL, 0);
     cmd_text(79, 238, 28, OPT_CENTER, ":");
-    cmd_number(82, 221, 30, OPT_NODL, 89);
+    cmd_number(82, 221, 30, OPT_NODL, 0);
 
     // best lap time
-    cmd_number(397, 222, 30, OPT_RIGHTX, 19);
+    cmd_number(397, 222, 30, OPT_RIGHTX, 0);
     cmd_text(400, 239, 28, OPT_CENTER, ":");
-    cmd_number(403, 222, 30, OPT_NODL, 25);
+    cmd_number(403, 222, 30, OPT_NODL, 0);
     cmd_text(439, 239, 28, OPT_CENTER, ":");
-    cmd_number(475, 222, 30, OPT_RIGHTX, 89);
+    cmd_number(475, 222, 30, OPT_RIGHTX, 0);
 
     // current lap time
-    cmd_number(217, 237, 30, OPT_RIGHTX, 19);
+    cmd_number(217, 237, 30, OPT_RIGHTX, 0);
     cmd_text(221, 254, 28, OPT_CENTER, ":");
-    cmd_number(240, 255, 30, OPT_CENTER, 25);
+    cmd_number(240, 255, 30, OPT_CENTER, 0);
     cmd_text(261, 254, 28, OPT_CENTER, ":");
-    cmd_number(298, 237, 30, OPT_RIGHTX, 89);
+    cmd_number(298, 237, 30, OPT_RIGHTX, 0);
 }
 
 void display_waterTemp(int temp) {
@@ -166,7 +166,8 @@ void display_rpm(int rpm) {
     if(first_digit < 2) {
         cmd_gauge(GAUGE_X,GAUGE_Y,GAUGE_SIZE,OPT_NOTICKS|GAUGE_OPTIONS,GAUGE_MAJOR_DIVISION,GAUGE_MINOR_DIVISION,first_digit,GAUGE_RANGE);
     } else {
-        cmd_gauge(GAUGE_X,GAUGE_Y,GAUGE_SIZE,OPT_NOTICKS|GAUGE_OPTIONS,GAUGE_MAJOR_DIVISION,GAUGE_MINOR_DIVISION,first_digit-2,GAUGE_RANGE);
+        int val = ((first_digit-2)*5)+(second_digit/2);
+        cmd_gauge(GAUGE_X,GAUGE_Y,GAUGE_SIZE,OPT_NOTICKS|GAUGE_OPTIONS,GAUGE_MAJOR_DIVISION,GAUGE_MINOR_DIVISION,val,GAUGE_RANGE);
     }
     // display RPM
     cmd(COLOR_RGB(255, 255, 255));
