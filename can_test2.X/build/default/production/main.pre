@@ -18112,28 +18112,27 @@ void display_laptime(float current, float best, float last, int lap);
 void display_message(char* message);
 
 # 16 "main.c"
-unsigned long convertStandardCANid(unsigned char tempRXBn_SIDH, unsigned char tempRXBn_SIDL);
-
-uCAN_MSG tempCanMsg;
-
-# 48
-unsigned long convertStandardCANid(unsigned char tempRXBn_SIDH, unsigned char tempRXBn_SIDL) {
-unsigned long returnValue = 0;
-unsigned long ConvertedID;
-
-
-
-ConvertedID = (tempRXBn_SIDH << 3);
-ConvertedID = ConvertedID + (tempRXBn_SIDL >> 5);
-returnValue = ConvertedID;
-return (returnValue);
-}
+uCAN_MSG canMessage;
+bool can_msg_received = 0;
 
 void wait2secs(){
 _delay((unsigned long)((2000)*(16000000/4000.0)));
 }
 
+void ECAN_ISR_ECAN_RXBI(void) {
+
+
+(INTCONbits.GIE = 0);
+(INTCONbits.PEIE = 0);
+can_msg_received = 1;
+CAN_receive(&canMessage);
+PIR5bits.RXB0IF = 0;
+}
+
 void main(void) {
+int rpm = 0, oilP = 0, fuelP = 0, tp = 0, speed = 0, gear = 0, engTemp = 0, oilTemp = 0, battVolts = 0,
+brakeP_F = 0, brakeP_R = 0, radio_sw = 0;
+
 do { LATAbits.LATA1 = 0; } while(0);
 do { LATDbits.LATD4 = 0; } while(0);
 do { LATAbits.LATA0 = 0; } while(0);
@@ -18141,15 +18140,12 @@ do { LATBbits.LATB5 = 0; } while(0);
 do { LATDbits.LATD5 = 0; } while(0);
 do { LATDbits.LATD3 = 0; } while(0);
 
-uCAN_MSG canMessage;
-int rpm = 0, oilP = 0, fuelP = 0, tp = 0, speed = 0, gear = 0, engTemp = 0, oilTemp = 0, battVolts = 0,
-brakeP_F = 0, brakeP_R = 0, radio_sw = 0;
 wait2secs();
-
-int y_start = 0;
 
 
 SYSTEM_Initialize();
+(INTCONbits.GIE = 1);
+(INTCONbits.PEIE = 1);
 
 
 CIOCONbits.CLKSEL = 1;
@@ -18169,6 +18165,10 @@ RXF4SIDH = 0xC8;
 RXF4SIDL = 0x20;
 RXF3SIDH = 0xC8;
 RXF3SIDL = 0x40;
+RXF2SIDH = 0xC8;
+RXF2SIDL = 0x60;
+RXF1SIDH = 0xC8;
+RXF1SIDL = 0x80;
 
 
 SSPSTATbits.SMP = 0;
@@ -18183,7 +18183,7 @@ wait2secs();
 display(rpm, oilP, fuelP, tp, speed, gear, engTemp, oilTemp, battVolts);
 
 while (1) {
-if(CAN_receive(&canMessage)) {
+if(can_msg_received) {
 if(canMessage.frame.id == 0x640) {
 rpm = ((canMessage.frame.data0 << 8) | canMessage.frame.data1);
 oilP = ((canMessage.frame.data2 << 8) | canMessage.frame.data3)/10;
@@ -18198,11 +18198,12 @@ gear = canMessage.frame.data6;
 engTemp = canMessage.frame.data0;
 oilTemp = canMessage.frame.data1;
 battVolts = canMessage.frame.data2;
-} else if(canMessage.frame.id == 0x643) {
-
 }
-display(rpm, oilP, fuelP, tp, speed, gear, engTemp, oilTemp, battVolts);
+can_msg_received = 0;
+(INTCONbits.GIE = 1);
+(INTCONbits.PEIE = 1);
 
+display(rpm, oilP, fuelP, tp, speed, gear, engTemp, oilTemp, battVolts);
 do { LATAbits.LATA1 = 0; } while(0);
 do { LATDbits.LATD4 = 0; } while(0);
 do { LATAbits.LATA0 = 0; } while(0);
@@ -18210,10 +18211,6 @@ do { LATBbits.LATB5 = 0; } while(0);
 do { LATDbits.LATD5 = 0; } while(0);
 do { LATDbits.LATD3 = 0; } while(0);
 }
-
-
-
-
 }
 }
 

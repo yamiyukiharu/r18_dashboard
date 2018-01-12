@@ -83,21 +83,21 @@
 [v _cmd cmd `(v  1 e 1 0 ]
 "143
 [v _FT800_Init FT800_Init `T(v  1 e 1 0 ]
-"60 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\main.c
+"19 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\main.c
 [v _wait2secs wait2secs `(v  1 e 1 0 ]
-"64
-[v _main main `(v  1 e 1 0 ]
-"61 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/ecan.c
+"23
 [v _ECAN_ISR_ECAN_RXBI ECAN_ISR_ECAN_RXBI `(v  1 e 1 0 ]
-"69
+"33
+[v _main main `(v  1 e 1 0 ]
+"64 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/ecan.c
 [v _ECAN_Initialize ECAN_Initialize `(v  1 e 1 0 ]
-"248
+"243
 [v _CAN_receive CAN_receive `(uc  1 e 1 0 ]
-"374
+"369
 [v _convertReg2ExtendedCANid convertReg2ExtendedCANid `(ul  1 e 4 0 ]
-"394
+"389
 [v _convertReg2StandardCANid convertReg2StandardCANid `(ul  1 e 4 0 ]
-"406
+"401
 [v _convertCANid2Reg convertCANid2Reg `(v  1 e 1 0 ]
 "51 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
@@ -446,7 +446,7 @@
 [v _CANSTAT CANSTAT `VEuc  1 e 1 @3950 ]
 "29162
 [v _CANCON CANCON `VEuc  1 e 1 @3951 ]
-[s S1302 . 1 `uc 1 CLKSEL 1 0 :1:0 
+[s S1369 . 1 `uc 1 CLKSEL 1 0 :1:0 
 `uc 1 . 1 0 :3:1 
 `uc 1 CANCAP 1 0 :1:4 
 `uc 1 ENDRHI 1 0 :1:5 
@@ -454,8 +454,8 @@
 `uc 1 TX2SRC 1 0 :1:7 
 ]
 "29269
-[u S1309 . 1 `S1302 1 . 1 0 ]
-[v _CIOCONbits CIOCONbits `VES1309  1 e 1 @3952 ]
+[u S1376 . 1 `S1369 1 . 1 0 ]
+[v _CIOCONbits CIOCONbits `VES1376  1 e 1 @3952 ]
 [s S542 . 1 `uc 1 EWARN 1 0 :1:0 
 `uc 1 RXWARN 1 0 :1:1 
 `uc 1 TXWARN 1 0 :1:2 
@@ -497,7 +497,7 @@
 ]
 [u S131 . 1 `S117 1 . 1 0 `S126 1 . 1 0 ]
 [v _PIE5bits PIE5bits `VES131  1 e 1 @3958 ]
-[s S47 . 1 `uc 1 RXB0IF 1 0 :1:0 
+[s S85 . 1 `uc 1 RXB0IF 1 0 :1:0 
 `uc 1 RXB1IF 1 0 :1:1 
 `uc 1 TXB0IF 1 0 :1:2 
 `uc 1 TXB1IF 1 0 :1:3 
@@ -507,13 +507,13 @@
 `uc 1 IRXIF 1 0 :1:7 
 ]
 "29637
-[s S56 . 1 `uc 1 FIFOWMIF 1 0 :1:0 
+[s S94 . 1 `uc 1 FIFOWMIF 1 0 :1:0 
 `uc 1 RXBnIF 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 TXBnIF 1 0 :1:4 
 ]
-[u S61 . 1 `S47 1 . 1 0 `S56 1 . 1 0 ]
-[v _PIR5bits PIR5bits `VES61  1 e 1 @3959 ]
+[u S99 . 1 `S85 1 . 1 0 `S94 1 . 1 0 ]
+[v _PIR5bits PIR5bits `VES99  1 e 1 @3959 ]
 "29807
 [v _TXREG2 TXREG2 `VEuc  1 e 1 @3961 ]
 "29827
@@ -526,7 +526,7 @@
 [v _SPBRGH1 SPBRGH1 `VEuc  1 e 1 @3965 ]
 "30490
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
-[s S1181 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1248 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -536,7 +536,7 @@
 `uc 1 LATA7 1 0 :1:7 
 ]
 "30517
-[s S1190 . 1 `uc 1 LA0 1 0 :1:0 
+[s S1257 . 1 `uc 1 LA0 1 0 :1:0 
 `uc 1 LA1 1 0 :1:1 
 `uc 1 LA2 1 0 :1:2 
 `uc 1 LA3 1 0 :1:3 
@@ -545,11 +545,11 @@
 `uc 1 LA6 1 0 :1:6 
 `uc 1 LA7 1 0 :1:7 
 ]
-[u S1199 . 1 `S1181 1 . 1 0 `S1190 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1199  1 e 1 @3977 ]
+[u S1266 . 1 `S1248 1 . 1 0 `S1257 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1266  1 e 1 @3977 ]
 "30592
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
-[s S1261 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S1328 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -559,7 +559,7 @@
 `uc 1 LATB7 1 0 :1:7 
 ]
 "30619
-[s S1270 . 1 `uc 1 LB0 1 0 :1:0 
+[s S1337 . 1 `uc 1 LB0 1 0 :1:0 
 `uc 1 LB1 1 0 :1:1 
 `uc 1 LB2 1 0 :1:2 
 `uc 1 LB3 1 0 :1:3 
@@ -568,11 +568,11 @@
 `uc 1 LB6 1 0 :1:6 
 `uc 1 LB7 1 0 :1:7 
 ]
-[u S1279 . 1 `S1261 1 . 1 0 `S1270 1 . 1 0 ]
-[v _LATBbits LATBbits `VES1279  1 e 1 @3978 ]
+[u S1346 . 1 `S1328 1 . 1 0 `S1337 1 . 1 0 ]
+[v _LATBbits LATBbits `VES1346  1 e 1 @3978 ]
 "30704
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
-[s S1630 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S1690 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -582,7 +582,7 @@
 `uc 1 LATC7 1 0 :1:7 
 ]
 "30731
-[s S1639 . 1 `uc 1 LC0 1 0 :1:0 
+[s S1699 . 1 `uc 1 LC0 1 0 :1:0 
 `uc 1 LC1 1 0 :1:1 
 `uc 1 LC2 1 0 :1:2 
 `uc 1 LC3 1 0 :1:3 
@@ -591,11 +591,11 @@
 `uc 1 LC6 1 0 :1:6 
 `uc 1 LC7 1 0 :1:7 
 ]
-[u S1648 . 1 `S1630 1 . 1 0 `S1639 1 . 1 0 ]
-[v _LATCbits LATCbits `VES1648  1 e 1 @3979 ]
+[u S1708 . 1 `S1690 1 . 1 0 `S1699 1 . 1 0 ]
+[v _LATCbits LATCbits `VES1708  1 e 1 @3979 ]
 "30816
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
-[s S1221 . 1 `uc 1 LATD0 1 0 :1:0 
+[s S1288 . 1 `uc 1 LATD0 1 0 :1:0 
 `uc 1 LATD1 1 0 :1:1 
 `uc 1 LATD2 1 0 :1:2 
 `uc 1 LATD3 1 0 :1:3 
@@ -605,7 +605,7 @@
 `uc 1 LATD7 1 0 :1:7 
 ]
 "30843
-[s S1230 . 1 `uc 1 LD0 1 0 :1:0 
+[s S1297 . 1 `uc 1 LD0 1 0 :1:0 
 `uc 1 LD1 1 0 :1:1 
 `uc 1 LD2 1 0 :1:2 
 `uc 1 LD3 1 0 :1:3 
@@ -614,8 +614,8 @@
 `uc 1 LD6 1 0 :1:6 
 `uc 1 LD7 1 0 :1:7 
 ]
-[u S1239 . 1 `S1221 1 . 1 0 `S1230 1 . 1 0 ]
-[v _LATDbits LATDbits `VES1239  1 e 1 @3980 ]
+[u S1306 . 1 `S1288 1 . 1 0 `S1297 1 . 1 0 ]
+[v _LATDbits LATDbits `VES1306  1 e 1 @3980 ]
 "30928
 [v _LATE LATE `VEuc  1 e 1 @3981 ]
 "31086
@@ -632,7 +632,7 @@
 [v _REFOCON REFOCON `VEuc  1 e 1 @3994 ]
 "31470
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
-[s S918 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S917 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 TMR1GIF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -642,13 +642,13 @@
 `uc 1 PSPIF 1 0 :1:7 
 ]
 "31705
-[s S927 . 1 `uc 1 . 1 0 :4:0 
+[s S926 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TXIF 1 0 :1:4 
 `uc 1 RCIF 1 0 :1:5 
 ]
-[u S931 . 1 `S918 1 . 1 0 `S927 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES931  1 e 1 @3998 ]
-[s S1056 . 1 `uc 1 . 1 0 :1:0 
+[u S930 . 1 `S917 1 . 1 0 `S926 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES930  1 e 1 @3998 ]
+[s S1055 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 CCP1IF 1 0 :1:1 
 `uc 1 CCP2IF 1 0 :1:2 
 `uc 1 CTMUIF 1 0 :1:3 
@@ -656,16 +656,16 @@
 `uc 1 RC2IF 1 0 :1:5 
 ]
 "32108
-[s S1063 . 1 `uc 1 . 1 0 :1:0 
+[s S1062 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RXBNIF 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 TXBNIF 1 0 :1:4 
 ]
-[u S1068 . 1 `S1056 1 . 1 0 `S1063 1 . 1 0 ]
-[v _PIR3bits PIR3bits `VES1068  1 e 1 @4004 ]
+[u S1067 . 1 `S1055 1 . 1 0 `S1062 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES1067  1 e 1 @4004 ]
 "32209
 [v _RCSTA2 RCSTA2 `VEuc  1 e 1 @4006 ]
-[s S948 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S947 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -675,7 +675,7 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "32245
-[s S1093 . 1 `uc 1 RX9D2 1 0 :1:0 
+[s S1092 . 1 `uc 1 RX9D2 1 0 :1:0 
 `uc 1 OERR2 1 0 :1:1 
 `uc 1 FERR2 1 0 :1:2 
 `uc 1 ADDEN2 1 0 :1:3 
@@ -684,36 +684,36 @@
 `uc 1 RX92 1 0 :1:6 
 `uc 1 SPEN2 1 0 :1:7 
 ]
-[s S1102 . 1 `uc 1 RCD82 1 0 :1:0 
+[s S1101 . 1 `uc 1 RCD82 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC8_92 1 0 :1:6 
 ]
-[s S1106 . 1 `uc 1 . 1 0 :6:0 
+[s S1105 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC92 1 0 :1:6 
 ]
-[u S1109 . 1 `S948 1 . 1 0 `S1093 1 . 1 0 `S1102 1 . 1 0 `S1106 1 . 1 0 ]
-[v _RCSTA2bits RCSTA2bits `VES1109  1 e 1 @4006 ]
+[u S1108 . 1 `S947 1 . 1 0 `S1092 1 . 1 0 `S1101 1 . 1 0 `S1105 1 . 1 0 ]
+[v _RCSTA2bits RCSTA2bits `VES1108  1 e 1 @4006 ]
 "32345
 [v _BAUDCON1 BAUDCON1 `VEuc  1 e 1 @4007 ]
 "32695
 [v _RCSTA1 RCSTA1 `VEuc  1 e 1 @4011 ]
 "32750
-[s S957 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S956 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :2:1 
 `uc 1 ADEN 1 0 :1:3 
 `uc 1 . 1 0 :2:4 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S963 . 1 `uc 1 . 1 0 :6:0 
+[s S962 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 NOT_RC8 1 0 :1:6 
 ]
-[s S966 . 1 `uc 1 . 1 0 :6:0 
+[s S965 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S969 . 1 `uc 1 . 1 0 :6:0 
+[s S968 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[s S972 . 1 `uc 1 RX9D1 1 0 :1:0 
+[s S971 . 1 `uc 1 RX9D1 1 0 :1:0 
 `uc 1 OERR1 1 0 :1:1 
 `uc 1 FERR1 1 0 :1:2 
 `uc 1 ADDEN1 1 0 :1:3 
@@ -722,11 +722,11 @@
 `uc 1 RX91 1 0 :1:6 
 `uc 1 SPEN1 1 0 :1:7 
 ]
-[s S981 . 1 `uc 1 . 1 0 :5:0 
+[s S980 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SRENA 1 0 :1:5 
 ]
-[u S984 . 1 `S948 1 . 1 0 `S957 1 . 1 0 `S963 1 . 1 0 `S966 1 . 1 0 `S969 1 . 1 0 `S972 1 . 1 0 `S981 1 . 1 0 ]
-[v _RCSTA1bits RCSTA1bits `VES984  1 e 1 @4011 ]
+[u S983 . 1 `S947 1 . 1 0 `S956 1 . 1 0 `S962 1 . 1 0 `S965 1 . 1 0 `S968 1 . 1 0 `S971 1 . 1 0 `S980 1 . 1 0 ]
+[v _RCSTA1bits RCSTA1bits `VES983  1 e 1 @4011 ]
 "33033
 [v _TXSTA1 TXSTA1 `VEuc  1 e 1 @4012 ]
 "33321
@@ -741,34 +741,34 @@
 [v _TXSTA2 TXSTA2 `VEuc  1 e 1 @4026 ]
 "35203
 [v _SSPCON1 SSPCON1 `VEuc  1 e 1 @4038 ]
-[s S730 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S729 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "35223
-[s S736 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S735 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
 "35223
-[u S741 . 1 `S730 1 . 1 0 `S736 1 . 1 0 ]
+[u S740 . 1 `S729 1 . 1 0 `S735 1 . 1 0 ]
 "35223
 "35223
-[v _SSPCON1bits SSPCON1bits `VES741  1 e 1 @4038 ]
+[v _SSPCON1bits SSPCON1bits `VES740  1 e 1 @4038 ]
 "35273
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @4039 ]
-[s S757 . 1 `uc 1 . 1 0 :2:0 
+[s S756 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_NOT_W 1 0 :1:2 
 ]
 "35350
-[s S760 . 1 `uc 1 . 1 0 :5:0 
+[s S759 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 D_NOT_A 1 0 :1:5 
 ]
 "35350
-[s S763 . 1 `uc 1 BF 1 0 :1:0 
+[s S762 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -778,90 +778,90 @@
 `uc 1 SMP 1 0 :1:7 
 ]
 "35350
-[s S772 . 1 `uc 1 . 1 0 :2:0 
+[s S771 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
 "35350
-[s S777 . 1 `uc 1 . 1 0 :2:0 
+[s S776 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
 "35350
-[s S782 . 1 `uc 1 . 1 0 :2:0 
+[s S781 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_WRITE 1 0 :1:2 
 ]
 "35350
-[s S785 . 1 `uc 1 . 1 0 :5:0 
+[s S784 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_ADDRESS 1 0 :1:5 
 ]
 "35350
-[s S788 . 1 `uc 1 . 1 0 :2:0 
+[s S787 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
 "35350
-[s S793 . 1 `uc 1 . 1 0 :2:0 
+[s S792 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
 "35350
-[s S798 . 1 `uc 1 . 1 0 :2:0 
+[s S797 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DAT 1 0 :1:5 
 ]
 "35350
-[s S804 . 1 `uc 1 . 1 0 :2:0 
+[s S803 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW 1 0 :1:2 
 `uc 1 START 1 0 :1:3 
 `uc 1 STOP 1 0 :1:4 
 `uc 1 DA 1 0 :1:5 
 ]
 "35350
-[s S810 . 1 `uc 1 . 1 0 :2:0 
+[s S809 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 NOT_A 1 0 :1:5 
 ]
 "35350
-[u S815 . 1 `S757 1 . 1 0 `S760 1 . 1 0 `S763 1 . 1 0 `S772 1 . 1 0 `S777 1 . 1 0 `S782 1 . 1 0 `S785 1 . 1 0 `S788 1 . 1 0 `S793 1 . 1 0 `S798 1 . 1 0 `S804 1 . 1 0 `S810 1 . 1 0 ]
+[u S814 . 1 `S756 1 . 1 0 `S759 1 . 1 0 `S762 1 . 1 0 `S771 1 . 1 0 `S776 1 . 1 0 `S781 1 . 1 0 `S784 1 . 1 0 `S787 1 . 1 0 `S792 1 . 1 0 `S797 1 . 1 0 `S803 1 . 1 0 `S809 1 . 1 0 ]
 "35350
 "35350
-[v _SSPSTATbits SSPSTATbits `VES815  1 e 1 @4039 ]
+[v _SSPSTATbits SSPSTATbits `VES814  1 e 1 @4039 ]
 "35505
 [v _SSPADD SSPADD `VEuc  1 e 1 @4040 ]
 "35575
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
-[s S1876 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+[s S1936 . 1 `uc 1 NOT_BOR 1 0 :1:0 
 ]
 "36009
-[s S1878 . 1 `uc 1 . 1 0 :1:0 
+[s S1938 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_POR 1 0 :1:1 
 ]
 "36009
-[s S1881 . 1 `uc 1 . 1 0 :2:0 
+[s S1941 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_PD 1 0 :1:2 
 ]
 "36009
-[s S1884 . 1 `uc 1 . 1 0 :3:0 
+[s S1944 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 NOT_TO 1 0 :1:3 
 ]
 "36009
-[s S1887 . 1 `uc 1 . 1 0 :4:0 
+[s S1947 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 NOT_RI 1 0 :1:4 
 ]
 "36009
-[s S1890 . 1 `uc 1 . 1 0 :5:0 
+[s S1950 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_CM 1 0 :1:5 
 ]
 "36009
-[s S1893 . 1 `uc 1 nBOR 1 0 :1:0 
+[s S1953 . 1 `uc 1 nBOR 1 0 :1:0 
 `uc 1 nPOR 1 0 :1:1 
 `uc 1 nPD 1 0 :1:2 
 `uc 1 nTO 1 0 :1:3 
@@ -871,7 +871,7 @@
 `uc 1 IPEN 1 0 :1:7 
 ]
 "36009
-[s S1902 . 1 `uc 1 BOR 1 0 :1:0 
+[s S1962 . 1 `uc 1 BOR 1 0 :1:0 
 `uc 1 POR 1 0 :1:1 
 `uc 1 PD 1 0 :1:2 
 `uc 1 TO 1 0 :1:3 
@@ -879,15 +879,15 @@
 `uc 1 CM 1 0 :1:5 
 ]
 "36009
-[u S1909 . 1 `S1876 1 . 1 0 `S1878 1 . 1 0 `S1881 1 . 1 0 `S1884 1 . 1 0 `S1887 1 . 1 0 `S1890 1 . 1 0 `S1893 1 . 1 0 `S1902 1 . 1 0 ]
+[u S1969 . 1 `S1936 1 . 1 0 `S1938 1 . 1 0 `S1941 1 . 1 0 `S1944 1 . 1 0 `S1947 1 . 1 0 `S1950 1 . 1 0 `S1953 1 . 1 0 `S1962 1 . 1 0 ]
 "36009
 "36009
-[v _RCONbits RCONbits `VES1909  1 e 1 @4048 ]
+[v _RCONbits RCONbits `VES1969  1 e 1 @4048 ]
 "36174
 [v _OSCCON2 OSCCON2 `VEuc  1 e 1 @4050 ]
 "36246
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
-[s S1952 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S1180 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -897,7 +897,7 @@
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "37234
-[s S1961 . 1 `uc 1 . 1 0 :1:0 
+[s S1189 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -907,72 +907,71 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "37234
-[s S1970 . 1 `uc 1 . 1 0 :6:0 
+[s S1198 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
 "37234
-[u S1974 . 1 `S1952 1 . 1 0 `S1961 1 . 1 0 `S1970 1 . 1 0 ]
+[u S1202 . 1 `S1180 1 . 1 0 `S1189 1 . 1 0 `S1198 1 . 1 0 ]
 "37234
 "37234
-[v _INTCONbits INTCONbits `VES1974  1 e 1 @4082 ]
+[v _INTCONbits INTCONbits `VES1202  1 e 1 @4082 ]
 "6 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\Gue/FT800.c
 [v _cmd_offset cmd_offset `us  1 e 2 0 ]
-"64 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\main.c
+[s S149 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
+"16 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\main.c
+[u S161 . 14 `S149 1 frame 14 0 `[14]uc 1 array 14 0 ]
+[v _canMessage canMessage `S161  1 e 14 0 ]
+"17
+[v _can_msg_received can_msg_received `uc  1 e 1 0 ]
+"33
 [v _main main `(v  1 e 1 0 ]
 {
-[s S149 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
-"72
-[u S161 . 14 `S149 1 frame 14 0 `[14]uc 1 array 14 0 ]
-[v main@canMessage canMessage `S161  1 a 14 44 ]
-"73
-[v main@battVolts battVolts `i  1 a 2 42 ]
-[v main@oilTemp oilTemp `i  1 a 2 40 ]
-[v main@engTemp engTemp `i  1 a 2 38 ]
-[v main@gear gear `i  1 a 2 36 ]
-[v main@speed speed `i  1 a 2 34 ]
-[v main@tp tp `i  1 a 2 32 ]
-[v main@fuelP fuelP `i  1 a 2 30 ]
-[v main@oilP oilP `i  1 a 2 28 ]
-[v main@rpm rpm `i  1 a 2 26 ]
-"74
-[v main@brakeP_R brakeP_R `i  1 a 2 24 ]
-[v main@brakeP_F brakeP_F `i  1 a 2 22 ]
-"77
-[v main@y_start y_start `i  1 a 2 20 ]
-"74
-[v main@radio_sw radio_sw `i  1 a 2 18 ]
-"146
+"34
+[v main@battVolts battVolts `i  1 a 2 74 ]
+[v main@oilTemp oilTemp `i  1 a 2 72 ]
+[v main@engTemp engTemp `i  1 a 2 70 ]
+[v main@gear gear `i  1 a 2 68 ]
+[v main@speed speed `i  1 a 2 66 ]
+[v main@tp tp `i  1 a 2 64 ]
+[v main@fuelP fuelP `i  1 a 2 62 ]
+[v main@oilP oilP `i  1 a 2 60 ]
+[v main@rpm rpm `i  1 a 2 58 ]
+"35
+[v main@brakeP_R brakeP_R `i  1 a 2 56 ]
+[v main@brakeP_F brakeP_F `i  1 a 2 54 ]
+[v main@radio_sw radio_sw `i  1 a 2 52 ]
+"116
 } 0
-"60
+"19
 [v _wait2secs wait2secs `(v  1 e 1 0 ]
 {
-"62
+"21
 } 0
 "3 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\display.c
 [v _display display `(v  1 e 1 0 ]
 {
-[v display@rpm rpm `i  1 p 2 0 ]
-[v display@oilP oilP `i  1 p 2 2 ]
-[v display@fuelP fuelP `i  1 p 2 4 ]
-[v display@tp tp `i  1 p 2 6 ]
-[v display@speed speed `i  1 p 2 8 ]
-[v display@gear gear `i  1 p 2 10 ]
-[v display@engTemp engTemp `i  1 p 2 12 ]
-[v display@oilTemp oilTemp `i  1 p 2 14 ]
-[v display@battVolts battVolts `i  1 p 2 16 ]
+[v display@rpm rpm `i  1 p 2 32 ]
+[v display@oilP oilP `i  1 p 2 34 ]
+[v display@fuelP fuelP `i  1 p 2 36 ]
+[v display@tp tp `i  1 p 2 38 ]
+[v display@speed speed `i  1 p 2 40 ]
+[v display@gear gear `i  1 p 2 42 ]
+[v display@engTemp engTemp `i  1 p 2 44 ]
+[v display@oilTemp oilTemp `i  1 p 2 46 ]
+[v display@battVolts battVolts `i  1 p 2 48 ]
 "18
 } 0
 "120
 [v _display_waterTemp display_waterTemp `(v  1 e 1 0 ]
 {
-[v display_waterTemp@temp temp `i  1 p 2 36 ]
+[v display_waterTemp@temp temp `i  1 p 2 18 ]
 "123
 } 0
 "145
 [v _display_tp display_tp `(v  1 e 1 0 ]
 {
-[v display_tp@tp tp `i  1 p 2 36 ]
+[v display_tp@tp tp `i  1 p 2 18 ]
 "147
 } 0
 "20
@@ -983,88 +982,88 @@
 "149
 [v _display_speed display_speed `(v  1 e 1 0 ]
 {
-[v display_speed@speed speed `i  1 p 2 36 ]
+[v display_speed@speed speed `i  1 p 2 18 ]
 "151
 } 0
 "153
 [v _display_rpm display_rpm `(v  1 e 1 0 ]
 {
 "165
-[v display_rpm@val val `i  1 a 2 41 ]
+[v display_rpm@val val `i  1 a 2 23 ]
 "154
-[v display_rpm@first_digit first_digit `i  1 a 2 45 ]
+[v display_rpm@first_digit first_digit `i  1 a 2 27 ]
 "155
-[v display_rpm@second_digit second_digit `i  1 a 2 43 ]
+[v display_rpm@second_digit second_digit `i  1 a 2 25 ]
 "153
-[v display_rpm@rpm rpm `i  1 p 2 36 ]
+[v display_rpm@rpm rpm `i  1 p 2 18 ]
 "187
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 {
 "17
-[v ___wmul@product product `ui  1 a 2 18 ]
+[v ___wmul@product product `ui  1 a 2 0 ]
 "15
-[v ___wmul@multiplier multiplier `ui  1 p 2 14 ]
-[v ___wmul@multiplicand multiplicand `ui  1 p 2 16 ]
+[v ___wmul@multiplier multiplier `ui  1 p 2 36 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 38 ]
 "53
 } 0
 "125 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\display.c
 [v _display_oilTemp display_oilTemp `(v  1 e 1 0 ]
 {
-[v display_oilTemp@temp temp `i  1 p 2 36 ]
+[v display_oilTemp@temp temp `i  1 p 2 18 ]
 "127
 } 0
 "141
 [v _display_oilPress display_oilPress `(v  1 e 1 0 ]
 {
-[v display_oilPress@pressure pressure `f  1 p 3 36 ]
+[v display_oilPress@pressure pressure `f  1 p 3 18 ]
 "143
 } 0
 "44 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\fttol.c
 [v ___fttol __fttol `(l  1 e 4 0 ]
 {
 "47
-[v ___fttol@lval lval `ul  1 a 4 24 ]
+[v ___fttol@lval lval `ul  1 a 4 6 ]
 "46
-[v ___fttol@exp1 exp1 `uc  1 a 1 28 ]
-[v ___fttol@sign1 sign1 `uc  1 a 1 23 ]
+[v ___fttol@exp1 exp1 `uc  1 a 1 10 ]
+[v ___fttol@sign1 sign1 `uc  1 a 1 5 ]
 "44
-[v ___fttol@f1 f1 `f  1 p 3 14 ]
+[v ___fttol@f1 f1 `f  1 p 3 36 ]
 "73
 } 0
 "64 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\display.c
 [v _display_message display_message `(v  1 e 1 0 ]
 {
-[v display_message@message message `*.25uc  1 p 2 36 ]
+[v display_message@message message `*.25uc  1 p 2 18 ]
 "71
 } 0
 "73
 [v _display_laptime display_laptime `(v  1 e 1 0 ]
 {
-[v display_laptime@current current `f  1 p 3 36 ]
-[v display_laptime@best best `f  1 p 3 39 ]
-[v display_laptime@last last `f  1 p 3 42 ]
-[v display_laptime@lap lap `i  1 p 2 45 ]
+[v display_laptime@current current `f  1 p 3 18 ]
+[v display_laptime@best best `f  1 p 3 21 ]
+[v display_laptime@last last `f  1 p 3 24 ]
+[v display_laptime@lap lap `i  1 p 2 27 ]
 "118
 } 0
 "32
 [v _display_labels display_labels `(v  1 e 1 0 ]
 {
 "33
-[v display_labels@y_start y_start `i  1 a 2 39 ]
+[v display_labels@y_start y_start `i  1 a 2 21 ]
 "62
 } 0
 "189
 [v _display_gear display_gear `(v  1 e 1 0 ]
 {
-[v display_gear@gear gear `i  1 p 2 36 ]
+[v display_gear@gear gear `i  1 p 2 18 ]
 "268
 } 0
 "129
 [v _display_fuel display_fuel `(v  1 e 1 0 ]
 {
-[v display_fuel@level level `i  1 p 2 36 ]
+[v display_fuel@level level `i  1 p 2 18 ]
 "133
 } 0
 "26
@@ -1075,34 +1074,34 @@
 "135
 [v _display_battery display_battery `(v  1 e 1 0 ]
 {
-[v display_battery@volts volts `i  1 p 2 36 ]
+[v display_battery@volts volts `i  1 p 2 18 ]
 "139
 } 0
 "43 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\Gue/FT800.c
 [v _wr8s wr8s `(uc  1 e 1 0 ]
 {
 "50
-[v wr8s@i i `uc  1 a 1 29 ]
+[v wr8s@i i `uc  1 a 1 11 ]
 "49
-[v wr8s@l l `uc  1 a 1 28 ]
+[v wr8s@l l `uc  1 a 1 10 ]
 "43
-[v wr8s@addr addr `um  1 p 3 20 ]
-[v wr8s@s s `*.25Cuc  1 p 2 23 ]
+[v wr8s@addr addr `um  1 p 3 2 ]
+[v wr8s@s s `*.25Cuc  1 p 2 5 ]
 "59
 } 0
 "4 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
 {
 "6
-[v strlen@cp cp `*.25Cuc  1 a 2 18 ]
+[v strlen@cp cp `*.25Cuc  1 a 2 0 ]
 "4
-[v strlen@s s `*.25Cuc  1 p 2 14 ]
+[v strlen@s s `*.25Cuc  1 p 2 36 ]
 "13
 } 0
 "126 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\Gue/FT800.c
 [v _cmd cmd `(v  1 e 1 0 ]
 {
-[v cmd@command command `ul  1 p 4 29 ]
+[v cmd@command command `ul  1 p 4 11 ]
 "128
 } 0
 "122
@@ -1110,48 +1109,48 @@
 {
 [v cmd_incrementn@n n `uc  1 a 1 wreg ]
 [v cmd_incrementn@n n `uc  1 a 1 wreg ]
-[v cmd_incrementn@n n `uc  1 a 1 16 ]
+[v cmd_incrementn@n n `uc  1 a 1 38 ]
 "124
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
 {
 "11
-[v ___awmod@sign sign `uc  1 a 1 27 ]
-[v ___awmod@counter counter `uc  1 a 1 26 ]
+[v ___awmod@sign sign `uc  1 a 1 9 ]
+[v ___awmod@counter counter `uc  1 a 1 8 ]
 "8
-[v ___awmod@dividend dividend `i  1 p 2 22 ]
-[v ___awmod@divisor divisor `i  1 p 2 24 ]
+[v ___awmod@dividend dividend `i  1 p 2 4 ]
+[v ___awmod@divisor divisor `i  1 p 2 6 ]
 "35
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 {
 "11
-[v ___awdiv@quotient quotient `i  1 a 2 20 ]
+[v ___awdiv@quotient quotient `i  1 a 2 2 ]
 "12
-[v ___awdiv@sign sign `uc  1 a 1 19 ]
-[v ___awdiv@counter counter `uc  1 a 1 18 ]
+[v ___awdiv@sign sign `uc  1 a 1 1 ]
+[v ___awdiv@counter counter `uc  1 a 1 0 ]
 "8
-[v ___awdiv@dividend dividend `i  1 p 2 14 ]
-[v ___awdiv@divisor divisor `i  1 p 2 16 ]
+[v ___awdiv@dividend dividend `i  1 p 2 36 ]
+[v ___awdiv@divisor divisor `i  1 p 2 38 ]
 "42
 } 0
 "32 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\awtoft.c
 [v ___awtoft __awtoft `(f  1 e 3 0 ]
 {
 "34
-[v ___awtoft@sign sign `uc  1 a 1 25 ]
+[v ___awtoft@sign sign `uc  1 a 1 39 ]
 "32
-[v ___awtoft@c c `i  1 p 2 22 ]
+[v ___awtoft@c c `i  1 p 2 5 ]
 "42
 } 0
 "62 C:\Program Files (x86)\Microchip\xc8\v1.42\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 {
-[v ___ftpack@arg arg `um  1 p 3 14 ]
-[v ___ftpack@exp exp `uc  1 p 1 17 ]
-[v ___ftpack@sign sign `uc  1 p 1 18 ]
+[v ___ftpack@arg arg `um  1 p 3 0 ]
+[v ___ftpack@exp exp `uc  1 p 1 3 ]
+[v ___ftpack@sign sign `uc  1 p 1 4 ]
 "86
 } 0
 "111 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/mcc.c
@@ -1179,10 +1178,10 @@
 {
 "55
 } 0
-"69 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/ecan.c
+"64 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/ecan.c
 [v _ECAN_Initialize ECAN_Initialize `(v  1 e 1 0 ]
 {
-"159
+"154
 } 0
 "143 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\Gue/FT800.c
 [v _FT800_Init FT800_Init `T(v  1 e 1 0 ]
@@ -1192,31 +1191,31 @@
 "16
 [v _wr8 wr8 `(v  1 e 1 0 ]
 {
-[v wr8@addr addr `um  1 p 3 15 ]
-[v wr8@value value `uc  1 p 1 18 ]
+[v wr8@addr addr `um  1 p 3 0 ]
+[v wr8@value value `uc  1 p 1 3 ]
 "23
 } 0
 "34
 [v _wr32 wr32 `(v  1 e 1 0 ]
 {
-[v wr32@addr addr `um  1 p 3 15 ]
-[v wr32@value value `ul  1 p 4 18 ]
+[v wr32@addr addr `um  1 p 3 0 ]
+[v wr32@value value `ul  1 p 4 3 ]
 "41
 } 0
 "25
 [v _wr16 wr16 `(v  1 e 1 0 ]
 {
-[v wr16@addr addr `um  1 p 3 15 ]
-[v wr16@value value `ui  1 p 2 18 ]
+[v wr16@addr addr `um  1 p 3 0 ]
+[v wr16@value value `ui  1 p 2 3 ]
 "32
 } 0
 "72
 [v _rd16 rd16 `(ui  1 e 2 0 ]
 {
 "79
-[v rd16@temp temp `uc  1 a 1 21 ]
+[v rd16@temp temp `uc  1 a 1 3 ]
 "72
-[v rd16@addr addr `um  1 p 3 15 ]
+[v rd16@addr addr `um  1 p 3 37 ]
 "83
 } 0
 "8
@@ -1224,7 +1223,7 @@
 {
 [v host_command@command command `uc  1 a 1 wreg ]
 [v host_command@command command `uc  1 a 1 wreg ]
-[v host_command@command command `uc  1 a 1 15 ]
+[v host_command@command command `uc  1 a 1 37 ]
 "14
 } 0
 "77 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/spi.c
@@ -1233,61 +1232,61 @@
 [v SPI_Exchange8bit@data data `uc  1 a 1 wreg ]
 [v SPI_Exchange8bit@data data `uc  1 a 1 wreg ]
 "80
-[v SPI_Exchange8bit@data data `uc  1 a 1 14 ]
+[v SPI_Exchange8bit@data data `uc  1 a 1 36 ]
 "89
-} 0
-"248 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/ecan.c
-[v _CAN_receive CAN_receive `(uc  1 e 1 0 ]
-{
-"249
-[v CAN_receive@returnValue returnValue `uc  1 a 1 35 ]
-[s S149 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
-"248
-[u S161 . 14 `S149 1 frame 14 0 `[14]uc 1 array 14 0 ]
-[v CAN_receive@tempCanMsg tempCanMsg `*.39S161  1 p 2 33 ]
-"314
-} 0
-"394
-[v _convertReg2StandardCANid convertReg2StandardCANid `(ul  1 e 4 0 ]
-{
-[v convertReg2StandardCANid@tempRXBn_SIDH tempRXBn_SIDH `uc  1 a 1 wreg ]
-"396
-[v convertReg2StandardCANid@ConvertedID ConvertedID `ul  1 a 4 25 ]
-"395
-[v convertReg2StandardCANid@returnValue returnValue `ul  1 a 4 21 ]
-"394
-[v convertReg2StandardCANid@tempRXBn_SIDH tempRXBn_SIDH `uc  1 a 1 wreg ]
-[v convertReg2StandardCANid@tempRXBn_SIDL tempRXBn_SIDL `uc  1 p 1 14 ]
-[v convertReg2StandardCANid@tempRXBn_SIDH tempRXBn_SIDH `uc  1 a 1 20 ]
-"404
-} 0
-"374
-[v _convertReg2ExtendedCANid convertReg2ExtendedCANid `(ul  1 e 4 0 ]
-{
-[v convertReg2ExtendedCANid@tempRXBn_EIDH tempRXBn_EIDH `uc  1 a 1 wreg ]
-"376
-[v convertReg2ExtendedCANid@ConvertedID ConvertedID `ul  1 a 4 29 ]
-"375
-[v convertReg2ExtendedCANid@returnValue returnValue `ul  1 a 4 23 ]
-"378
-[v convertReg2ExtendedCANid@CAN_standardLo_ID_hi3bits CAN_standardLo_ID_hi3bits `uc  1 a 1 28 ]
-"377
-[v convertReg2ExtendedCANid@CAN_standardLo_ID_lo2bits CAN_standardLo_ID_lo2bits `uc  1 a 1 27 ]
-"374
-[v convertReg2ExtendedCANid@tempRXBn_EIDH tempRXBn_EIDH `uc  1 a 1 wreg ]
-[v convertReg2ExtendedCANid@tempRXBn_EIDL tempRXBn_EIDL `uc  1 p 1 14 ]
-[v convertReg2ExtendedCANid@tempRXBn_SIDH tempRXBn_SIDH `uc  1 p 1 15 ]
-[v convertReg2ExtendedCANid@tempRXBn_SIDL tempRXBn_SIDL `uc  1 p 1 16 ]
-[v convertReg2ExtendedCANid@tempRXBn_EIDH tempRXBn_EIDH `uc  1 a 1 22 ]
-"392
 } 0
 "57 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 {
 "68
 } 0
-"61 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/ecan.c
+"23 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\main.c
 [v _ECAN_ISR_ECAN_RXBI ECAN_ISR_ECAN_RXBI `(v  1 e 1 0 ]
 {
-"66
+"31
+} 0
+"243 C:\Users\FSAE\Desktop\r18_dashboard\can_test2.X\mcc_generated_files/ecan.c
+[v _CAN_receive CAN_receive `(uc  1 e 1 0 ]
+{
+"244
+[v CAN_receive@returnValue returnValue `uc  1 a 1 21 ]
+[s S149 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
+"243
+[u S161 . 14 `S149 1 frame 14 0 `[14]uc 1 array 14 0 ]
+[v CAN_receive@tempCanMsg tempCanMsg `*.39S161  1 p 2 19 ]
+"309
+} 0
+"389
+[v _convertReg2StandardCANid convertReg2StandardCANid `(ul  1 e 4 0 ]
+{
+[v convertReg2StandardCANid@tempRXBn_SIDH tempRXBn_SIDH `uc  1 a 1 wreg ]
+"391
+[v convertReg2StandardCANid@ConvertedID ConvertedID `ul  1 a 4 11 ]
+"390
+[v convertReg2StandardCANid@returnValue returnValue `ul  1 a 4 7 ]
+"389
+[v convertReg2StandardCANid@tempRXBn_SIDH tempRXBn_SIDH `uc  1 a 1 wreg ]
+[v convertReg2StandardCANid@tempRXBn_SIDL tempRXBn_SIDL `uc  1 p 1 0 ]
+[v convertReg2StandardCANid@tempRXBn_SIDH tempRXBn_SIDH `uc  1 a 1 6 ]
+"399
+} 0
+"369
+[v _convertReg2ExtendedCANid convertReg2ExtendedCANid `(ul  1 e 4 0 ]
+{
+[v convertReg2ExtendedCANid@tempRXBn_EIDH tempRXBn_EIDH `uc  1 a 1 wreg ]
+"371
+[v convertReg2ExtendedCANid@ConvertedID ConvertedID `ul  1 a 4 15 ]
+"370
+[v convertReg2ExtendedCANid@returnValue returnValue `ul  1 a 4 9 ]
+"373
+[v convertReg2ExtendedCANid@CAN_standardLo_ID_hi3bits CAN_standardLo_ID_hi3bits `uc  1 a 1 14 ]
+"372
+[v convertReg2ExtendedCANid@CAN_standardLo_ID_lo2bits CAN_standardLo_ID_lo2bits `uc  1 a 1 13 ]
+"369
+[v convertReg2ExtendedCANid@tempRXBn_EIDH tempRXBn_EIDH `uc  1 a 1 wreg ]
+[v convertReg2ExtendedCANid@tempRXBn_EIDL tempRXBn_EIDL `uc  1 p 1 0 ]
+[v convertReg2ExtendedCANid@tempRXBn_SIDH tempRXBn_SIDH `uc  1 p 1 1 ]
+[v convertReg2ExtendedCANid@tempRXBn_SIDL tempRXBn_SIDL `uc  1 p 1 2 ]
+[v convertReg2ExtendedCANid@tempRXBn_EIDH tempRXBn_EIDH `uc  1 a 1 8 ]
+"387
 } 0

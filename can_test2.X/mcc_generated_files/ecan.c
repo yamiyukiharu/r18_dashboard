@@ -58,12 +58,7 @@ unsigned long convertReg2StandardCANid(unsigned char tempRXBn_SIDH, unsigned cha
 void convertCANid2Reg(unsigned long tempPassedInID, unsigned char canIdType, unsigned char *passedInEIDH, unsigned char *passedInEIDL, unsigned char *passedInSIDH, unsigned char *passedInSIDL);
 
 
-void ECAN_ISR_ECAN_RXBI(void)
-{
-    // Not supported yet
-    // clear the ECAN interrupt flag
-    PIR5bits.RXB0IF = 0;
-}
+
 
 
 void ECAN_Initialize(void)
