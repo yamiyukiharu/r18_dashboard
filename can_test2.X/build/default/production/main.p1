@@ -5,52 +5,54 @@ Version 3.2 HI-TECH Software Intermediate Code
 "67
 [u S1537 `S1538 1 `uc -> 14 `i ]
 [n S1537 . frame array ]
-"29620 /Applications/microchip/xc8/v1.45/include/pic18f46k80.h
-[s S1111 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1111 . RXB0IF RXB1IF TXB0IF TXB1IF TXB2IF ERRIF WAKIF IRXIF ]
-"29630
-[s S1112 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S1112 . FIFOWMIF RXBnIF . TXBnIF ]
-"29619
-[u S1110 `S1111 1 `S1112 1 ]
-[n S1110 . . . ]
-"29637
-[v _PIR5bits `VS1110 ~T0 @X0 0 e@3959 ]
-"29537
-[s S1108 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1108 . RXB0IE RXB1IE TXB0IE TXB1IE TXB2IE ERRIE WAKIE IRXIE ]
-"29547
-[s S1109 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S1109 . FIFOWMIE RXBnIE . TXBnIE ]
-"29536
-[u S1107 `S1108 1 `S1109 1 ]
-[n S1107 . . . ]
-"29554
-[v _PIE5bits `VS1107 ~T0 @X0 0 e@3958 ]
-"16 main.c
-[v _convertStandardCANid `(ul ~T0 @X0 0 ef2`uc`uc ]
-"27900 /Applications/microchip/xc8/v1.45/include/pic18f46k80.h
-[v _RXB0SIDH `Vuc ~T0 @X0 0 e@3937 ]
-"28020
-[v _RXB0SIDL `Vuc ~T0 @X0 0 e@3938 ]
-"28377
-[v _RXB0DLC `Vuc ~T0 @X0 0 e@3941 ]
-"28491
-[v _RXB0D0 `Vuc ~T0 @X0 0 e@3942 ]
-"28561
-[v _RXB0D1 `Vuc ~T0 @X0 0 e@3943 ]
-"28631
-[v _RXB0D2 `Vuc ~T0 @X0 0 e@3944 ]
-"28701
-[v _RXB0D3 `Vuc ~T0 @X0 0 e@3945 ]
-"28771
-[v _RXB0D4 `Vuc ~T0 @X0 0 e@3946 ]
-"28841
-[v _RXB0D5 `Vuc ~T0 @X0 0 e@3947 ]
-"28911
-[v _RXB0D6 `Vuc ~T0 @X0 0 e@3948 ]
-"28981
-[v _RXB0D7 `Vuc ~T0 @X0 0 e@3949 ]
+[v F15059 `(v ~T0 @X0 1 tf1`ul ]
+"164 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18.h
+[v __delay `JF15059 ~T0 @X0 0 e ]
+[p i __delay ]
+[p mainexit ]
+"30496 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f46k80.h
+[s S1156 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1156 . LATA0 LATA1 LATA2 LATA3 . LATA5 LATA6 LATA7 ]
+"30506
+[s S1157 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1157 . LA0 LA1 LA2 LA3 . LA5 LA6 LA7 ]
+"30495
+[u S1155 `S1156 1 `S1157 1 ]
+[n S1155 . . . ]
+"30517
+[v _LATAbits `VS1155 ~T0 @X0 0 e@3977 ]
+"30822
+[s S1165 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1165 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
+"30832
+[s S1166 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1166 . LD0 LD1 LD2 LD3 LD4 LD5 LD6 LD7 ]
+"30821
+[u S1164 `S1165 1 `S1166 1 ]
+[n S1164 . . . ]
+"30843
+[v _LATDbits `VS1164 ~T0 @X0 0 e@3980 ]
+"30598
+[s S1159 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1159 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"30608
+[s S1160 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1160 . LB0 LB1 LB2 LB3 LB4 LB5 LB6 LB7 ]
+"30597
+[u S1158 `S1159 1 `S1160 1 ]
+[n S1158 . . . ]
+"30619
+[v _LATBbits `VS1158 ~T0 @X0 0 e@3978 ]
+"70 mcc_generated_files/mcc.h
+[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"29260 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f46k80.h
+[s S1092 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1092 . CLKSEL . CANCAP ENDRHI TX2EN TX2SRC ]
+"29259
+[u S1091 `S1092 1 ]
+[n S1091 . . ]
+"29269
+[v _CIOCONbits `VS1091 ~T0 @X0 0 e@3952 ]
 "27722
 [s S1034 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S1034 . FILHIT0 JTOFF_FILHIT1 RB0DBEN_FILHIT2 RXRTRRO_FILHIT3 FILHIT4 RXM0_RTRRO RXM1 RXFUL ]
@@ -71,21 +73,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1033 . . . . . . ]
 "27765
 [v _RXB0CONbits `VS1033 ~T0 @X0 0 e@3936 ]
-[v F15059 `(v ~T0 @X0 1 tf1`ul ]
-"164 /Applications/microchip/xc8/v1.45/include/pic18.h
-[v __delay `JF15059 ~T0 @X0 0 e ]
-[p i __delay ]
-[p mainexit ]
-"71 mcc_generated_files/mcc.h
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"29260 /Applications/microchip/xc8/v1.45/include/pic18f46k80.h
-[s S1092 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1092 . CLKSEL . CANCAP ENDRHI TX2EN TX2SRC ]
-"29259
-[u S1091 `S1092 1 ]
-[n S1091 . . ]
-"29269
-[v _CIOCONbits `VS1091 ~T0 @X0 0 e@3952 ]
+"29537
+[s S1108 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1108 . RXB0IE RXB1IE TXB0IE TXB1IE TXB2IE ERRIE WAKIE IRXIE ]
+"29547
+[s S1109 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S1109 . FIFOWMIE RXBnIE . TXBnIE ]
+"29536
+[u S1107 `S1108 1 `S1109 1 ]
+[n S1107 . . . ]
+"29554
+[v _PIE5bits `VS1107 ~T0 @X0 0 e@3958 ]
 "18612
 [v _RXF5SIDH `Vuc ~T0 @X0 0 e@3828 ]
 "18732
@@ -150,64 +148,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1372 . . . ]
 "35223
 [v _SSPCON1bits `VS1372 ~T0 @X0 0 e@4038 ]
-[v F15208 `(v ~T0 @X0 1 tf ]
+[v F15197 `(v ~T0 @X0 1 tf ]
 "314 Gue/FT800.h
-[v _FT800_Init `TF15208 ~T0 @X0 0 e ]
-"94 mcc_generated_files/eusart1.h
-[v _EUSART1_Initialize `(v ~T0 @X0 0 ef ]
-"30496 /Applications/microchip/xc8/v1.45/include/pic18f46k80.h
-[s S1156 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1156 . LATA0 LATA1 LATA2 LATA3 . LATA5 LATA6 LATA7 ]
-"30506
-[s S1157 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1157 . LA0 LA1 LA2 LA3 . LA5 LA6 LA7 ]
-"30495
-[u S1155 `S1156 1 `S1157 1 ]
-[n S1155 . . . ]
-"30517
-[v _LATAbits `VS1155 ~T0 @X0 0 e@3977 ]
-"30822
-[s S1165 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1165 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
-"30832
-[s S1166 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1166 . LD0 LD1 LD2 LD3 LD4 LD5 LD6 LD7 ]
-"30821
-[u S1164 `S1165 1 `S1166 1 ]
-[n S1164 . . . ]
-"30843
-[v _LATDbits `VS1164 ~T0 @X0 0 e@3980 ]
-"30598
-[s S1159 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1159 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
-"30608
-[s S1160 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1160 . LB0 LB1 LB2 LB3 LB4 LB5 LB6 LB7 ]
-"30597
-[u S1158 `S1159 1 `S1160 1 ]
-[n S1158 . . . ]
-"30619
-[v _LATBbits `VS1158 ~T0 @X0 0 e@3978 ]
-"30710
-[s S1162 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1162 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
-"30720
-[s S1163 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1163 . LC0 LC1 LC2 LC3 LC4 LC5 LC6 LC7 ]
-"30709
-[u S1161 `S1162 1 `S1163 1 ]
-[n S1161 . . . ]
-"30731
-[v _LATCbits `VS1161 ~T0 @X0 0 e@3979 ]
+[v _FT800_Init `TF15197 ~T0 @X0 0 e ]
 "23 display.h
 [v _display `(v ~T0 @X0 0 ef9`i`i`i`i`i`i`i`i`i ]
-"184 mcc_generated_files/ecan.h
+"185 mcc_generated_files/ecan.h
 [v _CAN_receive `(uc ~T0 @X0 0 ef1`*S1537 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f46k80.h: 50: extern volatile unsigned char RXERRCNT @ 0xE41;
-"52 /Applications/microchip/xc8/v1.45/include/pic18f46k80.h
+"52 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f46k80.h
 [; ;pic18f46k80.h: 52: asm("RXERRCNT equ 0E41h");
 [; <" RXERRCNT equ 0E41h ;# ">
 [; ;pic18f46k80.h: 55: typedef union {
@@ -13789,43 +13741,41 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 164: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 166: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 168: extern __nonreentrant void _delay3(unsigned char);
-[; ;pin_manager.h: 311: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 323: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 250: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 262: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
-[; ;stdint.h: 28: typedef signed short long int int24_t;
-[; ;stdint.h: 36: typedef signed long int int32_t;
-[; ;stdint.h: 43: typedef unsigned char uint8_t;
-[; ;stdint.h: 49: typedef unsigned int uint16_t;
-[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
-[; ;stdint.h: 63: typedef unsigned long int uint32_t;
-[; ;stdint.h: 71: typedef signed char int_least8_t;
-[; ;stdint.h: 78: typedef signed int int_least16_t;
-[; ;stdint.h: 90: typedef signed short long int int_least24_t;
-[; ;stdint.h: 98: typedef signed long int int_least32_t;
-[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
-[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
-[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
-[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
-[; ;stdint.h: 137: typedef signed char int_fast8_t;
-[; ;stdint.h: 144: typedef signed int int_fast16_t;
-[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
-[; ;stdint.h: 164: typedef signed long int int_fast32_t;
-[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
-[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
-[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
-[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
-[; ;stdint.h: 200: typedef int32_t intmax_t;
-[; ;stdint.h: 205: typedef uint32_t uintmax_t;
-[; ;stdint.h: 210: typedef int16_t intptr_t;
-[; ;stdint.h: 215: typedef uint16_t uintptr_t;
+[; ;stdint.h: 38: typedef signed long int int32_t;
+[; ;stdint.h: 45: typedef unsigned char uint8_t;
+[; ;stdint.h: 51: typedef unsigned int uint16_t;
+[; ;stdint.h: 67: typedef unsigned long int uint32_t;
+[; ;stdint.h: 75: typedef signed char int_least8_t;
+[; ;stdint.h: 82: typedef signed int int_least16_t;
+[; ;stdint.h: 104: typedef signed long int int_least32_t;
+[; ;stdint.h: 111: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 117: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 136: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 145: typedef signed char int_fast8_t;
+[; ;stdint.h: 152: typedef signed int int_fast16_t;
+[; ;stdint.h: 174: typedef signed long int int_fast32_t;
+[; ;stdint.h: 181: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 187: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 206: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 212: typedef int32_t intmax_t;
+[; ;stdint.h: 217: typedef uint32_t uintmax_t;
+[; ;stdint.h: 222: typedef int16_t intptr_t;
+[; ;stdint.h: 227: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;eusart2.h: 94: void EUSART2_Initialize(void);
-[; ;eusart2.h: 114: uint8_t EUSART2_Read(void);
-[; ;eusart2.h: 134: void EUSART2_Write(uint8_t txData);
-[; ;eusart1.h: 94: void EUSART1_Initialize(void);
-[; ;eusart1.h: 114: uint8_t EUSART1_Read(void);
-[; ;eusart1.h: 134: void EUSART1_Write(uint8_t txData);
+[; ;interrupt_manager.h: 110: void interrupt INTERRUPT_InterruptManager(void);
+[; ;interrupt_manager.h: 122: void INTERRUPT_Initialize (void);
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stddef.h: 6: typedef int ptrdiff_t;
+[; ;spi.h: 116: void SPI_Initialize(void);
+[; ;spi.h: 151: uint8_t SPI_Exchange8bit(uint8_t data);
+[; ;spi.h: 191: uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
+[; ;spi.h: 214: bool SPI_IsBufferFull(void);
+[; ;spi.h: 239: bool SPI_HasWriteCollisionOccured(void);
+[; ;spi.h: 263: void SPI_ClearWriteCollisionStatus(void);
 [; ;ecan.h: 67: typedef union {
 [; ;ecan.h: 69: struct {
 [; ;ecan.h: 70: unsigned char idType;
@@ -13842,24 +13792,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ecan.h: 81: } frame;
 [; ;ecan.h: 82: unsigned char array[14];
 [; ;ecan.h: 83: } uCAN_MSG;
-[; ;ecan.h: 117: void ECAN_Initialize(void);
-[; ;ecan.h: 139: void CAN_sleep(void);
-[; ;ecan.h: 160: unsigned char CAN_transmit(uCAN_MSG *tempCanMsg);
-[; ;ecan.h: 184: unsigned char CAN_receive(uCAN_MSG *tempCanMsg);
-[; ;ecan.h: 206: unsigned char CAN_messagesInBuffer(void);
-[; ;ecan.h: 230: unsigned char CAN_isBusOff(void);
-[; ;ecan.h: 254: unsigned char CAN_isRXErrorPassive(void);
-[; ;ecan.h: 278: unsigned char CAN_isTXErrorPassive(void);
-[; ;__size_t.h: 4: typedef unsigned size_t;
-[; ;stddef.h: 6: typedef int ptrdiff_t;
-[; ;spi.h: 116: void SPI_Initialize(void);
-[; ;spi.h: 151: uint8_t SPI_Exchange8bit(uint8_t data);
-[; ;spi.h: 191: uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
-[; ;spi.h: 214: bool SPI_IsBufferFull(void);
-[; ;spi.h: 239: bool SPI_HasWriteCollisionOccured(void);
-[; ;spi.h: 263: void SPI_ClearWriteCollisionStatus(void);
-[; ;mcc.h: 71: void SYSTEM_Initialize(void);
-[; ;mcc.h: 84: void OSCILLATOR_Initialize(void);
+[; ;ecan.h: 96: void ECAN_ISR_ECAN_RXBI(void);
+[; ;ecan.h: 118: void ECAN_Initialize(void);
+[; ;ecan.h: 140: void CAN_sleep(void);
+[; ;ecan.h: 161: unsigned char CAN_transmit(uCAN_MSG *tempCanMsg);
+[; ;ecan.h: 185: unsigned char CAN_receive(uCAN_MSG *tempCanMsg);
+[; ;ecan.h: 207: unsigned char CAN_messagesInBuffer(void);
+[; ;ecan.h: 231: unsigned char CAN_isBusOff(void);
+[; ;ecan.h: 255: unsigned char CAN_isRXErrorPassive(void);
+[; ;ecan.h: 279: unsigned char CAN_isTXErrorPassive(void);
+[; ;mcc.h: 70: void SYSTEM_Initialize(void);
+[; ;mcc.h: 83: void OSCILLATOR_Initialize(void);
 [; ;FT_DataTypes.h: 8: typedef unsigned char ft_uint8_t;
 [; ;FT_DataTypes.h: 9: typedef char ft_char8_t;
 [; ;FT_DataTypes.h: 10: typedef signed char ft_schar8_t;
@@ -13912,68 +13855,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 "18 main.c
 [v _tempCanMsg `S1537 ~T0 @X0 1 e ]
 [; ;main.c: 18: uCAN_MSG tempCanMsg;
-[v $root$_can_bus `(v ~T0 @X0 0 e ]
-[v F15254 `(v ~T0 @X0 1 tf ]
-"21
-[v _can_bus `IF15254 ~T0 @X0 1 e ]
-{
-[; ;main.c: 21: void interrupt can_bus(void) {
-[e :U _can_bus ]
-[f ]
-[; ;main.c: 22: if(PIR5bits.RXB0IF) {
-"22
-[e $ ! != -> . . _PIR5bits 0 0 `i -> -> -> 0 `i `Vuc `i 1541  ]
-{
-[; ;main.c: 23: PIE5bits.RXB0IE = 0;
-"23
-[e = . . _PIE5bits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 31: tempCanMsg.frame.idType = (unsigned char) 1;
-"31
-[e = . . _tempCanMsg 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 32: tempCanMsg.frame.id = convertStandardCANid(RXB0SIDH, RXB0SIDL);
-"32
-[e = . . _tempCanMsg 0 1 ( _convertStandardCANid (2 , _RXB0SIDH _RXB0SIDL ]
-[; ;main.c: 33: tempCanMsg.frame.dlc = RXB0DLC;
-"33
-[e = . . _tempCanMsg 0 2 _RXB0DLC ]
-[; ;main.c: 34: tempCanMsg.frame.data0 = RXB0D0;
-"34
-[e = . . _tempCanMsg 0 3 _RXB0D0 ]
-[; ;main.c: 35: tempCanMsg.frame.data1 = RXB0D1;
-"35
-[e = . . _tempCanMsg 0 4 _RXB0D1 ]
-[; ;main.c: 36: tempCanMsg.frame.data2 = RXB0D2;
-"36
-[e = . . _tempCanMsg 0 5 _RXB0D2 ]
-[; ;main.c: 37: tempCanMsg.frame.data3 = RXB0D3;
-"37
-[e = . . _tempCanMsg 0 6 _RXB0D3 ]
-[; ;main.c: 38: tempCanMsg.frame.data4 = RXB0D4;
-"38
-[e = . . _tempCanMsg 0 7 _RXB0D4 ]
-[; ;main.c: 39: tempCanMsg.frame.data5 = RXB0D5;
-"39
-[e = . . _tempCanMsg 0 8 _RXB0D5 ]
-[; ;main.c: 40: tempCanMsg.frame.data6 = RXB0D6;
-"40
-[e = . . _tempCanMsg 0 9 _RXB0D6 ]
-[; ;main.c: 41: tempCanMsg.frame.data7 = RXB0D7;
-"41
-[e = . . _tempCanMsg 0 10 _RXB0D7 ]
-[; ;main.c: 42: RXB0CONbits.RXFUL = 0;
-"42
-[e = . . _RXB0CONbits 0 7 -> -> 0 `i `uc ]
-[; ;main.c: 43: PIE5bits.RXB0IE = 1;
-"43
-[e = . . _PIE5bits 0 0 -> -> 1 `i `uc ]
-"44
-}
-[e :U 1541 ]
-[; ;main.c: 44: }
-[; ;main.c: 46: }
-"46
-[e :UE 1540 ]
-}
 "48
 [v _convertStandardCANid `(ul ~T0 @X0 1 ef2`uc`uc ]
 {
@@ -14001,10 +13882,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 57: return (returnValue);
 "57
 [e ) _returnValue ]
-[e $UE 1542  ]
+[e $UE 1540  ]
 [; ;main.c: 58: }
 "58
-[e :UE 1542 ]
+[e :UE 1540 ]
 }
 "60
 [v _wait2secs `(v ~T0 @X0 1 ef ]
@@ -14017,23 +13898,63 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 [; ;main.c: 62: }
 "62
-[e :UE 1543 ]
+[e :UE 1541 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
 "64
 [v _main `(v ~T0 @X0 1 ef ]
-"65
 {
-[; ;main.c: 64: void main(void)
-[; ;main.c: 65: {
+[; ;main.c: 64: void main(void) {
 [e :U _main ]
 [f ]
+[; ;main.c: 65: do { LATAbits.LATA1 = 0; } while(0);
+"65
+[e :U 1545 ]
+{
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+}
+[e :U 1544 ]
+[; ;main.c: 66: do { LATDbits.LATD4 = 0; } while(0);
 "66
-[v _canMessage `S1537 ~T0 @X0 1 a ]
+[e :U 1548 ]
+{
+[e = . . _LATDbits 0 4 -> -> 0 `i `uc ]
+}
+[e :U 1547 ]
+[; ;main.c: 67: do { LATAbits.LATA0 = 0; } while(0);
 "67
+[e :U 1551 ]
+{
+[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
+}
+[e :U 1550 ]
+[; ;main.c: 68: do { LATBbits.LATB5 = 0; } while(0);
+"68
+[e :U 1554 ]
+{
+[e = . . _LATBbits 0 5 -> -> 0 `i `uc ]
+}
+[e :U 1553 ]
+[; ;main.c: 69: do { LATDbits.LATD5 = 0; } while(0);
+"69
+[e :U 1557 ]
+{
+[e = . . _LATDbits 0 5 -> -> 0 `i `uc ]
+}
+[e :U 1556 ]
+[; ;main.c: 70: do { LATDbits.LATD3 = 0; } while(0);
+"70
+[e :U 1560 ]
+{
+[e = . . _LATDbits 0 3 -> -> 0 `i `uc ]
+}
+[e :U 1559 ]
+"72
+[v _canMessage `S1537 ~T0 @X0 1 a ]
+"73
 [v _rpm `i ~T0 @X0 1 a ]
-[; ;main.c: 66: uCAN_MSG canMessage;
-[; ;main.c: 67: int rpm = 0, oilP = 0, fuelP = 0, tp = 0, speed = 0, gear = 0, engTemp = 0, oilTemp = 0, battVolts = 0,
+[; ;main.c: 72: uCAN_MSG canMessage;
+[; ;main.c: 73: int rpm = 0, oilP = 0, fuelP = 0, tp = 0, speed = 0, gear = 0, engTemp = 0, oilTemp = 0, battVolts = 0,
 [e = _rpm -> 0 `i ]
 [v _oilP `i ~T0 @X0 1 a ]
 [e = _oilP -> 0 `i ]
@@ -14051,308 +13972,223 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _oilTemp -> 0 `i ]
 [v _battVolts `i ~T0 @X0 1 a ]
 [e = _battVolts -> 0 `i ]
-"68
+"74
 [v _brakeP_F `i ~T0 @X0 1 a ]
-[; ;main.c: 68: brakeP_F = 0, brakeP_R = 0, radio_sw = 0;
+[; ;main.c: 74: brakeP_F = 0, brakeP_R = 0, radio_sw = 0;
 [e = _brakeP_F -> 0 `i ]
 [v _brakeP_R `i ~T0 @X0 1 a ]
 [e = _brakeP_R -> 0 `i ]
 [v _radio_sw `i ~T0 @X0 1 a ]
 [e = _radio_sw -> 0 `i ]
-[; ;main.c: 69: wait2secs();
-"69
+[; ;main.c: 75: wait2secs();
+"75
 [e ( _wait2secs ..  ]
-"71
-[v _y_start `i ~T0 @X0 1 a ]
-[; ;main.c: 71: int y_start = 0;
-[e = _y_start -> 0 `i ]
-[; ;main.c: 74: SYSTEM_Initialize();
-"74
-[e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 77: CIOCONbits.CLKSEL = 1;
 "77
-[e = . . _CIOCONbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 78: CIOCONbits.ENDRHI = 1;
-"78
-[e = . . _CIOCONbits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 79: CIOCONbits.TX2SRC = 0;
-"79
-[e = . . _CIOCONbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 80: CIOCONbits.TX2EN = 1;
+[v _y_start `i ~T0 @X0 1 a ]
+[; ;main.c: 77: int y_start = 0;
+[e = _y_start -> 0 `i ]
+[; ;main.c: 80: SYSTEM_Initialize();
 "80
-[e = . . _CIOCONbits 0 4 -> -> 1 `i `uc ]
-[; ;main.c: 81: RXB0CONbits.RXM0 = 1;
-"81
-[e = . . _RXB0CONbits 2 5 -> -> 1 `i `uc ]
-[; ;main.c: 82: RXB0CONbits.RXM1 = 0;
-"82
-[e = . . _RXB0CONbits 0 6 -> -> 0 `i `uc ]
-[; ;main.c: 83: RXB0CONbits.RB0DBEN = 0;
+[e ( _SYSTEM_Initialize ..  ]
+[; ;main.c: 83: CIOCONbits.CLKSEL = 1;
 "83
-[e = . . _RXB0CONbits 1 2 -> -> 0 `i `uc ]
-[; ;main.c: 84: RXB0CONbits.FILHIT0 = 0;
+[e = . . _CIOCONbits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 84: CIOCONbits.ENDRHI = 1;
 "84
-[e = . . _RXB0CONbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 85: PIE5bits.RXB0IE = 1;
+[e = . . _CIOCONbits 0 3 -> -> 1 `i `uc ]
+[; ;main.c: 85: CIOCONbits.TX2SRC = 0;
 "85
-[e = . . _PIE5bits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 88: RXF5SIDH = 0xC8;
+[e = . . _CIOCONbits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 86: CIOCONbits.TX2EN = 1;
+"86
+[e = . . _CIOCONbits 0 4 -> -> 1 `i `uc ]
+[; ;main.c: 87: RXB0CONbits.RXM0 = 1;
+"87
+[e = . . _RXB0CONbits 2 5 -> -> 1 `i `uc ]
+[; ;main.c: 88: RXB0CONbits.RXM1 = 0;
 "88
-[e = _RXF5SIDH -> -> 200 `i `uc ]
-[; ;main.c: 89: RXF5SIDL = 0x00;
+[e = . . _RXB0CONbits 0 6 -> -> 0 `i `uc ]
+[; ;main.c: 89: RXB0CONbits.RB0DBEN = 0;
 "89
-[e = _RXF5SIDL -> -> 0 `i `uc ]
-[; ;main.c: 90: RXF4SIDH = 0xC8;
+[e = . . _RXB0CONbits 1 2 -> -> 0 `i `uc ]
+[; ;main.c: 90: RXB0CONbits.FILHIT0 = 0;
 "90
-[e = _RXF4SIDH -> -> 200 `i `uc ]
-[; ;main.c: 91: RXF4SIDL = 0x20;
+[e = . . _RXB0CONbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 91: PIE5bits.RXB0IE = 1;
 "91
-[e = _RXF4SIDL -> -> 32 `i `uc ]
-[; ;main.c: 92: RXF3SIDH = 0xC8;
-"92
-[e = _RXF3SIDH -> -> 200 `i `uc ]
-[; ;main.c: 93: RXF3SIDL = 0x40;
-"93
-[e = _RXF3SIDL -> -> 64 `i `uc ]
-[; ;main.c: 96: SSPSTATbits.SMP = 0;
+[e = . . _PIE5bits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 94: RXF5SIDH = 0xC8;
+"94
+[e = _RXF5SIDH -> -> 200 `i `uc ]
+[; ;main.c: 95: RXF5SIDL = 0x00;
+"95
+[e = _RXF5SIDL -> -> 0 `i `uc ]
+[; ;main.c: 96: RXF4SIDH = 0xC8;
 "96
-[e = . . _SSPSTATbits 2 7 -> -> 0 `i `uc ]
-[; ;main.c: 97: SSPSTATbits.CKE = 1;
+[e = _RXF4SIDH -> -> 200 `i `uc ]
+[; ;main.c: 97: RXF4SIDL = 0x20;
 "97
-[e = . . _SSPSTATbits 2 6 -> -> 1 `i `uc ]
-[; ;main.c: 98: SSPCON1bits.SSPEN = 1;
+[e = _RXF4SIDL -> -> 32 `i `uc ]
+[; ;main.c: 98: RXF3SIDH = 0xC8;
 "98
-[e = . . _SSPCON1bits 0 2 -> -> 1 `i `uc ]
-[; ;main.c: 99: SSPCON1bits.CKP = 1;
+[e = _RXF3SIDH -> -> 200 `i `uc ]
+[; ;main.c: 99: RXF3SIDL = 0x40;
 "99
-[e = . . _SSPCON1bits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 100: SSPCON1bits.SSPM = 0b0000;
-"100
-[e = . . _SSPCON1bits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 101: FT800_Init();
-"101
-[e ( _FT800_Init ..  ]
-[; ;main.c: 103: EUSART1_Initialize();
+[e = _RXF3SIDL -> -> 64 `i `uc ]
+[; ;main.c: 102: SSPSTATbits.SMP = 0;
+"102
+[e = . . _SSPSTATbits 2 7 -> -> 0 `i `uc ]
+[; ;main.c: 103: SSPSTATbits.CKE = 1;
 "103
-[e ( _EUSART1_Initialize ..  ]
-[; ;main.c: 105: wait2secs();
+[e = . . _SSPSTATbits 2 6 -> -> 1 `i `uc ]
+[; ;main.c: 104: SSPCON1bits.SSPEN = 1;
+"104
+[e = . . _SSPCON1bits 0 2 -> -> 1 `i `uc ]
+[; ;main.c: 105: SSPCON1bits.CKP = 1;
 "105
-[e ( _wait2secs ..  ]
-[; ;main.c: 107: do { LATAbits.LATA1 = 0; } while(0);
+[e = . . _SSPCON1bits 0 1 -> -> 1 `i `uc ]
+[; ;main.c: 106: SSPCON1bits.SSPM = 0b0000;
+"106
+[e = . . _SSPCON1bits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 107: FT800_Init();
 "107
-[e :U 1547 ]
-{
-[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
-}
-[e :U 1546 ]
-[; ;main.c: 108: do { LATDbits.LATD4 = 0; } while(0);
-"108
-[e :U 1550 ]
-{
-[e = . . _LATDbits 0 4 -> -> 0 `i `uc ]
-}
-[e :U 1549 ]
-[; ;main.c: 109: do { LATAbits.LATA0 = 0; } while(0);
+[e ( _FT800_Init ..  ]
+[; ;main.c: 109: wait2secs();
 "109
-[e :U 1553 ]
-{
-[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
-}
-[e :U 1552 ]
-[; ;main.c: 110: do { LATBbits.LATB5 = 1; } while(0);
-"110
-[e :U 1556 ]
-{
-[e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
-}
-[e :U 1555 ]
-[; ;main.c: 111: do { LATDbits.LATD5 = 0; } while(0);
+[e ( _wait2secs ..  ]
+[; ;main.c: 111: display(rpm, oilP, fuelP, tp, speed, gear, engTemp, oilTemp, battVolts);
 "111
-[e :U 1559 ]
-{
-[e = . . _LATDbits 0 5 -> -> 0 `i `uc ]
-}
-[e :U 1558 ]
-[; ;main.c: 112: do { LATDbits.LATD3 = 1; } while(0);
-"112
+[e ( _display (4 , , , , , , , , _rpm _oilP _fuelP _tp _speed _gear _engTemp _oilTemp _battVolts ]
+[; ;main.c: 113: while (1) {
+"113
 [e :U 1562 ]
 {
-[e = . . _LATDbits 0 3 -> -> 1 `i `uc ]
-}
-[e :U 1561 ]
-[; ;main.c: 113: do { LATCbits.LATC2 = 1; } while(0);
-"113
-[e :U 1565 ]
+[; ;main.c: 114: if(CAN_receive(&canMessage)) {
+"114
+[e $ ! != -> ( _CAN_receive (1 &U _canMessage `i -> -> -> 0 `i `uc `i 1564  ]
 {
-[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
-}
-[e :U 1564 ]
-[; ;main.c: 115: display(rpm, oilP, fuelP, tp, speed, gear, engTemp, oilTemp, battVolts);
+[; ;main.c: 115: if(canMessage.frame.id == 0x640) {
 "115
-[e ( _display (4 , , , , , , , , _rpm _oilP _fuelP _tp _speed _gear _engTemp _oilTemp _battVolts ]
-[; ;main.c: 117: while (1) {
-"117
-[e :U 1567 ]
+[e $ ! == . . _canMessage 0 1 -> -> -> 1600 `i `l `ul 1565  ]
 {
-[; ;main.c: 118: if(CAN_receive(&canMessage)) {
-"118
-[e $ ! != -> ( _CAN_receive (1 &U _canMessage `i -> -> -> 0 `i `uc `i 1569  ]
-{
-[; ;main.c: 119: if(canMessage.frame.id == 0x640) {
-"119
-[e $ ! == . . _canMessage 0 1 -> -> -> 1600 `i `l `ul 1570  ]
-{
-[; ;main.c: 120: rpm = ((canMessage.frame.data0 << 8) | canMessage.frame.data1);
-"120
+[; ;main.c: 116: rpm = ((canMessage.frame.data0 << 8) | canMessage.frame.data1);
+"116
 [e = _rpm | << -> . . _canMessage 0 3 `i -> 8 `i -> . . _canMessage 0 4 `i ]
-[; ;main.c: 121: oilP = ((canMessage.frame.data2 << 8) | canMessage.frame.data3)/10;
-"121
+[; ;main.c: 117: oilP = ((canMessage.frame.data2 << 8) | canMessage.frame.data3)/10;
+"117
 [e = _oilP / | << -> . . _canMessage 0 5 `i -> 8 `i -> . . _canMessage 0 6 `i -> 10 `i ]
-[; ;main.c: 122: fuelP = ((canMessage.frame.data0 << 4) | canMessage.frame.data5);
-"122
+[; ;main.c: 118: fuelP = ((canMessage.frame.data0 << 4) | canMessage.frame.data5);
+"118
 [e = _fuelP | << -> . . _canMessage 0 3 `i -> 4 `i -> . . _canMessage 0 8 `i ]
-[; ;main.c: 123: tp = canMessage.frame.data6;
-"123
+[; ;main.c: 119: tp = canMessage.frame.data6;
+"119
 [e = _tp -> . . _canMessage 0 9 `i ]
-[; ;main.c: 124: speed = canMessage.frame.data7;
-"124
+[; ;main.c: 120: speed = canMessage.frame.data7;
+"120
 [e = _speed -> . . _canMessage 0 10 `i ]
-[; ;main.c: 125: do { LATDbits.LATD5 = 1; } while(0);
-"125
-[e :U 1573 ]
-{
-[e = . . _LATDbits 0 5 -> -> 1 `i `uc ]
+"121
 }
-[e :U 1572 ]
-[; ;main.c: 126: _delay((unsigned long)((200)*(16000000/4000.0)));
-"126
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"127
-}
-[; ;main.c: 127: } else if(canMessage.frame.id == 0x641) {
-[e $U 1574  ]
-[e :U 1570 ]
-[e $ ! == . . _canMessage 0 1 -> -> -> 1601 `i `l `ul 1575  ]
+[; ;main.c: 121: } else if(canMessage.frame.id == 0x641) {
+[e $U 1566  ]
+[e :U 1565 ]
+[e $ ! == . . _canMessage 0 1 -> -> -> 1601 `i `l `ul 1567  ]
 {
-[; ;main.c: 128: brakeP_F = canMessage.frame.data0;
-"128
+[; ;main.c: 122: brakeP_F = canMessage.frame.data0;
+"122
 [e = _brakeP_F -> . . _canMessage 0 3 `i ]
-[; ;main.c: 129: brakeP_R = canMessage.frame.data1;
-"129
+[; ;main.c: 123: brakeP_R = canMessage.frame.data1;
+"123
 [e = _brakeP_R -> . . _canMessage 0 4 `i ]
-[; ;main.c: 130: gear = canMessage.frame.data6;
-"130
+[; ;main.c: 124: gear = canMessage.frame.data6;
+"124
 [e = _gear -> . . _canMessage 0 9 `i ]
-[; ;main.c: 131: radio_sw = canMessage.frame.data7 >> 7;
-"131
-[e = _radio_sw >> -> . . _canMessage 0 10 `i -> 7 `i ]
-[; ;main.c: 132: do { LATBbits.LATB5 = 1; } while(0);
-"132
-[e :U 1578 ]
-{
-[e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
+"125
 }
-[e :U 1577 ]
-[; ;main.c: 133: _delay((unsigned long)((200)*(16000000/4000.0)));
-"133
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"134
-}
-[; ;main.c: 134: } else if(canMessage.frame.id == 0x642) {
-[e $U 1579  ]
-[e :U 1575 ]
-[e $ ! == . . _canMessage 0 1 -> -> -> 1602 `i `l `ul 1580  ]
+[; ;main.c: 125: } else if(canMessage.frame.id == 0x642) {
+[e $U 1568  ]
+[e :U 1567 ]
+[e $ ! == . . _canMessage 0 1 -> -> -> 1602 `i `l `ul 1569  ]
 {
-[; ;main.c: 135: engTemp = canMessage.frame.data0;
-"135
+[; ;main.c: 126: engTemp = canMessage.frame.data0;
+"126
 [e = _engTemp -> . . _canMessage 0 3 `i ]
-[; ;main.c: 136: oilTemp = canMessage.frame.data1;
-"136
+[; ;main.c: 127: oilTemp = canMessage.frame.data1;
+"127
 [e = _oilTemp -> . . _canMessage 0 4 `i ]
-[; ;main.c: 137: battVolts = canMessage.frame.data2;
-"137
+[; ;main.c: 128: battVolts = canMessage.frame.data2;
+"128
 [e = _battVolts -> . . _canMessage 0 5 `i ]
-"138
+"129
 }
-[; ;main.c: 138: } else if(canMessage.frame.id == 0x643) {
-[e $U 1581  ]
-[e :U 1580 ]
-[e $ ! == . . _canMessage 0 1 -> -> -> 1603 `i `l `ul 1582  ]
+[; ;main.c: 129: } else if(canMessage.frame.id == 0x643) {
+[e $U 1570  ]
+[e :U 1569 ]
+[e $ ! == . . _canMessage 0 1 -> -> -> 1603 `i `l `ul 1571  ]
 {
-[; ;main.c: 140: do { LATAbits.LATA0 = 1; } while(0);
-"140
-[e :U 1585 ]
-{
-[e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
+"131
 }
-[e :U 1584 ]
-[; ;main.c: 141: _delay((unsigned long)((200)*(16000000/4000.0)));
-"141
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"142
-}
-[e :U 1582 ]
-"144
-[e :U 1581 ]
-[e :U 1579 ]
+[e :U 1571 ]
+"132
+[e :U 1570 ]
+[e :U 1568 ]
+[e :U 1566 ]
+[; ;main.c: 131: }
+[; ;main.c: 132: display(rpm, oilP, fuelP, tp, speed, gear, engTemp, oilTemp, battVolts);
+[e ( _display (4 , , , , , , , , _rpm _oilP _fuelP _tp _speed _gear _engTemp _oilTemp _battVolts ]
+[; ;main.c: 134: do { LATAbits.LATA1 = 0; } while(0);
+"134
 [e :U 1574 ]
-[; ;main.c: 142: }
-[; ;main.c: 144: display(rpm, oilP, fuelP, tp, radio_sw, gear, engTemp, oilTemp, battVolts);
-[e ( _display (4 , , , , , , , , _rpm _oilP _fuelP _tp _radio_sw _gear _engTemp _oilTemp _battVolts ]
-[; ;main.c: 146: do { LATAbits.LATA1 = 0; } while(0);
-"146
-[e :U 1588 ]
 {
 [e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 1587 ]
-[; ;main.c: 147: do { LATDbits.LATD4 = 0; } while(0);
-"147
-[e :U 1591 ]
+[e :U 1573 ]
+[; ;main.c: 135: do { LATDbits.LATD4 = 0; } while(0);
+"135
+[e :U 1577 ]
 {
 [e = . . _LATDbits 0 4 -> -> 0 `i `uc ]
 }
-[e :U 1590 ]
-[; ;main.c: 148: do { LATAbits.LATA0 = 0; } while(0);
-"148
-[e :U 1594 ]
+[e :U 1576 ]
+[; ;main.c: 136: do { LATAbits.LATA0 = 0; } while(0);
+"136
+[e :U 1580 ]
 {
 [e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
 }
-[e :U 1593 ]
-[; ;main.c: 149: do { LATBbits.LATB5 = 0; } while(0);
-"149
-[e :U 1597 ]
+[e :U 1579 ]
+[; ;main.c: 137: do { LATBbits.LATB5 = 0; } while(0);
+"137
+[e :U 1583 ]
 {
 [e = . . _LATBbits 0 5 -> -> 0 `i `uc ]
 }
-[e :U 1596 ]
-[; ;main.c: 150: do { LATDbits.LATD5 = 0; } while(0);
-"150
-[e :U 1600 ]
+[e :U 1582 ]
+[; ;main.c: 138: do { LATDbits.LATD5 = 0; } while(0);
+"138
+[e :U 1586 ]
 {
 [e = . . _LATDbits 0 5 -> -> 0 `i `uc ]
 }
-[e :U 1599 ]
-[; ;main.c: 151: do { LATDbits.LATD3 = 0; } while(0);
-"151
-[e :U 1603 ]
+[e :U 1585 ]
+[; ;main.c: 139: do { LATDbits.LATD3 = 0; } while(0);
+"139
+[e :U 1589 ]
 {
 [e = . . _LATDbits 0 3 -> -> 0 `i `uc ]
 }
-[e :U 1602 ]
-"152
+[e :U 1588 ]
+"140
 }
-[e :U 1569 ]
-"157
+[e :U 1564 ]
+"145
 }
-[e :U 1566 ]
-"117
-[e $U 1567  ]
-[e :U 1568 ]
-[; ;main.c: 152: }
-[; ;main.c: 157: }
-[; ;main.c: 158: }
-"158
-[e :UE 1544 ]
+[e :U 1561 ]
+"113
+[e $U 1562  ]
+[e :U 1563 ]
+[; ;main.c: 140: }
+[; ;main.c: 145: }
+[; ;main.c: 146: }
+"146
+[e :UE 1542 ]
 }

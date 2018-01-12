@@ -1,5 +1,11 @@
 
-# 1 "mcc_generated_files/eusart2.c"
+# 1 "mcc_generated_files/interrupt_manager.c"
+
+# 110 "mcc_generated_files/interrupt_manager.h"
+void interrupt INTERRUPT_InterruptManager(void);
+
+# 122
+void INTERRUPT_Initialize (void);
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -17857,8 +17863,11 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdbool.h"
-typedef unsigned char bool;
+# 250 "mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+
+# 262
+void PIN_MANAGER_IOC(void);
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdint.h"
 typedef signed char int8_t;
@@ -17932,63 +17941,102 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 94 "mcc_generated_files/eusart2.h"
-void EUSART2_Initialize(void);
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdbool.h"
+typedef unsigned char bool;
 
-# 114
-uint8_t EUSART2_Read(void);
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\__size_t.h"
+typedef unsigned size_t;
 
-# 134
-void EUSART2_Write(uint8_t txData);
+# 6 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stddef.h"
+typedef int ptrdiff_t;
 
-# 55 "mcc_generated_files/eusart2.c"
-void EUSART2_Initialize(void)
+# 116 "mcc_generated_files/spi.h"
+void SPI_Initialize(void);
+
+# 151
+uint8_t SPI_Exchange8bit(uint8_t data);
+
+# 191
+uint8_t SPI_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
+
+# 214
+bool SPI_IsBufferFull(void);
+
+# 239
+bool SPI_HasWriteCollisionOccured(void);
+
+# 263
+void SPI_ClearWriteCollisionStatus(void);
+
+# 67 "mcc_generated_files/ecan.h"
+typedef union {
+
+struct {
+unsigned char idType;
+unsigned long id;
+unsigned char dlc;
+unsigned char data0;
+unsigned char data1;
+unsigned char data2;
+unsigned char data3;
+unsigned char data4;
+unsigned char data5;
+unsigned char data6;
+unsigned char data7;
+} frame;
+unsigned char array[14];
+} uCAN_MSG;
+
+# 96
+void ECAN_ISR_ECAN_RXBI(void);
+
+# 118
+void ECAN_Initialize(void);
+
+# 140
+void CAN_sleep(void);
+
+# 161
+unsigned char CAN_transmit(uCAN_MSG *tempCanMsg);
+
+# 185
+unsigned char CAN_receive(uCAN_MSG *tempCanMsg);
+
+# 207
+unsigned char CAN_messagesInBuffer(void);
+
+# 231
+unsigned char CAN_isBusOff(void);
+
+# 255
+unsigned char CAN_isRXErrorPassive(void);
+
+# 279
+unsigned char CAN_isTXErrorPassive(void);
+
+# 70 "mcc_generated_files/mcc.h"
+void SYSTEM_Initialize(void);
+
+# 83
+void OSCILLATOR_Initialize(void);
+
+# 51 "mcc_generated_files/interrupt_manager.c"
+void INTERRUPT_Initialize (void)
 {
 
-
-
-BAUDCON2 = 0x08;
-
-
-RCSTA2 = 0x90;
-
-
-TXSTA2 = 0x26;
-
-
-SPBRG2 = 0x22;
-
-
-SPBRGH2 = 0x00;
-
+RCONbits.IPEN = 0;
 }
 
-
-uint8_t EUSART2_Read(void)
+void interrupt INTERRUPT_InterruptManager (void)
 {
 
-while(!PIR3bits.RC2IF)
+if(INTCONbits.PEIE == 1 && PIE5bits.RXB0IE == 1 && PIR5bits.RXB0IF == 1)
 {
+ECAN_ISR_ECAN_RXBI();
 }
-
-
-if(1 == RCSTA2bits.OERR)
+else
 {
 
-
-RCSTA2bits.SPEN = 0;
-RCSTA2bits.SPEN = 1;
 }
-
-return RCREG2;
-}
-
-void EUSART2_Write(uint8_t txData)
-{
-while(0 == PIR3bits.TX2IF)
-{
-}
-
-TXREG2 = txData;
 }
 

@@ -1,5 +1,16 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"29162 /Applications/microchip/xc8/v1.45/include/pic18f46k80.h
+"29620 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f46k80.h
+[s S1111 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1111 . RXB0IF RXB1IF TXB0IF TXB1IF TXB2IF ERRIF WAKIF IRXIF ]
+"29630
+[s S1112 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S1112 . FIFOWMIF RXBnIF . TXBnIF ]
+"29619
+[u S1110 `S1111 1 `S1112 1 ]
+[n S1110 . . . ]
+"29637
+[v _PIR5bits `VS1110 ~T0 @X0 0 e@3959 ]
+"29162
 [v _CANCON `Vuc ~T0 @X0 0 e@3951 ]
 "29051
 [v _CANSTAT `Vuc ~T0 @X0 0 e@3950 ]
@@ -75,17 +86,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _BRGCON2 `Vuc ~T0 @X0 0 e@3652 ]
 "351
 [v _BRGCON3 `Vuc ~T0 @X0 0 e@3653 ]
-"29620
-[s S1111 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1111 . RXB0IF RXB1IF TXB0IF TXB1IF TXB2IF ERRIF WAKIF IRXIF ]
-"29630
-[s S1112 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S1112 . FIFOWMIF RXBnIF . TXBnIF ]
-"29619
-[u S1110 `S1111 1 `S1112 1 ]
-[n S1110 . . . ]
-"29637
-[v _PIR5bits `VS1110 ~T0 @X0 0 e@3959 ]
 "29537
 [s S1108 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S1108 . RXB0IE RXB1IE TXB0IE TXB1IE TXB2IE ERRIE WAKIE IRXIE ]
@@ -103,7 +103,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "67
 [u S1537 `S1538 1 `uc -> 14 `i ]
 [n S1537 . frame array ]
-"22881 /Applications/microchip/xc8/v1.45/include/pic18f46k80.h
+"22881 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f46k80.h
 [s S835 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S835 . TXPRI . TXREQ TXERR TXLARB TXABT TXBIF ]
 "22890
@@ -119,7 +119,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TXB0CONbits `VS834 ~T0 @X0 0 e@3872 ]
 "58 mcc_generated_files/ecan.c
 [v _convertCANid2Reg `(v ~T0 @X0 0 ef6`ul`uc`*uc`*uc`*uc`*uc ]
-"23217 /Applications/microchip/xc8/v1.45/include/pic18f46k80.h
+"23217 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f46k80.h
 [v _TXB0EIDH `Vuc ~T0 @X0 0 e@3875 ]
 "23337
 [v _TXB0EIDL `Vuc ~T0 @X0 0 e@3876 ]
@@ -249,7 +249,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RXB0SIDL `Vuc ~T0 @X0 0 e@3938 ]
 "56 mcc_generated_files/ecan.c
 [v _convertReg2ExtendedCANid `(ul ~T0 @X0 0 ef4`uc`uc`uc`uc ]
-"28137 /Applications/microchip/xc8/v1.45/include/pic18f46k80.h
+"28137 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f46k80.h
 [v _RXB0EIDH `Vuc ~T0 @X0 0 e@3939 ]
 "28257
 [v _RXB0EIDL `Vuc ~T0 @X0 0 e@3940 ]
@@ -257,7 +257,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RXB0SIDH `Vuc ~T0 @X0 0 e@3937 ]
 "57 mcc_generated_files/ecan.c
 [v _convertReg2StandardCANid `(ul ~T0 @X0 0 ef2`uc`uc ]
-"28377 /Applications/microchip/xc8/v1.45/include/pic18f46k80.h
+"28377 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f46k80.h
 [v _RXB0DLC `Vuc ~T0 @X0 0 e@3941 ]
 "28491
 [v _RXB0D0 `Vuc ~T0 @X0 0 e@3942 ]
@@ -342,7 +342,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f46k80.h: 50: extern volatile unsigned char RXERRCNT @ 0xE41;
-"52 /Applications/microchip/xc8/v1.45/include/pic18f46k80.h
+"52 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f46k80.h
 [; ;pic18f46k80.h: 52: asm("RXERRCNT equ 0E41h");
 [; <" RXERRCNT equ 0E41h ;# ">
 [; ;pic18f46k80.h: 55: typedef union {
@@ -13927,32 +13927,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdbool.h: 12: typedef unsigned char bool;
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
-[; ;stdint.h: 28: typedef signed short long int int24_t;
-[; ;stdint.h: 36: typedef signed long int int32_t;
-[; ;stdint.h: 43: typedef unsigned char uint8_t;
-[; ;stdint.h: 49: typedef unsigned int uint16_t;
-[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
-[; ;stdint.h: 63: typedef unsigned long int uint32_t;
-[; ;stdint.h: 71: typedef signed char int_least8_t;
-[; ;stdint.h: 78: typedef signed int int_least16_t;
-[; ;stdint.h: 90: typedef signed short long int int_least24_t;
-[; ;stdint.h: 98: typedef signed long int int_least32_t;
-[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
-[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
-[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
-[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
-[; ;stdint.h: 137: typedef signed char int_fast8_t;
-[; ;stdint.h: 144: typedef signed int int_fast16_t;
-[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
-[; ;stdint.h: 164: typedef signed long int int_fast32_t;
-[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
-[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
-[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
-[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
-[; ;stdint.h: 200: typedef int32_t intmax_t;
-[; ;stdint.h: 205: typedef uint32_t uintmax_t;
-[; ;stdint.h: 210: typedef int16_t intptr_t;
-[; ;stdint.h: 215: typedef uint16_t uintptr_t;
+[; ;stdint.h: 38: typedef signed long int int32_t;
+[; ;stdint.h: 45: typedef unsigned char uint8_t;
+[; ;stdint.h: 51: typedef unsigned int uint16_t;
+[; ;stdint.h: 67: typedef unsigned long int uint32_t;
+[; ;stdint.h: 75: typedef signed char int_least8_t;
+[; ;stdint.h: 82: typedef signed int int_least16_t;
+[; ;stdint.h: 104: typedef signed long int int_least32_t;
+[; ;stdint.h: 111: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 117: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 136: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 145: typedef signed char int_fast8_t;
+[; ;stdint.h: 152: typedef signed int int_fast16_t;
+[; ;stdint.h: 174: typedef signed long int int_fast32_t;
+[; ;stdint.h: 181: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 187: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 206: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 212: typedef int32_t intmax_t;
+[; ;stdint.h: 217: typedef uint32_t uintmax_t;
+[; ;stdint.h: 222: typedef int16_t intptr_t;
+[; ;stdint.h: 227: typedef uint16_t uintptr_t;
 [; ;ecan.h: 67: typedef union {
 [; ;ecan.h: 69: struct {
 [; ;ecan.h: 70: unsigned char idType;
@@ -13969,792 +13963,808 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ecan.h: 81: } frame;
 [; ;ecan.h: 82: unsigned char array[14];
 [; ;ecan.h: 83: } uCAN_MSG;
-[; ;ecan.h: 117: void ECAN_Initialize(void);
-[; ;ecan.h: 139: void CAN_sleep(void);
-[; ;ecan.h: 160: unsigned char CAN_transmit(uCAN_MSG *tempCanMsg);
-[; ;ecan.h: 184: unsigned char CAN_receive(uCAN_MSG *tempCanMsg);
-[; ;ecan.h: 206: unsigned char CAN_messagesInBuffer(void);
-[; ;ecan.h: 230: unsigned char CAN_isBusOff(void);
-[; ;ecan.h: 254: unsigned char CAN_isRXErrorPassive(void);
-[; ;ecan.h: 278: unsigned char CAN_isTXErrorPassive(void);
+[; ;ecan.h: 96: void ECAN_ISR_ECAN_RXBI(void);
+[; ;ecan.h: 118: void ECAN_Initialize(void);
+[; ;ecan.h: 140: void CAN_sleep(void);
+[; ;ecan.h: 161: unsigned char CAN_transmit(uCAN_MSG *tempCanMsg);
+[; ;ecan.h: 185: unsigned char CAN_receive(uCAN_MSG *tempCanMsg);
+[; ;ecan.h: 207: unsigned char CAN_messagesInBuffer(void);
+[; ;ecan.h: 231: unsigned char CAN_isBusOff(void);
+[; ;ecan.h: 255: unsigned char CAN_isRXErrorPassive(void);
+[; ;ecan.h: 279: unsigned char CAN_isTXErrorPassive(void);
 [; ;ecan.c: 56: unsigned long convertReg2ExtendedCANid(unsigned char tempRXBn_EIDH, unsigned char tempRXBn_EIDL, unsigned char tempRXBn_SIDH, unsigned char tempRXBn_SIDL);
 [; ;ecan.c: 57: unsigned long convertReg2StandardCANid(unsigned char tempRXBn_SIDH, unsigned char tempRXBn_SIDL);
 [; ;ecan.c: 58: void convertCANid2Reg(unsigned long tempPassedInID, unsigned char canIdType, unsigned char *passedInEIDH, unsigned char *passedInEIDL, unsigned char *passedInSIDH, unsigned char *passedInSIDL);
-"63 mcc_generated_files/ecan.c
-[v _ECAN_Initialize `(v ~T0 @X0 1 ef ]
-"64
+"61 mcc_generated_files/ecan.c
+[v _ECAN_ISR_ECAN_RXBI `(v ~T0 @X0 1 ef ]
+"62
 {
-[; ;ecan.c: 63: void ECAN_Initialize(void)
-[; ;ecan.c: 64: {
-[e :U _ECAN_Initialize ]
+[; ;ecan.c: 61: void ECAN_ISR_ECAN_RXBI(void)
+[; ;ecan.c: 62: {
+[e :U _ECAN_ISR_ECAN_RXBI ]
 [f ]
-[; ;ecan.c: 65: CANCON = 0x80;
+[; ;ecan.c: 65: PIR5bits.RXB0IF = 0;
 "65
-[e = _CANCON -> -> 128 `i `uc ]
-[; ;ecan.c: 66: while (0x80 != (CANSTAT & 0xE0));
+[e = . . _PIR5bits 0 0 -> -> 0 `i `uc ]
+[; ;ecan.c: 66: }
 "66
-[e $U 1540  ]
-[e :U 1541 ]
-[e :U 1540 ]
-[e $ != -> 128 `i & -> _CANSTAT `i -> 224 `i 1541  ]
-[e :U 1542 ]
-[; ;ecan.c: 71: ECANCON = 0x00;
-"71
-[e = _ECANCON -> -> 0 `i `uc ]
-[; ;ecan.c: 85: RXM0EIDH = 0xFF;
-"85
-[e = _RXM0EIDH -> -> 255 `i `uc ]
-[; ;ecan.c: 86: RXM0EIDL = 0xFF;
-"86
-[e = _RXM0EIDL -> -> 255 `i `uc ]
-[; ;ecan.c: 87: RXM0SIDH = 0xFF;
-"87
-[e = _RXM0SIDH -> -> 255 `i `uc ]
-[; ;ecan.c: 88: RXM0SIDL = 0xFF;
-"88
-[e = _RXM0SIDL -> -> 255 `i `uc ]
-[; ;ecan.c: 90: RXM1EIDH = 0xFF;
-"90
-[e = _RXM1EIDH -> -> 255 `i `uc ]
-[; ;ecan.c: 91: RXM1EIDL = 0xFF;
-"91
-[e = _RXM1EIDL -> -> 255 `i `uc ]
-[; ;ecan.c: 92: RXM1SIDH = 0xFF;
-"92
-[e = _RXM1SIDH -> -> 255 `i `uc ]
-[; ;ecan.c: 93: RXM1SIDL = 0xFF;
-"93
-[e = _RXM1SIDL -> -> 255 `i `uc ]
-[; ;ecan.c: 99: RXF0EIDH = 0x00;
-"99
-[e = _RXF0EIDH -> -> 0 `i `uc ]
-[; ;ecan.c: 100: RXF0EIDL = 0x00;
-"100
-[e = _RXF0EIDL -> -> 0 `i `uc ]
-[; ;ecan.c: 101: RXF0SIDH = 0x00;
-"101
-[e = _RXF0SIDH -> -> 0 `i `uc ]
-[; ;ecan.c: 102: RXF0SIDL = 0x00;
-"102
-[e = _RXF0SIDL -> -> 0 `i `uc ]
-[; ;ecan.c: 104: RXF1EIDH = 0x00;
-"104
-[e = _RXF1EIDH -> -> 0 `i `uc ]
-[; ;ecan.c: 105: RXF1EIDL = 0x00;
-"105
-[e = _RXF1EIDL -> -> 0 `i `uc ]
-[; ;ecan.c: 106: RXF1SIDH = 0x00;
-"106
-[e = _RXF1SIDH -> -> 0 `i `uc ]
-[; ;ecan.c: 107: RXF1SIDL = 0x00;
-"107
-[e = _RXF1SIDL -> -> 0 `i `uc ]
-[; ;ecan.c: 109: RXF2EIDH = 0x00;
-"109
-[e = _RXF2EIDH -> -> 0 `i `uc ]
-[; ;ecan.c: 110: RXF2EIDL = 0x00;
-"110
-[e = _RXF2EIDL -> -> 0 `i `uc ]
-[; ;ecan.c: 111: RXF2SIDH = 0x00;
-"111
-[e = _RXF2SIDH -> -> 0 `i `uc ]
-[; ;ecan.c: 112: RXF2SIDL = 0x00;
-"112
-[e = _RXF2SIDL -> -> 0 `i `uc ]
-[; ;ecan.c: 114: RXF3EIDH = 0x00;
-"114
-[e = _RXF3EIDH -> -> 0 `i `uc ]
-[; ;ecan.c: 115: RXF3EIDL = 0x00;
-"115
-[e = _RXF3EIDL -> -> 0 `i `uc ]
-[; ;ecan.c: 116: RXF3SIDH = 0x00;
-"116
-[e = _RXF3SIDH -> -> 0 `i `uc ]
-[; ;ecan.c: 117: RXF3SIDL = 0x00;
-"117
-[e = _RXF3SIDL -> -> 0 `i `uc ]
-[; ;ecan.c: 119: RXF4EIDH = 0x00;
-"119
-[e = _RXF4EIDH -> -> 0 `i `uc ]
-[; ;ecan.c: 120: RXF4EIDL = 0x00;
-"120
-[e = _RXF4EIDL -> -> 0 `i `uc ]
-[; ;ecan.c: 121: RXF4SIDH = 0x00;
-"121
-[e = _RXF4SIDH -> -> 0 `i `uc ]
-[; ;ecan.c: 122: RXF4SIDL = 0x00;
-"122
-[e = _RXF4SIDL -> -> 0 `i `uc ]
-[; ;ecan.c: 124: RXF5EIDH = 0x00;
-"124
-[e = _RXF5EIDH -> -> 0 `i `uc ]
-[; ;ecan.c: 125: RXF5EIDL = 0x00;
-"125
-[e = _RXF5EIDL -> -> 0 `i `uc ]
-[; ;ecan.c: 126: RXF5SIDH = 0x00;
-"126
-[e = _RXF5SIDH -> -> 0 `i `uc ]
-[; ;ecan.c: 127: RXF5SIDL = 0x00;
-"127
-[e = _RXF5SIDL -> -> 0 `i `uc ]
-[; ;ecan.c: 142: BRGCON1 = 0x00;
-"142
-[e = _BRGCON1 -> -> 0 `i `uc ]
-[; ;ecan.c: 143: BRGCON2 = 0x98;
-"143
-[e = _BRGCON2 -> -> 152 `i `uc ]
-[; ;ecan.c: 144: BRGCON3 = 0x01;
-"144
-[e = _BRGCON3 -> -> 1 `i `uc ]
-[; ;ecan.c: 146: CANCON = 0x00;
-"146
-[e = _CANCON -> -> 0 `i `uc ]
-[; ;ecan.c: 147: while (0x00 != (CANSTAT & 0xE0));
-"147
-[e $U 1543  ]
-[e :U 1544 ]
-[e :U 1543 ]
-[e $ != -> 0 `i & -> _CANSTAT `i -> 224 `i 1544  ]
-[e :U 1545 ]
-[; ;ecan.c: 150: }
-"150
 [e :UE 1539 ]
 }
-"155
-[v _CAN_sleep `(v ~T0 @X0 1 ef ]
+"69
+[v _ECAN_Initialize `(v ~T0 @X0 1 ef ]
+"70
 {
-[; ;ecan.c: 155: void CAN_sleep(void) {
-[e :U _CAN_sleep ]
+[; ;ecan.c: 69: void ECAN_Initialize(void)
+[; ;ecan.c: 70: {
+[e :U _ECAN_Initialize ]
 [f ]
-[; ;ecan.c: 157: PIR5bits.WAKIF = 0;
-"157
-[e = . . _PIR5bits 0 6 -> -> 0 `i `uc ]
-[; ;ecan.c: 158: PIE5bits.WAKIE = 1;
-"158
-[e = . . _PIE5bits 0 6 -> -> 1 `i `uc ]
-[; ;ecan.c: 159: CANCON = 0x20;
+[; ;ecan.c: 71: CANCON = 0x80;
+"71
+[e = _CANCON -> -> 128 `i `uc ]
+[; ;ecan.c: 72: while (0x80 != (CANSTAT & 0xE0));
+"72
+[e $U 1541  ]
+[e :U 1542 ]
+[e :U 1541 ]
+[e $ != -> 128 `i & -> _CANSTAT `i -> 224 `i 1542  ]
+[e :U 1543 ]
+[; ;ecan.c: 77: ECANCON = 0x00;
+"77
+[e = _ECANCON -> -> 0 `i `uc ]
+[; ;ecan.c: 94: RXM0EIDH = 0x00;
+"94
+[e = _RXM0EIDH -> -> 0 `i `uc ]
+[; ;ecan.c: 95: RXM0EIDL = 0x00;
+"95
+[e = _RXM0EIDL -> -> 0 `i `uc ]
+[; ;ecan.c: 96: RXM0SIDH = 0x00;
+"96
+[e = _RXM0SIDH -> -> 0 `i `uc ]
+[; ;ecan.c: 97: RXM0SIDL = 0x00;
+"97
+[e = _RXM0SIDL -> -> 0 `i `uc ]
+[; ;ecan.c: 99: RXM1EIDH = 0xFF;
+"99
+[e = _RXM1EIDH -> -> 255 `i `uc ]
+[; ;ecan.c: 100: RXM1EIDL = 0xFF;
+"100
+[e = _RXM1EIDL -> -> 255 `i `uc ]
+[; ;ecan.c: 101: RXM1SIDH = 0xFF;
+"101
+[e = _RXM1SIDH -> -> 255 `i `uc ]
+[; ;ecan.c: 102: RXM1SIDL = 0xFF;
+"102
+[e = _RXM1SIDL -> -> 255 `i `uc ]
+[; ;ecan.c: 108: RXF0EIDH = 0x00;
+"108
+[e = _RXF0EIDH -> -> 0 `i `uc ]
+[; ;ecan.c: 109: RXF0EIDL = 0x00;
+"109
+[e = _RXF0EIDL -> -> 0 `i `uc ]
+[; ;ecan.c: 110: RXF0SIDH = 0x88;
+"110
+[e = _RXF0SIDH -> -> 136 `i `uc ]
+[; ;ecan.c: 111: RXF0SIDL = 0x80;
+"111
+[e = _RXF0SIDL -> -> 128 `i `uc ]
+[; ;ecan.c: 113: RXF1EIDH = 0x00;
+"113
+[e = _RXF1EIDH -> -> 0 `i `uc ]
+[; ;ecan.c: 114: RXF1EIDL = 0x00;
+"114
+[e = _RXF1EIDL -> -> 0 `i `uc ]
+[; ;ecan.c: 115: RXF1SIDH = 0xCC;
+"115
+[e = _RXF1SIDH -> -> 204 `i `uc ]
+[; ;ecan.c: 116: RXF1SIDL = 0xC0;
+"116
+[e = _RXF1SIDL -> -> 192 `i `uc ]
+[; ;ecan.c: 118: RXF2EIDH = 0x00;
+"118
+[e = _RXF2EIDH -> -> 0 `i `uc ]
+[; ;ecan.c: 119: RXF2EIDL = 0x00;
+"119
+[e = _RXF2EIDL -> -> 0 `i `uc ]
+[; ;ecan.c: 120: RXF2SIDH = 0x00;
+"120
+[e = _RXF2SIDH -> -> 0 `i `uc ]
+[; ;ecan.c: 121: RXF2SIDL = 0x00;
+"121
+[e = _RXF2SIDL -> -> 0 `i `uc ]
+[; ;ecan.c: 123: RXF3EIDH = 0x00;
+"123
+[e = _RXF3EIDH -> -> 0 `i `uc ]
+[; ;ecan.c: 124: RXF3EIDL = 0x00;
+"124
+[e = _RXF3EIDL -> -> 0 `i `uc ]
+[; ;ecan.c: 125: RXF3SIDH = 0x00;
+"125
+[e = _RXF3SIDH -> -> 0 `i `uc ]
+[; ;ecan.c: 126: RXF3SIDL = 0x00;
+"126
+[e = _RXF3SIDL -> -> 0 `i `uc ]
+[; ;ecan.c: 128: RXF4EIDH = 0x00;
+"128
+[e = _RXF4EIDH -> -> 0 `i `uc ]
+[; ;ecan.c: 129: RXF4EIDL = 0x00;
+"129
+[e = _RXF4EIDL -> -> 0 `i `uc ]
+[; ;ecan.c: 130: RXF4SIDH = 0x00;
+"130
+[e = _RXF4SIDH -> -> 0 `i `uc ]
+[; ;ecan.c: 131: RXF4SIDL = 0x00;
+"131
+[e = _RXF4SIDL -> -> 0 `i `uc ]
+[; ;ecan.c: 133: RXF5EIDH = 0x00;
+"133
+[e = _RXF5EIDH -> -> 0 `i `uc ]
+[; ;ecan.c: 134: RXF5EIDL = 0x00;
+"134
+[e = _RXF5EIDL -> -> 0 `i `uc ]
+[; ;ecan.c: 135: RXF5SIDH = 0x00;
+"135
+[e = _RXF5SIDH -> -> 0 `i `uc ]
+[; ;ecan.c: 136: RXF5SIDL = 0x00;
+"136
+[e = _RXF5SIDL -> -> 0 `i `uc ]
+[; ;ecan.c: 151: BRGCON1 = 0x00;
+"151
+[e = _BRGCON1 -> -> 0 `i `uc ]
+[; ;ecan.c: 152: BRGCON2 = 0x98;
+"152
+[e = _BRGCON2 -> -> 152 `i `uc ]
+[; ;ecan.c: 153: BRGCON3 = 0x01;
+"153
+[e = _BRGCON3 -> -> 1 `i `uc ]
+[; ;ecan.c: 155: CANCON = 0x00;
+"155
+[e = _CANCON -> -> 0 `i `uc ]
+[; ;ecan.c: 156: while (0x00 != (CANSTAT & 0xE0));
+"156
+[e $U 1544  ]
+[e :U 1545 ]
+[e :U 1544 ]
+[e $ != -> 0 `i & -> _CANSTAT `i -> 224 `i 1545  ]
+[e :U 1546 ]
+[; ;ecan.c: 159: }
 "159
-[e = _CANCON -> -> 32 `i `uc ]
-[; ;ecan.c: 160: while ((CANSTAT & 0xE0) != 0x20);
-"160
-[e $U 1547  ]
-[e :U 1548 ]
-[e :U 1547 ]
-[e $ != & -> _CANSTAT `i -> 224 `i -> 32 `i 1548  ]
-[e :U 1549 ]
-[; ;ecan.c: 162: }
-"162
-[e :UE 1546 ]
+[e :UE 1540 ]
 }
 "164
+[v _CAN_sleep `(v ~T0 @X0 1 ef ]
+{
+[; ;ecan.c: 164: void CAN_sleep(void) {
+[e :U _CAN_sleep ]
+[f ]
+[; ;ecan.c: 166: PIR5bits.WAKIF = 0;
+"166
+[e = . . _PIR5bits 0 6 -> -> 0 `i `uc ]
+[; ;ecan.c: 167: PIE5bits.WAKIE = 1;
+"167
+[e = . . _PIE5bits 0 6 -> -> 1 `i `uc ]
+[; ;ecan.c: 168: CANCON = 0x20;
+"168
+[e = _CANCON -> -> 32 `i `uc ]
+[; ;ecan.c: 169: while ((CANSTAT & 0xE0) != 0x20);
+"169
+[e $U 1548  ]
+[e :U 1549 ]
+[e :U 1548 ]
+[e $ != & -> _CANSTAT `i -> 224 `i -> 32 `i 1549  ]
+[e :U 1550 ]
+[; ;ecan.c: 171: }
+"171
+[e :UE 1547 ]
+}
+"173
 [v _CAN_transmit `(uc ~T0 @X0 1 ef1`*S1537 ]
 {
-[; ;ecan.c: 164: unsigned char CAN_transmit(uCAN_MSG *tempCanMsg) {
+[; ;ecan.c: 173: unsigned char CAN_transmit(uCAN_MSG *tempCanMsg) {
 [e :U _CAN_transmit ]
 [v _tempCanMsg `*S1537 ~T0 @X0 1 r1 ]
 [f ]
-"165
-[v _tempEIDH `uc ~T0 @X0 1 a ]
-[; ;ecan.c: 165: unsigned char tempEIDH = 0;
-[e = _tempEIDH -> -> 0 `i `uc ]
-"166
-[v _tempEIDL `uc ~T0 @X0 1 a ]
-[; ;ecan.c: 166: unsigned char tempEIDL = 0;
-[e = _tempEIDL -> -> 0 `i `uc ]
-"167
-[v _tempSIDH `uc ~T0 @X0 1 a ]
-[; ;ecan.c: 167: unsigned char tempSIDH = 0;
-[e = _tempSIDH -> -> 0 `i `uc ]
-"168
-[v _tempSIDL `uc ~T0 @X0 1 a ]
-[; ;ecan.c: 168: unsigned char tempSIDL = 0;
-[e = _tempSIDL -> -> 0 `i `uc ]
-"170
-[v _returnValue `uc ~T0 @X0 1 a ]
-[; ;ecan.c: 170: unsigned char returnValue = 0;
-[e = _returnValue -> -> 0 `i `uc ]
-[; ;ecan.c: 172: if (TXB0CONbits.TXREQ != 1) {
-"172
-[e $ ! != -> . . _TXB0CONbits 0 2 `i -> 1 `i 1551  ]
-{
-[; ;ecan.c: 174: convertCANid2Reg(tempCanMsg->frame.id, tempCanMsg->frame.idType, &tempEIDH, &tempEIDL, &tempSIDH, &tempSIDL);
 "174
-[e ( _convertCANid2Reg (4 , , , , , . . *U _tempCanMsg 0 1 . . *U _tempCanMsg 0 0 &U _tempEIDH &U _tempEIDL &U _tempSIDH &U _tempSIDL ]
-[; ;ecan.c: 176: TXB0EIDH = tempEIDH;
+[v _tempEIDH `uc ~T0 @X0 1 a ]
+[; ;ecan.c: 174: unsigned char tempEIDH = 0;
+[e = _tempEIDH -> -> 0 `i `uc ]
+"175
+[v _tempEIDL `uc ~T0 @X0 1 a ]
+[; ;ecan.c: 175: unsigned char tempEIDL = 0;
+[e = _tempEIDL -> -> 0 `i `uc ]
 "176
-[e = _TXB0EIDH _tempEIDH ]
-[; ;ecan.c: 177: TXB0EIDL = tempEIDL;
+[v _tempSIDH `uc ~T0 @X0 1 a ]
+[; ;ecan.c: 176: unsigned char tempSIDH = 0;
+[e = _tempSIDH -> -> 0 `i `uc ]
 "177
-[e = _TXB0EIDL _tempEIDL ]
-[; ;ecan.c: 178: TXB0SIDH = tempSIDH;
-"178
-[e = _TXB0SIDH _tempSIDH ]
-[; ;ecan.c: 179: TXB0SIDL = tempSIDL;
+[v _tempSIDL `uc ~T0 @X0 1 a ]
+[; ;ecan.c: 177: unsigned char tempSIDL = 0;
+[e = _tempSIDL -> -> 0 `i `uc ]
 "179
-[e = _TXB0SIDL _tempSIDL ]
-[; ;ecan.c: 180: TXB0DLC = tempCanMsg->frame.dlc;
-"180
-[e = _TXB0DLC . . *U _tempCanMsg 0 2 ]
-[; ;ecan.c: 181: TXB0D0 = tempCanMsg->frame.data0;
+[v _returnValue `uc ~T0 @X0 1 a ]
+[; ;ecan.c: 179: unsigned char returnValue = 0;
+[e = _returnValue -> -> 0 `i `uc ]
+[; ;ecan.c: 181: if (TXB0CONbits.TXREQ != 1) {
 "181
-[e = _TXB0D0 . . *U _tempCanMsg 0 3 ]
-[; ;ecan.c: 182: TXB0D1 = tempCanMsg->frame.data1;
-"182
-[e = _TXB0D1 . . *U _tempCanMsg 0 4 ]
-[; ;ecan.c: 183: TXB0D2 = tempCanMsg->frame.data2;
+[e $ ! != -> . . _TXB0CONbits 0 2 `i -> 1 `i 1552  ]
+{
+[; ;ecan.c: 183: convertCANid2Reg(tempCanMsg->frame.id, tempCanMsg->frame.idType, &tempEIDH, &tempEIDL, &tempSIDH, &tempSIDL);
 "183
-[e = _TXB0D2 . . *U _tempCanMsg 0 5 ]
-[; ;ecan.c: 184: TXB0D3 = tempCanMsg->frame.data3;
-"184
-[e = _TXB0D3 . . *U _tempCanMsg 0 6 ]
-[; ;ecan.c: 185: TXB0D4 = tempCanMsg->frame.data4;
+[e ( _convertCANid2Reg (4 , , , , , . . *U _tempCanMsg 0 1 . . *U _tempCanMsg 0 0 &U _tempEIDH &U _tempEIDL &U _tempSIDH &U _tempSIDL ]
+[; ;ecan.c: 185: TXB0EIDH = tempEIDH;
 "185
-[e = _TXB0D4 . . *U _tempCanMsg 0 7 ]
-[; ;ecan.c: 186: TXB0D5 = tempCanMsg->frame.data5;
+[e = _TXB0EIDH _tempEIDH ]
+[; ;ecan.c: 186: TXB0EIDL = tempEIDL;
 "186
-[e = _TXB0D5 . . *U _tempCanMsg 0 8 ]
-[; ;ecan.c: 187: TXB0D6 = tempCanMsg->frame.data6;
+[e = _TXB0EIDL _tempEIDL ]
+[; ;ecan.c: 187: TXB0SIDH = tempSIDH;
 "187
-[e = _TXB0D6 . . *U _tempCanMsg 0 9 ]
-[; ;ecan.c: 188: TXB0D7 = tempCanMsg->frame.data7;
+[e = _TXB0SIDH _tempSIDH ]
+[; ;ecan.c: 188: TXB0SIDL = tempSIDL;
 "188
-[e = _TXB0D7 . . *U _tempCanMsg 0 10 ]
-[; ;ecan.c: 190: TXB0CONbits.TXREQ = 1;
+[e = _TXB0SIDL _tempSIDL ]
+[; ;ecan.c: 189: TXB0DLC = tempCanMsg->frame.dlc;
+"189
+[e = _TXB0DLC . . *U _tempCanMsg 0 2 ]
+[; ;ecan.c: 190: TXB0D0 = tempCanMsg->frame.data0;
 "190
-[e = . . _TXB0CONbits 0 2 -> -> 1 `i `uc ]
-[; ;ecan.c: 191: returnValue = 1;
+[e = _TXB0D0 . . *U _tempCanMsg 0 3 ]
+[; ;ecan.c: 191: TXB0D1 = tempCanMsg->frame.data1;
 "191
-[e = _returnValue -> -> 1 `i `uc ]
+[e = _TXB0D1 . . *U _tempCanMsg 0 4 ]
+[; ;ecan.c: 192: TXB0D2 = tempCanMsg->frame.data2;
 "192
-}
-[; ;ecan.c: 192: } else if (TXB1CONbits.TXREQ != 1) {
-[e $U 1552  ]
-[e :U 1551 ]
-[e $ ! != -> . . _TXB1CONbits 0 2 `i -> 1 `i 1553  ]
-{
-[; ;ecan.c: 194: convertCANid2Reg(tempCanMsg->frame.id, tempCanMsg->frame.idType, &tempEIDH, &tempEIDL, &tempSIDH, &tempSIDL);
+[e = _TXB0D2 . . *U _tempCanMsg 0 5 ]
+[; ;ecan.c: 193: TXB0D3 = tempCanMsg->frame.data3;
+"193
+[e = _TXB0D3 . . *U _tempCanMsg 0 6 ]
+[; ;ecan.c: 194: TXB0D4 = tempCanMsg->frame.data4;
 "194
-[e ( _convertCANid2Reg (4 , , , , , . . *U _tempCanMsg 0 1 . . *U _tempCanMsg 0 0 &U _tempEIDH &U _tempEIDL &U _tempSIDH &U _tempSIDL ]
-[; ;ecan.c: 196: TXB1EIDH = tempEIDH;
+[e = _TXB0D4 . . *U _tempCanMsg 0 7 ]
+[; ;ecan.c: 195: TXB0D5 = tempCanMsg->frame.data5;
+"195
+[e = _TXB0D5 . . *U _tempCanMsg 0 8 ]
+[; ;ecan.c: 196: TXB0D6 = tempCanMsg->frame.data6;
 "196
-[e = _TXB1EIDH _tempEIDH ]
-[; ;ecan.c: 197: TXB1EIDL = tempEIDL;
+[e = _TXB0D6 . . *U _tempCanMsg 0 9 ]
+[; ;ecan.c: 197: TXB0D7 = tempCanMsg->frame.data7;
 "197
-[e = _TXB1EIDL _tempEIDL ]
-[; ;ecan.c: 198: TXB1SIDH = tempSIDH;
-"198
-[e = _TXB1SIDH _tempSIDH ]
-[; ;ecan.c: 199: TXB1SIDL = tempSIDL;
+[e = _TXB0D7 . . *U _tempCanMsg 0 10 ]
+[; ;ecan.c: 199: TXB0CONbits.TXREQ = 1;
 "199
-[e = _TXB1SIDL _tempSIDL ]
-[; ;ecan.c: 200: TXB1DLC = tempCanMsg->frame.dlc;
+[e = . . _TXB0CONbits 0 2 -> -> 1 `i `uc ]
+[; ;ecan.c: 200: returnValue = 1;
 "200
-[e = _TXB1DLC . . *U _tempCanMsg 0 2 ]
-[; ;ecan.c: 201: TXB1D0 = tempCanMsg->frame.data0;
+[e = _returnValue -> -> 1 `i `uc ]
 "201
-[e = _TXB1D0 . . *U _tempCanMsg 0 3 ]
-[; ;ecan.c: 202: TXB1D1 = tempCanMsg->frame.data1;
-"202
-[e = _TXB1D1 . . *U _tempCanMsg 0 4 ]
-[; ;ecan.c: 203: TXB1D2 = tempCanMsg->frame.data2;
-"203
-[e = _TXB1D2 . . *U _tempCanMsg 0 5 ]
-[; ;ecan.c: 204: TXB1D3 = tempCanMsg->frame.data3;
-"204
-[e = _TXB1D3 . . *U _tempCanMsg 0 6 ]
-[; ;ecan.c: 205: TXB1D4 = tempCanMsg->frame.data4;
-"205
-[e = _TXB1D4 . . *U _tempCanMsg 0 7 ]
-[; ;ecan.c: 206: TXB1D5 = tempCanMsg->frame.data5;
-"206
-[e = _TXB1D5 . . *U _tempCanMsg 0 8 ]
-[; ;ecan.c: 207: TXB1D6 = tempCanMsg->frame.data6;
-"207
-[e = _TXB1D6 . . *U _tempCanMsg 0 9 ]
-[; ;ecan.c: 208: TXB1D7 = tempCanMsg->frame.data7;
-"208
-[e = _TXB1D7 . . *U _tempCanMsg 0 10 ]
-[; ;ecan.c: 210: TXB1CONbits.TXREQ = 1;
-"210
-[e = . . _TXB1CONbits 0 2 -> -> 1 `i `uc ]
-[; ;ecan.c: 211: returnValue = 1;
-"211
-[e = _returnValue -> -> 1 `i `uc ]
-"212
 }
-[; ;ecan.c: 212: } else if (TXB2CONbits.TXREQ != 1) {
-[e $U 1554  ]
-[e :U 1553 ]
-[e $ ! != -> . . _TXB2CONbits 0 2 `i -> 1 `i 1555  ]
-{
-[; ;ecan.c: 214: convertCANid2Reg(tempCanMsg->frame.id, tempCanMsg->frame.idType, &tempEIDH, &tempEIDL, &tempSIDH, &tempSIDL);
-"214
-[e ( _convertCANid2Reg (4 , , , , , . . *U _tempCanMsg 0 1 . . *U _tempCanMsg 0 0 &U _tempEIDH &U _tempEIDL &U _tempSIDH &U _tempSIDL ]
-[; ;ecan.c: 216: TXB2EIDH = tempEIDH;
-"216
-[e = _TXB2EIDH _tempEIDH ]
-[; ;ecan.c: 217: TXB2EIDL = tempEIDL;
-"217
-[e = _TXB2EIDL _tempEIDL ]
-[; ;ecan.c: 218: TXB2SIDH = tempSIDH;
-"218
-[e = _TXB2SIDH _tempSIDH ]
-[; ;ecan.c: 219: TXB2SIDL = tempSIDL;
-"219
-[e = _TXB2SIDL _tempSIDL ]
-[; ;ecan.c: 220: TXB2DLC = tempCanMsg->frame.dlc;
-"220
-[e = _TXB2DLC . . *U _tempCanMsg 0 2 ]
-[; ;ecan.c: 221: TXB2D0 = tempCanMsg->frame.data0;
-"221
-[e = _TXB2D0 . . *U _tempCanMsg 0 3 ]
-[; ;ecan.c: 222: TXB2D1 = tempCanMsg->frame.data1;
-"222
-[e = _TXB2D1 . . *U _tempCanMsg 0 4 ]
-[; ;ecan.c: 223: TXB2D2 = tempCanMsg->frame.data2;
-"223
-[e = _TXB2D2 . . *U _tempCanMsg 0 5 ]
-[; ;ecan.c: 224: TXB2D3 = tempCanMsg->frame.data3;
-"224
-[e = _TXB2D3 . . *U _tempCanMsg 0 6 ]
-[; ;ecan.c: 225: TXB2D4 = tempCanMsg->frame.data4;
-"225
-[e = _TXB2D4 . . *U _tempCanMsg 0 7 ]
-[; ;ecan.c: 226: TXB2D5 = tempCanMsg->frame.data5;
-"226
-[e = _TXB2D5 . . *U _tempCanMsg 0 8 ]
-[; ;ecan.c: 227: TXB2D6 = tempCanMsg->frame.data6;
-"227
-[e = _TXB2D6 . . *U _tempCanMsg 0 9 ]
-[; ;ecan.c: 228: TXB2D7 = tempCanMsg->frame.data7;
-"228
-[e = _TXB2D7 . . *U _tempCanMsg 0 10 ]
-[; ;ecan.c: 230: TXB2CONbits.TXREQ = 1;
-"230
-[e = . . _TXB2CONbits 0 2 -> -> 1 `i `uc ]
-[; ;ecan.c: 231: returnValue = 1;
-"231
-[e = _returnValue -> -> 1 `i `uc ]
-"232
-}
-[e :U 1555 ]
-"236
-[e :U 1554 ]
+[; ;ecan.c: 201: } else if (TXB1CONbits.TXREQ != 1) {
+[e $U 1553  ]
 [e :U 1552 ]
-[; ;ecan.c: 232: }
-[; ;ecan.c: 236: return (returnValue);
-[e ) _returnValue ]
-[e $UE 1550  ]
-[; ;ecan.c: 237: }
-"237
-[e :UE 1550 ]
+[e $ ! != -> . . _TXB1CONbits 0 2 `i -> 1 `i 1554  ]
+{
+[; ;ecan.c: 203: convertCANid2Reg(tempCanMsg->frame.id, tempCanMsg->frame.idType, &tempEIDH, &tempEIDL, &tempSIDH, &tempSIDL);
+"203
+[e ( _convertCANid2Reg (4 , , , , , . . *U _tempCanMsg 0 1 . . *U _tempCanMsg 0 0 &U _tempEIDH &U _tempEIDL &U _tempSIDH &U _tempSIDL ]
+[; ;ecan.c: 205: TXB1EIDH = tempEIDH;
+"205
+[e = _TXB1EIDH _tempEIDH ]
+[; ;ecan.c: 206: TXB1EIDL = tempEIDL;
+"206
+[e = _TXB1EIDL _tempEIDL ]
+[; ;ecan.c: 207: TXB1SIDH = tempSIDH;
+"207
+[e = _TXB1SIDH _tempSIDH ]
+[; ;ecan.c: 208: TXB1SIDL = tempSIDL;
+"208
+[e = _TXB1SIDL _tempSIDL ]
+[; ;ecan.c: 209: TXB1DLC = tempCanMsg->frame.dlc;
+"209
+[e = _TXB1DLC . . *U _tempCanMsg 0 2 ]
+[; ;ecan.c: 210: TXB1D0 = tempCanMsg->frame.data0;
+"210
+[e = _TXB1D0 . . *U _tempCanMsg 0 3 ]
+[; ;ecan.c: 211: TXB1D1 = tempCanMsg->frame.data1;
+"211
+[e = _TXB1D1 . . *U _tempCanMsg 0 4 ]
+[; ;ecan.c: 212: TXB1D2 = tempCanMsg->frame.data2;
+"212
+[e = _TXB1D2 . . *U _tempCanMsg 0 5 ]
+[; ;ecan.c: 213: TXB1D3 = tempCanMsg->frame.data3;
+"213
+[e = _TXB1D3 . . *U _tempCanMsg 0 6 ]
+[; ;ecan.c: 214: TXB1D4 = tempCanMsg->frame.data4;
+"214
+[e = _TXB1D4 . . *U _tempCanMsg 0 7 ]
+[; ;ecan.c: 215: TXB1D5 = tempCanMsg->frame.data5;
+"215
+[e = _TXB1D5 . . *U _tempCanMsg 0 8 ]
+[; ;ecan.c: 216: TXB1D6 = tempCanMsg->frame.data6;
+"216
+[e = _TXB1D6 . . *U _tempCanMsg 0 9 ]
+[; ;ecan.c: 217: TXB1D7 = tempCanMsg->frame.data7;
+"217
+[e = _TXB1D7 . . *U _tempCanMsg 0 10 ]
+[; ;ecan.c: 219: TXB1CONbits.TXREQ = 1;
+"219
+[e = . . _TXB1CONbits 0 2 -> -> 1 `i `uc ]
+[; ;ecan.c: 220: returnValue = 1;
+"220
+[e = _returnValue -> -> 1 `i `uc ]
+"221
 }
+[; ;ecan.c: 221: } else if (TXB2CONbits.TXREQ != 1) {
+[e $U 1555  ]
+[e :U 1554 ]
+[e $ ! != -> . . _TXB2CONbits 0 2 `i -> 1 `i 1556  ]
+{
+[; ;ecan.c: 223: convertCANid2Reg(tempCanMsg->frame.id, tempCanMsg->frame.idType, &tempEIDH, &tempEIDL, &tempSIDH, &tempSIDL);
+"223
+[e ( _convertCANid2Reg (4 , , , , , . . *U _tempCanMsg 0 1 . . *U _tempCanMsg 0 0 &U _tempEIDH &U _tempEIDL &U _tempSIDH &U _tempSIDL ]
+[; ;ecan.c: 225: TXB2EIDH = tempEIDH;
+"225
+[e = _TXB2EIDH _tempEIDH ]
+[; ;ecan.c: 226: TXB2EIDL = tempEIDL;
+"226
+[e = _TXB2EIDL _tempEIDL ]
+[; ;ecan.c: 227: TXB2SIDH = tempSIDH;
+"227
+[e = _TXB2SIDH _tempSIDH ]
+[; ;ecan.c: 228: TXB2SIDL = tempSIDL;
+"228
+[e = _TXB2SIDL _tempSIDL ]
+[; ;ecan.c: 229: TXB2DLC = tempCanMsg->frame.dlc;
+"229
+[e = _TXB2DLC . . *U _tempCanMsg 0 2 ]
+[; ;ecan.c: 230: TXB2D0 = tempCanMsg->frame.data0;
+"230
+[e = _TXB2D0 . . *U _tempCanMsg 0 3 ]
+[; ;ecan.c: 231: TXB2D1 = tempCanMsg->frame.data1;
+"231
+[e = _TXB2D1 . . *U _tempCanMsg 0 4 ]
+[; ;ecan.c: 232: TXB2D2 = tempCanMsg->frame.data2;
+"232
+[e = _TXB2D2 . . *U _tempCanMsg 0 5 ]
+[; ;ecan.c: 233: TXB2D3 = tempCanMsg->frame.data3;
+"233
+[e = _TXB2D3 . . *U _tempCanMsg 0 6 ]
+[; ;ecan.c: 234: TXB2D4 = tempCanMsg->frame.data4;
+"234
+[e = _TXB2D4 . . *U _tempCanMsg 0 7 ]
+[; ;ecan.c: 235: TXB2D5 = tempCanMsg->frame.data5;
+"235
+[e = _TXB2D5 . . *U _tempCanMsg 0 8 ]
+[; ;ecan.c: 236: TXB2D6 = tempCanMsg->frame.data6;
+"236
+[e = _TXB2D6 . . *U _tempCanMsg 0 9 ]
+[; ;ecan.c: 237: TXB2D7 = tempCanMsg->frame.data7;
+"237
+[e = _TXB2D7 . . *U _tempCanMsg 0 10 ]
+[; ;ecan.c: 239: TXB2CONbits.TXREQ = 1;
 "239
+[e = . . _TXB2CONbits 0 2 -> -> 1 `i `uc ]
+[; ;ecan.c: 240: returnValue = 1;
+"240
+[e = _returnValue -> -> 1 `i `uc ]
+"241
+}
+[e :U 1556 ]
+"245
+[e :U 1555 ]
+[e :U 1553 ]
+[; ;ecan.c: 241: }
+[; ;ecan.c: 245: return (returnValue);
+[e ) _returnValue ]
+[e $UE 1551  ]
+[; ;ecan.c: 246: }
+"246
+[e :UE 1551 ]
+}
+"248
 [v _CAN_receive `(uc ~T0 @X0 1 ef1`*S1537 ]
 {
-[; ;ecan.c: 239: unsigned char CAN_receive(uCAN_MSG *tempCanMsg) {
+[; ;ecan.c: 248: unsigned char CAN_receive(uCAN_MSG *tempCanMsg) {
 [e :U _CAN_receive ]
 [v _tempCanMsg `*S1537 ~T0 @X0 1 r1 ]
 [f ]
-"240
-[v _returnValue `uc ~T0 @X0 1 a ]
-[; ;ecan.c: 240: unsigned char returnValue = 0;
-[e = _returnValue -> -> 0 `i `uc ]
-[; ;ecan.c: 244: {
-"244
-{
-[; ;ecan.c: 247: if (RXB0CONbits.RXFUL != 0)
-"247
-[e $ ! != -> . . _RXB0CONbits 0 7 `i -> 0 `i 1557  ]
-[; ;ecan.c: 248: {
-"248
-{
-[; ;ecan.c: 249: if ((RXB0SIDL & 0x08) == 0x08)
 "249
-[e $ ! == & -> _RXB0SIDL `i -> 8 `i -> 8 `i 1558  ]
-[; ;ecan.c: 250: {
-"250
-{
-[; ;ecan.c: 252: tempCanMsg->frame.idType = (unsigned char) 2;
-"252
-[e = . . *U _tempCanMsg 0 0 -> -> 2 `i `uc ]
-[; ;ecan.c: 253: tempCanMsg->frame.id = convertReg2ExtendedCANid(RXB0EIDH, RXB0EIDL, RXB0SIDH, RXB0SIDL);
+[v _returnValue `uc ~T0 @X0 1 a ]
+[; ;ecan.c: 249: unsigned char returnValue = 0;
+[e = _returnValue -> -> 0 `i `uc ]
+[; ;ecan.c: 253: {
 "253
-[e = . . *U _tempCanMsg 0 1 ( _convertReg2ExtendedCANid (4 , , , _RXB0EIDH _RXB0EIDL _RXB0SIDH _RXB0SIDL ]
-"254
-}
-[; ;ecan.c: 254: } else {
-[e $U 1559  ]
-[e :U 1558 ]
 {
-[; ;ecan.c: 256: tempCanMsg->frame.idType = (unsigned char) 1;
+[; ;ecan.c: 256: if (RXB0CONbits.RXFUL != 0)
 "256
-[e = . . *U _tempCanMsg 0 0 -> -> 1 `i `uc ]
-[; ;ecan.c: 257: tempCanMsg->frame.id = convertReg2StandardCANid(RXB0SIDH, RXB0SIDL);
+[e $ ! != -> . . _RXB0CONbits 0 7 `i -> 0 `i 1558  ]
+[; ;ecan.c: 257: {
 "257
-[e = . . *U _tempCanMsg 0 1 ( _convertReg2StandardCANid (2 , _RXB0SIDH _RXB0SIDL ]
+{
+[; ;ecan.c: 258: if ((RXB0SIDL & 0x08) == 0x08)
 "258
-}
-[e :U 1559 ]
-[; ;ecan.c: 258: }
-[; ;ecan.c: 260: tempCanMsg->frame.dlc = RXB0DLC;
-"260
-[e = . . *U _tempCanMsg 0 2 _RXB0DLC ]
-[; ;ecan.c: 261: tempCanMsg->frame.data0 = RXB0D0;
+[e $ ! == & -> _RXB0SIDL `i -> 8 `i -> 8 `i 1559  ]
+[; ;ecan.c: 259: {
+"259
+{
+[; ;ecan.c: 261: tempCanMsg->frame.idType = (unsigned char) 2;
 "261
-[e = . . *U _tempCanMsg 0 3 _RXB0D0 ]
-[; ;ecan.c: 262: tempCanMsg->frame.data1 = RXB0D1;
-"262
-[e = . . *U _tempCanMsg 0 4 _RXB0D1 ]
-[; ;ecan.c: 263: tempCanMsg->frame.data2 = RXB0D2;
-"263
-[e = . . *U _tempCanMsg 0 5 _RXB0D2 ]
-[; ;ecan.c: 264: tempCanMsg->frame.data3 = RXB0D3;
-"264
-[e = . . *U _tempCanMsg 0 6 _RXB0D3 ]
-[; ;ecan.c: 265: tempCanMsg->frame.data4 = RXB0D4;
-"265
-[e = . . *U _tempCanMsg 0 7 _RXB0D4 ]
-[; ;ecan.c: 266: tempCanMsg->frame.data5 = RXB0D5;
-"266
-[e = . . *U _tempCanMsg 0 8 _RXB0D5 ]
-[; ;ecan.c: 267: tempCanMsg->frame.data6 = RXB0D6;
-"267
-[e = . . *U _tempCanMsg 0 9 _RXB0D6 ]
-[; ;ecan.c: 268: tempCanMsg->frame.data7 = RXB0D7;
-"268
-[e = . . *U _tempCanMsg 0 10 _RXB0D7 ]
-[; ;ecan.c: 269: RXB0CONbits.RXFUL = 0;
-"269
-[e = . . _RXB0CONbits 0 7 -> -> 0 `i `uc ]
-[; ;ecan.c: 270: returnValue = 1;
-"270
-[e = _returnValue -> -> 1 `i `uc ]
-"271
-}
-[; ;ecan.c: 271: } else if (RXB1CONbits.RXFUL != 0)
-[e $U 1560  ]
-[e :U 1557 ]
-[e $ ! != -> . . _RXB1CONbits 0 7 `i -> 0 `i 1561  ]
-[; ;ecan.c: 272: {
-"272
-{
-[; ;ecan.c: 273: if ((RXB1SIDL & 0x08) == 0x08)
-"273
-[e $ ! == & -> _RXB1SIDL `i -> 8 `i -> 8 `i 1562  ]
-[; ;ecan.c: 274: {
-"274
-{
-[; ;ecan.c: 276: tempCanMsg->frame.idType = (unsigned char) 2;
-"276
 [e = . . *U _tempCanMsg 0 0 -> -> 2 `i `uc ]
-[; ;ecan.c: 277: tempCanMsg->frame.id = convertReg2ExtendedCANid(RXB1EIDH, RXB1EIDL, RXB1SIDH, RXB1SIDL);
-"277
-[e = . . *U _tempCanMsg 0 1 ( _convertReg2ExtendedCANid (4 , , , _RXB1EIDH _RXB1EIDL _RXB1SIDH _RXB1SIDL ]
-"278
+[; ;ecan.c: 262: tempCanMsg->frame.id = convertReg2ExtendedCANid(RXB0EIDH, RXB0EIDL, RXB0SIDH, RXB0SIDL);
+"262
+[e = . . *U _tempCanMsg 0 1 ( _convertReg2ExtendedCANid (4 , , , _RXB0EIDH _RXB0EIDL _RXB0SIDH _RXB0SIDL ]
+"263
 }
-[; ;ecan.c: 278: }
-[e $U 1563  ]
-"279
-[e :U 1562 ]
-[; ;ecan.c: 279: else
-[; ;ecan.c: 280: {
-"280
+[; ;ecan.c: 263: } else {
+[e $U 1560  ]
+[e :U 1559 ]
 {
-[; ;ecan.c: 282: tempCanMsg->frame.idType = (unsigned char) 1;
-"282
+[; ;ecan.c: 265: tempCanMsg->frame.idType = (unsigned char) 1;
+"265
 [e = . . *U _tempCanMsg 0 0 -> -> 1 `i `uc ]
-[; ;ecan.c: 283: tempCanMsg->frame.id = convertReg2StandardCANid(RXB1SIDH, RXB1SIDL);
-"283
-[e = . . *U _tempCanMsg 0 1 ( _convertReg2StandardCANid (2 , _RXB1SIDH _RXB1SIDL ]
-"284
+[; ;ecan.c: 266: tempCanMsg->frame.id = convertReg2StandardCANid(RXB0SIDH, RXB0SIDL);
+"266
+[e = . . *U _tempCanMsg 0 1 ( _convertReg2StandardCANid (2 , _RXB0SIDH _RXB0SIDL ]
+"267
 }
-[e :U 1563 ]
-[; ;ecan.c: 284: }
-[; ;ecan.c: 286: tempCanMsg->frame.dlc = RXB1DLC;
-"286
-[e = . . *U _tempCanMsg 0 2 _RXB1DLC ]
-[; ;ecan.c: 287: tempCanMsg->frame.data0 = RXB1D0;
-"287
-[e = . . *U _tempCanMsg 0 3 _RXB1D0 ]
-[; ;ecan.c: 288: tempCanMsg->frame.data1 = RXB1D1;
-"288
-[e = . . *U _tempCanMsg 0 4 _RXB1D1 ]
-[; ;ecan.c: 289: tempCanMsg->frame.data2 = RXB1D2;
-"289
-[e = . . *U _tempCanMsg 0 5 _RXB1D2 ]
-[; ;ecan.c: 290: tempCanMsg->frame.data3 = RXB1D3;
-"290
-[e = . . *U _tempCanMsg 0 6 _RXB1D3 ]
-[; ;ecan.c: 291: tempCanMsg->frame.data4 = RXB1D4;
-"291
-[e = . . *U _tempCanMsg 0 7 _RXB1D4 ]
-[; ;ecan.c: 292: tempCanMsg->frame.data5 = RXB1D5;
-"292
-[e = . . *U _tempCanMsg 0 8 _RXB1D5 ]
-[; ;ecan.c: 293: tempCanMsg->frame.data6 = RXB1D6;
-"293
-[e = . . *U _tempCanMsg 0 9 _RXB1D6 ]
-[; ;ecan.c: 294: tempCanMsg->frame.data7 = RXB1D7;
-"294
-[e = . . *U _tempCanMsg 0 10 _RXB1D7 ]
-[; ;ecan.c: 295: RXB1CONbits.RXFUL = 0;
-"295
-[e = . . _RXB1CONbits 0 7 -> -> 0 `i `uc ]
-[; ;ecan.c: 296: returnValue = 1;
-"296
-[e = _returnValue -> -> 1 `i `uc ]
-"297
-}
-[e :U 1561 ]
-"300
 [e :U 1560 ]
-[; ;ecan.c: 297: }
-[; ;ecan.c: 300: PIR5bits.RXB1IF = 0;
-[e = . . _PIR5bits 0 1 -> -> 0 `i `uc ]
+[; ;ecan.c: 267: }
+[; ;ecan.c: 269: tempCanMsg->frame.dlc = RXB0DLC;
+"269
+[e = . . *U _tempCanMsg 0 2 _RXB0DLC ]
+[; ;ecan.c: 270: tempCanMsg->frame.data0 = RXB0D0;
+"270
+[e = . . *U _tempCanMsg 0 3 _RXB0D0 ]
+[; ;ecan.c: 271: tempCanMsg->frame.data1 = RXB0D1;
+"271
+[e = . . *U _tempCanMsg 0 4 _RXB0D1 ]
+[; ;ecan.c: 272: tempCanMsg->frame.data2 = RXB0D2;
+"272
+[e = . . *U _tempCanMsg 0 5 _RXB0D2 ]
+[; ;ecan.c: 273: tempCanMsg->frame.data3 = RXB0D3;
+"273
+[e = . . *U _tempCanMsg 0 6 _RXB0D3 ]
+[; ;ecan.c: 274: tempCanMsg->frame.data4 = RXB0D4;
+"274
+[e = . . *U _tempCanMsg 0 7 _RXB0D4 ]
+[; ;ecan.c: 275: tempCanMsg->frame.data5 = RXB0D5;
+"275
+[e = . . *U _tempCanMsg 0 8 _RXB0D5 ]
+[; ;ecan.c: 276: tempCanMsg->frame.data6 = RXB0D6;
+"276
+[e = . . *U _tempCanMsg 0 9 _RXB0D6 ]
+[; ;ecan.c: 277: tempCanMsg->frame.data7 = RXB0D7;
+"277
+[e = . . *U _tempCanMsg 0 10 _RXB0D7 ]
+[; ;ecan.c: 278: RXB0CONbits.RXFUL = 0;
+"278
+[e = . . _RXB0CONbits 0 7 -> -> 0 `i `uc ]
+[; ;ecan.c: 279: returnValue = 1;
+"279
+[e = _returnValue -> -> 1 `i `uc ]
+"280
+}
+[; ;ecan.c: 280: } else if (RXB1CONbits.RXFUL != 0)
+[e $U 1561  ]
+[e :U 1558 ]
+[e $ ! != -> . . _RXB1CONbits 0 7 `i -> 0 `i 1562  ]
+[; ;ecan.c: 281: {
+"281
+{
+[; ;ecan.c: 282: if ((RXB1SIDL & 0x08) == 0x08)
+"282
+[e $ ! == & -> _RXB1SIDL `i -> 8 `i -> 8 `i 1563  ]
+[; ;ecan.c: 283: {
+"283
+{
+[; ;ecan.c: 285: tempCanMsg->frame.idType = (unsigned char) 2;
+"285
+[e = . . *U _tempCanMsg 0 0 -> -> 2 `i `uc ]
+[; ;ecan.c: 286: tempCanMsg->frame.id = convertReg2ExtendedCANid(RXB1EIDH, RXB1EIDL, RXB1SIDH, RXB1SIDL);
+"286
+[e = . . *U _tempCanMsg 0 1 ( _convertReg2ExtendedCANid (4 , , , _RXB1EIDH _RXB1EIDL _RXB1SIDH _RXB1SIDL ]
+"287
+}
+[; ;ecan.c: 287: }
+[e $U 1564  ]
+"288
+[e :U 1563 ]
+[; ;ecan.c: 288: else
+[; ;ecan.c: 289: {
+"289
+{
+[; ;ecan.c: 291: tempCanMsg->frame.idType = (unsigned char) 1;
+"291
+[e = . . *U _tempCanMsg 0 0 -> -> 1 `i `uc ]
+[; ;ecan.c: 292: tempCanMsg->frame.id = convertReg2StandardCANid(RXB1SIDH, RXB1SIDL);
+"292
+[e = . . *U _tempCanMsg 0 1 ( _convertReg2StandardCANid (2 , _RXB1SIDH _RXB1SIDL ]
+"293
+}
+[e :U 1564 ]
+[; ;ecan.c: 293: }
+[; ;ecan.c: 295: tempCanMsg->frame.dlc = RXB1DLC;
+"295
+[e = . . *U _tempCanMsg 0 2 _RXB1DLC ]
+[; ;ecan.c: 296: tempCanMsg->frame.data0 = RXB1D0;
+"296
+[e = . . *U _tempCanMsg 0 3 _RXB1D0 ]
+[; ;ecan.c: 297: tempCanMsg->frame.data1 = RXB1D1;
+"297
+[e = . . *U _tempCanMsg 0 4 _RXB1D1 ]
+[; ;ecan.c: 298: tempCanMsg->frame.data2 = RXB1D2;
+"298
+[e = . . *U _tempCanMsg 0 5 _RXB1D2 ]
+[; ;ecan.c: 299: tempCanMsg->frame.data3 = RXB1D3;
+"299
+[e = . . *U _tempCanMsg 0 6 _RXB1D3 ]
+[; ;ecan.c: 300: tempCanMsg->frame.data4 = RXB1D4;
+"300
+[e = . . *U _tempCanMsg 0 7 _RXB1D4 ]
+[; ;ecan.c: 301: tempCanMsg->frame.data5 = RXB1D5;
 "301
-}
-[; ;ecan.c: 301: }
-[; ;ecan.c: 304: return (returnValue);
+[e = . . *U _tempCanMsg 0 8 _RXB1D5 ]
+[; ;ecan.c: 302: tempCanMsg->frame.data6 = RXB1D6;
+"302
+[e = . . *U _tempCanMsg 0 9 _RXB1D6 ]
+[; ;ecan.c: 303: tempCanMsg->frame.data7 = RXB1D7;
+"303
+[e = . . *U _tempCanMsg 0 10 _RXB1D7 ]
+[; ;ecan.c: 304: RXB1CONbits.RXFUL = 0;
 "304
-[e ) _returnValue ]
-[e $UE 1556  ]
-[; ;ecan.c: 305: }
+[e = . . _RXB1CONbits 0 7 -> -> 0 `i `uc ]
+[; ;ecan.c: 305: returnValue = 1;
 "305
-[e :UE 1556 ]
+[e = _returnValue -> -> 1 `i `uc ]
+"306
 }
-"307
+[e :U 1562 ]
+"309
+[e :U 1561 ]
+[; ;ecan.c: 306: }
+[; ;ecan.c: 309: PIR5bits.RXB1IF = 0;
+[e = . . _PIR5bits 0 1 -> -> 0 `i `uc ]
+"310
+}
+[; ;ecan.c: 310: }
+[; ;ecan.c: 313: return (returnValue);
+"313
+[e ) _returnValue ]
+[e $UE 1557  ]
+[; ;ecan.c: 314: }
+"314
+[e :UE 1557 ]
+}
+"316
 [v _CAN_messagesInBuffer `(uc ~T0 @X0 1 ef ]
 {
-[; ;ecan.c: 307: unsigned char CAN_messagesInBuffer(void) {
+[; ;ecan.c: 316: unsigned char CAN_messagesInBuffer(void) {
 [e :U _CAN_messagesInBuffer ]
 [f ]
-"308
+"317
 [v _messageCount `uc ~T0 @X0 1 a ]
-[; ;ecan.c: 308: unsigned char messageCount = 0;
+[; ;ecan.c: 317: unsigned char messageCount = 0;
 [e = _messageCount -> -> 0 `i `uc ]
-[; ;ecan.c: 309: if (RXB0CONbits.RXFUL != 0)
-"309
-[e $ ! != -> . . _RXB0CONbits 0 7 `i -> 0 `i 1565  ]
-[; ;ecan.c: 310: {
-"310
+[; ;ecan.c: 318: if (RXB0CONbits.RXFUL != 0)
+"318
+[e $ ! != -> . . _RXB0CONbits 0 7 `i -> 0 `i 1566  ]
+[; ;ecan.c: 319: {
+"319
 {
-[; ;ecan.c: 311: messageCount++;
-"311
+[; ;ecan.c: 320: messageCount++;
+"320
 [e ++ _messageCount -> -> 1 `i `uc ]
-"312
-}
-[e :U 1565 ]
-[; ;ecan.c: 312: }
-[; ;ecan.c: 313: if (RXB1CONbits.RXFUL != 0)
-"313
-[e $ ! != -> . . _RXB1CONbits 0 7 `i -> 0 `i 1566  ]
-[; ;ecan.c: 314: {
-"314
-{
-[; ;ecan.c: 315: messageCount++;
-"315
-[e ++ _messageCount -> -> 1 `i `uc ]
-"316
+"321
 }
 [e :U 1566 ]
-[; ;ecan.c: 316: }
-[; ;ecan.c: 318: return (messageCount);
-"318
-[e ) _messageCount ]
-[e $UE 1564  ]
-[; ;ecan.c: 319: }
-"319
-[e :UE 1564 ]
+[; ;ecan.c: 321: }
+[; ;ecan.c: 322: if (RXB1CONbits.RXFUL != 0)
+"322
+[e $ ! != -> . . _RXB1CONbits 0 7 `i -> 0 `i 1567  ]
+[; ;ecan.c: 323: {
+"323
+{
+[; ;ecan.c: 324: messageCount++;
+"324
+[e ++ _messageCount -> -> 1 `i `uc ]
+"325
 }
-"321
+[e :U 1567 ]
+[; ;ecan.c: 325: }
+[; ;ecan.c: 327: return (messageCount);
+"327
+[e ) _messageCount ]
+[e $UE 1565  ]
+[; ;ecan.c: 328: }
+"328
+[e :UE 1565 ]
+}
+"330
 [v _CAN_isBusOff `(uc ~T0 @X0 1 ef ]
 {
-[; ;ecan.c: 321: unsigned char CAN_isBusOff(void) {
+[; ;ecan.c: 330: unsigned char CAN_isBusOff(void) {
 [e :U _CAN_isBusOff ]
 [f ]
-"322
-[v _returnValue `uc ~T0 @X0 1 a ]
-[; ;ecan.c: 322: unsigned char returnValue = 0;
-[e = _returnValue -> -> 0 `i `uc ]
-[; ;ecan.c: 328: if (COMSTATbits.TXBO == 1) {
-"328
-[e $ ! == -> . . _COMSTATbits 0 5 `i -> 1 `i 1568  ]
-{
-[; ;ecan.c: 329: returnValue = 1;
-"329
-[e = _returnValue -> -> 1 `i `uc ]
-"330
-}
-[e :U 1568 ]
-[; ;ecan.c: 330: }
-[; ;ecan.c: 331: return (returnValue);
 "331
-[e ) _returnValue ]
-[e $UE 1567  ]
-[; ;ecan.c: 332: }
-"332
-[e :UE 1567 ]
+[v _returnValue `uc ~T0 @X0 1 a ]
+[; ;ecan.c: 331: unsigned char returnValue = 0;
+[e = _returnValue -> -> 0 `i `uc ]
+[; ;ecan.c: 337: if (COMSTATbits.TXBO == 1) {
+"337
+[e $ ! == -> . . _COMSTATbits 0 5 `i -> 1 `i 1569  ]
+{
+[; ;ecan.c: 338: returnValue = 1;
+"338
+[e = _returnValue -> -> 1 `i `uc ]
+"339
 }
-"334
+[e :U 1569 ]
+[; ;ecan.c: 339: }
+[; ;ecan.c: 340: return (returnValue);
+"340
+[e ) _returnValue ]
+[e $UE 1568  ]
+[; ;ecan.c: 341: }
+"341
+[e :UE 1568 ]
+}
+"343
 [v _CAN_isRXErrorPassive `(uc ~T0 @X0 1 ef ]
 {
-[; ;ecan.c: 334: unsigned char CAN_isRXErrorPassive(void) {
+[; ;ecan.c: 343: unsigned char CAN_isRXErrorPassive(void) {
 [e :U _CAN_isRXErrorPassive ]
 [f ]
-"335
-[v _returnValue `uc ~T0 @X0 1 a ]
-[; ;ecan.c: 335: unsigned char returnValue = 0;
-[e = _returnValue -> -> 0 `i `uc ]
-[; ;ecan.c: 341: if (COMSTATbits.RXBP == 1) {
-"341
-[e $ ! == -> . . _COMSTATbits 0 3 `i -> 1 `i 1570  ]
-{
-[; ;ecan.c: 342: returnValue = 1;
-"342
-[e = _returnValue -> -> 1 `i `uc ]
-"343
-}
-[e :U 1570 ]
-[; ;ecan.c: 343: }
-[; ;ecan.c: 344: return (returnValue);
 "344
-[e ) _returnValue ]
-[e $UE 1569  ]
-[; ;ecan.c: 345: }
-"345
-[e :UE 1569 ]
+[v _returnValue `uc ~T0 @X0 1 a ]
+[; ;ecan.c: 344: unsigned char returnValue = 0;
+[e = _returnValue -> -> 0 `i `uc ]
+[; ;ecan.c: 350: if (COMSTATbits.RXBP == 1) {
+"350
+[e $ ! == -> . . _COMSTATbits 0 3 `i -> 1 `i 1571  ]
+{
+[; ;ecan.c: 351: returnValue = 1;
+"351
+[e = _returnValue -> -> 1 `i `uc ]
+"352
 }
-"347
+[e :U 1571 ]
+[; ;ecan.c: 352: }
+[; ;ecan.c: 353: return (returnValue);
+"353
+[e ) _returnValue ]
+[e $UE 1570  ]
+[; ;ecan.c: 354: }
+"354
+[e :UE 1570 ]
+}
+"356
 [v _CAN_isTXErrorPassive `(uc ~T0 @X0 1 ef ]
 {
-[; ;ecan.c: 347: unsigned char CAN_isTXErrorPassive(void) {
+[; ;ecan.c: 356: unsigned char CAN_isTXErrorPassive(void) {
 [e :U _CAN_isTXErrorPassive ]
 [f ]
-"348
-[v _returnValue `uc ~T0 @X0 1 a ]
-[; ;ecan.c: 348: unsigned char returnValue = 0;
-[e = _returnValue -> -> 0 `i `uc ]
-[; ;ecan.c: 354: if (COMSTATbits.TXBP == 1) {
-"354
-[e $ ! == -> . . _COMSTATbits 0 4 `i -> 1 `i 1572  ]
-{
-[; ;ecan.c: 355: returnValue = 1;
-"355
-[e = _returnValue -> -> 1 `i `uc ]
-"356
-}
-[e :U 1572 ]
-[; ;ecan.c: 356: }
-[; ;ecan.c: 357: return (returnValue);
 "357
-[e ) _returnValue ]
-[e $UE 1571  ]
-[; ;ecan.c: 358: }
-"358
-[e :UE 1571 ]
-}
+[v _returnValue `uc ~T0 @X0 1 a ]
+[; ;ecan.c: 357: unsigned char returnValue = 0;
+[e = _returnValue -> -> 0 `i `uc ]
+[; ;ecan.c: 363: if (COMSTATbits.TXBP == 1) {
+"363
+[e $ ! == -> . . _COMSTATbits 0 4 `i -> 1 `i 1573  ]
+{
+[; ;ecan.c: 364: returnValue = 1;
+"364
+[e = _returnValue -> -> 1 `i `uc ]
 "365
+}
+[e :U 1573 ]
+[; ;ecan.c: 365: }
+[; ;ecan.c: 366: return (returnValue);
+"366
+[e ) _returnValue ]
+[e $UE 1572  ]
+[; ;ecan.c: 367: }
+"367
+[e :UE 1572 ]
+}
+"374
 [v _convertReg2ExtendedCANid `(ul ~T0 @X0 1 ef4`uc`uc`uc`uc ]
 {
-[; ;ecan.c: 365: unsigned long convertReg2ExtendedCANid(unsigned char tempRXBn_EIDH, unsigned char tempRXBn_EIDL, unsigned char tempRXBn_SIDH, unsigned char tempRXBn_SIDL) {
+[; ;ecan.c: 374: unsigned long convertReg2ExtendedCANid(unsigned char tempRXBn_EIDH, unsigned char tempRXBn_EIDL, unsigned char tempRXBn_SIDH, unsigned char tempRXBn_SIDL) {
 [e :U _convertReg2ExtendedCANid ]
 [v _tempRXBn_EIDH `uc ~T0 @X0 1 r1 ]
 [v _tempRXBn_EIDL `uc ~T0 @X0 1 r2 ]
 [v _tempRXBn_SIDH `uc ~T0 @X0 1 r3 ]
 [v _tempRXBn_SIDL `uc ~T0 @X0 1 r4 ]
 [f ]
-"366
-[v _returnValue `ul ~T0 @X0 1 a ]
-[; ;ecan.c: 366: unsigned long returnValue = 0;
-[e = _returnValue -> -> -> 0 `i `l `ul ]
-"367
-[v _ConvertedID `ul ~T0 @X0 1 a ]
-[; ;ecan.c: 367: unsigned long ConvertedID = 0;
-[e = _ConvertedID -> -> -> 0 `i `l `ul ]
-"368
-[v _CAN_standardLo_ID_lo2bits `uc ~T0 @X0 1 a ]
-"369
-[v _CAN_standardLo_ID_hi3bits `uc ~T0 @X0 1 a ]
-[; ;ecan.c: 368: unsigned char CAN_standardLo_ID_lo2bits;
-[; ;ecan.c: 369: unsigned char CAN_standardLo_ID_hi3bits;
-[; ;ecan.c: 371: CAN_standardLo_ID_lo2bits = (tempRXBn_SIDL & 0x03);
-"371
-[e = _CAN_standardLo_ID_lo2bits -> & -> _tempRXBn_SIDL `i -> 3 `i `uc ]
-[; ;ecan.c: 372: CAN_standardLo_ID_hi3bits = (tempRXBn_SIDL >> 5);
-"372
-[e = _CAN_standardLo_ID_hi3bits -> >> -> _tempRXBn_SIDL `i -> 5 `i `uc ]
-[; ;ecan.c: 373: ConvertedID = (tempRXBn_SIDH << 3);
-"373
-[e = _ConvertedID -> -> << -> _tempRXBn_SIDH `i -> 3 `i `l `ul ]
-[; ;ecan.c: 374: ConvertedID = ConvertedID + CAN_standardLo_ID_hi3bits;
-"374
-[e = _ConvertedID + _ConvertedID -> _CAN_standardLo_ID_hi3bits `ul ]
-[; ;ecan.c: 375: ConvertedID = (ConvertedID << 2);
 "375
-[e = _ConvertedID << _ConvertedID -> 2 `i ]
-[; ;ecan.c: 376: ConvertedID = ConvertedID + CAN_standardLo_ID_lo2bits;
+[v _returnValue `ul ~T0 @X0 1 a ]
+[; ;ecan.c: 375: unsigned long returnValue = 0;
+[e = _returnValue -> -> -> 0 `i `l `ul ]
 "376
-[e = _ConvertedID + _ConvertedID -> _CAN_standardLo_ID_lo2bits `ul ]
-[; ;ecan.c: 377: ConvertedID = (ConvertedID << 8);
+[v _ConvertedID `ul ~T0 @X0 1 a ]
+[; ;ecan.c: 376: unsigned long ConvertedID = 0;
+[e = _ConvertedID -> -> -> 0 `i `l `ul ]
 "377
-[e = _ConvertedID << _ConvertedID -> 8 `i ]
-[; ;ecan.c: 378: ConvertedID = ConvertedID + tempRXBn_EIDH;
+[v _CAN_standardLo_ID_lo2bits `uc ~T0 @X0 1 a ]
 "378
-[e = _ConvertedID + _ConvertedID -> _tempRXBn_EIDH `ul ]
-[; ;ecan.c: 379: ConvertedID = (ConvertedID << 8);
-"379
-[e = _ConvertedID << _ConvertedID -> 8 `i ]
-[; ;ecan.c: 380: ConvertedID = ConvertedID + tempRXBn_EIDL;
+[v _CAN_standardLo_ID_hi3bits `uc ~T0 @X0 1 a ]
+[; ;ecan.c: 377: unsigned char CAN_standardLo_ID_lo2bits;
+[; ;ecan.c: 378: unsigned char CAN_standardLo_ID_hi3bits;
+[; ;ecan.c: 380: CAN_standardLo_ID_lo2bits = (tempRXBn_SIDL & 0x03);
 "380
-[e = _ConvertedID + _ConvertedID -> _tempRXBn_EIDL `ul ]
-[; ;ecan.c: 381: returnValue = ConvertedID;
+[e = _CAN_standardLo_ID_lo2bits -> & -> _tempRXBn_SIDL `i -> 3 `i `uc ]
+[; ;ecan.c: 381: CAN_standardLo_ID_hi3bits = (tempRXBn_SIDL >> 5);
 "381
-[e = _returnValue _ConvertedID ]
-[; ;ecan.c: 382: return (returnValue);
+[e = _CAN_standardLo_ID_hi3bits -> >> -> _tempRXBn_SIDL `i -> 5 `i `uc ]
+[; ;ecan.c: 382: ConvertedID = (tempRXBn_SIDH << 3);
 "382
-[e ) _returnValue ]
-[e $UE 1573  ]
-[; ;ecan.c: 383: }
+[e = _ConvertedID -> -> << -> _tempRXBn_SIDH `i -> 3 `i `l `ul ]
+[; ;ecan.c: 383: ConvertedID = ConvertedID + CAN_standardLo_ID_hi3bits;
 "383
-[e :UE 1573 ]
-}
+[e = _ConvertedID + _ConvertedID -> _CAN_standardLo_ID_hi3bits `ul ]
+[; ;ecan.c: 384: ConvertedID = (ConvertedID << 2);
+"384
+[e = _ConvertedID << _ConvertedID -> 2 `i ]
+[; ;ecan.c: 385: ConvertedID = ConvertedID + CAN_standardLo_ID_lo2bits;
 "385
+[e = _ConvertedID + _ConvertedID -> _CAN_standardLo_ID_lo2bits `ul ]
+[; ;ecan.c: 386: ConvertedID = (ConvertedID << 8);
+"386
+[e = _ConvertedID << _ConvertedID -> 8 `i ]
+[; ;ecan.c: 387: ConvertedID = ConvertedID + tempRXBn_EIDH;
+"387
+[e = _ConvertedID + _ConvertedID -> _tempRXBn_EIDH `ul ]
+[; ;ecan.c: 388: ConvertedID = (ConvertedID << 8);
+"388
+[e = _ConvertedID << _ConvertedID -> 8 `i ]
+[; ;ecan.c: 389: ConvertedID = ConvertedID + tempRXBn_EIDL;
+"389
+[e = _ConvertedID + _ConvertedID -> _tempRXBn_EIDL `ul ]
+[; ;ecan.c: 390: returnValue = ConvertedID;
+"390
+[e = _returnValue _ConvertedID ]
+[; ;ecan.c: 391: return (returnValue);
+"391
+[e ) _returnValue ]
+[e $UE 1574  ]
+[; ;ecan.c: 392: }
+"392
+[e :UE 1574 ]
+}
+"394
 [v _convertReg2StandardCANid `(ul ~T0 @X0 1 ef2`uc`uc ]
 {
-[; ;ecan.c: 385: unsigned long convertReg2StandardCANid(unsigned char tempRXBn_SIDH, unsigned char tempRXBn_SIDL) {
+[; ;ecan.c: 394: unsigned long convertReg2StandardCANid(unsigned char tempRXBn_SIDH, unsigned char tempRXBn_SIDL) {
 [e :U _convertReg2StandardCANid ]
 [v _tempRXBn_SIDH `uc ~T0 @X0 1 r1 ]
 [v _tempRXBn_SIDL `uc ~T0 @X0 1 r2 ]
 [f ]
-"386
-[v _returnValue `ul ~T0 @X0 1 a ]
-[; ;ecan.c: 386: unsigned long returnValue = 0;
-[e = _returnValue -> -> -> 0 `i `l `ul ]
-"387
-[v _ConvertedID `ul ~T0 @X0 1 a ]
-[; ;ecan.c: 387: unsigned long ConvertedID;
-[; ;ecan.c: 391: ConvertedID = (tempRXBn_SIDH << 3);
-"391
-[e = _ConvertedID -> -> << -> _tempRXBn_SIDH `i -> 3 `i `l `ul ]
-[; ;ecan.c: 392: ConvertedID = ConvertedID + (tempRXBn_SIDL >> 5);
-"392
-[e = _ConvertedID + _ConvertedID -> -> >> -> _tempRXBn_SIDL `i -> 5 `i `l `ul ]
-[; ;ecan.c: 393: returnValue = ConvertedID;
-"393
-[e = _returnValue _ConvertedID ]
-[; ;ecan.c: 394: return (returnValue);
-"394
-[e ) _returnValue ]
-[e $UE 1574  ]
-[; ;ecan.c: 395: }
 "395
-[e :UE 1574 ]
+[v _returnValue `ul ~T0 @X0 1 a ]
+[; ;ecan.c: 395: unsigned long returnValue = 0;
+[e = _returnValue -> -> -> 0 `i `l `ul ]
+"396
+[v _ConvertedID `ul ~T0 @X0 1 a ]
+[; ;ecan.c: 396: unsigned long ConvertedID;
+[; ;ecan.c: 400: ConvertedID = (tempRXBn_SIDH << 3);
+"400
+[e = _ConvertedID -> -> << -> _tempRXBn_SIDH `i -> 3 `i `l `ul ]
+[; ;ecan.c: 401: ConvertedID = ConvertedID + (tempRXBn_SIDL >> 5);
+"401
+[e = _ConvertedID + _ConvertedID -> -> >> -> _tempRXBn_SIDL `i -> 5 `i `l `ul ]
+[; ;ecan.c: 402: returnValue = ConvertedID;
+"402
+[e = _returnValue _ConvertedID ]
+[; ;ecan.c: 403: return (returnValue);
+"403
+[e ) _returnValue ]
+[e $UE 1575  ]
+[; ;ecan.c: 404: }
+"404
+[e :UE 1575 ]
 }
-"397
+"406
 [v _convertCANid2Reg `(v ~T0 @X0 1 ef6`ul`uc`*uc`*uc`*uc`*uc ]
 {
-[; ;ecan.c: 397: void convertCANid2Reg(unsigned long tempPassedInID, unsigned char canIdType, unsigned char *passedInEIDH, unsigned char *passedInEIDL, unsigned char *passedInSIDH, unsigned char *passedInSIDL) {
+[; ;ecan.c: 406: void convertCANid2Reg(unsigned long tempPassedInID, unsigned char canIdType, unsigned char *passedInEIDH, unsigned char *passedInEIDL, unsigned char *passedInSIDH, unsigned char *passedInSIDL) {
 [e :U _convertCANid2Reg ]
 [v _tempPassedInID `ul ~T0 @X0 1 r1 ]
 [v _canIdType `uc ~T0 @X0 1 r2 ]
@@ -14763,78 +14773,78 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _passedInSIDH `*uc ~T0 @X0 1 r5 ]
 [v _passedInSIDL `*uc ~T0 @X0 1 r6 ]
 [f ]
-"398
-[v _wipSIDL `uc ~T0 @X0 1 a ]
-[; ;ecan.c: 398: unsigned char wipSIDL = 0;
-[e = _wipSIDL -> -> 0 `i `uc ]
-[; ;ecan.c: 400: if (canIdType == 2) {
-"400
-[e $ ! == -> _canIdType `i -> 2 `i 1576  ]
-{
-[; ;ecan.c: 403: *passedInEIDL = 0xFF & tempPassedInID;
-"403
-[e = *U _passedInEIDL -> & -> -> -> 255 `i `l `ul _tempPassedInID `uc ]
-[; ;ecan.c: 404: tempPassedInID = tempPassedInID >> 8;
-"404
-[e = _tempPassedInID >> _tempPassedInID -> 8 `i ]
-[; ;ecan.c: 407: *passedInEIDH = 0xFF & tempPassedInID;
 "407
-[e = *U _passedInEIDH -> & -> -> -> 255 `i `l `ul _tempPassedInID `uc ]
-[; ;ecan.c: 408: tempPassedInID = tempPassedInID >> 8;
-"408
-[e = _tempPassedInID >> _tempPassedInID -> 8 `i ]
-[; ;ecan.c: 412: wipSIDL = 0x03 & tempPassedInID;
-"412
-[e = _wipSIDL -> & -> -> -> 3 `i `l `ul _tempPassedInID `uc ]
-[; ;ecan.c: 413: tempPassedInID = tempPassedInID << 3;
-"413
-[e = _tempPassedInID << _tempPassedInID -> 3 `i ]
-[; ;ecan.c: 414: wipSIDL = (0xE0 & tempPassedInID) + wipSIDL;
-"414
-[e = _wipSIDL -> + & -> -> -> 224 `i `l `ul _tempPassedInID -> _wipSIDL `ul `uc ]
-[; ;ecan.c: 415: wipSIDL = wipSIDL + 0x08;
-"415
-[e = _wipSIDL -> + -> _wipSIDL `i -> 8 `i `uc ]
-[; ;ecan.c: 416: *passedInSIDL = 0xEB & wipSIDL;
-"416
-[e = *U _passedInSIDL -> & -> 235 `i -> _wipSIDL `i `uc ]
-[; ;ecan.c: 419: tempPassedInID = tempPassedInID >> 8;
-"419
-[e = _tempPassedInID >> _tempPassedInID -> 8 `i ]
-[; ;ecan.c: 420: *passedInSIDH = 0xFF & tempPassedInID;
-"420
-[e = *U _passedInSIDH -> & -> -> -> 255 `i `l `ul _tempPassedInID `uc ]
-"421
-}
-[; ;ecan.c: 421: } else
-[e $U 1577  ]
-[e :U 1576 ]
-[; ;ecan.c: 422: {
-"422
+[v _wipSIDL `uc ~T0 @X0 1 a ]
+[; ;ecan.c: 407: unsigned char wipSIDL = 0;
+[e = _wipSIDL -> -> 0 `i `uc ]
+[; ;ecan.c: 409: if (canIdType == 2) {
+"409
+[e $ ! == -> _canIdType `i -> 2 `i 1577  ]
 {
-[; ;ecan.c: 423: *passedInEIDH = 0;
-"423
-[e = *U _passedInEIDH -> -> 0 `i `uc ]
-[; ;ecan.c: 424: *passedInEIDL = 0;
-"424
-[e = *U _passedInEIDL -> -> 0 `i `uc ]
-[; ;ecan.c: 425: tempPassedInID = tempPassedInID << 5;
-"425
-[e = _tempPassedInID << _tempPassedInID -> 5 `i ]
-[; ;ecan.c: 426: *passedInSIDL = 0xFF & tempPassedInID;
-"426
-[e = *U _passedInSIDL -> & -> -> -> 255 `i `l `ul _tempPassedInID `uc ]
-[; ;ecan.c: 427: tempPassedInID = tempPassedInID >> 8;
-"427
+[; ;ecan.c: 412: *passedInEIDL = 0xFF & tempPassedInID;
+"412
+[e = *U _passedInEIDL -> & -> -> -> 255 `i `l `ul _tempPassedInID `uc ]
+[; ;ecan.c: 413: tempPassedInID = tempPassedInID >> 8;
+"413
 [e = _tempPassedInID >> _tempPassedInID -> 8 `i ]
-[; ;ecan.c: 428: *passedInSIDH = 0xFF & tempPassedInID;
+[; ;ecan.c: 416: *passedInEIDH = 0xFF & tempPassedInID;
+"416
+[e = *U _passedInEIDH -> & -> -> -> 255 `i `l `ul _tempPassedInID `uc ]
+[; ;ecan.c: 417: tempPassedInID = tempPassedInID >> 8;
+"417
+[e = _tempPassedInID >> _tempPassedInID -> 8 `i ]
+[; ;ecan.c: 421: wipSIDL = 0x03 & tempPassedInID;
+"421
+[e = _wipSIDL -> & -> -> -> 3 `i `l `ul _tempPassedInID `uc ]
+[; ;ecan.c: 422: tempPassedInID = tempPassedInID << 3;
+"422
+[e = _tempPassedInID << _tempPassedInID -> 3 `i ]
+[; ;ecan.c: 423: wipSIDL = (0xE0 & tempPassedInID) + wipSIDL;
+"423
+[e = _wipSIDL -> + & -> -> -> 224 `i `l `ul _tempPassedInID -> _wipSIDL `ul `uc ]
+[; ;ecan.c: 424: wipSIDL = wipSIDL + 0x08;
+"424
+[e = _wipSIDL -> + -> _wipSIDL `i -> 8 `i `uc ]
+[; ;ecan.c: 425: *passedInSIDL = 0xEB & wipSIDL;
+"425
+[e = *U _passedInSIDL -> & -> 235 `i -> _wipSIDL `i `uc ]
+[; ;ecan.c: 428: tempPassedInID = tempPassedInID >> 8;
 "428
-[e = *U _passedInSIDH -> & -> -> -> 255 `i `l `ul _tempPassedInID `uc ]
+[e = _tempPassedInID >> _tempPassedInID -> 8 `i ]
+[; ;ecan.c: 429: *passedInSIDH = 0xFF & tempPassedInID;
 "429
-}
-[e :U 1577 ]
-[; ;ecan.c: 429: }
-[; ;ecan.c: 430: }
+[e = *U _passedInSIDH -> & -> -> -> 255 `i `l `ul _tempPassedInID `uc ]
 "430
-[e :UE 1575 ]
+}
+[; ;ecan.c: 430: } else
+[e $U 1578  ]
+[e :U 1577 ]
+[; ;ecan.c: 431: {
+"431
+{
+[; ;ecan.c: 432: *passedInEIDH = 0;
+"432
+[e = *U _passedInEIDH -> -> 0 `i `uc ]
+[; ;ecan.c: 433: *passedInEIDL = 0;
+"433
+[e = *U _passedInEIDL -> -> 0 `i `uc ]
+[; ;ecan.c: 434: tempPassedInID = tempPassedInID << 5;
+"434
+[e = _tempPassedInID << _tempPassedInID -> 5 `i ]
+[; ;ecan.c: 435: *passedInSIDL = 0xFF & tempPassedInID;
+"435
+[e = *U _passedInSIDL -> & -> -> -> 255 `i `l `ul _tempPassedInID `uc ]
+[; ;ecan.c: 436: tempPassedInID = tempPassedInID >> 8;
+"436
+[e = _tempPassedInID >> _tempPassedInID -> 8 `i ]
+[; ;ecan.c: 437: *passedInSIDH = 0xFF & tempPassedInID;
+"437
+[e = *U _passedInSIDH -> & -> -> -> 255 `i `l `ul _tempPassedInID `uc ]
+"438
+}
+[e :U 1578 ]
+[; ;ecan.c: 438: }
+[; ;ecan.c: 439: }
+"439
+[e :UE 1576 ]
 }

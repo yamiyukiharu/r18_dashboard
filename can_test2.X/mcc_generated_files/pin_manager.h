@@ -14,7 +14,7 @@
     This header file provides implementations for pin APIs for all pins selected in the GUI.
     Generation Information :
         Product Revision  :  MPLAB(c) Code Configurator - 4.15.3
-        Device            :  PIC18F45K80
+        Device            :  PIC18F46K80
         Version           :  1.01
     The generated drivers are tested against the following:
         Compiler          :  XC8 1.35
@@ -87,19 +87,15 @@
 #define up_shift_SetAnalogMode()  do { ANCON0bits.ANSEL1 = 1; } while(0)
 #define up_shift_SetDigitalMode() do { ANCON0bits.ANSEL1 = 0; } while(0)
 
-// get/set CAN aliases
-#define CAN_TRIS               TRISBbits.TRISB2
-#define CAN_LAT                LATBbits.LATB2
-#define CAN_PORT               PORTBbits.RB2
-#define CAN_WPU                WPUBbits.WPUB2
-#define CAN_SetHigh()            do { LATBbits.LATB2 = 1; } while(0)
-#define CAN_SetLow()             do { LATBbits.LATB2 = 0; } while(0)
-#define CAN_Toggle()             do { LATBbits.LATB2 = ~LATBbits.LATB2; } while(0)
-#define CAN_GetValue()           PORTBbits.RB2
-#define CAN_SetDigitalInput()    do { TRISBbits.TRISB2 = 1; } while(0)
-#define CAN_SetDigitalOutput()   do { TRISBbits.TRISB2 = 0; } while(0)
-#define CAN_SetPullup()      do { WPUBbits.WPUB2 = 1; } while(0)
-#define CAN_ResetPullup()    do { WPUBbits.WPUB2 = 0; } while(0)
+// get/set RB2 procedures
+#define RB2_SetHigh()    do { LATBbits.LATB2 = 1; } while(0)
+#define RB2_SetLow()   do { LATBbits.LATB2 = 0; } while(0)
+#define RB2_Toggle()   do { LATBbits.LATB2 = ~LATBbits.LATB2; } while(0)
+#define RB2_GetValue()         PORTBbits.RB2
+#define RB2_SetDigitalInput()   do { TRISBbits.TRISB2 = 1; } while(0)
+#define RB2_SetDigitalOutput()  do { TRISBbits.TRISB2 = 0; } while(0)
+#define RB2_SetPullup()     do { WPUBbits.WPUB2 = 1; } while(0)
+#define RB2_ResetPullup()   do { WPUBbits.WPUB2 = 0; } while(0)
 
 // get/set RB3 procedures
 #define RB3_SetHigh()    do { LATBbits.LATB3 = 1; } while(0)
@@ -142,17 +138,6 @@
 #define warning_2_SetPullup()      do { WPUBbits.WPUB5 = 1; } while(0)
 #define warning_2_ResetPullup()    do { WPUBbits.WPUB5 = 0; } while(0)
 
-// get/set IO_RC0 aliases
-#define IO_RC0_TRIS               TRISCbits.TRISC0
-#define IO_RC0_LAT                LATCbits.LATC0
-#define IO_RC0_PORT               PORTCbits.RC0
-#define IO_RC0_SetHigh()            do { LATCbits.LATC0 = 1; } while(0)
-#define IO_RC0_SetLow()             do { LATCbits.LATC0 = 0; } while(0)
-#define IO_RC0_Toggle()             do { LATCbits.LATC0 = ~LATCbits.LATC0; } while(0)
-#define IO_RC0_GetValue()           PORTCbits.RC0
-#define IO_RC0_SetDigitalInput()    do { TRISCbits.TRISC0 = 1; } while(0)
-#define IO_RC0_SetDigitalOutput()   do { TRISCbits.TRISC0 = 0; } while(0)
-
 // get/set LCD_PD aliases
 #define LCD_PD_TRIS               TRISCbits.TRISC1
 #define LCD_PD_LAT                LATCbits.LATC1
@@ -163,17 +148,6 @@
 #define LCD_PD_GetValue()           PORTCbits.RC1
 #define LCD_PD_SetDigitalInput()    do { TRISCbits.TRISC1 = 1; } while(0)
 #define LCD_PD_SetDigitalOutput()   do { TRISCbits.TRISC1 = 0; } while(0)
-
-// get/set IO_RC2 aliases
-#define IO_RC2_TRIS               TRISCbits.TRISC2
-#define IO_RC2_LAT                LATCbits.LATC2
-#define IO_RC2_PORT               PORTCbits.RC2
-#define IO_RC2_SetHigh()            do { LATCbits.LATC2 = 1; } while(0)
-#define IO_RC2_SetLow()             do { LATCbits.LATC2 = 0; } while(0)
-#define IO_RC2_Toggle()             do { LATCbits.LATC2 = ~LATCbits.LATC2; } while(0)
-#define IO_RC2_GetValue()           PORTCbits.RC2
-#define IO_RC2_SetDigitalInput()    do { TRISCbits.TRISC2 = 1; } while(0)
-#define IO_RC2_SetDigitalOutput()   do { TRISCbits.TRISC2 = 0; } while(0)
 
 // get/set RC3 procedures
 #define RC3_SetHigh()    do { LATCbits.LATC3 = 1; } while(0)
@@ -198,22 +172,6 @@
 #define RC5_GetValue()         PORTCbits.RC5
 #define RC5_SetDigitalInput()   do { TRISCbits.TRISC5 = 1; } while(0)
 #define RC5_SetDigitalOutput()  do { TRISCbits.TRISC5 = 0; } while(0)
-
-// get/set RC6 procedures
-#define RC6_SetHigh()    do { LATCbits.LATC6 = 1; } while(0)
-#define RC6_SetLow()   do { LATCbits.LATC6 = 0; } while(0)
-#define RC6_Toggle()   do { LATCbits.LATC6 = ~LATCbits.LATC6; } while(0)
-#define RC6_GetValue()         PORTCbits.RC6
-#define RC6_SetDigitalInput()   do { TRISCbits.TRISC6 = 1; } while(0)
-#define RC6_SetDigitalOutput()  do { TRISCbits.TRISC6 = 0; } while(0)
-
-// get/set RC7 procedures
-#define RC7_SetHigh()    do { LATCbits.LATC7 = 1; } while(0)
-#define RC7_SetLow()   do { LATCbits.LATC7 = 0; } while(0)
-#define RC7_Toggle()   do { LATCbits.LATC7 = ~LATCbits.LATC7; } while(0)
-#define RC7_GetValue()         PORTCbits.RC7
-#define RC7_SetDigitalInput()   do { TRISCbits.TRISC7 = 1; } while(0)
-#define RC7_SetDigitalOutput()  do { TRISCbits.TRISC7 = 0; } while(0)
 
 // get/set LCD_CS aliases
 #define LCD_CS_TRIS               TRISDbits.TRISD0
@@ -278,25 +236,6 @@
 #define warning_3_GetValue()           PORTDbits.RD5
 #define warning_3_SetDigitalInput()    do { TRISDbits.TRISD5 = 1; } while(0)
 #define warning_3_SetDigitalOutput()   do { TRISDbits.TRISD5 = 0; } while(0)
-
-// get/set RD6 procedures
-#define RD6_SetHigh()    do { LATDbits.LATD6 = 1; } while(0)
-#define RD6_SetLow()   do { LATDbits.LATD6 = 0; } while(0)
-#define RD6_Toggle()   do { LATDbits.LATD6 = ~LATDbits.LATD6; } while(0)
-#define RD6_GetValue()         PORTDbits.RD6
-#define RD6_SetDigitalInput()   do { TRISDbits.TRISD6 = 1; } while(0)
-#define RD6_SetDigitalOutput()  do { TRISDbits.TRISD6 = 0; } while(0)
-
-// get/set UART aliases
-#define UART_TRIS               TRISDbits.TRISD7
-#define UART_LAT                LATDbits.LATD7
-#define UART_PORT               PORTDbits.RD7
-#define UART_SetHigh()            do { LATDbits.LATD7 = 1; } while(0)
-#define UART_SetLow()             do { LATDbits.LATD7 = 0; } while(0)
-#define UART_Toggle()             do { LATDbits.LATD7 = ~LATDbits.LATD7; } while(0)
-#define UART_GetValue()           PORTDbits.RD7
-#define UART_SetDigitalInput()    do { TRISDbits.TRISD7 = 1; } while(0)
-#define UART_SetDigitalOutput()   do { TRISDbits.TRISD7 = 0; } while(0)
 
 /**
    @Param

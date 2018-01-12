@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"30928 /Applications/microchip/xc8/v1.45/include/pic18f46k80.h
+"30928 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f46k80.h
 [v _LATE `Vuc ~T0 @X0 0 e@3981 ]
 "30816
 [v _LATD `Vuc ~T0 @X0 0 e@3980 ]
@@ -25,19 +25,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ANCON1 `Vuc ~T0 @X0 0 e@3932 ]
 "26910
 [v _WPUB `Vuc ~T0 @X0 0 e@3931 ]
-"26877
-[s S1006 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1006 . . IOCB4 IOCB5 IOCB6 IOCB7 ]
-"26876
-[u S1005 `S1006 1 ]
-[n S1005 . . ]
-"26885
-[v _IOCBbits `VS1005 ~T0 @X0 0 e@3930 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f46k80.h: 50: extern volatile unsigned char RXERRCNT @ 0xE41;
-"52 /Applications/microchip/xc8/v1.45/include/pic18f46k80.h
+"52 C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f46k80.h
 [; ;pic18f46k80.h: 52: asm("RXERRCNT equ 0E41h");
 [; <" RXERRCNT equ 0E41h ;# ">
 [; ;pic18f46k80.h: 55: typedef union {
@@ -13619,72 +13611,69 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 164: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 166: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 168: extern __nonreentrant void _delay3(unsigned char);
-[; ;pin_manager.h: 311: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 323: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 250: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 262: void PIN_MANAGER_IOC(void);
 [; ;stdbool.h: 12: typedef unsigned char bool;
-"52 mcc_generated_files/pin_manager.c
+"51 mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 1 ef ]
-"53
+"52
 {
-[; ;pin_manager.c: 52: void PIN_MANAGER_Initialize(void)
-[; ;pin_manager.c: 53: {
+[; ;pin_manager.c: 51: void PIN_MANAGER_Initialize(void)
+[; ;pin_manager.c: 52: {
 [e :U _PIN_MANAGER_Initialize ]
 [f ]
-[; ;pin_manager.c: 57: LATE = 0x00;
-"57
+[; ;pin_manager.c: 56: LATE = 0x00;
+"56
 [e = _LATE -> -> 0 `i `uc ]
-[; ;pin_manager.c: 58: LATD = 0x00;
-"58
+[; ;pin_manager.c: 57: LATD = 0x00;
+"57
 [e = _LATD -> -> 0 `i `uc ]
-[; ;pin_manager.c: 59: LATA = 0x07;
+[; ;pin_manager.c: 58: LATA = 0x04;
+"58
+[e = _LATA -> -> 4 `i `uc ]
+[; ;pin_manager.c: 59: LATB = 0x00;
 "59
-[e = _LATA -> -> 7 `i `uc ]
-[; ;pin_manager.c: 60: LATB = 0x00;
-"60
 [e = _LATB -> -> 0 `i `uc ]
-[; ;pin_manager.c: 61: LATC = 0x00;
-"61
+[; ;pin_manager.c: 60: LATC = 0x00;
+"60
 [e = _LATC -> -> 0 `i `uc ]
-[; ;pin_manager.c: 66: TRISE = 0x07;
-"66
+[; ;pin_manager.c: 65: TRISE = 0x07;
+"65
 [e = _TRISE -> -> 7 `i `uc ]
-[; ;pin_manager.c: 67: TRISA = 0xEC;
-"67
+[; ;pin_manager.c: 66: TRISA = 0xEC;
+"66
 [e = _TRISA -> -> 236 `i `uc ]
-[; ;pin_manager.c: 68: TRISB = 0xDB;
-"68
+[; ;pin_manager.c: 67: TRISB = 0xDB;
+"67
 [e = _TRISB -> -> 219 `i `uc ]
-[; ;pin_manager.c: 69: TRISC = 0x91;
+[; ;pin_manager.c: 68: TRISC = 0xD5;
+"68
+[e = _TRISC -> -> 213 `i `uc ]
+[; ;pin_manager.c: 69: TRISD = 0xC4;
 "69
-[e = _TRISC -> -> 145 `i `uc ]
-[; ;pin_manager.c: 70: TRISD = 0x84;
-"70
-[e = _TRISD -> -> 132 `i `uc ]
-[; ;pin_manager.c: 75: ANCON0 = 0xF8;
-"75
+[e = _TRISD -> -> 196 `i `uc ]
+[; ;pin_manager.c: 74: ANCON0 = 0xF8;
+"74
 [e = _ANCON0 -> -> 248 `i `uc ]
-[; ;pin_manager.c: 76: ANCON1 = 0x65;
-"76
-[e = _ANCON1 -> -> 101 `i `uc ]
-[; ;pin_manager.c: 81: WPUB = 0xFF;
-"81
+[; ;pin_manager.c: 75: ANCON1 = 0x25;
+"75
+[e = _ANCON1 -> -> 37 `i `uc ]
+[; ;pin_manager.c: 80: WPUB = 0xFF;
+"80
 [e = _WPUB -> -> 255 `i `uc ]
-[; ;pin_manager.c: 89: IOCBbits.IOCB4 = 1;
-"89
-[e = . . _IOCBbits 0 1 -> -> 1 `i `uc ]
-[; ;pin_manager.c: 94: }
-"94
+[; ;pin_manager.c: 87: }
+"87
 [e :UE 1537 ]
 }
-"96
+"89
 [v _PIN_MANAGER_IOC `(v ~T0 @X0 1 ef ]
-"97
+"90
 {
-[; ;pin_manager.c: 96: void PIN_MANAGER_IOC(void)
-[; ;pin_manager.c: 97: {
+[; ;pin_manager.c: 89: void PIN_MANAGER_IOC(void)
+[; ;pin_manager.c: 90: {
 [e :U _PIN_MANAGER_IOC ]
 [f ]
-[; ;pin_manager.c: 99: }
-"99
+[; ;pin_manager.c: 92: }
+"92
 [e :UE 1538 ]
 }

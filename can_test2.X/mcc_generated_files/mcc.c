@@ -14,7 +14,7 @@
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
         Product Revision  :  MPLAB(c) Code Configurator - 4.15.3
-        Device            :  PIC18F45K80
+        Device            :  PIC18F46K80
         Driver Version    :  1.02
     The generated drivers are tested against the following:
         Compiler          :  XC8 1.35
@@ -48,7 +48,7 @@
 // CONFIG1L
 #pragma config RETEN = OFF    // VREG Sleep Enable bit->Ultra low-power regulator is Disabled (Controlled by REGSLP bit)
 #pragma config INTOSCSEL = HIGH    // LF-INTOSC Low-power Enable bit->LF-INTOSC in High-power mode during Sleep
-#pragma config SOSCSEL = DIG    // SOSC Power Selection and mode Configuration bits->High Power SOSC circuit selected
+#pragma config SOSCSEL = HIGH    // SOSC Power Selection and mode Configuration bits->High Power SOSC circuit selected
 #pragma config XINST = OFF    // Extended Instruction Set->Disabled
 
 // CONFIG1H
@@ -77,20 +77,20 @@
 #pragma config BBSIZ = BB2K    // Boot Block Size->2K word Boot Block size
 
 // CONFIG5L
-#pragma config CP0 = OFF    // Code Protect 00800-01FFF->Disabled
-#pragma config CP1 = OFF    // Code Protect 02000-03FFF->Disabled
-#pragma config CP2 = OFF    // Code Protect 04000-05FFF->Disabled
-#pragma config CP3 = OFF    // Code Protect 06000-07FFF->Disabled
+#pragma config CP0 = OFF    // Code Protect 00800-03FFF->Disabled
+#pragma config CP1 = OFF    // Code Protect 04000-07FFF->Disabled
+#pragma config CP2 = OFF    // Code Protect 08000-0BFFF->Disabled
+#pragma config CP3 = OFF    // Code Protect 0C000-0FFFF->Disabled
 
 // CONFIG5H
 #pragma config CPB = OFF    // Code Protect Boot->Disabled
 #pragma config CPD = OFF    // Data EE Read Protect->Disabled
 
 // CONFIG6L
-#pragma config WRT0 = OFF    // Table Write Protect 00800-01FFF->Disabled
-#pragma config WRT1 = OFF    // Table Write Protect 02000-03FFF->Disabled
-#pragma config WRT2 = OFF    // Table Write Protect 04000-05FFF->Disabled
-#pragma config WRT3 = OFF    // Table Write Protect 06000-07FFF->Disabled
+#pragma config WRT0 = OFF    // Table Write Protect 00800-03FFF->Disabled
+#pragma config WRT1 = OFF    // Table Write Protect 04000-07FFF->Disabled
+#pragma config WRT2 = OFF    // Table Write Protect 08000-0BFFF->Disabled
+#pragma config WRT3 = OFF    // Table Write Protect 0C000-0FFFF->Disabled
 
 // CONFIG6H
 #pragma config WRTC = OFF    // Config. Write Protect->Disabled
@@ -98,10 +98,10 @@
 #pragma config WRTD = OFF    // Data EE Write Protect->Disabled
 
 // CONFIG7L
-#pragma config EBTR0 = OFF    // Table Read Protect 00800-01FFF->Disabled
-#pragma config EBTR1 = OFF    // Table Read Protect 02000-03FFF->Disabled
-#pragma config EBTR2 = OFF    // Table Read Protect 04000-05FFF->Disabled
-#pragma config EBTR3 = OFF    // Table Read Protect 06000-07FFF->Disabled
+#pragma config EBTR0 = OFF    // Table Read Protect 00800-03FFF->Disabled
+#pragma config EBTR1 = OFF    // Table Read Protect 04000-07FFF->Disabled
+#pragma config EBTR2 = OFF    // Table Read Protect 08000-0BFFF->Disabled
+#pragma config EBTR3 = OFF    // Table Read Protect 0C000-0FFFF->Disabled
 
 // CONFIG7H
 #pragma config EBTRB = OFF    // Table Read Protect Boot->Disabled
@@ -111,11 +111,10 @@
 void SYSTEM_Initialize(void)
 {
 
+    INTERRUPT_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
     SPI_Initialize();
-    EUSART1_Initialize();
-    EUSART2_Initialize();
     ECAN_Initialize();
 }
 

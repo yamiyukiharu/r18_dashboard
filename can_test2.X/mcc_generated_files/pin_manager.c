@@ -14,7 +14,7 @@
     This header file provides implementations for pin APIs for all pins selected in the GUI.
     Generation Information :
         Product Revision  :  MPLAB(c) Code Configurator - 4.15.3
-        Device            :  PIC18F45K80
+        Device            :  PIC18F46K80
         Driver Version    :  1.02
     The generated drivers are tested against the following:
         Compiler          :  XC8 1.35
@@ -48,7 +48,6 @@
 #include "stdbool.h"
 
 
-
 void PIN_MANAGER_Initialize(void)
 {
     /**
@@ -56,7 +55,7 @@ void PIN_MANAGER_Initialize(void)
     */   
     LATE = 0x00;    
     LATD = 0x00;    
-    LATA = 0x07;    
+    LATA = 0x04;    
     LATB = 0x00;    
     LATC = 0x00;    
 
@@ -66,14 +65,14 @@ void PIN_MANAGER_Initialize(void)
     TRISE = 0x07;
     TRISA = 0xEC;
     TRISB = 0xDB;
-    TRISC = 0x91;
-    TRISD = 0x84;
+    TRISC = 0xD5;
+    TRISD = 0xC4;
 
     /**
     ANSELx registers
     */   
     ANCON0 = 0xF8;
-    ANCON1 = 0x65;
+    ANCON1 = 0x25;
 
     /**
     WPUx registers
@@ -82,13 +81,7 @@ void PIN_MANAGER_Initialize(void)
 
     
 
-    /**
-    IOCx registers
-    */
-    // interrupt on change for group IOCB - any
-    IOCBbits.IOCB4 = 1;
 
-    // register default IOC callback functions at runtime; use these methods to register a custom function
    
     
 }       

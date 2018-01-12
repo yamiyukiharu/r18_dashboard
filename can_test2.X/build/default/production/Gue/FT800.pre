@@ -1,17 +1,17 @@
 
 # 1 "Gue/FT800.c"
 
-# 26 "/Applications/microchip/xc8/v1.45/include/htc.h"
+# 26 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
-# 13 "/Applications/microchip/xc8/v1.45/include/xc8debug.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 50 "/Applications/microchip/xc8/v1.45/include/pic18f46k80.h"
+# 50 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f46k80.h"
 extern volatile unsigned char RXERRCNT @ 0xE41;
 
 asm("RXERRCNT equ 0E41h");
@@ -17830,7 +17830,7 @@ extern volatile __bit nW @ (((unsigned) &SSPSTAT)*8) + 2;
 
 extern volatile __bit nWRITE @ (((unsigned) &SSPSTAT)*8) + 2;
 
-# 18 "/Applications/microchip/xc8/v1.45/include/pic18.h"
+# 18 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18.h"
 __attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
 __attribute__((__unsupported__("The " "EraseFlash" " routine is no longer supported. Please use the MPLAB X MCC."))) void EraseFlash(unsigned long startaddr, unsigned long endaddr);
 
@@ -17888,85 +17888,67 @@ ft_uint32_t FontHeightInPixels;
 ft_uint32_t PointerToFontGraphicsData;
 }FT_Gpu_Fonts_t;
 
-# 311 "Gue/../mcc_generated_files/pin_manager.h"
+# 250 "Gue/../mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 323
+# 262
 void PIN_MANAGER_IOC(void);
 
-# 13 "/Applications/microchip/xc8/v1.45/include/stdint.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdint.h"
 typedef signed char int8_t;
 
 # 20
 typedef signed int int16_t;
 
-# 28
-typedef signed short long int int24_t;
-
-# 36
+# 38
 typedef signed long int int32_t;
 
-# 43
+# 45
 typedef unsigned char uint8_t;
 
-# 49
+# 51
 typedef unsigned int uint16_t;
 
-# 56
-typedef unsigned short long int uint24_t;
-
-# 63
+# 67
 typedef unsigned long int uint32_t;
 
-# 71
+# 75
 typedef signed char int_least8_t;
 
-# 78
+# 82
 typedef signed int int_least16_t;
 
-# 90
-typedef signed short long int int_least24_t;
-
-# 98
+# 104
 typedef signed long int int_least32_t;
 
-# 105
+# 111
 typedef unsigned char uint_least8_t;
 
-# 111
+# 117
 typedef unsigned int uint_least16_t;
 
-# 121
-typedef unsigned short long int uint_least24_t;
-
-# 128
+# 136
 typedef unsigned long int uint_least32_t;
 
-# 137
+# 145
 typedef signed char int_fast8_t;
 
-# 144
+# 152
 typedef signed int int_fast16_t;
 
-# 156
-typedef signed short long int int_fast24_t;
-
-# 164
+# 174
 typedef signed long int int_fast32_t;
 
-# 171
+# 181
 typedef unsigned char uint_fast8_t;
 
-# 177
+# 187
 typedef unsigned int uint_fast16_t;
 
-# 187
-typedef unsigned short long int uint_fast24_t;
-
-# 194
+# 206
 typedef unsigned long int uint_fast32_t;
 
-# 200
+# 212
 typedef int32_t intmax_t;
 
 
@@ -17984,74 +17966,19 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 12 "/Applications/microchip/xc8/v1.45/include/stdbool.h"
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdbool.h"
 typedef unsigned char bool;
 
-# 94 "Gue/../mcc_generated_files/eusart2.h"
-void EUSART2_Initialize(void);
+# 110 "Gue/../mcc_generated_files/interrupt_manager.h"
+void interrupt INTERRUPT_InterruptManager(void);
 
-# 114
-uint8_t EUSART2_Read(void);
+# 122
+void INTERRUPT_Initialize (void);
 
-# 134
-void EUSART2_Write(uint8_t txData);
-
-# 94 "Gue/../mcc_generated_files/eusart1.h"
-void EUSART1_Initialize(void);
-
-# 114
-uint8_t EUSART1_Read(void);
-
-# 134
-void EUSART1_Write(uint8_t txData);
-
-# 67 "Gue/../mcc_generated_files/ecan.h"
-typedef union {
-
-struct {
-unsigned char idType;
-unsigned long id;
-unsigned char dlc;
-unsigned char data0;
-unsigned char data1;
-unsigned char data2;
-unsigned char data3;
-unsigned char data4;
-unsigned char data5;
-unsigned char data6;
-unsigned char data7;
-} frame;
-unsigned char array[14];
-} uCAN_MSG;
-
-# 117
-void ECAN_Initialize(void);
-
-# 139
-void CAN_sleep(void);
-
-# 160
-unsigned char CAN_transmit(uCAN_MSG *tempCanMsg);
-
-# 184
-unsigned char CAN_receive(uCAN_MSG *tempCanMsg);
-
-# 206
-unsigned char CAN_messagesInBuffer(void);
-
-# 230
-unsigned char CAN_isBusOff(void);
-
-# 254
-unsigned char CAN_isRXErrorPassive(void);
-
-# 278
-unsigned char CAN_isTXErrorPassive(void);
-
-# 4 "/Applications/microchip/xc8/v1.45/include/__size_t.h"
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\__size_t.h"
 typedef unsigned size_t;
 
-# 6 "/Applications/microchip/xc8/v1.45/include/stddef.h"
+# 6 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stddef.h"
 typedef int ptrdiff_t;
 
 # 116 "Gue/../mcc_generated_files/spi.h"
@@ -18072,10 +17999,56 @@ bool SPI_HasWriteCollisionOccured(void);
 # 263
 void SPI_ClearWriteCollisionStatus(void);
 
-# 71 "Gue/../mcc_generated_files/mcc.h"
+# 67 "Gue/../mcc_generated_files/ecan.h"
+typedef union {
+
+struct {
+unsigned char idType;
+unsigned long id;
+unsigned char dlc;
+unsigned char data0;
+unsigned char data1;
+unsigned char data2;
+unsigned char data3;
+unsigned char data4;
+unsigned char data5;
+unsigned char data6;
+unsigned char data7;
+} frame;
+unsigned char array[14];
+} uCAN_MSG;
+
+# 96
+void ECAN_ISR_ECAN_RXBI(void);
+
+# 118
+void ECAN_Initialize(void);
+
+# 140
+void CAN_sleep(void);
+
+# 161
+unsigned char CAN_transmit(uCAN_MSG *tempCanMsg);
+
+# 185
+unsigned char CAN_receive(uCAN_MSG *tempCanMsg);
+
+# 207
+unsigned char CAN_messagesInBuffer(void);
+
+# 231
+unsigned char CAN_isBusOff(void);
+
+# 255
+unsigned char CAN_isRXErrorPassive(void);
+
+# 279
+unsigned char CAN_isTXErrorPassive(void);
+
+# 70 "Gue/../mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
-# 84
+# 83
 void OSCILLATOR_Initialize(void);
 
 # 21 "Gue/FT800.h"
@@ -18121,7 +18094,7 @@ inline void FT800_Init();
 # 318
 void off_display();
 
-# 14 "/Applications/microchip/xc8/v1.45/include/string.h"
+# 14 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\string.h"
 extern void * memcpy(void *, const void *, size_t);
 extern void * memmove(void *, const void *, size_t);
 extern void * memset(void *, int, size_t);

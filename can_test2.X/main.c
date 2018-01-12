@@ -18,32 +18,32 @@ unsigned long convertStandardCANid(unsigned char tempRXBn_SIDH, unsigned char te
 uCAN_MSG tempCanMsg;
 
 
-void interrupt can_bus(void) {
-    if(PIR5bits.RXB0IF) { //check if its CAN interrupt
-        PIE5bits.RXB0IE = 0; //disable CAN interrupt
-//        if(!RXB0CONbits.FILHIT2) { //Filter 3, ID=0x642
-//            
-//        } else if(RXB0CONbits.FILHIT2 & !RXB0CONbits.FILHIT0) { //Filter 4, ID=0x640
-//            
-//        } else if(RXB0CONbits.FILHIT2 & RXB0CONbits.FILHIT0) { //Filter 3, ID=0x641
-//            
-//        }
-        tempCanMsg.frame.idType = (unsigned char) dSTANDARD_CAN_MSG_ID_2_0B;
-        tempCanMsg.frame.id = convertStandardCANid(RXB0SIDH, RXB0SIDL);
-        tempCanMsg.frame.dlc = RXB0DLC;
-        tempCanMsg.frame.data0 = RXB0D0;
-        tempCanMsg.frame.data1 = RXB0D1;
-        tempCanMsg.frame.data2 = RXB0D2;
-        tempCanMsg.frame.data3 = RXB0D3;
-        tempCanMsg.frame.data4 = RXB0D4;
-        tempCanMsg.frame.data5 = RXB0D5;
-        tempCanMsg.frame.data6 = RXB0D6;
-        tempCanMsg.frame.data7 = RXB0D7;
-        RXB0CONbits.RXFUL = 0; //indicate that message is read
-        PIE5bits.RXB0IE = 1; //enable CAN interrupt
-    }
-    
-}
+//void interrupt can_bus(void) {
+//    if(PIR5bits.RXB0IF) { //check if its CAN interrupt
+//        PIE5bits.RXB0IE = 0; //disable CAN interrupt
+////        if(!RXB0CONbits.FILHIT2) { //Filter 3, ID=0x642
+////            
+////        } else if(RXB0CONbits.FILHIT2 & !RXB0CONbits.FILHIT0) { //Filter 4, ID=0x640
+////            
+////        } else if(RXB0CONbits.FILHIT2 & RXB0CONbits.FILHIT0) { //Filter 3, ID=0x641
+////            
+////        }
+//        tempCanMsg.frame.idType = (unsigned char) dSTANDARD_CAN_MSG_ID_2_0B;
+//        tempCanMsg.frame.id = convertStandardCANid(RXB0SIDH, RXB0SIDL);
+//        tempCanMsg.frame.dlc = RXB0DLC;
+//        tempCanMsg.frame.data0 = RXB0D0;
+//        tempCanMsg.frame.data1 = RXB0D1;
+//        tempCanMsg.frame.data2 = RXB0D2;
+//        tempCanMsg.frame.data3 = RXB0D3;
+//        tempCanMsg.frame.data4 = RXB0D4;
+//        tempCanMsg.frame.data5 = RXB0D5;
+//        tempCanMsg.frame.data6 = RXB0D6;
+//        tempCanMsg.frame.data7 = RXB0D7;
+//        RXB0CONbits.RXFUL = 0; //indicate that message is read
+//        PIE5bits.RXB0IE = 1; //enable CAN interrupt
+//    }
+//    
+//}
 
 unsigned long convertStandardCANid(unsigned char tempRXBn_SIDH, unsigned char tempRXBn_SIDL) {
     unsigned long returnValue = 0;
@@ -61,8 +61,14 @@ void wait2secs(){
     __delay_ms(2000);
 }
 
-void main(void)
-{   
+void main(void) {   
+    up_shift_SetLow();
+    down_shift_SetLow();
+    warning_1_SetLow();
+    warning_2_SetLow();
+    warning_3_SetLow();
+    warning_4_SetLow();
+    
     uCAN_MSG canMessage;
     int rpm = 0, oilP = 0, fuelP = 0, tp = 0, speed = 0, gear = 0, engTemp = 0, oilTemp = 0, battVolts = 0,
             brakeP_F = 0, brakeP_R = 0, radio_sw = 0;
@@ -99,19 +105,9 @@ void main(void)
     SSPCON1bits.CKP = 1;
     SSPCON1bits.SSPM = 0b0000;     
     FT800_Init();
-    
-    EUSART1_Initialize();
  
     wait2secs(); 
 
-    up_shift_SetLow();
-    down_shift_SetLow();
-    warning_1_SetLow();
-    warning_2_SetHigh();
-    warning_3_SetLow();
-    warning_4_SetHigh();
-    IO_RC2_SetHigh();
-    
     display(rpm, oilP, fuelP, tp, speed, gear, engTemp, oilTemp, battVolts);
     
     while (1) {  
@@ -122,26 +118,18 @@ void main(void)
                 fuelP = ((canMessage.frame.data0 << 4) | canMessage.frame.data5);
                 tp = canMessage.frame.data6;
                 speed = canMessage.frame.data7;
-                warning_3_SetHigh();
-                __delay_ms(200);
             } else if(canMessage.frame.id == 0x641) {
                 brakeP_F = canMessage.frame.data0;
                 brakeP_R = canMessage.frame.data1;
                 gear = canMessage.frame.data6;
-                radio_sw = canMessage.frame.data7 >> 7;
-                warning_2_SetHigh();
-                __delay_ms(200);
             } else if(canMessage.frame.id == 0x642) {
                 engTemp = canMessage.frame.data0;
                 oilTemp = canMessage.frame.data1;
                 battVolts = canMessage.frame.data2;
             } else if(canMessage.frame.id == 0x643) {
                 
-                warning_1_SetHigh();
-                __delay_ms(200);
             }
-        //display(rpm, oilP, fuelP, tp, speed, gear, engTemp, oilTemp, battVolts); 
-        display(rpm, oilP, fuelP, tp, radio_sw, gear, engTemp, oilTemp, battVolts); 
+        display(rpm, oilP, fuelP, tp, speed, gear, engTemp, oilTemp, battVolts); 
         
         up_shift_SetLow();
         down_shift_SetLow();

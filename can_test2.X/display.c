@@ -103,22 +103,18 @@ void display_laptime(float current, float best, float last, int lap) {
     cmd_number(36, 222, 30, OPT_RIGHTX, 0);
     cmd_text(39, 238, 28, OPT_CENTER, ":");
     cmd_number(42, 222, 30, OPT_NODL, 0);
-    cmd_text(79, 238, 28, OPT_CENTER, ":");
-    cmd_number(82, 221, 30, OPT_NODL, 0);
+
 
     // best lap time
-    cmd_number(397, 222, 30, OPT_RIGHTX, 0);
-    cmd_text(400, 239, 28, OPT_CENTER, ":");
-    cmd_number(403, 222, 30, OPT_NODL, 0);
-    cmd_text(439, 239, 28, OPT_CENTER, ":");
-    cmd_number(475, 222, 30, OPT_RIGHTX, 0);
+    cmd_number(434, 222, 30, OPT_RIGHTX, 0);
+    cmd_text(437, 239, 28, OPT_CENTER, ":");
+    cmd_number(440, 222, 30, OPT_NODL, 0);
+
 
     // current lap time
-    cmd_number(217, 237, 30, OPT_RIGHTX, 0);
-    cmd_text(221, 254, 28, OPT_CENTER, ":");
-    cmd_number(240, 255, 30, OPT_CENTER, 0);
-    cmd_text(261, 254, 28, OPT_CENTER, ":");
-    cmd_number(298, 237, 30, OPT_RIGHTX, 0);
+    cmd_number(233, 235, 30, OPT_RIGHTX, 0);
+    cmd_text(237, 252, 28, OPT_CENTER, ":");
+    cmd_number(240, 235, 30, OPT_NODL, 0);
 }
 
 void display_waterTemp(int temp) {

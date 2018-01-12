@@ -14,7 +14,7 @@
     This header file provides APIs for MSSP.
     Generation Information :
         Product Revision  :  MPLAB(c) Code Configurator - 4.15.3
-        Device            :  PIC18F45K80
+        Device            :  PIC18F46K80
         Driver Version    :  2.00
     The generated drivers are tested against the following:
         Compiler          :  XC8 1.35

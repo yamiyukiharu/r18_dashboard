@@ -14,7 +14,7 @@
     This source file provides APIs for ECAN.
     Generation Information :
         Product Revision  :  MPLAB(c) Code Configurator - 4.15.3
-        Device            :  PIC18F45K80
+        Device            :  PIC18F46K80
         Driver Version    :  2.00
     The generated drivers are tested against the following:
         Compiler          :  XC8 1.35
@@ -58,6 +58,12 @@ unsigned long convertReg2StandardCANid(unsigned char tempRXBn_SIDH, unsigned cha
 void convertCANid2Reg(unsigned long tempPassedInID, unsigned char canIdType, unsigned char *passedInEIDH, unsigned char *passedInEIDL, unsigned char *passedInSIDH, unsigned char *passedInSIDL);
 
 
+void ECAN_ISR_ECAN_RXBI(void)
+{
+    // Not supported yet
+    // clear the ECAN interrupt flag
+    PIR5bits.RXB0IF = 0;
+}
 
 
 void ECAN_Initialize(void)
@@ -75,6 +81,9 @@ Mask and Filter definitions
 ........................................................
 CAN ID		Mask		Filter		Buffer
 ........................................................
+0x444		Acceptance Mask 0		Filter 0	RXB0
+0x555		Acceptance Mask 0		Filter 0	RXB0
+0x666		Acceptance Mask 0		Filter 1	RXB1
 ........................................................
 */
     
@@ -82,10 +91,10 @@ CAN ID		Mask		Filter		Buffer
     Initialize Receive Masks
 */    
 
-    RXM0EIDH = 0xFF;
-    RXM0EIDL = 0xFF;
-    RXM0SIDH = 0xFF;
-    RXM0SIDL = 0xFF;
+    RXM0EIDH = 0x00;
+    RXM0EIDL = 0x00;
+    RXM0SIDH = 0x00;
+    RXM0SIDL = 0x00;
 
     RXM1EIDH = 0xFF;
     RXM1EIDL = 0xFF;
@@ -98,13 +107,13 @@ CAN ID		Mask		Filter		Buffer
 
     RXF0EIDH = 0x00;
     RXF0EIDL = 0x00;
-    RXF0SIDH = 0x00;
-    RXF0SIDL = 0x00;
+    RXF0SIDH = 0x88;
+    RXF0SIDL = 0x80;
 
     RXF1EIDH = 0x00;
     RXF1EIDL = 0x00;
-    RXF1SIDH = 0x00;
-    RXF1SIDL = 0x00;
+    RXF1SIDH = 0xCC;
+    RXF1SIDL = 0xC0;
 
     RXF2EIDH = 0x00;
     RXF2EIDL = 0x00;

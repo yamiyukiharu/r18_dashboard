@@ -1,17 +1,17 @@
 
 # 1 "mcc_generated_files/pin_manager.c"
 
-# 26 "/Applications/microchip/xc8/v1.45/include/htc.h"
+# 26 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
-# 13 "/Applications/microchip/xc8/v1.45/include/xc8debug.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 50 "/Applications/microchip/xc8/v1.45/include/pic18f46k80.h"
+# 50 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f46k80.h"
 extern volatile unsigned char RXERRCNT @ 0xE41;
 
 asm("RXERRCNT equ 0E41h");
@@ -17830,7 +17830,7 @@ extern volatile __bit nW @ (((unsigned) &SSPSTAT)*8) + 2;
 
 extern volatile __bit nWRITE @ (((unsigned) &SSPSTAT)*8) + 2;
 
-# 18 "/Applications/microchip/xc8/v1.45/include/pic18.h"
+# 18 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18.h"
 __attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
 __attribute__((__unsupported__("The " "EraseFlash" " routine is no longer supported. Please use the MPLAB X MCC."))) void EraseFlash(unsigned long startaddr, unsigned long endaddr);
 
@@ -17857,46 +17857,41 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 311 "mcc_generated_files/pin_manager.h"
+# 250 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 323
+# 262
 void PIN_MANAGER_IOC(void);
 
-# 12 "/Applications/microchip/xc8/v1.45/include/stdbool.h"
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdbool.h"
 typedef unsigned char bool;
 
-# 52 "mcc_generated_files/pin_manager.c"
+# 51 "mcc_generated_files/pin_manager.c"
 void PIN_MANAGER_Initialize(void)
 {
 
-# 57
+# 56
 LATE = 0x00;
 LATD = 0x00;
-LATA = 0x07;
+LATA = 0x04;
 LATB = 0x00;
 LATC = 0x00;
 
-# 66
+# 65
 TRISE = 0x07;
 TRISA = 0xEC;
 TRISB = 0xDB;
-TRISC = 0x91;
-TRISD = 0x84;
+TRISC = 0xD5;
+TRISD = 0xC4;
 
-# 75
+# 74
 ANCON0 = 0xF8;
-ANCON1 = 0x65;
+ANCON1 = 0x25;
 
-# 81
+# 80
 WPUB = 0xFF;
 
-# 89
-IOCBbits.IOCB4 = 1;
-
-
-
-
+# 87
 }
 
 void PIN_MANAGER_IOC(void)

@@ -1,17 +1,17 @@
 
 # 1 "mcc_generated_files/ecan.c"
 
-# 26 "/Applications/microchip/xc8/v1.45/include/htc.h"
+# 26 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
-# 13 "/Applications/microchip/xc8/v1.45/include/xc8debug.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 50 "/Applications/microchip/xc8/v1.45/include/pic18f46k80.h"
+# 50 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18f46k80.h"
 extern volatile unsigned char RXERRCNT @ 0xE41;
 
 asm("RXERRCNT equ 0E41h");
@@ -17830,7 +17830,7 @@ extern volatile __bit nW @ (((unsigned) &SSPSTAT)*8) + 2;
 
 extern volatile __bit nWRITE @ (((unsigned) &SSPSTAT)*8) + 2;
 
-# 18 "/Applications/microchip/xc8/v1.45/include/pic18.h"
+# 18 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\pic18.h"
 __attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
 __attribute__((__unsupported__("The " "EraseFlash" " routine is no longer supported. Please use the MPLAB X MCC."))) void EraseFlash(unsigned long startaddr, unsigned long endaddr);
 
@@ -17857,82 +17857,64 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 12 "/Applications/microchip/xc8/v1.45/include/stdbool.h"
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdbool.h"
 typedef unsigned char bool;
 
-# 13 "/Applications/microchip/xc8/v1.45/include/stdint.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.42\include\stdint.h"
 typedef signed char int8_t;
 
 # 20
 typedef signed int int16_t;
 
-# 28
-typedef signed short long int int24_t;
-
-# 36
+# 38
 typedef signed long int int32_t;
 
-# 43
+# 45
 typedef unsigned char uint8_t;
 
-# 49
+# 51
 typedef unsigned int uint16_t;
 
-# 56
-typedef unsigned short long int uint24_t;
-
-# 63
+# 67
 typedef unsigned long int uint32_t;
 
-# 71
+# 75
 typedef signed char int_least8_t;
 
-# 78
+# 82
 typedef signed int int_least16_t;
 
-# 90
-typedef signed short long int int_least24_t;
-
-# 98
+# 104
 typedef signed long int int_least32_t;
 
-# 105
+# 111
 typedef unsigned char uint_least8_t;
 
-# 111
+# 117
 typedef unsigned int uint_least16_t;
 
-# 121
-typedef unsigned short long int uint_least24_t;
-
-# 128
+# 136
 typedef unsigned long int uint_least32_t;
 
-# 137
+# 145
 typedef signed char int_fast8_t;
 
-# 144
+# 152
 typedef signed int int_fast16_t;
 
-# 156
-typedef signed short long int int_fast24_t;
-
-# 164
+# 174
 typedef signed long int int_fast32_t;
 
-# 171
+# 181
 typedef unsigned char uint_fast8_t;
 
-# 177
+# 187
 typedef unsigned int uint_fast16_t;
 
-# 187
-typedef unsigned short long int uint_fast24_t;
-
-# 194
+# 206
 typedef unsigned long int uint_fast32_t;
 
-# 200
+# 212
 typedef int32_t intmax_t;
 
 
@@ -17969,28 +17951,31 @@ unsigned char data7;
 unsigned char array[14];
 } uCAN_MSG;
 
-# 117
+# 96
+void ECAN_ISR_ECAN_RXBI(void);
+
+# 118
 void ECAN_Initialize(void);
 
-# 139
+# 140
 void CAN_sleep(void);
 
-# 160
+# 161
 unsigned char CAN_transmit(uCAN_MSG *tempCanMsg);
 
-# 184
+# 185
 unsigned char CAN_receive(uCAN_MSG *tempCanMsg);
 
-# 206
+# 207
 unsigned char CAN_messagesInBuffer(void);
 
-# 230
+# 231
 unsigned char CAN_isBusOff(void);
 
-# 254
+# 255
 unsigned char CAN_isRXErrorPassive(void);
 
-# 278
+# 279
 unsigned char CAN_isTXErrorPassive(void);
 
 # 56 "mcc_generated_files/ecan.c"
@@ -17999,6 +17984,12 @@ unsigned long convertReg2StandardCANid(unsigned char tempRXBn_SIDH, unsigned cha
 void convertCANid2Reg(unsigned long tempPassedInID, unsigned char canIdType, unsigned char *passedInEIDH, unsigned char *passedInEIDL, unsigned char *passedInSIDH, unsigned char *passedInSIDL);
 
 
+void ECAN_ISR_ECAN_RXBI(void)
+{
+
+
+PIR5bits.RXB0IF = 0;
+}
 
 
 void ECAN_Initialize(void)
@@ -18006,30 +17997,30 @@ void ECAN_Initialize(void)
 CANCON = 0x80;
 while (0x80 != (CANSTAT & 0xE0));
 
-# 71
+# 77
 ECANCON = 0x00;
 
-# 85
-RXM0EIDH = 0xFF;
-RXM0EIDL = 0xFF;
-RXM0SIDH = 0xFF;
-RXM0SIDL = 0xFF;
+# 94
+RXM0EIDH = 0x00;
+RXM0EIDL = 0x00;
+RXM0SIDH = 0x00;
+RXM0SIDL = 0x00;
 
 RXM1EIDH = 0xFF;
 RXM1EIDL = 0xFF;
 RXM1SIDH = 0xFF;
 RXM1SIDL = 0xFF;
 
-# 99
+# 108
 RXF0EIDH = 0x00;
 RXF0EIDL = 0x00;
-RXF0SIDH = 0x00;
-RXF0SIDL = 0x00;
+RXF0SIDH = 0x88;
+RXF0SIDL = 0x80;
 
 RXF1EIDH = 0x00;
 RXF1EIDL = 0x00;
-RXF1SIDH = 0x00;
-RXF1SIDL = 0x00;
+RXF1SIDH = 0xCC;
+RXF1SIDL = 0xC0;
 
 RXF2EIDH = 0x00;
 RXF2EIDL = 0x00;
@@ -18051,7 +18042,7 @@ RXF5EIDL = 0x00;
 RXF5SIDH = 0x00;
 RXF5SIDL = 0x00;
 
-# 142
+# 151
 BRGCON1 = 0x00;
 BRGCON2 = 0x98;
 BRGCON3 = 0x01;
@@ -18062,7 +18053,7 @@ while (0x00 != (CANSTAT & 0xE0));
 
 }
 
-# 155
+# 164
 void CAN_sleep(void) {
 
 PIR5bits.WAKIF = 0;
@@ -18232,7 +18223,7 @@ return (messageCount);
 unsigned char CAN_isBusOff(void) {
 unsigned char returnValue = 0;
 
-# 328
+# 337
 if (COMSTATbits.TXBO == 1) {
 returnValue = 1;
 }
@@ -18242,7 +18233,7 @@ return (returnValue);
 unsigned char CAN_isRXErrorPassive(void) {
 unsigned char returnValue = 0;
 
-# 341
+# 350
 if (COMSTATbits.RXBP == 1) {
 returnValue = 1;
 }
@@ -18252,14 +18243,14 @@ return (returnValue);
 unsigned char CAN_isTXErrorPassive(void) {
 unsigned char returnValue = 0;
 
-# 354
+# 363
 if (COMSTATbits.TXBP == 1) {
 returnValue = 1;
 }
 return (returnValue);
 }
 
-# 365
+# 374
 unsigned long convertReg2ExtendedCANid(unsigned char tempRXBn_EIDH, unsigned char tempRXBn_EIDL, unsigned char tempRXBn_SIDH, unsigned char tempRXBn_SIDL) {
 unsigned long returnValue = 0;
 unsigned long ConvertedID = 0;
